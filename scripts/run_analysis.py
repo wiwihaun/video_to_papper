@@ -233,6 +233,51 @@ def main(argv=None):
         md.append("")
         js["bridge"] = rows
 
+        if br.get("shapley"):
+            # Order-independent attribution: average marginal contribution over all orderings.
+            import itertools, math
+            steps = br["steps"]
+            n = len(steps)
+            cache = {}
+
+            def v(mask):
+                if mask not in cache:
+                    c2 = copy.deepcopy(case)
+                    for i in range(n):
+                        if mask & (1 << i):
+                            c2 = apply_sets(c2, steps[i].get("set"))
+                    cache[mask] = pw_quote(c2, measure)[1]
+                return cache[mask]
+
+            phi = []
+            for i in range(n):
+                tot = 0.0
+                for mask in range(1 << n):
+                    if mask & (1 << i):
+                        continue
+                    k = bin(mask).count("1")
+                    w = math.factorial(k) * math.factorial(n - k - 1) / math.factorial(n)
+                    tot += w * (v(mask | (1 << i)) - v(mask))
+                phi.append(tot)
+            md.append("**Order-independent (Shapley) attribution of the same gap:**")
+            md.append("")
+            md.append("| Step | Shapley contribution | Range across orderings |")
+            md.append("|---|---|---|")
+            for i in range(n):
+                contribs = []
+                for perm in itertools.permutations(range(n)):
+                    mask = 0
+                    for j in perm:
+                        if j == i:
+                            contribs.append(v(mask | (1 << i)) - v(mask))
+                            break
+                        mask |= (1 << j)
+                md.append("| %s | %+s | %+s to %+s |" % (steps[i]["label"], ve._m(phi[i], 0),
+                                                        ve._m(min(contribs), 0), ve._m(max(contribs), 0)))
+            md.append("| Total | %+s | |" % ve._m(sum(phi), 0))
+            md.append("")
+            js["bridge_shapley"] = [{"label": steps[i]["label"], "shapley": phi[i]} for i in range(n)]
+
     # ---- solve: bisect a case path so a measure hits a target
     js["solve"] = []
     if spec.get("solve"):

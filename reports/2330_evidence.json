@@ -921,6 +921,1736 @@
   ]
  },
  {
+  "topic": "Peer valuation multiples (late Oct 2026) for TSMC comparables: NVDA, AVGO, ASML, AMD, Samsung, SK hynix, Intel (post-drop), UMC, GlobalFoundries, SMIC; plus TSMC vs S&P 500 / SOX forward P/E comparisons",
+  "findings": [
+   {
+    "item": "NVIDIA: price, forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "Close US$204.64; Forward PE 16.92x; trailing PE 25.88x; EV/EBITDA (TTM) 24.43x; EV/Sales 16.23x; operating margin (TTM) 65.21%; mkt cap $4.94T; EV $4.92T",
+    "as_of": "2026-10-30 US close (page updated 2026-11-01)",
+    "source_name": "StockAnalysis.com – NVDA statistics",
+    "source_url": "https://stockanalysis.com/stocks/nvda/statistics/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Site does not define its Forward PE basis; back-solving vs its own FY EPS implies ~US$12.09 EPS, i.e. a next-four-quarters (from last reported qtr, Q2 FY27) non-GAAP blend, not a pure FY figure."
+   },
+   {
+    "item": "NVIDIA: P/E and EV/EBITDA by fiscal year (FY ends late Jan)",
+    "value": "P/E FY2027(Jan-27) 20.5x, FY2028(Jan-28) 13.0x, FY2029 9.97x; EV/EBITDA FY2027 17.6x, FY2028 10.1x, FY2029 7.48x; EV/Sales 11.7x / 6.68x / 4.82x; consensus EBIT margin FY2027 65.31%, FY2028 65.97%",
+    "as_of": "2026-10-30 close (ref. price US$204.64)",
+    "source_name": "MarketScreener – NVIDIA valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/NVIDIA-CORPORATION-57355629/valuation/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "FY2028 (Feb-27 to Jan-28) is the closest proxy for CY2027."
+   },
+   {
+    "item": "NVIDIA: consensus revenue/EPS and next-FY revenue growth",
+    "value": "FY2027 (Jan-27) revenue US$411.65B (+90.64%); FY2028 (Jan-28) revenue US$692.21B (+68.15%); non-GAAP EPS FY2027 $9.31 (+95.23%), FY2028 $15.91 (+70.90%)",
+    "as_of": "Consensus last updated 2026-10-26 (S&P Global; 54 analysts FY27)",
+    "source_name": "StockAnalysis.com – NVDA forecast",
+    "source_url": "https://stockanalysis.com/stocks/nvda/forecast/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "MarketScreener shows identical sales estimates (411,653 / 692,206 US$m). DERIVED (not sourced): 204.64/15.91 = 12.9x FY2028 non-GAAP P/E; 204.64/9.31 = 22.0x FY2027."
+   },
+   {
+    "item": "NVIDIA: latest reported quarter (Q2 FY2027, qtr ended 2026-07-26) and Q3 FY27 guide",
+    "value": "Revenue $96.2B; GAAP operating income $63,734M; non-GAAP operating income $63,956M; GAAP & non-GAAP GM 75.0%; Q3 FY27 guide revenue $108.0B ±2%, GM 74.0% ±50bp",
+    "as_of": "Released 2026-08-26",
+    "source_name": "NVIDIA Form 8-K Ex.99.1 (SEC EDGAR)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000073/q2fy27pr.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "DERIVED (not sourced): GAAP operating margin ≈66.3% (63,734/96,200). Q3 FY27 not yet reported as of 2026-11-01."
+   },
+   {
+    "item": "Broadcom: price, forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "Close US$326.08 (-5.48% on the day); Forward PE 18.74x; trailing PE 41.62x; EV/EBITDA (TTM) 30.46x; EV/Sales 17.87x; operating margin (TTM, GAAP) 48.81%; EV $1.59T",
+    "as_of": "2026-10-30 US close",
+    "source_name": "StockAnalysis.com – AVGO statistics",
+    "source_url": "https://stockanalysis.com/stocks/avgo/statistics/",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "Broadcom: P/E and EV/EBITDA by fiscal year (FY ends ~Nov 1)",
+    "value": "P/E FY2026 35.2x, FY2027 19.8x, FY2028 12.1x; EV/EBITDA FY2026 21.9x, FY2027 12.9x, FY2028 7.56x; EV/Revenue 14.9x / 8.67x / 5.16x; consensus EBIT margin FY2026 67.01%, FY2027 66.66%",
+    "as_of": "2026-10-30 close (ref. price US$326.08)",
+    "source_name": "MarketScreener – Broadcom valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/BROADCOM-INC-42668543/valuation/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "MarketScreener EPS used (FY26 9.263, FY27 16.46) appears GAAP-based while EBIT margins look adjusted; not like-for-like with StockAnalysis non-GAAP."
+   },
+   {
+    "item": "Broadcom: consensus revenue/EPS and next-FY revenue growth",
+    "value": "FY2026 (ending Oct-31-2026) revenue US$105.99B (+65.89%); FY2027 (ending Oct-31-2027) revenue US$174.23B (+64.39%); non-GAAP EPS FY2026 $11.67, FY2027 $19.47 (+66.86%)",
+    "as_of": "Consensus last updated 2026-10-28",
+    "source_name": "StockAnalysis.com – AVGO forecast",
+    "source_url": "https://stockanalysis.com/stocks/avgo/forecast/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "MarketScreener sales identical (105,985 / 174,227 US$m). DERIVED (not sourced): 326.08/19.47 = 16.7x FY2027 non-GAAP P/E."
+   },
+   {
+    "item": "Broadcom: Q3 FY2026 results and Q4 FY2026 guidance",
+    "value": "Q3 revenue $29.6B (+86% YoY); GAAP operating income $16.0B; non-GAAP operating income $20.1B; AI semiconductor revenue $16.7B (+221% YoY). Q4 guide: revenue ~$34.8B; non-GAAP operating income ~66% of revenue; AI semi revenue $21.7B (+236% YoY)",
+    "as_of": "Released 2026-09-02",
+    "source_name": "Broadcom Form 8-K Ex.99 (SEC EDGAR)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001730168/000173016826000076/avgo-08022026x8kxex99.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "DERIVED (not sourced): Q3 GAAP OPM ≈54%, non-GAAP ≈68%. Release reports no adjusted EBITDA."
+   },
+   {
+    "item": "ASML: price, forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "ADR close US$1,565.90 (-6.55% on the day); Forward PE 24.73x; trailing PE 39.99x; EV/EBITDA (TTM) 32.06x; EV/Sales 13.14x; operating margin (TTM) 38.55%",
+    "as_of": "2026-10-30 US close",
+    "source_name": "StockAnalysis.com – ASML statistics",
+    "source_url": "https://stockanalysis.com/stocks/asml/statistics/",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "ASML: P/E and EV/EBITDA by year (Euronext listing)",
+    "value": "P/E 2026E 34x, 2027E 25x, 2028E 18.7x; EV/EBITDA 27x / 19.4x / 14.5x; EV/Sales 11.8x / 9.03x / 7.09x; consensus EBIT margin 2026E 41.31%, 2027E 43.88%; EPS 2026E €41.51, 2027E €56.55",
+    "as_of": "2026-10-30 Euronext close (ref. price €1,412.80)",
+    "source_name": "MarketScreener – ASML valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/ASML-HOLDING-N-V-12002973/valuation/",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "ASML: consensus revenue/EPS and next-FY revenue growth",
+    "value": "FY2026 revenue €44.46B (+36.09%); FY2027 revenue €57.21B (+28.69%); EPS FY2026 €41.21, FY2027 €55.93 (+35.72%)",
+    "as_of": "Consensus last updated 2026-10-16 (35-41 analysts)",
+    "source_name": "StockAnalysis.com – ASML forecast",
+    "source_url": "https://stockanalysis.com/stocks/asml/forecast/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "DERIVED (not sourced): €1,412.80/€55.93 = 25.3x 2027E."
+   },
+   {
+    "item": "ASML: Q3 2026 results and guidance",
+    "value": "Q3 net sales €11.66B; GM 57.5%; net income €4.96B; EPS €12.95. Q4 guide €14.2-15.2B, GM ~57%. FY2026 guide €44-45B, GM ~56%. CEO: planned 2027-2028 supply 'will not fully meet the demand'",
+    "as_of": "Released 2026-10-14",
+    "source_name": "ASML Form 6-K press release (SEC EDGAR)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0000937966/000162828026065813/pressreleasefinancialresul.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Release gives no operating-income line; no explicit 2027 revenue guide."
+   },
+   {
+    "item": "AMD: price, forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "Close US$504.80; Forward PE 45.09x; trailing PE 129.55x; EV/EBITDA (TTM) 85.26x; EV/Sales 19.74x; operating margin (TTM, GAAP) 15.82%; mkt cap $824.07B",
+    "as_of": "2026-10-30 US close",
+    "source_name": "StockAnalysis.com – AMD statistics",
+    "source_url": "https://stockanalysis.com/stocks/amd/statistics/",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "AMD: P/E and EV/EBITDA by year",
+    "value": "P/E 2026E 87.8x, 2027E 36.9x, 2028E 25.3x; EV/EBITDA 60.4x / 26.5x / 16.7x; EV/Revenue 15.9x / 8.91x / 6.14x; consensus EBIT margin 2026E 27.89%, 2027E 33.73%",
+    "as_of": "2026-10-30 close (ref. price US$504.80)",
+    "source_name": "MarketScreener – AMD valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/AMD-ADVANCED-MICRO-DEVICE-19475876/valuation/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "EPS used (2026E 5.753, 2027E 13.69) appears GAAP; non-GAAP basis is lower P/E."
+   },
+   {
+    "item": "AMD: consensus revenue/EPS and next-FY revenue growth",
+    "value": "FY2026 revenue US$50.99B (+47.20%); FY2027 revenue US$89.36B (+75.26%); non-GAAP EPS FY2026 $7.62, FY2027 $15.91 (+108.78%)",
+    "as_of": "Consensus last updated 2026-10-28 (48 analysts)",
+    "source_name": "StockAnalysis.com – AMD forecast",
+    "source_url": "https://stockanalysis.com/stocks/amd/forecast/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "DERIVED (not sourced): 504.80/15.91 = 31.7x 2027E non-GAAP P/E."
+   },
+   {
+    "item": "AMD: latest reported quarter (Q2 2026) and Q3 guide",
+    "value": "Revenue $11.5B; GAAP GM 54%, non-GAAP 56%; GAAP operating margin 17%, non-GAAP 27%; EPS GAAP $1.38 / non-GAAP $1.66. Q3 2026 guide revenue ~$13.0B ±$0.3B, non-GAAP GM ~56%",
+    "as_of": "Released 2026-08-04",
+    "source_name": "AMD Form 8-K Ex.99.1 (SEC EDGAR)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0000002488/000000248826000121/q22026991.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Q3 2026 not yet reported as of 2026-11-01."
+   },
+   {
+    "item": "Samsung Electronics: price, forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "Close KRW 225,000 (-3.02%); Forward PE 3.16x; trailing PE 6.93x; EV/EBITDA (TTM) 3.81x; EV/Sales 2.08x; operating margin (TTM) 46.13%; mkt cap KRW 1,436.88T",
+    "as_of": "2026-10-30 KRX close",
+    "source_name": "StockAnalysis.com – KRX:005930 statistics",
+    "source_url": "https://stockanalysis.com/quote/krx/005930/statistics/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "KRX close came after Intel's 10/29 after-hours guide but before the 10/30 US-session chip selloff."
+   },
+   {
+    "item": "Samsung Electronics: P/E and EV/EBITDA by year; consensus sales and EBIT margin",
+    "value": "P/E 2026E 4.89x, 2027E 2.97x, 2028E 2.81x; EV/EBITDA 2.71x / 1.29x / 0.69x; yield 4.83% / 7.69%; sales 2026E KRW 722,304bn, 2027E 1,008,634bn; EBIT margin 2026E 53.6%, 2027E 59.3%; EPS 2026E 45,977, 2027E 75,876",
+    "as_of": "2026-10-30 KRX close (ref. KRW 225,000)",
+    "source_name": "MarketScreener – Samsung Electronics valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/SAMSUNG-ELECTRONICS-CO-LT-6494906/valuation/",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "Samsung Electronics: next-FY consensus revenue growth",
+    "value": "FY2026 revenue KRW 722.30T (+116.51%); FY2027 KRW 1,008.63T (+39.64%); EPS FY2026 46.17K, FY2027 75.63K (+63.79%)",
+    "as_of": "Consensus shown 2026-10-30 (29 analysts); no update date shown",
+    "source_name": "StockAnalysis.com – KRX:005930 forecast",
+    "source_url": "https://stockanalysis.com/quote/krx/005930/forecast/",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "Samsung Electronics: Q3 2026 preliminary results",
+    "value": "Q3 2026 consolidated sales ~KRW 195T (range 194-196T); operating profit ~KRW 107.40T (range 107.3-107.5T); Q2 2026 sales 171.5T, OP 89.49T; Q3 2025 sales 86.06T, OP 12.17T",
+    "as_of": "Earnings guidance released 2026-10-08",
+    "source_name": "Samsung Electronics – Earnings Guidance for Q3 2026 (Samsung Semiconductor Newsroom)",
+    "source_url": "https://news.samsungsemiconductor.com/global/samsung-electronics-announces-earnings-guidance-for-third-quarter-2026/",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "DERIVED: Q3 OPM ≈55.1% (press also cites 55.1%); Q2 ≈52.2%. Audited Q3 release not located."
+   },
+   {
+    "item": "Samsung / SK hynix 12M forward P/E – Daishin Securities",
+    "value": "Samsung 3.0x; SK hynix 2.8x (12-month forward); 'market has priced in a memory downturn'",
+    "as_of": "Note reported 2026-10-26",
+    "source_name": "StockHub (AI-assisted summary of Daishin Securities note)",
+    "source_url": "https://stockhub.kr/en/news/news_2c2b28f7ab0a",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Sell-side figure via AI-assisted summary; original report not opened; price date not stated."
+   },
+   {
+    "item": "Samsung / SK hynix 12M forward P/E – SK Securities",
+    "value": "Samsung 3.3x; SK hynix 3.0x (12-month forward), vs post-2010 lows of 5.5x and 3.0x",
+    "as_of": "Note reported 2026-10-16",
+    "source_name": "StockHub (AI-assisted summary of SK Securities note)",
+    "source_url": "https://stockhub.kr/en/news/news_bef1125a198f",
+    "tier": "press",
+    "confidence": "low"
+   },
+   {
+    "item": "Samsung / SK hynix 12M forward P/E – Korean press (conflicting)",
+    "value": "Samsung ~4.7x (moved 6-7x earlier in 2026); SK hynix 3.5x (6-8x earlier in 2026)",
+    "as_of": "Article 2026-10-19 (data provider/as-of not stated)",
+    "source_name": "Economist (economist.co.kr), Kim Du-yong",
+    "source_url": "https://economist.co.kr/article/view/ecn202610190014",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Conflicts with ~3x readings from StockAnalysis, MarketScreener and Daishin; trust the ~3x cluster (three sources, later dates)."
+   },
+   {
+    "item": "SK hynix: price, forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "Close KRW 1,418,000; Forward PE 2.84x; trailing PE 5.43x; EV/EBITDA (TTM) 4.32x; EV/Sales 3.47x; operating margin (TTM) 74.50%; mkt cap KRW 1,033.53T",
+    "as_of": "2026-10-30 KRX close",
+    "source_name": "StockAnalysis.com – KRX:000660 statistics",
+    "source_url": "https://stockanalysis.com/quote/krx/000660/statistics/",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "SK hynix: P/E and EV/EBITDA by year; consensus sales and EBIT margin",
+    "value": "P/E 2026E 3.87x, 2027E 2.69x, 2028E 2.28x; EV/EBITDA 2.95x / 1.31x / 0.62x; sales 2026E KRW 363,553bn, 2027E 576,170bn; EBIT margin 2026E 78.61%, 2027E 79.83%",
+    "as_of": "2026-10-30 KRX close (ref. KRW 1,418,000)",
+    "source_name": "MarketScreener – SK hynix valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/SK-HYNIX-INC-6494929/valuation/",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "SK hynix: next-FY consensus revenue growth",
+    "value": "FY2026 revenue KRW 363.55T (+274.23%); FY2027 KRW 576.17T (+58.48%); EPS FY2026 358.67K, FY2027 527.16K (+46.97%)",
+    "as_of": "Consensus shown 2026-10-30 (37-41 analysts)",
+    "source_name": "StockAnalysis.com – KRX:000660 forecast",
+    "source_url": "https://stockanalysis.com/quote/krx/000660/forecast/",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "SK hynix: Q3 2026 results",
+    "value": "Revenue KRW 104.6155T; operating profit KRW 83.3338T (80% margin); net profit KRW 39.7756T (38% margin); FY2026 shareholder return ~KRW 100T; expects demand > supply through 2030; investment to increase significantly next year",
+    "as_of": "Release dateline 2026-10-27 (review not finalized)",
+    "source_name": "SK hynix press release (via Placera)",
+    "source_url": "https://www.placera.se/pressmeddelanden/sk-hynix-announces-3q26-financial-results-20261028",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Release does not explain net profit << operating profit; trailing P/E may be distorted."
+   },
+   {
+    "item": "Intel: post-guidance share drop",
+    "value": "Close US$65.76 on 2026-10-30, -28.58% (-$26.31); press: steepest one-day decline in 50+ years",
+    "as_of": "2026-10-30 US close",
+    "source_name": "StockAnalysis.com – INTC statistics; Investing.com",
+    "source_url": "https://stockanalysis.com/stocks/intc/statistics/",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "Investing.com headline 'Intel plummets over 28%' (https://www.investing.com/news/stock-market-news/intel-plunges-20-as-weak-q4-forecast-overshadows-earnings-beat-4984988). DERIVED: implied prior close ≈US$92.08."
+   },
+   {
+    "item": "Intel: forward P/E, TTM EV/EBITDA, TTM operating margin (post-drop price)",
+    "value": "Forward PE 45.94x; PE (TTM) n/a; EV/EBITDA (TTM) 18.49x; EV/Sales 5.77x; operating margin (TTM) 10.32%; profit margin -20.09%; mkt cap $349.51B; EV $345.33B",
+    "as_of": "2026-10-30 US close (US$65.76)",
+    "source_name": "StockAnalysis.com – INTC statistics",
+    "source_url": "https://stockanalysis.com/stocks/intc/statistics/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Unclear whether NTM EPS behind 45.94x reflects the 10/29 guide cut."
+   },
+   {
+    "item": "Intel: P/E and EV/EBITDA by year; consensus sales and EBIT margin",
+    "value": "P/E 2026E -28.7x (GAAP loss), 2027E 46.5x, 2028E 28x; EV/EBITDA 17.2x / 14.2x / 10.8x; sales 2026E US$61,965m, 2027E US$69,585m; EBIT margin 2026E 15.17%, 2027E 16.72%; EPS 2026E -2.293, 2027E 1.413",
+    "as_of": "2026-10-30 close (ref. US$65.76)",
+    "source_name": "MarketScreener – Intel valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/INTEL-CORPORATION-4829/valuation/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "DERIVED: 2027E sales growth +12.3%. GAAP-based EPS."
+   },
+   {
+    "item": "Intel: consensus revenue/EPS and next-FY revenue growth",
+    "value": "FY2026 revenue US$62.35B (+17.98%); FY2027 US$70.77B (+13.50%); non-GAAP EPS FY2026 $1.49, FY2027 $1.95 (+31.40%)",
+    "as_of": "Page updated 2026-10-31 (45-49 analysts)",
+    "source_name": "StockAnalysis.com – INTC forecast",
+    "source_url": "https://stockanalysis.com/stocks/intc/forecast/",
+    "tier": "consensus",
+    "confidence": "low",
+    "note": "Conflicts with MarketScreener (2027E +12.3%); not confirmed that estimates absorbed the Q4 guide. DERIVED: 65.76/1.95 = 33.7x 2027E non-GAAP."
+   },
+   {
+    "item": "Intel: Q3 2026 results and Q4 2026 guidance",
+    "value": "Q3 revenue $16.5B (+21% YoY); GM GAAP 43.0% / non-GAAP 44.1%; operating margin GAAP 15.3% / non-GAAP 19.6%; EPS GAAP $0.60 / non-GAAP $0.52. Q4 guide revenue $15.0-16.0B; GM 37.1% / 38.0%; EPS $0.10 / $0.25",
+    "as_of": "Released 2026-10-29",
+    "source_name": "Intel Form 8-K Ex.99.1 (SEC EDGAR)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0000050863/000005086326000188/q326earningsrelease.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "CNBC: LSEG consensus for Q4 was revenue $17.1B, adj. EPS $0.43; CFO sees PC slowdown through at least 1H27 (https://www.cnbc.com/2026/10/29/intel-intc-q3-earnings-report-2026-.html)."
+   },
+   {
+    "item": "UMC (2303.TW): price, forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "Close NT$111.50 (-3.46%); Forward PE 16.93x; trailing PE 16.56x; EV/EBITDA shown 8.91x; EV/Sales 4.99x; operating margin (TTM) 21.45%; EV NT$1.33T; EBITDA NT$119.09B",
+    "as_of": "2026-10-30 TWSE close",
+    "source_name": "StockAnalysis.com – TPE:2303 statistics",
+    "source_url": "https://stockanalysis.com/quote/tpe/2303/statistics/",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "8.91x is internally inconsistent with the page's own EV/EBITDA (≈11.2x). UMC ADR page: US$16.68, forward PE 17.06x, EV/EBITDA (TTM) 10.88x (consistent)."
+   },
+   {
+    "item": "UMC (2303.TW): P/E and EV/EBITDA by year; consensus EBIT margin",
+    "value": "P/E 2026E 15.1x, 2027E 15.8x, 2028E 12.8x; EV/EBITDA 9.85x / 7.57x / 6.21x; dividend yield 3.52% / 4.43%; EBIT margin 2026E 22.69%, 2027E 27.64%; EPS 2026E 7.366, 2027E 7.061",
+    "as_of": "2026-10-30 TWSE close (ref. NT$111.50)",
+    "source_name": "MarketScreener – UMC valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/UNITED-MICROELECTRONICS-C-6494400/valuation/",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "UMC: next-FY consensus revenue growth",
+    "value": "FY2026 revenue NT$281.10B (+18.33%); FY2027 NT$346.62B (+23.31%); EPS FY2026 NT$7.38 (+120.89%), FY2027 NT$7.16 (-2.98%)",
+    "as_of": "Consensus shown 2026-10-30 (19 analysts)",
+    "source_name": "StockAnalysis.com – TPE:2303 forecast",
+    "source_url": "https://stockanalysis.com/quote/tpe/2303/forecast/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "2026E EPS likely inflated by non-operating gains (3Q26 net income fell 61% QoQ per press). DERIVED: 111.50/7.16 = 15.6x 2027E."
+   },
+   {
+    "item": "UMC: 3Q26 results and 4Q26 guidance",
+    "value": "Revenue NT$74.24B (US$2.32B); GM 34.0%; operating margin 25.1%; net income NT$16.43B; EPS NT$1.32 (US$0.206/ADS); utilization 92%. 4Q26: shipments +low-single digit, ASP firm, GM comparable, utilization low-90%; 2026 capex US$2.0B",
+    "as_of": "Released 2026-10-28",
+    "source_name": "UMC Form 6-K Ex.99 (SEC EDGAR)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001033767/000119312526434992/umc-ex99.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "GlobalFoundries: price, forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "Close US$41.90; Forward PE 19.36x; trailing PE 32.73x; EV/EBITDA (TTM) 10.79x; EV/Sales 3.08x; operating margin (TTM) 11.59%; mkt cap $22.99B",
+    "as_of": "2026-10-30 US close",
+    "source_name": "StockAnalysis.com – GFS statistics",
+    "source_url": "https://stockanalysis.com/stocks/gfs/statistics/",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "GlobalFoundries: P/E and EV/EBITDA by year; consensus EBIT margin",
+    "value": "P/E 2026E 32.3x, 2027E 19.4x, 2028E 13.8x; EV/EBITDA 9.13x / 7.27x / 5.9x; EBIT margin 2026E 17.19%, 2027E 20.43%",
+    "as_of": "2026-10-30 close (ref. US$41.90)",
+    "source_name": "MarketScreener – GlobalFoundries valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/GLOBALFOUNDRIES-INC-128691269/valuation/",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "GlobalFoundries: next-FY consensus revenue growth",
+    "value": "FY2026 revenue US$7.31B (+7.61%); FY2027 US$8.22B (+12.54%); non-GAAP EPS FY2026 $1.96, FY2027 $2.63 (+34.43%)",
+    "as_of": "Consensus last updated 2026-10-26 (22-23 analysts)",
+    "source_name": "StockAnalysis.com – GFS forecast",
+    "source_url": "https://stockanalysis.com/stocks/gfs/forecast/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "DERIVED: 41.90/2.63 = 15.9x 2027E non-GAAP."
+   },
+   {
+    "item": "GlobalFoundries: Q2 2026 results and Q3 guide",
+    "value": "Revenue $1.786B; GM 28.3% (non-IFRS 29.9%); operating margin 9.7% (non-IFRS 16.7%); Q3 guide revenue $1,885M ±$25M, non-IFRS GM 30.5% ±100bp, non-IFRS operating margin 16.7% ±170bp, non-IFRS EPS $0.51 ±$0.05",
+    "as_of": "Released 2026-08-05",
+    "source_name": "GlobalFoundries Form 6-K (SEC EDGAR)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001709048/000170904826000218/globalfoundries2q2026earni.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Q3 2026 not yet reported as of 2026-11-01."
+   },
+   {
+    "item": "SMIC (0981.HK): price, forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "Close HK$42.98 (-4.40%); Forward PE 30.47x; trailing PE 42.17x; EV/EBITDA (TTM) 15.23x; EV/Sales 8.09x; operating margin (TTM) 9.04%; mkt cap HK$549.03B",
+    "as_of": "2026-10-30 HKEX close",
+    "source_name": "StockAnalysis.com – HKG:0981 statistics",
+    "source_url": "https://stockanalysis.com/quote/hkg/0981/statistics/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "-4.40% day move from MarketScreener. Forward PE appears to use FY2026 EPS (stale consensus)."
+   },
+   {
+    "item": "SMIC: P/E and EV/EBITDA by year; consensus sales and EBIT margin",
+    "value": "P/E 2026E 31.8x, 2027E 25.1x, 2028E 20.5x; EV/EBITDA 11.6x / 9.96x / 8.81x; sales 2026E US$11,859m, 2027E US$14,070m; EBIT margin 2026E 15.71%, 2027E 16.82%; ref. price US$5.479 (2025 ref US$9.180)",
+    "as_of": "2026-10-30 HKEX close",
+    "source_name": "MarketScreener – SMIC valuation/finances",
+    "source_url": "https://www.marketscreener.com/quote/stock/SMIC-SEMICONDUCTOR-MANUFA-6170774/valuation/",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "SMIC: next-FY consensus revenue growth",
+    "value": "FY2026 revenue US$11.86B (+27.15%); FY2027 US$14.07B (+18.65%); EPS FY2026 $0.18, FY2027 $0.23 (+26.16%)",
+    "as_of": "Consensus last updated 2026-08-29 (stale)",
+    "source_name": "StockAnalysis.com – HKG:0981 forecast",
+    "source_url": "https://stockanalysis.com/quote/hkg/0981/forecast/",
+    "tier": "consensus",
+    "confidence": "low",
+    "note": "DERIVED: US$5.479/0.23 = 23.8x 2027E."
+   },
+   {
+    "item": "TSMC reference (same sources): TSM ADR forward P/E, TTM EV/EBITDA, TTM operating margin",
+    "value": "ADR close US$406.13; Forward PE 19.07x; trailing PE 27.18x; EV/EBITDA (TTM) 15.76x; EV/Sales 11.51x; operating margin (TTM) 57.96%",
+    "as_of": "2026-10-30 US close",
+    "source_name": "StockAnalysis.com – TSM statistics",
+    "source_url": "https://stockanalysis.com/stocks/tsm/statistics/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "DERIVED: implied NTM EPS US$21.30/ADR ≈ NT$138.3/share at 32.48, consistent with FactSet NTM blend (~NT$139.6)."
+   },
+   {
+    "item": "TSMC reference: 2330.TW P/E and EV/EBITDA by year",
+    "value": "P/E 2026E 21.5x, 2027E 16.0x, 2028E 12.5x; EV/EBITDA 14.2x / 10.1x / 7.59x; EV/Revenue 10.5x / 7.46x / 5.68x",
+    "as_of": "2026-10-30 TWSE close (ref. NT$2,370)",
+    "source_name": "MarketScreener – TSMC valuation",
+    "source_url": "https://www.marketscreener.com/quote/stock/TSMC-TAIWAN-SEMICONDUCTOR-6492349/valuation/",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "DERIVED: 2,370/145.69 (FactSet 2027E) = 16.3x; FactSet NTM blend (2/12×109.21 + 10/12×145.69 = 139.61) → 17.0x local, 18.9x on ADR-implied NT$2,638.06."
+   },
+   {
+    "item": "TSMC reference: next-FY consensus revenue growth",
+    "value": "FY2026 revenue NT$5.58T (+46.46%); FY2027 NT$7.68T (+37.64%); EPS FY2026 NT$110.55, FY2027 NT$149.17 (+34.94%)",
+    "as_of": "Consensus last updated 2026-10-16 (40 analysts)",
+    "source_name": "StockAnalysis.com – TSM forecast",
+    "source_url": "https://stockanalysis.com/stocks/tsm/forecast/",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "S&P 500 forward 12M P/E and growth",
+    "value": "Forward 12M P/E 18.7 (5-yr avg 19.8; 10-yr avg 19.1); trailing 25.9; CY2026 EPS growth +32.9%, CY2027 +16.3%; S&P 500 close 7,720.39; Semis & Semi Equipment Q3-26 earnings growth 132%, revenue 83%",
+    "as_of": "Report 2026-10-30 (data through 2026-10-29, pre-Intel selloff)",
+    "source_name": "FactSet Earnings Insight (John Butters)",
+    "source_url": "https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_103026.pdf",
+    "tier": "industry data",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC forward P/E vs S&P 500 and Tech sector (press/Zacks)",
+    "value": "'TSMC is trading almost directly in line with the Tech sector and the S&P 500 (and its own 10-year median) at a 36% discount to its highs at 19.8X forward 12-month earnings.' Zacks TSM EPS growth +59% 2026, +29% 2027 ($21.85/ADR 2027); S&P 500 EPS growth +28.8% 2026, +19.0% 2027",
+    "as_of": "2026-10-19",
+    "source_name": "Zacks via Finviz",
+    "source_url": "https://finviz.com/news/404288/buy-top-ranked-tech-stock-tsmc-now-on-the-dip-and-hold",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "TSMC forward P/E vs Nvidia/AMD/average large company (press)",
+    "value": "TSMC ~28x trailing, ~20x forward ('roughly what investors pay for an average large company'); roughly same forward multiple as Nvidia; AMD ~54x forward",
+    "as_of": "2026-08-03",
+    "source_name": "Motley Fool (Daniel Sparks)",
+    "source_url": "https://www.fool.com/investing/2026/08/03/taiwan-semiconductor-just-reclaimed-a-2-trillion-m/",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "TSMC forward P/E vs S&P 500 (press, early 2026)",
+    "value": "TSMC 24x forward earnings; S&P 500 22.3x; most big tech ~30x",
+    "as_of": "2026-01-22",
+    "source_name": "Motley Fool (Keithen Drury)",
+    "source_url": "https://www.fool.com/investing/2026/01/22/taiwan-semiconductors-2026-outlook-is-a-clear-sign/",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Semis ETF vs S&P 500 forward P/E (LSEG)",
+    "value": "Weighted forward P/E: SOXX 22.8, SPY 20.3, QQQ 22.8 (LSEG rolling 12M consensus); PHLX SOX -18.2% in July after doubling in 1H26",
+    "as_of": "Mid-July 2026 (article 2026-07-17)",
+    "source_name": "MarketWatch via Morningstar (LSEG data)",
+    "source_url": "https://www.morningstar.com/news/marketwatch/20260717437/how-your-winning-stock-index-fund-can-turn-on-a-dime",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Seen in search-result text only; page returned HTTP 403."
+   },
+   {
+    "item": "SOXX forward P/E vs Nasdaq-100 (press)",
+    "value": "SOXX forward P/E fell to 24.7x (≈3-yr average), level with Nasdaq-100 at 24.0x; semis peaked above 32x in late June",
+    "as_of": "2026-07-16",
+    "source_name": "Benzinga via Webull",
+    "source_url": "https://www.webull.com/news/15237342889927680",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "S&P 500 Semiconductors industry forward P/E (Yardeni)",
+    "value": "15.9 forward P/E, 'selling at a significant discount to the market'",
+    "as_of": "Yardeni note 2026-08-02 (reported 2026-08-03)",
+    "source_name": "Benzinga via Webull (quoting Ed Yardeni)",
+    "source_url": "https://www.webull.com/news/15339846431351808",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Semiconductor ETF aggregate forward P/E (late-Oct proxy for SOX)",
+    "value": "SOXX US$471.51 (-8.24%), Forward PE 16.75, PE 29.80 (tracks NYSE Semiconductor Index; top: AMD 9.51%, INTC 8.13%, MU 7.70%, NVDA 7.65%, AVGO 7.36%). SMH US$522.49, Forward PE 16.55, PE 28.28 (NVDA 19.62%, TSM 9.47%, ASML 4.48%, SK hynix 4.19%)",
+    "as_of": "2026-10-30 US close",
+    "source_name": "StockAnalysis.com – SOXX and SMH ETF pages",
+    "source_url": "https://stockanalysis.com/etf/soxx/",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "SMH page: https://stockanalysis.com/etf/smh/. Aggregation method undisclosed; neither ETF is the PHLX SOX. StartupFortune (2026-11-01) put SOXX 10/30 drop at 'roughly 10%' — trust StockAnalysis."
+   },
+   {
+    "item": "SOX/S&P 500 price ratio",
+    "value": "1.45, lowest since April 2026; -24% from mid-June peak; +142% from 2022 low",
+    "as_of": "2026-10-19",
+    "source_name": "Crypto Briefing",
+    "source_url": "https://cryptobriefing.com/semiconductor-index-sp500-ratio-lowest-since-april/",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Morgan Stanley: TSMC P/E vs own history",
+    "value": "TP raised NT$2,888→2,988 (Overweight); TP ≈20x 2027E P/E; current ≈17x 2027E, close to ~16.5x average (1-yr forward) since 2018",
+    "as_of": "2026-07-18",
+    "source_name": "Anue/cnyes (reporting Morgan Stanley)",
+    "source_url": "https://news.cnyes.com/news/id/6539250",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "BofA: TSMC target and EPS",
+    "value": "TP raised NT$3,100→3,260 (Buy); EPS 2026E NT$112.46, 2027E 161.36, 2028E 203.48 (raised 2%/3.5%/8.3%); 'P/E still relatively low', valuation 'should catch up'",
+    "as_of": "2026-10-13",
+    "source_name": "Economic Daily News (udn.com), reporting BofA",
+    "source_url": "https://udn.com/news/story/7252/9812252",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "No multiple or comparison to SOX/S&P disclosed."
+   },
+   {
+    "item": "TSMC forward P/E snapshots (other providers)",
+    "value": "Investing.com: Forward P/E 23.0x, consensus ADR EPS FY2026 $16.99, FY2027 $22.50 (2026-10-15). GuruFocus: TSM Forward PE 18.40 (2026-10-31)",
+    "as_of": "2026-10-15 / 2026-10-31",
+    "source_name": "Investing.com; GuruFocus (search snippet)",
+    "source_url": "https://www.investing.com/news/stock-market-news/tsmc-earnings-analysis-questions-answered-and-next-catalysts-93CH-4952354",
+    "tier": "press",
+    "confidence": "low",
+    "note": "GuruFocus (https://www.gurufocus.com/term/forward-pe-ratio/TSM) seen only in search results (403). Shows provider dispersion of ~18-23x."
+   }
+  ],
+  "synthesis": "FACT (2026-10-30 closes): MarketScreener consensus puts 2330 at 21.5x 2026E / 16.0x 2027E P/E and 10.1x 2027E EV/EBITDA; StockAnalysis shows the TSM ADR at 19.1x forward after its -5.95% move. Same-date next-year P/Es: NVDA 13.0x (FY Jan-28), AVGO 19.8x (FY Oct-27, GAAP basis; 16.7x non-GAAP, derived), ASML 25x, AMD 36.9x, INTC 46.5x, GFS 19.4x, UMC 15.8x, SMIC 25.1x, Samsung 3.0x, SK hynix 2.7x. Next-FY consensus revenue growth: AMD +75%, NVDA +68%, AVGO +64%, SK hynix +58%, Samsung +40%, TSMC +38% (NT$), ASML +29%, UMC +23%, SMIC +19%, GFS +13%, INTC +12-14%. TTM operating margin: TSMC 58% vs SK hynix 75%, NVDA 65%, AVGO 49% (GAAP), Samsung 46%, ASML 39%, UMC 21%, AMD 16%, GFS 12%, INTC 10%, SMIC 9%. FactSet S&P 500 forward P/E: 18.7 (Oct-29 data; 10-yr avg 19.1). Zacks (Oct-19) called TSMC's 19.8x F12M in line with the S&P 500 and its 10-yr median. Morgan Stanley (Jul-18) had it at ~17x 2027E vs a ~16.5x post-2018 average. No late-October PHLX SOX forward P/E was found; ETF aggregates were SOXX 16.75x and SMH 16.55x.\nINFERENCE: (1) TSMC carries no growth premium. A derived local-share NTM P/E of ~17x is ~9% below the S&P 500 despite ~33% 2027E EPS growth. It also sits in the NVDA/AVGO band even though their consensus growth is higher, so a re-rating case must rest on lower estimate risk, not on looking cheap next to its customers. (2) Memory peers at ~3x are pricing peak-cycle earnings. Exclude them from peer medians; they also pull down the ETF aggregates. (3) Excluding memory and the trough-earnings AMD/INTC, next-year P/Es cluster at ~13-25x, bracketing TSMC's 16x. (4) The Asian Oct-30 closes (2330, Samsung, SK hynix, UMC, SMIC) came after Intel's after-hours guide but before the US-session selloff (SOX -7.2%), so those multiples are likely stale-high. (5) Intel's multiples probably rest on estimates not yet cut for its Q4 guide.",
+  "unresolved": [
+   "No index-level PHLX SOX forward P/E was found for late October 2026 (no Bloomberg/LSEG/FactSet figure). The only proxies are StockAnalysis ETF aggregates (SOXX 16.75x, SMH 16.55x; method undisclosed) and older readings: LSEG July (SOXX 22.8x), Benzinga July (24.7x) and Yardeni August (S&P 500 semis industry 15.9x).",
+   "No sell-side note was found that explicitly compares TSMC's forward P/E with the SOX in 2026. The comparisons found are against the S&P 500 (Zacks Oct-19, Motley Fool Jan/Aug) and against TSMC's own history (Morgan Stanley Jul-18).",
+   "Local prices after the selloff for 2330, Samsung, SK hynix, UMC and SMIC are not yet available (next session Nov-2). Their Oct-30 closes predate the Oct-30 US-session chip selloff, so multiples across the Asian and US peers are not on the same price date.",
+   "It is not confirmed that Intel consensus reflects the Oct-29 Q4 guide cut. FY2027 revenue growth differs by source: +13.5% (StockAnalysis, $70.77B) vs +12.3% (MarketScreener, $69.59B). No post-drop broker EPS revisions or price-target changes were located.",
+   "StockAnalysis does not document what its 'Forward PE' is based on; back-solving suggests the next four quarters of non-GAAP EPS from the last reported quarter. MarketScreener P/Es for US names appear to use GAAP EPS. The two sources are therefore not like-for-like.",
+   "UMC's TPE:2303 EV/EBITDA on StockAnalysis (8.91x) contradicts the page's own EV and EBITDA, which imply about 11.2x. UMC's 2026E EPS is inflated by non-operating gains, and the reason for its +23% 2027E revenue growth is not explained.",
+   "Samsung's audited/full Q3-2026 results (due around Oct-29/30) were not located; only the Oct-8 preliminary guidance was used.",
+   "SK hynix Q3-2026 net profit (KRW 39.78T) is far below operating profit (KRW 83.33T), and the release gives no reason; trailing P/E may be distorted.",
+   "Korean 12-month forward P/E readings conflict. Samsung: 3.0x (Daishin, Oct-26), 3.3x (SK Securities, Oct-16), 4.7x (Economist, Oct-19). SK hynix: 2.8x, 3.0x and 3.5x from the same sources. The Daishin and SK Securities figures come from AI-assisted StockHub summaries; the original broker reports were not opened.",
+   "SMIC consensus on StockAnalysis was last updated Aug-29-2026 (stale). Q3-2026 results for NVDA (Q3 FY27), AMD, GFS and SMIC are not yet reported as of Nov-1, so their latest-quarter margins are Q2.",
+   "ASML's Q3-2026 release does not state operating income or margin; TTM (38.55%) and consensus EBIT margins were used instead.",
+   "The LSEG July SOXX/SPY/QQQ P/E figures come from search-result text only (MarketWatch/Morningstar page returned 403). The GuruFocus TSM forward P/E of 18.40 (Oct-31) is also snippet-only."
+  ]
+ },
+ {
+  "topic": "AI infrastructure demand as TSMC's growth driver: hyperscaler capex (calendar Q3-2026 reports), NVIDIA/AMD/Broadcom AI outlooks, AI-financing stress behind the late-Oct-2026 Nasdaq drawdown, CoWoS capacity estimates, and TSMC management commentary on demand vs supply and cycle length (as of 2026-11-01)",
+  "findings": [
+   {
+    "item": "Microsoft calendar-2026 capex guidance (incl. finance leases)",
+    "value": "'for the calendar year, spend should be approximately $170 billion due to the 3P capacity delays' (CFO Amy Hood)",
+    "as_of": "2026-10-28 (FY27 Q1 call)",
+    "source_name": "Microsoft FY27 Q1 earnings call transcript (Microsoft IR)",
+    "source_url": "https://www.microsoft.com/en-us/investor/events/fy-2027/earnings-fy-2027-q1",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "Cut from ~US$175bn (Jul-2026). The Jul-2026 figure was itself cut from ~US$190bn, mainly because data-centre leases are now depreciated over 25 years instead of 15. Some secondary sites (Cardano Capital, explainx) mislabel the US$170bn as FY27 or CY2027 capex. The transcript says 'the calendar year', meaning CY2026."
+   },
+   {
+    "item": "Microsoft prior CY2026 capex guide and uncommenced lease commitments",
+    "value": "CY2026 capex ~US$175bn (below prior US$190bn) after spreading long-term data-centre leases over 25 rather than 15 years; Q1 FY27 guide ~US$50bn vs Visible Alpha consensus US$56.02bn; data-centre leases not yet commenced US$329.1bn (starting FY27-FY33)",
+    "as_of": "2026-07-29/30 (FY26 Q4 report)",
+    "source_name": "The Standard (Reuters)",
+    "source_url": "https://www.thestandard.com.hk/innovation/article/338641/Microsoft-cloud-forecast-beats-estimates-as-cash-keeps-flowing-from-AI-revenue-surpasses-US100-bln",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Microsoft FY27 Q1 (Jul-Sep 2026) capex",
+    "value": "Capex US$45.2bn including US$7.4bn finance leases; cash 'Additions to property and equipment' US$39,367m (vs US$19,394m a year earlier)",
+    "as_of": "Quarter ended 2026-09-30 (reported 2026-10-28)",
+    "source_name": "Microsoft FY27 Q1 press release and call transcript",
+    "source_url": "https://www.microsoft.com/en-us/investor/earnings/FY-2027-Q1/press-release-webcast",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Hood said capex came in lower 'as some third-party capacity deliveries we expected in Q1 were delayed'. She said 'roughly three quarters of our capex was for short-lived assets, primarily CPUs and GPUs'."
+   },
+   {
+    "item": "Microsoft forward capex commentary (Q2 FY27 and Jan-Jun 2027)",
+    "value": "Q2 FY27: 'we expect CapEx spend will be over $50 billion'. H2 FY27: 'In the second half of the fiscal year, we currently expect CapEx spend to accelerate primarily from CPUs, inclusive of higher memory and storage costs, and GPUs, as well as the 3P capacity deliveries that shifted to H2.' No FY27 or CY2027 total was given.",
+    "as_of": "2026-10-28",
+    "source_name": "Microsoft FY27 Q1 earnings call transcript",
+    "source_url": "https://www.microsoft.com/en-us/investor/events/fy-2027/earnings-fy-2027-q1",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "Hood also said 'we expect to continue to remain free cash flow positive in FY27'."
+   },
+   {
+    "item": "Microsoft demand and backlog signals",
+    "value": "'Customer demand continues to exceed available supply' (Hood); commercial RPO US$677bn (+73% YoY), weighted-average duration 2.3 years; Azure revenue +48% to US$33,165m; Microsoft Cloud revenue US$63.9bn (+30%)",
+    "as_of": "Quarter ended 2026-09-30 (reported 2026-10-28)",
+    "source_name": "Microsoft FY27 Q1 press release and call transcript",
+    "source_url": "https://www.microsoft.com/en-us/investor/earnings/FY-2027-Q1/press-release-webcast",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Q2 FY27 Azure guide of 49-50% constant currency comes from a secondary summary (DataStudios: https://www.datastudios.org/post/microsoft-q1-fy27-results-azure-48-percent-33-2-billion-capex-45-2-billion), so medium confidence for that figure. The transcript gives no time horizon for supply constraints."
+   },
+   {
+    "item": "Microsoft US$25bn bond (AI financing)",
+    "value": "US$25.0bn senior notes in 10 tranches (2028-2066): 2036 at T+65bp, 2046 at T+85bp, 2056 at T+95bp, 6.350% 2066 at T+105bp. Trade date 2026-10-29, settlement 2026-11-04.",
+    "as_of": "2026-10-29",
+    "source_name": "Microsoft Form FWP pricing term sheet (SEC EDGAR)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0000789019/000119312526439794/d799291dfwp.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Reuters (Oct-30) called it Microsoft's first US investment-grade bond sale in more than nine years. A ~US$115bn order book appears only in secondary reports and is unverified."
+   },
+   {
+    "item": "Alphabet FY2026 capex guidance",
+    "value": "'Our full year 2026 CapEx guidance range of $195 billion to $205 billion remain unchanged' (CFO Anat Ashkenazi)",
+    "as_of": "2026-10-28 (Q3 2026 call)",
+    "source_name": "Alphabet Q3 2026 earnings call transcript (Motley Fool); CNBC",
+    "source_url": "https://www.fool.com/earnings/call-transcripts/2026/10/29/alphabet-googl-q3-2026-earnings-call-transcript/",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "Raised in Jul-2026 from US$180-190bn (W.Media, 2026-07-23: https://w.media/ai-infrastructure-demand-pushes-alphabets-2026-capex-guidance-to-us-205-billion/). Quarterly capex was US$35.7bn in Q1, US$44.9bn in Q2 and US$51.4bn in Q3. By simple arithmetic, hitting the range needs about US$63-73bn in Q4."
+   },
+   {
+    "item": "Alphabet 2027 capex commentary",
+    "value": "'We continue to expect our CapEx to increase significantly in 2027, and we'll provide further details on our Q4 call.' (Ashkenazi)",
+    "as_of": "2026-10-28",
+    "source_name": "CNBC; Alphabet Q3 2026 call",
+    "source_url": "https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "CNBC also wrote that capex will be 'exceeding $300 billion in 2027', but the line is unattributed. That is CNBC's framing, not company guidance. AI Weekly repeated it as something Alphabet 'signaled', so treat the figure as unconfirmed."
+   },
+   {
+    "item": "Alphabet Q3 2026 capex, cash flow and cloud backlog",
+    "value": "Purchases of property and equipment US$51,355m; operating cash flow US$42,290m; free cash flow US$(9,065)m; Google Cloud revenue US$30.7bn (+103% YoY); Cloud backlog US$561bn, of which 'just over 55%' is expected to be recognized within 24 months",
+    "as_of": "Quarter ended 2026-09-30 (released 2026-10-28)",
+    "source_name": "Alphabet 8-K Exhibit 99.1 (SEC) and Q3 call transcript",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000080/googexhibit991q32026.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Backlog was US$514bn at end-June 2026 (W.Media). Ashkenazi said Alphabet began using third-party compute at the end of Q3 'given the supply constrained environment'. The CEO said Cloud growth was 'powered by huge demand for our AI infrastructure'. Shares fell more than 10% after hours (CNBC)."
+   },
+   {
+    "item": "Alphabet AI financing (debt and equity)",
+    "value": "Q3-2026 proceeds from debt issuance US$28,996m (YTD US$85,222m); Q3 senior-note net proceeds US$28.7bn; long-term debt US$125.1bn vs US$21.6bn a year earlier. Jun-2026 equity program totals US$84.75bn: US$34.75bn underwritten (including US$16.75bn mandatory convertible preferred), up to US$40bn ATM with sales from Q3-2026, and a US$10bn private placement by Berkshire Hathaway.",
+    "as_of": "Q3 2026 / equity program priced 2026-06-02",
+    "source_name": "Alphabet 8-K Exhibit 99.2 (equity program, SEC); Alphabet Q3 8-K Exhibit 99.1; CNBC (long-term debt comparison)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001652044/000119312526257724/d83560dex992.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The stated use of proceeds includes capital expenditures to 'scale AI infrastructure and global compute'."
+   },
+   {
+    "item": "Amazon 2026 and 2027 capex",
+    "value": "'We still expect 2026 cash CapEx of approximately $220 billion'; Amazon expects to 'spend meaningfully more in 2027' (Andy Jassy). Q3 purchases of property and equipment US$77.3bn (cash capex US$75.9bn per the call); TTM purchases US$215.2bn.",
+    "as_of": "2026-10-29 (Q3 2026)",
+    "source_name": "Amazon Q3 2026 press release (IR) and Q3 call transcript (Motley Fool)",
+    "source_url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "Transcript: https://www.fool.com/earnings/call-transcripts/2026/10/30/amazon-amzn-q3-2026-earnings-call-transcript/. Jassy cited 'heightened component costs like memory'. No 2027 capex figure was given."
+   },
+   {
+    "item": "AWS growth, backlog and outlook",
+    "value": "AWS sales US$46.0bn (+39% YoY); 'Backlog is $578 billion, growing triple digits year-over-year'; 'AWS can grow north of 40% in each of 2027 and in 2028' (Jassy)",
+    "as_of": "Q3 2026 (reported 2026-10-29)",
+    "source_name": "Amazon Q3 2026 call transcript (Motley Fool) and press release",
+    "source_url": "https://www.fool.com/earnings/call-transcripts/2026/10/30/amazon-amzn-q3-2026-earnings-call-transcript/",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Jassy said revenue commitments for Graviton and Trainium have each risen more than 20x YoY. He said Amazon plans to sell Trainium chips externally 'late in 2027'."
+   },
+   {
+    "item": "Amazon cash burn and debt funding",
+    "value": "TTM free cash flow: outflow of US$42.4bn. Proceeds from long-term debt: US$48.1bn in Q3-2026, US$115.1bn in 9M-2026, US$130.0bn TTM.",
+    "as_of": "TTM to 2026-09-30",
+    "source_name": "Amazon Q3 2026 press release",
+    "source_url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Meta 2026 capex guidance and 2027 commentary",
+    "value": "Q3 capex including principal payments on finance leases US$34.91bn. 2026 capex 'in the range of $135-145 billion', narrowed from US$130-145bn. On 2027: 'we are still developing our budget and capacity plans for next year' and 'we expect to continue investing aggressively'. No 2027 capex figure.",
+    "as_of": "2026-10-21 (Q3 2026 release)",
+    "source_name": "Meta 8-K Exhibit 99.1 (SEC)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066700/meta-09302026xexhibit991.htm",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "Meta reported on 2026-10-21, before its peers. 2026 total expenses are guided to US$175-179bn, including a US$9.9bn legal charge. Reality Labs losses are expected to narrow to about US$15bn in 2027."
+   },
+   {
+    "item": "Meta cash flow and debt",
+    "value": "Q3 free cash flow negative US$2.12bn; long-term debt US$80.92bn at 2026-09-30 vs US$58.74bn at 2025-12-31; 9M-2026 proceeds from long-term debt US$24.91bn; cash and marketable securities US$82.45bn; Q3 'proceeds from data center venture distribution' US$1,037m",
+    "as_of": "2026-09-30",
+    "source_name": "Meta 8-K Exhibit 99.1 (SEC)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001326801/000162828026066700/meta-09302026xexhibit991.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Meta equity raise anchored by its chip suppliers (circular financing)",
+    "value": "Launched 2026-10-26: ~US$22.5bn Class A common (forward sale) plus ~US$12.5bn Series A mandatory convertible preferred depositary shares. A planned ~US$60bn Class C ATM would start no earlier than Q1-2027. NVIDIA, AMD and Broadcom, named as 'Cornerstone Investors', indicated non-binding interest in up to US$5.0bn of Class A shares.",
+    "as_of": "2026-10-26",
+    "source_name": "Meta Form FWP (SEC EDGAR)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001326801/000119312526431036/d116268dfwp.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The common tranche was upsized to US$25bn, taking the total plan to ~US$97.5bn (Reuters via Manila Times, seen in search results: https://www.manilatimes.net/2026/10/29/business/foreign-business/meta-increases-equity-offerings-to-975-billion/2456518). CNBC (2026-10-27, https://www.cnbc.com/2026/10/27/nvidia-invest-meta.html): NVIDIA invests US$3bn and AMD US$1bn, and Meta will expand its Vera Rubin and Vera CPU deployment."
+   },
+   {
+    "item": "Oracle FY27 (Jun-2026 to May-2027) capex guidance",
+    "value": "'We continue to anticipate $90 billion-$95 billion in CapEx for the full year ... with not more than $70 billion in net cash CapEx' (CFO Hilary Maxson). Q1 FY27 capex ~US$28bn, free cash flow ~-US$5bn. RPO US$664bn (+US$26bn QoQ, +US$209bn YoY).",
+    "as_of": "2026-09-10 (Q1 FY27; quarter ended 2026-08-31)",
+    "source_name": "Oracle Q1 FY27 call transcript (MarketBeat); ERP Today",
+    "source_url": "https://www.marketbeat.com/earnings/reports/2026-9-10-oracle-co-stock/",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "Oracle did not report earnings in late October; its latest quarter was reported 2026-09-10. ERP Today (https://erp.today/oracle-q1-fy27-results-664b-backlog-ai-contracts/) gives Q1 capex as US$28.5bn and confirms a completed US$20bn equity sale. Co-CEO Magouyrk said pricing reflects 'a world where demand exceeds supply'. Most new AI contracts were structured as prepay or bring-your-own-hardware."
+   },
+   {
+    "item": "Oracle Investor Day: capex peak and financing cap",
+    "value": "Capex peaks in FY27-FY28 and steps down in FY29. Positive free cash flow expected in 2H FY28; FY29 free cash flow at least US$30bn. FY30 revenue at least US$225bn. New capital-markets raises over FY27-FY30 limited to US$20bn (US$10bn equity + US$10bn gross debt, excluding refinancing). Vendor financing, customer-provided hardware and customer prepayments are expected to reduce upfront cash needs.",
+    "as_of": "2026-10-28",
+    "source_name": "Oracle 8-K Exhibit 99.1 'Oracle Investor Day 2026' (SEC)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001341439/000119312526435853/d75538dex991.htm",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "Oracle is the only one of the five that has explicitly signalled a capex step-down. FY29 runs Jun-2028 to May-2029. No FY28 capex figure was found."
+   },
+   {
+    "item": "Top-5 hyperscaler capex outlook cited by NVIDIA's CFO",
+    "value": "'CapEx by the top five hyperscalers is expected to reach nearly $800 billion in 2026 and $1.3 trillion in 2027.' (Colette Kress)",
+    "as_of": "2026-08-26",
+    "source_name": "NVIDIA Q2 FY27 call transcript (MarketBeat)",
+    "source_url": "https://www.marketbeat.com/earnings/reports/2026-8-26-nvidia-co-stock/",
+    "tier": "other",
+    "confidence": "medium",
+    "note": "A company citing external estimates. This predates the October earnings round."
+   },
+   {
+    "item": "Goldman Sachs hyperscaler capex forecast",
+    "value": "Top-5 US hyperscalers (AMZN, GOOGL, MSFT, ORCL, META): ~US$800bn in 2026; US$1.2tn in 2027 (+54%, vs Street consensus US$1.1tn); ~US$1.4tn in 2028 (+12%). Hyperscaler capex now exceeds operating cash flow.",
+    "as_of": "2026-09-27",
+    "source_name": "Bloomberg Linea (citing Bloomberg on Goldman Sachs research)",
+    "source_url": "https://www.bloomberglinea.com/mercados/goldman-ve-us12-billones-en-gasto-en-ia-mientras-crecen-dudas-sobre-su-rentabilidad/",
+    "tier": "other",
+    "confidence": "medium",
+    "note": "Sell-side estimate. Growth slows from almost 100% in 2026 to 54% in 2027 and 12% in 2028, which is the key data point on how long the cycle runs."
+   },
+   {
+    "item": "Other sell-side AI capex estimates (Oct-30 Reuters piece)",
+    "value": "J.P. Morgan: global AI capex US$900bn in 2026 and US$5.5tn by 2030. Morgan Stanley: AI infrastructure capex above US$1tn next year.",
+    "as_of": "2026-10-30",
+    "source_name": "Reuters via Investing.com",
+    "source_url": "https://www.investing.com/news/stock-market-news/nasdaq-faces-2-trillion-wipeout-in-october-as-ai-spending-fears-deepen-4988211",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "NVIDIA Q2 FY27 results",
+    "value": "Revenue US$96.2bn (+106% YoY, +18% QoQ); Data Center revenue US$89.0bn (+117% YoY, +18% QoQ); GAAP and non-GAAP gross margin 75.0%",
+    "as_of": "Quarter ended 2026-07-26 (released 2026-08-26)",
+    "source_name": "NVIDIA press release",
+    "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "The release does not split Data Center into compute and networking. Q3 FY27 (quarter ending Oct-2026) had not been reported as of 2026-11-01."
+   },
+   {
+    "item": "NVIDIA Q3 FY27 guidance",
+    "value": "Revenue US$108.0bn ±2%; GAAP and non-GAAP gross margin 74.0% ±50bp; assumes no Data Center compute revenue from China",
+    "as_of": "2026-08-26",
+    "source_name": "NVIDIA press release",
+    "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+    "tier": "guidance",
+    "confidence": "high"
+   },
+   {
+    "item": "NVIDIA FY2028 (about Feb-2027 to Jan-2028) growth outlook",
+    "value": "'We expect to grow revenue by approximately 70% in fiscal 2028. This is a supply-constrained outlook.' (Kress). 'Even though our demand is much greater than 70%, our supply allows us to confidently deliver 70%.' (Huang)",
+    "as_of": "2026-08-26",
+    "source_name": "NVIDIA Q2 FY27 call transcript (MarketBeat); Axios",
+    "source_url": "https://www.marketbeat.com/earnings/reports/2026-8-26-nvidia-co-stock/",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "Corroborated by Axios (https://axios.com/2026/08/26/nvidia-earnings-jensen-huang-ai, seen in results). Secondary reports say the Street had modelled ~44% (LSEG consensus). Kress said 'memory scarcity today is being driven in large part by the AI build-out itself'. Vera Rubin is expected to be about 20% of Data Center revenue in Q3."
+   },
+   {
+    "item": "NVIDIA supply and capacity commitments and inventory",
+    "value": "Supply and capacity commitments US$279bn at 2026-07-26 (vs US$119bn at 2026-04-26), 'primarily memory and manufacturing facilities'. Schedule: US$92bn for the rest of FY27, US$87bn in FY28, US$88bn in FY29. Total commitments US$366bn. Inventory US$31.6bn.",
+    "as_of": "2026-07-26",
+    "source_name": "NVIDIA Form 10-Q, Q2 FY27 (SEC)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000075/nvda-20260726.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The filing says some of these agreements may be cancelable, rescheduled or adjustable."
+   },
+   {
+    "item": "NVIDIA customer-financing guarantees and equity commitments (circularity)",
+    "value": "Guarantees to SB Energy capped at US$105bn: credit support for a customer affiliated with OpenAI Group PBC, covering ~4.25 GW of leases at the PORTS campus in Ohio, first phase expected FY29. Land, power and shell guarantees for AI clouds US$3.5bn. Total maximum gross exposure US$108.5bn. Equity investment commitments of US$25bn to 'AI model makers, infrastructure financiers, and other private companies'.",
+    "as_of": "2026-07-26 (SB Energy guarantee entered Aug-2026)",
+    "source_name": "NVIDIA Form 10-Q, Q2 FY27 (SEC)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000075/nvda-20260726.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "NVIDIA Blackwell and Vera Rubin demand visibility (GTC)",
+    "value": "Purchase orders for Blackwell and Vera Rubin systems of about US$1 trillion through 2027, vs about US$500bn through 2026 cited a year earlier",
+    "as_of": "2026-03-16 (GTC)",
+    "source_name": "Let's Data Science (press summary)",
+    "source_url": "https://www.letsdatascience.com/news/nvidia-projects-1-trillion-blackwell-vera-rubin-demand-b8d6cf74",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "This is a paraphrase, not a direct Huang quote."
+   },
+   {
+    "item": "AMD Q2 2026 results and Q3 guidance",
+    "value": "Revenue US$11.5bn (+50% YoY); Data Center US$6.7bn (+107%, 58% of revenue); Q3-2026 guide about US$13.0bn ±US$300m with non-GAAP gross margin about 56%",
+    "as_of": "2026-08-04",
+    "source_name": "AMD 8-K Exhibit 99.1 (SEC)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0000002488/000000248826000121/q22026991.htm",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Q3-2026 results are scheduled for 2026-11-03, per search results citing AMD's Oct-6 announcement."
+   },
+   {
+    "item": "AMD 2027 data-center guidance",
+    "value": "'We now expect data center segment revenue to more than double year over year in 2027' (Lisa Su). Anthropic partnership for up to 2 GW of MI450-series GPUs in Helios racks.",
+    "as_of": "2026-08-04 (Q2 call)",
+    "source_name": "The Register (Q2 call coverage); AMD 8-K",
+    "source_url": "https://assets.theregister.com/2026/08/05/2026/",
+    "tier": "guidance",
+    "confidence": "medium",
+    "note": "No explicit dollar figure for AI GPU revenue in 2026 or 2027 was found. The 'tens of billions in 2027' language comes from the Nov-2025 analyst day and was not confirmed as repeated in 2026."
+   },
+   {
+    "item": "Broadcom Q3 FY26 AI revenue and Q4 guidance",
+    "value": "Revenue US$29.6bn (+86%); AI semiconductor revenue US$16.7bn (+221% YoY, +54% QoQ). Q4 FY26 guide: revenue ~US$34.8bn (+93%), AI semiconductor revenue US$21.7bn (+236%).",
+    "as_of": "2026-09-02 (quarter ended 2026-08-02)",
+    "source_name": "Broadcom 8-K Exhibit 99 (SEC)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001730168/000173016826000076/avgo-08022026x8kxex99.htm",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Broadcom FY26-FY28 AI revenue outlook",
+    "value": "FY26 AI revenue ~US$58bn (raised from US$56bn). FY27: Broadcom has 'secured the supply to again double AI revenue to approximately $115 billion'. FY28: 'We have line of sight for fiscal 2028 AI semiconductor revenue growth to again double to $230 billion.' (Hock Tan)",
+    "as_of": "2026-09-02/03 (Q3 FY26 call)",
+    "source_name": "Fierce Network; TrendForce News",
+    "source_url": "https://www.fierce-network.com/broadband/broadcom-predicts-ai-chip-revenue-double-2027",
+    "tier": "guidance",
+    "confidence": "medium",
+    "note": "The FY27 figure is framed as limited by supply, not demand. Tan said Anthropic is 'on track to become our largest XPU customer in 2027'. TrendForce (https://www.trendforce.com/news/?p=63572) quotes Tan on 'bottlenecks across the supply chain, from land, power and data-center shells to leading-edge silicon, substrates and memory', and reports a Singapore substrate fab starting in FY27."
+   },
+   {
+    "item": "Late-October Nasdaq drawdown",
+    "value": "Nasdaq-100 down more than 5.8% in October, with over US$2tn of market value wiped (Reuters, Oct-30). Nasdaq-100 -3.46% on 2026-10-30, briefly crossing -10% from its 2026-10-06 peak intraday (Cardano Capital). Nasdaq Composite -2.86% to 25,437.00 on 2026-10-30 and about -5.3% for October, its worst month since March 2025 (Yahoo Finance).",
+    "as_of": "2026-10-30",
+    "source_name": "Yahoo Finance live blog; Reuters via Investing.com; Cardano Capital Substack",
+    "source_url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-ai-sell-off-191429143.html",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "AI financing worries cited by Reuters for the October sell-off",
+    "value": "Rising borrowing costs 'could make debt-funded AI investment more expensive and harder to justify'. Also cited: Microsoft's ~US$25bn investment-grade bond (first in more than nine years); Meta's record US$97.5bn raise heightening dilution concerns; the cost of insuring against default 'has surged'; Alphabet's biggest one-day percentage drop on record after weak search ads and a 'sharp increase in cash burn'.",
+    "as_of": "2026-10-30",
+    "source_name": "Reuters via Investing.com",
+    "source_url": "https://www.investing.com/news/stock-market-news/nasdaq-faces-2-trillion-wipeout-in-october-as-ai-spending-fears-deepen-4988211",
+    "tier": "press",
+    "confidence": "high",
+    "note": "Reuters' same-day opening piece (https://www.investing.com/news/stock-market-news/nasdaq-tumbles-at-open-as-amazon-intel-add-to-ai-spending-woes-4988016) blamed Amazon's 'aggressive AI spending plan' and Intel's cash-burn warning. Cardano Capital puts Alphabet's 2026-10-29 drop at -12.6%."
+   },
+   {
+    "item": "Credit-default-swap stress on AI borrowers",
+    "value": "Oracle 5Y CDS at a record 288bp (+26bp overnight, 260bp a week earlier; S&P Global Market Intelligence). SoftBank 424bp. CoreWeave above 1,000bp (LSEG; about 63% implied 5-year default probability), with its 2032 bonds at about 77-78 cents yielding over 16%. Meta, Alphabet, Amazon and NVIDIA CDS at record wides, levels not given.",
+    "as_of": "2026-10-15",
+    "source_name": "Yahoo Finance",
+    "source_url": "https://finance.yahoo.com/markets/stocks/articles/ai-credit-default-insurance-costs-140727215.html",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "CONFLICT: Startup Fortune (2026-10-11, citing Bloomberg) put Oracle 5Y CDS at about 151bp in 'early October'. I trust 288bp: it is dated, names the data vendor, and is corroborated by a second Yahoo piece (https://finance.yahoo.com/markets/stocks/articles/oracles-default-insurance-hits-record-122137367.html)."
+   },
+   {
+    "item": "CoreWeave bond repricing",
+    "value": "Bonds issued in June at a 9.675% yield were yielding about 15%. US$35.6bn of indebtedness per the Q2 10-Q. Q2 net interest expense US$640m vs US$267m a year earlier.",
+    "as_of": "2026-10-16/17",
+    "source_name": "FinChannel",
+    "source_url": "https://finchannel.com/nasdaq-falls-as-ai-debt-concerns-deepen-wall-street-losses/138473/american-business-trends/stock-prices/2026/10/",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "The Nasdaq Composite fell 2.1% on 2026-10-16 amid 'renewed scrutiny of debt financing for data centers'."
+   },
+   {
+    "item": "Anthropic US$63bn chip-lease financing with a Broadcom backstop",
+    "value": "A US$63bn SPV buys Broadcom AI accelerators and networking and leases them to Anthropic. First-lien debt of about US$43.5bn (69%) is arranged by BofA, Citi and Morgan Stanley; Blackstone is sole provider of the committed second lien. Broadcom provides 'residual value support' to lenders. Deliveries begin in 2027. An earlier US$35bn Apollo/Blackstone deal carried a Broadcom backstop of up to US$29bn.",
+    "as_of": "2026-10-26",
+    "source_name": "Reuters via Investing.com",
+    "source_url": "https://www.investing.com/news/stock-market-news/wall-street-banks-blackstone-line-up-63-billion-to-finance-broadcom-chips-for-anthropic-4973662",
+    "tier": "press",
+    "confidence": "high",
+    "note": "This is vendor-backed financing: the chip supplier supports debt that funds purchases of its own chips. FT details relayed third-hand by Cardano Capital (https://cardanocapital.substack.com/p/nasdaq-100-sinks-35-as-ai-earnings, 2026-10-31) are low confidence: about 1.5 GW of Google chips, over US$42bn of senior debt guaranteed by Broadcom, US$18bn of junior debt, Blackstone funds holding US$9bn of junior debt at yields above 10%, and the junior tranche rated BB+ (KBRA) and BB (DBRS)."
+   },
+   {
+    "item": "Banks struggling to sell down data-center debt",
+    "value": "Banks including JPMorgan and MUFG have spent more than six months trying to distribute US$38bn of construction debt for a Texas/Wisconsin data-center project leased to Oracle. CoreWeave-leased paper priced at 7.00-9.875% vs 5.70-7.875% for hyperscaler-leased bonds.",
+    "as_of": "2026-10-11",
+    "source_name": "Startup Fortune (citing Bloomberg, FT, CCIR)",
+    "source_url": "https://startupfortune.com/banks-are-now-trying-to-offload-the-ai-data-center-debt-they-just-underwrote/",
+    "tier": "press",
+    "confidence": "low"
+   },
+   {
+    "item": "Private-credit exposure to AI data centers",
+    "value": "About US$700bn of 2026-28 data-centre spending expected to be financed by private credit. Chips and equipment are about 70% of data-centre cost (JPMAM). Nvidia H100 rental rates are down 25-50% since early 2025 (Silicon Data). Blue Owl capped private-credit fund redemptions at 5% twice in 2026.",
+    "as_of": "2026-10-29",
+    "source_name": "Commentary by Altaf Kassam (via rallies.ai / OWL News)",
+    "source_url": "https://rallies.ai/news/private-credits-huge-ai-footprint-obscures-growing-risks-altaf-kassam-6daa34bf871363ee",
+    "tier": "other",
+    "confidence": "low",
+    "note": "The US$700bn figure is not attributed to a named primary source. Background from WealthManagement (2026-02-23, https://www.wealthmanagement.com/alternative-investments/blue-owl-anxiety-rattles-1-8-trillion-private-credit-market): Blue Owl closed withdrawals from its ~US$1.6bn OBDC II fund and helped finance Meta's Hyperion data centre (over US$27bn of debt)."
+   },
+   {
+    "item": "US 10-year Treasury yield at the time of the drawdown",
+    "value": "4.929% (-6bp on the day) on 2026-10-30 per the page ticker. Cardano Capital: about 4.9%, vs 5.05% on 2026-10-28 and about 5.30% at end-September.",
+    "as_of": "2026-10-30",
+    "source_name": "Yahoo Finance live-blog ticker; Cardano Capital Substack",
+    "source_url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-ai-sell-off-191429143.html",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Not from FRED, and the ticker's timing is unclear. Compare with the established FRED DGS10 of 5.10% on 2026-10-15. Verify on FRED before using in a discount rate."
+   },
+   {
+    "item": "TSMC CoWoS capacity and supply-demand gap (TrendForce News re-report)",
+    "value": "TSMC monthly CoWoS capacity could reach a record 120,000-140,000 wafers in 2026. OSAT partners are adding 50,000-60,000 wpm, bringing the industry close to 200,000 wpm. The CoWoS supply-demand gap of about 20% now is seen narrowing to about 10% by end-2026 (institutional investors via Economic Daily News). TSMC plans more than 60% CoWoS expansion by 2027. TrendForce expects the severe 2.5D packaging shortage to begin moderating by 2027. TSMC's May-2026 symposium (via Reuters) put CoWoS capacity CAGR above 80% for 2022-2027.",
+    "as_of": "2026-06-15",
+    "source_name": "TrendForce News",
+    "source_url": "https://www.trendforce.com/news/2026/06/15/news-tsmc-cowos-supply-demand-gap-reportedly-seen-narrowing-from-20-to-10-by-end-2026-as-capacity-expands/",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "CoWoS capacity targets (DIGITIMES supply-chain report)",
+    "value": "End-2026: originally about 110k wpm, now expected above 130k. 2027: 'at least 200k wpm', according to equipment makers citing TSMC, who call it a low bar. The market thinks end-2027 could reach 240-260k wpm. History: 2024 about 30k+, 2025 about 70k. The SoIC target was raised to 50k wpm.",
+    "as_of": "2026-07-10",
+    "source_name": "DIGITIMES (Chinese)",
+    "source_url": "https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?id=0000758962_JM8LNQ2Y5FVI793XXKPAW",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Morgan Stanley CoWoS supply/demand and TSMC AI revenue model",
+    "value": "End-2027: TSMC CoWoS 200k wpm plus 80k non-TSMC, about 280k wpm in total (~3.36m wafers/yr). Global CoWoS demand 1.394m wafers in 2026 rising to 2.694m in 2027 (+93%). NVIDIA 1.222m wafers in 2027; AMD 120k in 2026 rising to 530k in 2027. TSMC AI revenue US$27.1bn (2026), US$86.3bn (2027: GPU 28 + custom AI 18 + CoWoS packaging 40 + AI server CPU 0.3), US$106.6bn (2028).",
+    "as_of": "2026-06-23 (MS report; article dated 2026-06-25)",
+    "source_name": "KuCoin News (summary of Morgan Stanley report)",
+    "source_url": "https://www.kucoin.com/news/flash/morgan-stanley-report-tsmc-s-2027-ai-revenue-to-double-cowos-capacity-remains-a-bottleneck",
+    "tier": "other",
+    "confidence": "low",
+    "note": "Sell-side figures via a secondary summary. A second summary (TechFlow: https://www.techflowpost.com/en-US/article/32210) shows the AI-revenue figures with a misplaced decimal (2.71 and 8.63). The KuCoin figures add up internally, so I prefer them. MS's AI revenue definition is broader than TSMC's narrow AI-accelerator definition."
+   },
+   {
+    "item": "Goldman Sachs end-2027 capacity and TSMC 2027 capex estimates",
+    "value": "End-2027 CoWoS including WMCM 280k wpm (raised from 250k). End-2027 N3 200k wpm and N2 140k wpm. TSMC 2027 capex US$78bn (raised from US$70bn). USD revenue growth 39% / 32% / 28% for 2026 / 2027 / 2028. Gross margin 66.9% / 66.8% / 67.3%. Target price NT$3,000 (Buy).",
+    "as_of": "2026-07-03",
+    "source_name": "TechNews (summary of Goldman Sachs report)",
+    "source_url": "https://technews.tw/2026/07/03/goldman-sachs-see-2026-q2-tsmc/",
+    "tier": "other",
+    "confidence": "medium"
+   },
+   {
+    "item": "CoWoS annual output estimates and pricing (Commercial Times via TrendForce)",
+    "value": "Goldman Sachs: TSMC CoWoS 1.275m wafers in 2026 (~106k/month), 2.73m in 2027 (+114% YoY, ~227.5k/month), 3.48m in 2028. Commercial Times analysts: above 130k wpm in 2026, 200k target in 2027. TSMC is reportedly weighing CoWoS price hikes of up to 20%. Wafer prices reportedly rise 3-6% from Jan-2027, steepest on N2 and N3 (Liberty Times). Equipment lead times are 6-8 months, up from 3-6.",
+    "as_of": "2026-10-27",
+    "source_name": "TrendForce News (citing Commercial Times, Liberty Times, Seoul Economic Daily)",
+    "source_url": "https://www.trendforce.com/news/2026/10/27/news-tsmc-reportedly-eyes-20-cowos-price-hike-skips-equipment-price-renegotiations-amid-ai-demand-surge",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Annual wafer totals are average run-rates and are not comparable with year-end wpm figures."
+   },
+   {
+    "item": "UBS CoWoS capacity forecast",
+    "value": "Global CoWoS capacity 160k wpm at end-2026 rising to 270k wpm at end-2027 (raised from 260k). TSMC CoW about 180k wpm at end-2027. ASE CoW 20k rising to 70k. Amkor CoW 20k at end-2027. 2027 CoWoS demand about 2.63m wafer-equivalents vs 1.321m in 2026.",
+    "as_of": "2026-09-23",
+    "source_name": "UDN Money (summary of UBS report); Wallstreetcn",
+    "source_url": "https://money.udn.com/money/story/5607/9773857",
+    "tier": "other",
+    "confidence": "medium",
+    "note": "The demand figures come from Wallstreetcn (https://wallstreetcn.com/articles/3782268), whose page shows 09/22 without a year. UBS says CoWoS still needs further expansion in 2028 even with Intel EMIB-T and TSMC CoPoS."
+   },
+   {
+    "item": "Taiwan broker estimate (unnamed financial-holding investment advisory)",
+    "value": "TSMC CoWoS 140k wpm at end-2026 rising to 220k at end-2027 (+57%). OSAT CoWoS about 40k rising to 65k wpm. TSMC 2027 capex estimated at about US$80bn (+~25%) and 2028 at about US$100bn. 2027 EPS estimate raised from NT$148.63 to NT$157.29. Target price raised from NT$3,300 to NT$3,500.",
+    "as_of": "2026-10-08",
+    "source_name": "Wantrich / China Times",
+    "source_url": "https://wantrich.chinatimes.com/news/20261008900006-420101",
+    "tier": "press",
+    "confidence": "low",
+    "note": "The broker is not named."
+   },
+   {
+    "item": "TSMC CoWoS and leading-edge capacity (Economic Daily News via TrendForce)",
+    "value": "CoWoS about 130k wpm at end-2026 and about 260k wpm by end-2028, a doubling centred on AP7 in Taiwan and Arizona. N2 rises from 90k wpm at end-2026 to 110k by mid-2027 (+22%). N3 rises from over 180k to 210k wpm (+16%).",
+    "as_of": "2026-09-14",
+    "source_name": "TrendForce News (citing Economic Daily News / Wccftech)",
+    "source_url": "https://www.trendforce.com/news/2026/09/14/news-tsmc-reportedly-targets-22-2nm-16-3nm-capacity-boost-by-mid-2027-cowos-to-double-by-2028/",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "KGI CoWoS forecast (earlier in 2026)",
+    "value": "End-2027 CoWoS capacity raised to 170k wpm from 155k, with the expansion mainly in 2H27 (about 1% extra revenue in 2027). NVIDIA and Broadcom could each get about 100k additional CoWoS wafers in 2027. KGI says 'demand far outstrips supply'. Target price NT$2,420 (20x 2027F EPS).",
+    "as_of": "2026-03-09",
+    "source_name": "KGI Securities company update (PDF)",
+    "source_url": "https://www.kgi.com.hk/en/-/media/files/kgishk/research-reports/tw-reports/tsmc_2330-tt_09032026e.pdf",
+    "tier": "other",
+    "confidence": "medium",
+    "note": "Dated; later estimates are higher."
+   },
+   {
+    "item": "TSMC CEO on AI demand durability and the supply gap (4Q25 call)",
+    "value": "'I will tell you the truth - I do not know. But I look at the AI, it looks like, it is going to be, like, endless. I mean, that's for many years to come.' 'The capacity is very tight... Probably this year, next year, we have to work extremely hard to narrow the gap.' On new fabs: 'we are looking for 2028-2029 supply, and we hope it's a time that the gap will be narrow.' 'still the bottleneck is TSMC's wafer supply, not the power consumption'",
+    "as_of": "2026-01-15",
+    "source_name": "TSMC 4Q25 earnings call transcript (LSEG edited, TSMC IR)",
+    "source_url": "https://investor.tsmc.com/japanese/encrypt/files/encrypt_file/reports/2026-01/51d09df96cd89ac19d65af39032b038dc2896a24/TSMC%204Q25%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Wei said he had checked the CSPs' demand and finances ('they are very rich'). In places the transcript renders the capex budget as 'TWD52 billion to TWD56 billion'; this is a transcription error for USD."
+   },
+   {
+    "item": "TSMC CEO on how long the constraint lasts (1Q26 call)",
+    "value": "Asked whether supply would still trail demand into 2027: 'It takes time to build a new fab, it takes time to ramp it up. And so we expect this to continue to be very tight.' Also: 'our advanced packaging capacity is very tight also. So we have to work with our OSAT partners.'",
+    "as_of": "2026-04-16",
+    "source_name": "TSMC 1Q26 earnings call transcript (LSEG edited, TSMC IR)",
+    "source_url": "https://investor.tsmc.com/japanese/encrypt/files/encrypt_file/reports/2026-04/3cef85204275f94fd111485cfdf4adb3c0263c45/TSMC%201Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC CEO on cycle length (2Q26 call)",
+    "value": "'I believe from this day on all the way to probably 2029, 2030, the demand is very strong. Whether in between there's a dip or not, I'm not very sure.' On discounting customer forecasts: 'all the truth together is not a truth'. On capex: 'you bet that will continue to increase'.",
+    "as_of": "2026-07-16",
+    "source_name": "TSMC 2Q26 earnings call transcript (LSEG edited, TSMC IR)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Wei also said TSMC checks the progress of AI data-centre builds to make sure its chips 'will not be put in inventory'."
+   },
+   {
+    "item": "TSMC CEO on the size of the gap and packaging (2Q26 call)",
+    "value": "'our packaging capacity is so tight that now it limits my customers' growth' (he welcomed EMIB-T as an alternative). Asked whether unconstrained N3-and-below demand is 30-50% above supply: 'the gap is very big'. Also: 'the demand and the supply, the gap is so big', and the back end is 'still in shortage mode, the gap is bigger'.",
+    "as_of": "2026-07-16",
+    "source_name": "TSMC 2Q26 earnings call transcript (LSEG edited, TSMC IR)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC CEO on demand vs supply (3Q26 call)",
+    "value": "'based on our assessed demand, we still think the demand is higher than the supply'; 'the gap between demand and supply are still quite big'; 'the demand actually is still far above our capability today to supply'; 'we have a little bit shortage on the back end' (citing the GlobalFoundries interposer deal); CoWoS is 'still the number one choice for our customers'",
+    "as_of": "2026-10-15",
+    "source_name": "TSMC 3Q26 earnings call transcript (LSEG edited, TSMC IR)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Wei said TSMC's demand assessment takes in 'the CSPs, CapEx, data centers' build-out, financial, power supply, and also other components' supply'. TSMC sends its own teams to check US data-centre build-out and power, and the feedback is 'so far so good'."
+   },
+   {
+    "item": "TSMC 3Q26: AI CAGR, capex direction and 2027 caution",
+    "value": "On the mid-to-high-50s% AI accelerator CAGR for 2024-29 (a narrow definition that excludes CPUs): 'we did not see any sign of slowdown whether it's high 50% CAGR, it doesn't matter, it probably will be higher'. 2026 capex of US$60-64bn reiterated; 2026-28 capex to be 'even more significantly higher than the past three years'. 'we are being prudent in our business planning going into 2027', citing consumer and price-sensitive segments hit by rising component prices. N2-family annual capacity to more than double in 2027. Nearly 20 fabs in progress: 13 leading-edge and advanced-packaging fabs in Taiwan plus 5-6 overseas.",
+    "as_of": "2026-10-15",
+    "source_name": "TSMC 3Q26 earnings call transcript (LSEG edited, TSMC IR)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "The CFO said it is 'too early to share the CapEx number beyond this year' and that 'tool price inflation is real'. Overseas-fab gross-margin dilution is expected to be closer to 2% for full-year 2026, and 3-4 points 'in the second part of the five-year period'. This matches the established figure; no conflict."
+   }
+  ],
+  "synthesis": "FACT – demand: The four US hyperscalers that reported in late October 2026 all held or raised CY2026 capex guidance: MSFT ~US$170bn including finance leases, trimmed only because third-party capacity deliveries slipped; GOOGL US$195-205bn; AMZN ~US$220bn cash; META US$135-145bn. Simple addition gives roughly US$720-740bn, though each company defines capex differently. All four pointed to more spending in 2027: 'increase significantly', 'meaningfully more', acceleration in Microsoft's Jan-Jun 2027 half, 'continue investing aggressively'. Backlogs are very large (MSFT RPO US$677bn, AWS US$578bn, Google Cloud US$561bn, Oracle RPO US$664bn), and MSFT, GOOGL and ORCL say demand exceeds supply. Upstream, NVIDIA guides FY28 revenue to grow about 70% and calls it 'supply-constrained'. Broadcom has secured supply for ~US$115bn of FY27 AI revenue, and AMD expects data-centre revenue to more than double in 2027. TSMC says demand is 'still far above our capability today to supply', with back-end packaging short. Sell-side estimates for end-2027 CoWoS capacity range from about 170k to 280k wpm, against about 115-140k at end-2026.\n\nFACT – financing: Capex now exceeds operating cash flow at Alphabet (Q3 FCF -US$9.1bn), Meta (-US$2.1bn) and Amazon (TTM -US$42.4bn). Funding is moving to record capital-markets issuance: Alphabet's US$84.75bn equity program, Meta's ~US$97.5bn equity plan and Microsoft's US$25bn bond. It is also moving to vendor-backed structures: NVIDIA's US$105bn SB Energy guarantee and US$279bn of supply commitments, Broadcom's residual-value support on the US$63bn Anthropic SPV, and NVIDIA/AMD/Broadcom anchoring Meta's equity raise. Oracle says its capex peaks in FY27-28. Goldman expects hyperscaler capex growth to slow to 54% in 2027 and 12% in 2028.\n\nINFERENCE for TSMC: 2027 revenue looks limited by TSMC's own capacity rather than by demand, so near-term volume risk is low and reported price rises (CoWoS up to +20%, wafers +3-6%) are supportive. The valuation swing factor is how long demand lasts after 2028. End-demand increasingly depends on capital-market access and circular vendor financing, and that is what the October sell-off priced, not any change in TSMC's 2026-27 fundamentals. Wei's own 'probably 2029, 2030... whether in between there's a dip or not, I'm not very sure' argues for modelling a 2028-29 digestion scenario rather than a smooth fade.",
+  "unresolved": [
+   "AMD Q3-2026 results and any updated 2027 AI-GPU revenue figure are due 2026-11-03, after this date. No 2026 AMD dollar guidance specifically for AI GPUs was found.",
+   "NVIDIA Q3 FY27 (quarter ending Oct-2026) has not been reported as of 2026-11-01. The Q2 release does not split Data Center revenue into compute and networking.",
+   "No dollar figure for 2027 capex from Alphabet (details promised on the Q4 call), Amazon ('meaningfully more'), Meta (budget not set) or Microsoft (no FY27 or CY2027 total). CNBC's '>US$300bn' for Alphabet in 2027 is unattributed and not company guidance.",
+   "Oracle has not given an FY28 capex figure; the investor day says only that capex peaks in FY27-FY28.",
+   "TrendForce's own CoWoS capacity research was not found as a primary press release; only TrendForce News re-reports of EDN, Commercial Times and broker figures. TSMC does not disclose CoWoS capacity. Estimates mix year-end wpm with annual wafer totals, and TSMC-only with totals that include OSAT or WMCM.",
+   "One Chinese search summary cited a conservative Morgan Stanley estimate of ~90k wpm at end-2026; it could not be verified, and no post-June 2026 Morgan Stanley CoWoS update was opened.",
+   "The FT terms of the Anthropic US$63bn financing (1.5 GW, US$18bn junior debt, Blackstone's US$9bn junior holding, KBRA/DBRS ratings) were seen only via a Substack relay. No Broadcom 8-K disclosure of its backstop exposure (reportedly ~US$43bn) was opened.",
+   "Oracle 5Y CDS conflict: ~151bp in early October (Startup Fortune citing Bloomberg) vs a 288bp record on 2026-10-15 (Yahoo citing S&P Global MI). The difference in measure or date is unexplained.",
+   "The ~US$700bn estimate of 2026-28 data-centre capex financed by private credit has no primary source. No late-October 2026 data on private-credit redemptions or defaults was found.",
+   "The Microsoft bond order book (~US$115bn) and the final 424B2 allocation were not verified. Meta's upsized pricing (US$625 per common share, 6.5% preferred dividend) appears only in search-result summaries; the final 424B5 was not opened.",
+   "Goldman's reported '~US$400bn of 2027 IG issuance funding ~US$1.14tn of capex' was not verified. The verified Goldman figures are US$1.2tn in 2027 and ~US$1.4tn in 2028.",
+   "The US 10Y close on 2026-10-30 was not checked on FRED. The ~4.93% figure comes from a page ticker of unclear timing.",
+   "No 2026 TSMC disclosure was found of AI accelerator revenue as a share of 2026 revenue, or any formal update to the mid-to-high-50s% CAGR. Wei said only that it 'probably will be higher'."
+  ]
+ },
+ {
+  "topic": "How semiconductor and foundry downcycles played out (TSMC 2001/2009/2019/2023; WSTS/SIA; the 2000-02 telecom and equipment capex bust) and 2026 analyst commentary on an AI-capex digestion in 2027-28, for calibrating a TSMC bear scenario",
+  "findings": [
+   {
+    "item": "TSMC 3Q00 (pre-peak quarter): net sales, GM, operating income, utilization",
+    "value": "Net sales NT$47,491m; GM 47.1%; operating income NT$18,615m; utilization 107%",
+    "as_of": "3Q00 (released 2000-10-19)",
+    "source_name": "TSMC 3Q00 results release (PDF)",
+    "source_url": "https://investor.tsmc.com/japanese/encrypt/files/encrypt_file/english/2000/Q3/3q00fr.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Unconsolidated, including resale of JV wafers. Includes the TASMC/WSMC mergers effective 30 Jun 2000."
+   },
+   {
+    "item": "TSMC 4Q00, the 2001-cycle revenue peak",
+    "value": "Net sales NT$53,822m (+13.3% QoQ); utilization above 100% (106% per release text, 105% per the later 1Q01 report)",
+    "as_of": "4Q00 (released 2001-02-06)",
+    "source_name": "TSMC 4Q00 release; EE Times reprint",
+    "source_url": "https://pr.tsmc.com/english/news/2302",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "The EE Times reprint (https://www.eetimes.com/?p=1215602) gives GM 46.0% and 106% utilization."
+   },
+   {
+    "item": "TSMC 4Q00 GM and operating income: as reported vs restated",
+    "value": "GM 46.0% as originally reported; restated GP NT$25,574m on NT$53,822m sales = 47.5% (computed); operating income NT$21,160m = OPM 39.3% (computed)",
+    "as_of": "4Q00 (restated in the 4Q01 statement, Jan 2002)",
+    "source_name": "TSMC 4Q01 unconsolidated income statement (Attachment B)",
+    "source_url": "https://investor.tsmc.com/schinese/encrypt/files/encrypt_file/english/2001/Q4/4q01IS.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "CONFLICT: the restatement moved NT$818.5m from COGS to opex. Use 47.5% for like-for-like comparison with 2001 quarters."
+   },
+   {
+    "item": "TSMC 1Q01: revenue, GM, utilization, capex plan",
+    "value": "Net sales NT$39,521m (-27% QoQ); GM 34% (vs 46% in 4Q00); utilization 70% (from 105%); 2001 capex plan cut 19% to US$2.2bn from US$2.7bn",
+    "as_of": "1Q01 (released 2001-04-27)",
+    "source_name": "TSMC 1Q01 results release (PDF)",
+    "source_url": "https://investor.tsmc.com/japanese/encrypt/files/encrypt_file/english/2001/Q1/1Q01_fr.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 2001 capex plan, initial cut",
+    "value": "2001 capex plan cut 29% to US$2.7bn from US$3.8bn; total cut from US$3.8bn to the April US$2.2bn = -42% (computed)",
+    "as_of": "Feb 2001 and Apr 2001",
+    "source_name": "EE Times reprint of TSMC 4Q00 release; TSMC 1Q01 report",
+    "source_url": "https://www.eetimes.com/?p=1215602",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Shows how fast foundry capex was cut after the 2000 boom."
+   },
+   {
+    "item": "TSMC 2Q01, the 2001-cycle revenue and margin trough",
+    "value": "Net sales NT$26,298m (-33.5% QoQ, -17.3% YoY); operating income NT$284m; utilization 44%; management said it 'hit the bottom' in May-June 2001",
+    "as_of": "2Q01 (released 2001-07-26)",
+    "source_name": "TSMC 2001 Second Quarter Report",
+    "source_url": "https://pr.tsmc.com/english/news/2366",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 2Q01 trough gross and operating margin",
+    "value": "Gross profit NT$4,999m on NT$26,298m sales = GM 19.0% (computed); operating income NT$284m = OPM 1.1% (computed)",
+    "as_of": "2Q01",
+    "source_name": "TSMC 2002 Second Quarter Report (2Q01 comparison column)",
+    "source_url": "https://pr.tsmc.com/english/news/1204",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Margins computed from TSMC's table, which does not state them. Same report: 1Q02 GM 33.6% (computed), OPM 22.9%; 2Q02 GM 37.2% (computed), OPM 27.1%, utilization 85%."
+   },
+   {
+    "item": "TSMC 2001 cycle: peak-to-trough quarterly revenue change",
+    "value": "-51.1% (computed: 2Q01 NT$26,298m vs 4Q00 NT$53,822m); trough two quarters after the peak; GM down about 28.5pp (47.5% to 19.0%); OPM down about 38pp (39.3% to 1.1%)",
+    "as_of": "4Q00 to 2Q01",
+    "source_name": "Computed from TSMC releases (4Q00, 2Q01, 2Q02, 4Q01 income statement)",
+    "source_url": "https://pr.tsmc.com/english/news/2366",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Derived figure (my arithmetic on sourced numbers). NT$ basis, unconsolidated."
+   },
+   {
+    "item": "TSMC 3Q01 and 4Q01: recovery path",
+    "value": "3Q01: sales NT$26,940m, GP NT$6,816m (GM 25.3% computed), operating income NT$1,942m (OPM 7.2% computed). 4Q01: sales NT$33,130m, GM 33.5%, OPM 17.7%, utilization 50%",
+    "as_of": "3Q01-4Q01 (4Q01 released 2002-01-25)",
+    "source_name": "TSMC 4Q01 income statement; TSMC 2001 Fourth Quarter Report",
+    "source_url": "https://pr.tsmc.com/english/news/2404",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC full-year 2001 revenue change",
+    "value": "NT$125,888m vs NT$166,229m in 2000 = -24.3%",
+    "as_of": "FY2001",
+    "source_name": "TSMC 4Q01 and 4Q00 releases; EDN (2002-01-09)",
+    "source_url": "https://www.edn.com/?p=4030807",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 2001 cycle: quarters to regain the revenue peak",
+    "value": "2Q03 NT$49,922m (below peak). 3Q03 NT$54,877m was a 'new record high', the first quarter above 4Q00's NT$53,822m: 9 quarters after the trough, 11 after the peak. 3Q03 GM 39.1%. 4Q03 NT$57,780m, GM 39.3%, utilization 101%",
+    "as_of": "3Q03 (released 2003-10-28) and 4Q03 (released 2004-01-29)",
+    "source_name": "TSMC 2003 Fourth Quarter Report; TSMC 3Q03 release",
+    "source_url": "https://pr.tsmc.com/english/news/1274",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "The 3Q03 release (https://pr.tsmc.com/english/news/1263) was seen in search results. By end-2003 GM was still about 8pp below 2000 levels."
+   },
+   {
+    "item": "TSMC 3Q08, the 2009-cycle revenue peak",
+    "value": "Revenue NT$92.98bn; GM 46.3%; OPM 35.4%; 4Q08 guidance NT$69-71bn, GM 34-36%",
+    "as_of": "3Q08 (released 2008-10-30)",
+    "source_name": "TSMC Reports Third Quarter EPS of NT$1.18",
+    "source_url": "https://pr.tsmc.com/english/news/1521",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 4Q08",
+    "value": "Net sales NT$64,562m; GM 31.3% (computed from GP NT$20,195m); OPM 18.6% (computed)",
+    "as_of": "4Q08",
+    "source_name": "TSMC 4Q09 6-K (comparison table)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001046179/000095012310005891/h03949e6vk.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 1Q09 guidance: original vs revised",
+    "value": "Original (2009-01-22): revenue NT$32-35bn, GM 1-5%, OPM -19% to -15%. Revised (2009-03-10): NT$36-38bn, GM 14-16%, OPM -2% to 0%. Jan-Feb 2009 consolidated revenue NT$25.30bn (-58.1% YoY)",
+    "as_of": "1Q09 guidance, Jan-Mar 2009",
+    "source_name": "TSMC: February 2009 Sales Report and Revised First-Quarter Guidance",
+    "source_url": "https://pr.tsmc.com/english/news/1539",
+    "tier": "guidance",
+    "confidence": "high",
+    "note": "TSMC's own initial guidance implied a deep operating loss: an upper bound for bear-case margin stress."
+   },
+   {
+    "item": "TSMC 1Q09, the 2009-cycle trough",
+    "value": "Revenue NT$39.5bn (-54.8% YoY, -38.8% QoQ); GM 18.9%; OPM 3.1%; net margin 3.9%; 2009 capex expected about US$1.5bn; 2Q09 guidance NT$71-74bn, GM 43.5-45.5%",
+    "as_of": "1Q09 (released 2009-04-30)",
+    "source_name": "TSMC Reports First Quarter EPS of NT$0.06",
+    "source_url": "https://pr.tsmc.com/english/news/1548",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 2009 cycle: peak-to-trough change",
+    "value": "Revenue -57.5% (computed: NT$39.50bn 1Q09 vs NT$92.98bn 3Q08), trough two quarters after the peak; GM -27.4pp (46.3% to 18.9%); OPM -32.3pp (35.4% to 3.1%)",
+    "as_of": "3Q08 to 1Q09",
+    "source_name": "Computed from TSMC releases",
+    "source_url": "https://pr.tsmc.com/english/news/1548",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Derived. Consolidated NT$ basis."
+   },
+   {
+    "item": "TSMC 2009 cycle: recovery",
+    "value": "3Q09 NT$89,936m (GM 47.7% computed, above the 3Q08 peak GM); 4Q09 NT$92,094m (GM 48.5%, OPM 36.5%; 99.0% of the peak, computed); 1Q10 NT$92.19bn (GM 47.9%, OPM 37%); 2Q10 NT$104.96bn (GM 49.5%, OPM 38.6%) was the first quarter above 3Q08: 5 quarters after the trough, 7 after the peak",
+    "as_of": "3Q09-2Q10",
+    "source_name": "TSMC 4Q09 6-K; TSMC 1Q10 release (2010-04-27); TSMC 2Q10 release (2010-07-29)",
+    "source_url": "https://pr.tsmc.com/english/news/1631",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "1Q10: https://pr.tsmc.com/english/news/1614. Margins regained the prior peak about 2 quarters after the trough."
+   },
+   {
+    "item": "TSMC full-year 2009",
+    "value": "Consolidated net sales NT$295.74bn (-11.2% YoY); GM 43.7% (vs 42.5% in 2008); OPM 31.1%; capex US$2.67bn",
+    "as_of": "FY2009",
+    "source_name": "TSMC 6-K (4Q09 management report)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001046179/000095012310006379/h03951e6vk.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 4Q18, the 2019-cycle peak",
+    "value": "Revenue NT$289.77bn / US$9.40bn; GM 47.7%; OPM 37.0%",
+    "as_of": "4Q18 (released 2019-01-17)",
+    "source_name": "TSMC Reports Fourth Quarter EPS of NT$3.86",
+    "source_url": "https://pr.tsmc.com/english/news/1982",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 1Q19, the 2019-cycle trough",
+    "value": "Revenue NT$218.70bn / US$7.10bn; -24.5% QoQ; -11.8% YoY in NT$ (-16.1% in US$); GM 41.3%; OPM 29.4%. Peak-to-trough: -24.5% in both NT$ and US$ (US$ computed), GM -6.4pp, OPM -7.6pp",
+    "as_of": "1Q19 (released 2019-04-18)",
+    "source_name": "TSMC Reports First Quarter EPS of NT$2.37",
+    "source_url": "https://pr.tsmc.com/english/news/1991",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "A photoresist defect incident cut 1Q19 revenue by about 3.5%. Customer inventory adjustment was also cited. One-quarter correction."
+   },
+   {
+    "item": "TSMC 2019 cycle: recovery",
+    "value": "3Q19 NT$293.05bn (new NT$ high) / US$9.40bn (equal to the 4Q18 US$ peak); GM 47.6%; OPM 36.8%. Revenue and margins back at the prior peak 2 quarters after the trough",
+    "as_of": "3Q19 (released 2019-10-17)",
+    "source_name": "TSMC Reports Third Quarter EPS of NT$3.90",
+    "source_url": "https://pr.tsmc.com/english/news/2012",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC full-year 2019 vs industry",
+    "value": "NT$1,069.99bn (+3.7%); US$34.63bn vs US$34.20bn in 2018 (+1.3%, computed). The industry fell 12.1% the same year",
+    "as_of": "FY2019",
+    "source_name": "TSMC 2019 Annual Report",
+    "source_url": "https://investor.tsmc.com/static/annualReports/2019/english/ebook/files/basic-html/page6.html",
+    "tier": "filing",
+    "confidence": "medium",
+    "note": "Seen via search-result extract of the annual report."
+   },
+   {
+    "item": "TSMC 3Q22, the 2023-cycle US$ revenue peak",
+    "value": "Revenue NT$613.14bn / US$20.23bn; GM 60.4%; OPM 50.6%",
+    "as_of": "3Q22 (released 2022-10-13)",
+    "source_name": "TSMC Reports Third Quarter EPS of NT$10.83",
+    "source_url": "https://pr.tsmc.com/english/news/2965",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 4Q22, the NT$ revenue and margin peak",
+    "value": "Revenue NT$625.53bn / US$19.93bn; GM 62.2%; OPM 52.0%",
+    "as_of": "4Q22 (released 2023-01-12)",
+    "source_name": "TSMC Reports Fourth Quarter EPS of NT$11.41",
+    "source_url": "https://pr.tsmc.com/english/news/2992",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 1Q23",
+    "value": "Revenue NT$508,633m / US$16.72bn (-16.1% QoQ in US$); GM 56.3%; OPM 45.5%",
+    "as_of": "1Q23 (released 2023-04-20)",
+    "source_name": "TSMC 1Q23 earnings release (6-K)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828023012121/a1q23e_withguidancexfinal.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 2Q23, the 2023-cycle revenue trough",
+    "value": "Revenue NT$480.84bn / US$15.68bn (-13.7% YoY, -6.2% QoQ in US$); GM 54.1%; OPM 42.0%",
+    "as_of": "2Q23 (released 2023-07-20)",
+    "source_name": "TSMC Reports Second Quarter EPS of NT$7.01",
+    "source_url": "https://pr.tsmc.com/english/news/3041",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 2023 cycle: peak-to-trough revenue",
+    "value": "US$: -22.5% (computed, 3Q22 US$20.23bn to 2Q23 US$15.68bn, 3 quarters). NT$: -23.1% (computed, 4Q22 NT$625.53bn to 2Q23 NT$480.84bn, 2 quarters)",
+    "as_of": "3Q22/4Q22 to 2Q23",
+    "source_name": "Computed from TSMC releases",
+    "source_url": "https://pr.tsmc.com/english/news/3041",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Derived."
+   },
+   {
+    "item": "TSMC 3Q23",
+    "value": "Revenue NT$546.73bn / US$17.28bn; GM 54.3%; OPM 41.7%",
+    "as_of": "3Q23 (released 2023-10-19)",
+    "source_name": "TSMC Reports Third Quarter EPS of NT$8.14",
+    "source_url": "https://pr.tsmc.com/english/news/3076",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC 4Q23, the 2023-cycle margin trough",
+    "value": "Net sales NT$625,529m (vs NT$625,532m in 4Q22, flat) / US$19.62bn; GM 53.0%; OPM 41.6%. Margin decline from the 4Q22 peak: GM -9.2pp, OPM -10.4pp (computed)",
+    "as_of": "4Q23 (released 2024-01-18)",
+    "source_name": "TSMC 4Q23 earnings release (6-K)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617924000005/a4q24e_withguidancexfinal.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The margin trough came 2 quarters after the revenue trough: N3 ramp dilution while revenue was already recovering."
+   },
+   {
+    "item": "TSMC 1Q24 and 2Q24: revenue recovery",
+    "value": "1Q24 NT$592.64bn / US$18.87bn, GM 53.1%, OPM 42.0%. 2Q24 NT$673.51bn / US$20.82bn, GM 53.2%, OPM 42.5%. 2Q24 was the first quarter above the 3Q22 US$ peak and a new NT$ high: 4 quarters after the trough, 7 after the US$ peak",
+    "as_of": "1Q24 (2024-04-18), 2Q24 (2024-07-18)",
+    "source_name": "TSMC 1Q24 and 2Q24 releases",
+    "source_url": "https://pr.tsmc.com/english/news/3160",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "1Q24: https://pr.tsmc.com/english/news/3131. In NT$, revenue matched the 4Q22 level in 4Q23, 2 quarters after the trough."
+   },
+   {
+    "item": "TSMC 2023 cycle: quarters to regain peak margins",
+    "value": "4Q25 GM 62.3%, OPM 54.0% (revenue NT$1,046.09bn / US$33.73bn) was the first quarter above the 4Q22 peak of 62.2%/52.0%: 8 quarters after the 4Q23 margin trough",
+    "as_of": "4Q25 (released 2026-01-15)",
+    "source_name": "TSMC 4Q25 earnings release (6-K)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000008/a4q25e_withguidancexfinal.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC full-year 2023",
+    "value": "Revenue NT$2,161.74bn (-4.5% YoY). Per the 4Q23 call: US$ revenue -8.7% to about US$69bn; GM 54.4% (-5.2pp); OPM 42.6% (-6.9pp); EPS NT$32.34 (-17.5%); capex US$30.45bn",
+    "as_of": "FY2023",
+    "source_name": "TSMC monthly revenue 6-K (2024-01-10); 4Q23 call transcript (third-party)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617924000002/tsm-revenue20240110x6k.htm",
+    "tier": "filing",
+    "confidence": "medium",
+    "note": "NT$ figure is high confidence (6-K, opened). The US$ and margin figures come from third-party transcript summaries (e.g. https://www.fool.com/earnings/call-transcripts/2024/01/18/taiwan-semiconductor-manufacturing-tsm-q4-2023-ear/), not checked against TSMC's own transcript."
+   },
+   {
+    "item": "Global semiconductor sales 2001 (SIA/WSTS)",
+    "value": "US$139bn vs US$204bn in 2000 = -32%, 'the sharpest yearly decline in its history'",
+    "as_of": "FY2001 (reported 2002-02-04)",
+    "source_name": "EDN, citing SIA",
+    "source_url": "https://www.edn.com/?p=4026514",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "Dataquest's preliminary count was different (US$152bn, -33%). SIA/WSTS is the official series."
+   },
+   {
+    "item": "Global semiconductor sales, quarterly trough 2001",
+    "value": "4Q01 = 3Q01 = US$30.5bn, ending three quarters of double-digit declines; December 2001 -43.1% YoY",
+    "as_of": "4Q01 (reported 2002-02-12)",
+    "source_name": "Vision Systems Design, citing SIA",
+    "source_url": "https://www.vision-systems.com/non-factory/environment-agriculture/article/16741723/fourth-quarter-2001-is-first-quarter-without-drop-in-chip-sales",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "Global semiconductor sales 2009 (SIA/WSTS)",
+    "value": "US$226.3bn vs US$248.6bn in 2008 = -9%",
+    "as_of": "FY2009 (released 2010-02-01)",
+    "source_name": "SIA press release (WSTS data)",
+    "source_url": "https://semiconductors.org/global-chip-sales-decline-in-2009",
+    "tier": "industry data",
+    "confidence": "high"
+   },
+   {
+    "item": "Global semiconductor sales 2019 (SIA/WSTS)",
+    "value": "US$412.1bn = -12.1% YoY; memory -32.6%; all other products combined -1.7%",
+    "as_of": "FY2019 (released 2020-02-03)",
+    "source_name": "SIA press release (WSTS data)",
+    "source_url": "https://www.semiconductors.org/worldwide-semiconductor-sales-decrease-12-percent-to-412-billion-in-2019/",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "The downturn was memory-led. TSMC grew in NT$ that year."
+   },
+   {
+    "item": "Global semiconductor sales 2023 (SIA/WSTS)",
+    "value": "US$526.8bn vs US$574.1bn in 2022 = -8.2%; logic US$178.5bn; memory US$92.3bn",
+    "as_of": "FY2023 (released 2024-02-05)",
+    "source_name": "SIA press release (WSTS data)",
+    "source_url": "https://www.semiconductors.org/global-semiconductor-sales-decrease-8-2-in-2023-market-rebounds-late-in-year/",
+    "tier": "industry data",
+    "confidence": "high"
+   },
+   {
+    "item": "WSTS Spring 2026 forecast: starting point for any 2027-28 downturn",
+    "value": "2025 US$795.6bn (+26.2%). 2026F US$1,511.2bn (+89.9%): memory US$803.9bn (+249.5%), logic US$411.4bn (+37.3%). 2027F US$1,913.7bn (+26.6%): memory +32.1%, logic +27.1%",
+    "as_of": "Released 2026-06-02",
+    "source_name": "WSTS Spring 2026 forecast release",
+    "source_url": "https://www.wsts.org/esraCMS/extension/media/f/WST/7618/WSTS_FC-Release-2026-May.pdf",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "Computed from the table: memory is about 53% of the 2026 market and about 80% of its growth. Past industry declines were memory-led."
+   },
+   {
+    "item": "WSTS Q2-2026 update",
+    "value": "1H26 market US$702bn (+102% YoY). FY2026 calculation US$1,655bn (+~108%); memory 2026 +302%. 2027 about US$2.1tn (+~29%)",
+    "as_of": "Aug 2026 (Q2 results)",
+    "source_name": "WSTS: Global Semiconductor Market records exceptional growth in Q2 2026",
+    "source_url": "https://www.wsts.org/76/Global-Semiconductor-Market-records-exceptional-growth-in-Q2-2026",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "WSTS says these are 'not new forecast values': the Spring model with Q2 actuals substituted."
+   },
+   {
+    "item": "2000-02 analogue: worldwide semiconductor equipment sales, 2001",
+    "value": "US$28.1bn in 2001 vs US$47.7bn in 2000 = -41%. Taiwan -65% (US$9.3bn to US$3.2bn); North America -37%; Korea -44%; Japan -17%",
+    "as_of": "FY2001 (reported 2002-03-01)",
+    "source_name": "Solid State Technology, citing SEMI/SEAJ",
+    "source_url": "https://sst.semiconductor-digest.com/?p=26003",
+    "tier": "industry data",
+    "confidence": "high"
+   },
+   {
+    "item": "2000-02 analogue: equipment sales, 2002 and two-year decline",
+    "value": "US$19.7bn in 2002 vs US$28.0bn in 2001 = -29.6%; 2000 peak US$47.8bn; 2000-2002 change about -59% (computed)",
+    "as_of": "FY2002 (reported 2003-04-15)",
+    "source_name": "EE Times, citing SEMI",
+    "source_url": "https://www.eetimes.com/?p=1174957",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "The 2000 base is US$47.7bn (Mar 2002) vs US$47.8bn (https://www.eetimes.com/?p=1226350). 2001 is US$28.1bn vs US$28.0bn (revised). Gartner put 2002 at US$18.5bn (-30.4%)."
+   },
+   {
+    "item": "2000-02 analogue: quarterly equipment collapse",
+    "value": "3Q01 worldwide equipment shipments US$5.63bn vs US$12.98bn in 3Q00 = -55.6% YoY",
+    "as_of": "3Q01 (reported 2001-12-03)",
+    "source_name": "Vision Systems Design, citing SEMI",
+    "source_url": "https://www.vision-systems.com/factory/manufacturing/article/16744219/worldwide-semiconductor-equipment-market-dives-556",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "2000-02 analogue: foundry revenue in 2001",
+    "value": "UMC revenue -38.6% to NT$64.49bn (from NT$105.08bn); TSMC -24.3% to NT$125.89bn",
+    "as_of": "FY2001 (reported 2002-01-09)",
+    "source_name": "EDN: Taiwan foundries report mixed results for December",
+    "source_url": "https://www.edn.com/?p=4030807",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "CONFLICT: a later Digitimes report (seen in search results) uses a 2001 UMC base of NT$61.509bn, probably restated. In 1Q01 alone TSMC fell 26.6% QoQ and UMC 25.9% (EE Times, https://www.eetimes.com/?p=1180431)."
+   },
+   {
+    "item": "2000-02 analogue: North American telecom carrier capex (RHK)",
+    "value": "US$92bn in 2000; US$66bn in 2001 (-28%, computed); US$53bn forecast for 2002 (-42% from peak, computed)",
+    "as_of": "Dec 2001",
+    "source_name": "EE Times, citing RHK (Robert MacLellan)",
+    "source_url": "https://www.eetimes.com/?p=1228634",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "2002 is a forecast made in Dec 2001, not an actual."
+   },
+   {
+    "item": "2000-02 analogue: worldwide service-provider capex (In-Stat/MDR)",
+    "value": "2002 capex budgets US$205bn, -27% vs 2001; a further -7% expected in 2003. Capex/telecom services revenue 31% at the 2000 peak vs about 20% in 2002",
+    "as_of": "Reported 2003-06-02",
+    "source_name": "Lightwave, citing In-Stat/MDR",
+    "source_url": "https://www.lightwaveonline.com/business/article/16657070/service-provider-capex-spending-remains-cautious-says-instatmdr",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "2000-02 analogue: telecom equipment vendor revenue (Lucent)",
+    "value": "Total revenues FY1999 US$26,993m; FY2000 US$28,904m; FY2001 US$21,294m; FY2002 US$12,321m; FY2003 US$8,470m. FY2000-FY2003 change -70.7% (computed). Lucent attributed the 31% FY2003 decline mainly to large service providers' capex cuts",
+    "as_of": "FY1999-FY2003 (10-K filed late 2003)",
+    "source_name": "Lucent Technologies FY2003 10-K, Exhibit 13",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001006240/000120677403000885/ex-13.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Restated for continuing operations."
+   },
+   {
+    "item": "2000-02 analogue: US investment boom and bust (NY Fed)",
+    "value": "Equipment & software investment growth (Q4/Q4): 2000 +5.2%, 2001 -8.8%, 2002 +3.3%. Communications equipment contribution: +2.9pp (2000), -3.9pp (2001). Telephone-industry investment rate almost 33% in 2000 vs 15-20% historically (18% 1970-96 average). Capital overhangs 'largely worked off in 2002-03'",
+    "as_of": "May 2004 (Current Issues Vol 10 No 6)",
+    "source_name": "Federal Reserve Bank of New York, Jonathan McCarthy",
+    "source_url": "https://www.newyorkfed.org/medialibrary/media/research/current_issues/ci10-6.pdf",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Central-bank research. Overhang digestion took about 2 years."
+   },
+   {
+    "item": "Allianz Research: AI capex digestion path 2026-28",
+    "value": "Top-5 US capex spenders: more than US$600bn in 2026, about US$2.1trn over 2026-28. Capex intensity 34% of revenue vs a 15% peak in the 1990s internet build-out. Capex growth 51% (2026) to 13% (2027) to about 5% (2028), 'the natural digestion of an extraordinary base, not a change of conviction'",
+    "as_of": "2026-03-25",
+    "source_name": "Allianz Research, 'AI capex cycle: war-proof for now' (Subran, Dejean, Hirt, Utermoehl et al.)",
+    "source_url": "https://www.allianz.com/content/dam/onemarketing/azcom/Allianz_com/economic-research/publications/specials/en/2026/march/2026_03_25_AI.pdf",
+    "tier": "other",
+    "confidence": "high",
+    "note": "The summary page says hyperscaler capex plans are about US$575bn (+50%) in 2026, a different scope. FCF yield of the top 5 is turning negative."
+   },
+   {
+    "item": "UBS (per Reuters): hyperscaler capex growth path",
+    "value": "2026 capex +76% to US$673bn; growth slows to 25% in 2027 and 6% in 2028",
+    "as_of": "2026-07-17",
+    "source_name": "Reuters (Danilo Masoni), republished by Global Banking & Finance Review",
+    "source_url": "https://www.globalbankingandfinance.com/analysis-among-ai-crowd-investors-position-slower/",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "The underlying UBS note was not opened. Scope differs from the UBS CIO figures below."
+   },
+   {
+    "item": "UBS CIO 'Capex taper tantrum'",
+    "value": "AI capex forecast US$820bn in 2026 and US$990bn in 2027 (+21%, computed). Hyperscaler operating cash flow overtaken by cash capex 'as early as 3Q26'. 'A decline, or even slower growth, in AI investment could lead to higher volatility'",
+    "as_of": "2026-07-10",
+    "source_name": "UBS Global Wealth Management CIO (Michael Bolliger)",
+    "source_url": "https://www.ubs.com/us/en/wealth-management/insights/market-news/article/_jcr_content.474243142.file/PS9jb250ZW50L2RhbS9pbXBvcnRlZC9jaW9yZXNlYXJjaC9wZGYvMzUvMzQvMzQvOC8zNTM0MzQ4L2VuLzM1MzQzNDgucGRm/3534348.pdf",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Broader 'AI capex' scope. Still constructive: overweight AI by about 16pp vs Nasdaq 100."
+   },
+   {
+    "item": "DoubleLine: hyperscaler capex momentum",
+    "value": "5 hyperscalers (GOOGL, AMZN, META, MSFT, ORCL): about US$154bn 2023, US$239bn 2024, US$412bn 2025, about US$760bn expected 2026 (+84.7%). Growth expected +27.5% in 2027 and +7.4% in 2028; 'second derivative turns negative after 2026'",
+    "as_of": "2026-07-24",
+    "source_name": "DoubleLine, 'AI Capex Is Still Booming as Momentum Slows' (Garza, Mezyk, He, Wang)",
+    "source_url": "https://doubleline.com/markets-insights/ai-capex-is-still-booming-as-momentum-slows/",
+    "tier": "other",
+    "confidence": "medium",
+    "note": "The source of the 'expected' figures is not stated; probably consensus."
+   },
+   {
+    "item": "Goldman Sachs: what 2027 consensus implies",
+    "value": "Consensus implies 2027 hyperscaler capex of about US$920bn (+22%) after +84% in 2026. Goldman's estimate is about US$1.1tn (+45%), with an upside case of US$1.4tn (+89%)",
+    "as_of": "2026-06-11",
+    "source_name": "Yahoo Finance, citing Goldman Sachs (Ryan Hammond)",
+    "source_url": "https://finance.yahoo.com/sectors/technology/articles/goldman-says-consensus-2027-hyperscaler-140152065.html",
+    "tier": "consensus",
+    "confidence": "medium",
+    "note": "Goldman is a bull counterpoint, but the note documents a sharp consensus deceleration in 2027."
+   },
+   {
+    "item": "Wells Fargo, Pantheon, Columbia: 2027 peak / 2028 slowdown",
+    "value": "Kwon (Wells Fargo): 'We expect the market will start thinking about a potential peak year in 2027 soon, likely after 3Q EPS and midterms'; 'Most investors now agree that AI capex will likely slow meaningfully in 2028.' Pantheon (Tombs, Allen): 'hyperscaler capex growth looks set to moderate in 2027.' Van Nieuwerburgh (Columbia): capex exceeds the combined operating cash flow of ORCL/MSFT/AMZN/META/GOOGL for the first time in 2026",
+    "as_of": "2026-10-07",
+    "source_name": "Fortune (Jim Edwards)",
+    "source_url": "https://fortune.com/2026/10/07/ai-cash-flow-negative-inflection-point-capex-slow/",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "No capex dollar paths are given. Wells Fargo dollar estimates in secondary outlets conflict (see unresolved)."
+   },
+   {
+    "item": "Barclays (Krishna): earnings 'air pocket' risk",
+    "value": "Semis and hardware are about 40% of YTD S&P 500 2026 EPS estimate revisions and 75% of 2027 revisions. Market 'could hit a major air pocket if any of those assumptions around capex, pricing, and breadth prove to be materially off base'",
+    "as_of": "2026-10-07",
+    "source_name": "Yahoo Finance (Brian Sozzi), citing Barclays strategist Venu Krishna",
+    "source_url": "https://finance.yahoo.com/markets/article/wall-streets-ai-earnings-excitement-spills-into-2027-but-risks-market-air-pocket-144308239.html",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "BIS: 'protracted investment bust' risk",
+    "value": "The five largest hyperscalers are set to spend more than US$1tn on AI capex in 2025-26, 'outpacing earnings and the free cash flow'. 'Disappointment in returns could trigger a sudden pullback in financing and turn the capex boom into a protracted investment bust.' Railway-mania and dot-com parallels 'ended with an eventual reversal in investment, inducing economy-wide recessions'",
+    "as_of": "2026-06-28",
+    "source_name": "BIS Annual Economic Report 2026, Ch. I 'Progress and peril' (Box C)",
+    "source_url": "https://www.bis.org/publications/aer-2026/progress-peril",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Qualitative: no capex-decline magnitude given."
+   },
+   {
+    "item": "Bank of America: hyperscaler capex and free-cash-flow stress",
+    "value": "CY26 hyperscaler capex above US$860bn (+~80%); path toward about US$1.2tn in CY27 (+38%). Aggregate FCF margin about -1% in CY26, bottoming near -5% to -6% in CY27-28 vs a historical +15-20%",
+    "as_of": "Article dated 04/08/2026 (probably 4 Aug 2026)",
+    "source_name": "InvestingLive, citing BofA",
+    "source_url": "https://investinglive.com/stocks/if-you-think-ai-capex-is-insane-this-year-wait-until-2027-as-bofa-sees-a-nearly-50-rise/",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Bull on capex. The FCF path is the stress indicator a digestion thesis relies on."
+   },
+   {
+    "item": "Barclays (O'Malley): bull counterpoint on peak timing",
+    "value": "Hyperscale capex peaks in 2028; consensus too low by more than US$225bn across CY27/CY28; Nvidia appears to be pricing in a 2027 peak",
+    "as_of": "2026-03-11",
+    "source_name": "Investing.com, citing Barclays (Tom O'Malley)",
+    "source_url": "https://www.investing.com/news/stock-market-news/ai-capex-forecasts-may-be-225-billion-too-low-for-2027-2028-barclays-4553943",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Jefferies (Christopher Wood): capital-destruction warning",
+    "value": "The AI boom 'could end in massive capital destruction across the US AI sector'. 2026 US hyperscaler capex guidance about US$695bn; 2027 projected at US$870bn",
+    "as_of": "2026-10-09 (GREED & fear)",
+    "source_name": "Cryptobriefing, citing Jefferies GREED & fear",
+    "source_url": "https://cryptobriefing.com/jefferies-warns-us-ai-capital-destruction/",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Low-quality secondary source; primary note not accessed."
+   },
+   {
+    "item": "Capital Economics (John Higgins): AI equity unwind in 2027",
+    "value": "S&P 500 about 8,250 at end-2026, then 6,500 at end-2027 as the AI boom fades; CAPE above 40",
+    "as_of": "Late Oct 2026",
+    "source_name": "Cryptobriefing / secondary aggregators, citing Capital Economics",
+    "source_url": "https://cryptobriefing.com/capital-economics-ai-equity-boom-defensive-sectors/",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Equity-market call, not a capex forecast. Primary note not accessed."
+   },
+   {
+    "item": "TSMC management 2027 tone (3Q26 call)",
+    "value": "C.C. Wei: 'we are being prudent in our business planning going into 2027', citing consumer and price-sensitive segments hit by rising component prices; AI demand described as 'extremely robust'",
+    "as_of": "2026-10-15 call (article 2026-10-17)",
+    "source_name": "The Next Web; Reuters headline via BusinessDay",
+    "source_url": "https://thenextweb.com/news/tsmc-q3-2026-record-profit-prudent-2027",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Reuters: https://www.businessday.co.za/world/international-companies/2026-10-15-tsmc-sees-record-profit-but-warns-of-2027-caution/"
+   },
+   {
+    "item": "SEMI equipment forecast (context for a 2027 equipment peak)",
+    "value": "Equipment sales US$133bn in 2025 (+13.7%), US$145bn in 2026, record US$156bn in 2027; WFE US$135.2bn in 2027. No 2028 forecast. The article says bubble risk 'could peak around 2027'",
+    "as_of": "2025-12-19",
+    "source_name": "EE Times, citing SEMI (Ajit Manocha)",
+    "source_url": "https://www.eetimes.com/ai-drives-capex-chip-equipment-to-record-156b-in-2027/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Published in 2025, so not 2026 commentary. The 'peak around 2027' remark is from unnamed experts."
+   }
+  ],
+  "synthesis": "FACT. TSMC's peak-to-trough quarterly revenue declines were -51.1% (4Q00 to 2Q01, NT$), -57.5% (3Q08 to 1Q09, NT$), -24.5% (4Q18 to 1Q19) and -22.5% (3Q22 to 2Q23, US$). Each trough came 1-3 quarters after the peak.\n\nTrough GM/OPM:\n- 2Q01: 19.0%/1.1%, at 44% utilization.\n- 1Q09: 18.9%/3.1%. The original guidance had been GM 1-5% and OPM -19% to -15%.\n- 1Q19: 41.3%/29.4%.\n- 4Q23: 53.0%/41.6%. This margin trough lagged the revenue trough by two quarters because of N3 dilution.\n\nRevenue regained the prior peak 9, 5, 2 and 4 quarters after the trough. Margins in the 2023 cycle needed 8 quarters (to 4Q25).\n\nWSTS/SIA annual declines were -32% (2001), -9% (2009), -12.1% (2019; memory -32.6%, non-memory -1.7%) and -8.2% (2023). TSMC's full-year changes were -24.3%, -11.2%, +3.7% and -4.5% in NT$ (-8.7% in US$).\n\nAfter the 2000 capex boom:\n- Equipment sales fell 41% and then 30% (about -59% over two years); 3Q01 was down 55.6% YoY.\n- TSMC cut its 2001 capex plan by about 42% within three months.\n- UMC revenue fell 38.6%.\n- North American carrier capex fell about 28% in 2001 and about 42% by 2002F.\n- Lucent revenue fell 71% over FY00-FY03.\n\n2026 commentary mostly projects slower growth rather than outright decline:\n- Allianz: 51%, 13%, about 5% (2026-28).\n- UBS (via Reuters): 76%, 25%, 6%.\n- DoubleLine: 84.7%, 27.5%, 7.4%.\n- Goldman says consensus implies +22% in 2027.\n\nWells Fargo (2027 peak), the BIS ('protracted investment bust') and Jefferies are bearish but give no decline magnitudes. The bulls (GS, BofA, Barclays O'Malley) put 2027 capex at about US$1.1-1.4tn.\n\nINFERENCE. If capex merely plateaus, the 2019/2023 template fits: about -20% to -25% peak-to-trough quarterly revenue, GM down 6-10pp, recovery in 2-4 quarters. The 2001/2009 template (about -50%, GM down about 28pp, utilization under 50%) needs an absolute capex collapse like the 2001 telecom and equipment bust; treat it as a tail case. Memory is about 53% of the 2026 WSTS market and about 80% of its growth, so headline industry declines would overstate TSMC's drawdown. However, TSMC's heavier fixed-cost base (rising depreciation, overseas fabs, N2 ramp) probably means a larger margin loss per point of revenue decline than in 2019/2023.",
+  "unresolved": [
+   "The web search budget ran out late in the task. A follow-up could verify the items below.",
+   "When worldwide equipment sales regained the 2000 peak of US$47.7-47.8bn: believed to be about 2017 per SEMI, but not verified.",
+   "Industry-wide foundry revenue decline in 2001 (Gartner/Dataquest/IC Insights) was not found; only TSMC and UMC company data are available.",
+   "TSMC quarterly US$ revenue for the 2001 and 2009 cycles was not collected (NT$ only), so FX effects on peak-to-trough are ignored for those cycles.",
+   "TSMC capacity utilization at the 2009, 2019 and 2023 troughs is not disclosed in the releases opened.",
+   "TSMC 2001-cycle GM recovery to 2000 levels (about 47%) after 4Q03 was not collected; GM was still 39.3% in 4Q03.",
+   "TSMC FY2023 US$ figures (-8.7%, about US$69bn, GM 54.4%, OPM 42.6%, capex US$30.45bn) come from third-party transcript summaries and were not checked against TSMC's transcript PDF.",
+   "UBS figures conflict by scope: Reuters (hyperscaler capex US$673bn 2026, +25% 2027, +6% 2028) vs the UBS CIO note (AI capex US$820bn 2026, US$990bn 2027) vs an unverified Aug-2026 write-up (US$1.009tn / 1.447tn / 1.619tn). The UBS Investment Bank note itself was not accessed.",
+   "Wells Fargo's own 2027/2028 capex dollar estimates conflict across secondary outlets (24/7 Wall St: about US$1.1tn in July vs about US$1.5tn in September). Not verified against Wells Fargo research.",
+   "BofA hyperscaler FCF dollar figures (-US$144bn in 2027, -US$186bn in 2028) appear only in a low-quality secondary source (tftc.io). Only the BofA FCF-margin path (-1% to -5/-6%) was verified via InvestingLive.",
+   "Morgan Stanley's 2026 telecom-bubble comparison and its reported forecasts (US$805bn 2026, US$1.1tn 2027) were seen only in search snippets and not opened.",
+   "Primary Jefferies (GREED & fear, 2026-10-09) and Capital Economics notes were not accessed. Those figures rest on low-quality secondary outlets.",
+   "No credible 2026 source was found that quantifies an absolute hyperscaler capex decline, or a TSMC revenue decline, in 2027-28. Bear commentary is qualitative or based on slowing growth.",
+   "Hyperscaler 2026 capex levels differ by scope and date (US$673bn UBS/Reuters, about US$695bn Jefferies, about US$760bn DoubleLine, more than US$860bn BofA, more than US$600bn top-5 per Allianz). There is no single agreed base."
+  ]
+ },
+ {
   "topic": "Facts gathered directly in the main session (2026-11-01)",
   "findings": [
    {

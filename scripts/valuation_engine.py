@@ -48,6 +48,7 @@ SOLVABLE = (
     "fcff_scale",
     "exit_multiple",
     "hazard_rate",
+    "ebitda_margin",
 )
 
 
@@ -224,6 +225,7 @@ def _hazard(scenario, case):
     hz = scenario.get("hazard", case.get("hazard")) or {}
     h = float(hz.get("annual_probability", 0.0))
     L = float(hz.get("loss_fraction", 1.0))
+    # optional "years": hazard applies only through that year; no new events afterwards
     if not 0.0 <= h < 1.0:
         raise ValueError("hazard annual_probability must be in [0, 1)")
     if not 0.0 <= L <= 1.0:
@@ -263,10 +265,13 @@ def dcf(scenario, case):
     n = len(rows)
     dfs = discount_factors(n, wacc, midyear)
     h, L = _hazard(scenario, case)
+    hz_years = (scenario.get("hazard", case.get("hazard")) or {}).get("years")
     pv_explicit = 0.0
     pv_explicit_no_hazard = 0.0
     for t, (r, df) in enumerate(zip(rows, dfs), 1):
         exp = t - 0.5 if midyear else t
+        if hz_years is not None:
+            exp = min(exp, float(hz_years))
         mult = (1.0 - L) + L * (1.0 - h) ** exp
         r["discount_factor"] = df
         r["survival_multiplier"] = mult
@@ -285,6 +290,9 @@ def dcf(scenario, case):
     pv_tv_no_hazard = tv * tv_df
     if h == 0.0:
         pv_tv = pv_tv_no_hazard
+    elif hz_years is not None:
+        # events possible only through hz_years: terminal flows carry survival to that date
+        pv_tv = pv_tv_no_hazard * ((1.0 - L) + L * (1.0 - h) ** min(float(hz_years), n))
     elif tv_detail["mode"] == "gordon":
         # Closed form: sum over t > N of CF_N (1+g)^(t-N) [(1-L) + L(1-h)^t] / (1+r)^t
         g, cf = tv_detail["terminal_growth"], tv_detail["base_fcff_m"]
@@ -491,7 +499,8 @@ def to_equity(result, scenario, case):
     else:
         net_debt = float(scenario.get("net_debt_m", case.get("net_debt_m", 0.0)))
         minority = float(scenario.get("minority_interest_m", case.get("minority_interest_m", 0.0)))
-    other = float(scenario.get("other_adjustments_m", scenario.get("other_claims_m", 0.0)))
+    other = float(scenario.get("other_adjustments_m",
+                               case.get("other_adjustments_m", scenario.get("other_claims_m", 0.0))))
     shares = float(scenario.get("shares_diluted_m", case["shares_diluted_m"]))
     if shares <= 0:
         raise ValueError("shares_diluted_m must be positive")
@@ -557,11 +566,18 @@ def run_scenario(scenario, case):
 def roll_forward_rate(case):
     """Cost of equity in the quote currency for the 12-month roll-forward.
 
-    Either given directly ("cost_of_equity_quote"), or derived from the model-currency
-    discount rate by interest-rate parity ("quote_rf" and "model_rf"):
-        (1 + WACC) x (1 + quote_rf) / (1 + model_rf) - 1
-    Deriving it keeps the roll-forward consistent when WACC itself is varied."""
+    Three conventions:
+      basis = "model": roll forward at the model-currency WACC and convert at spot FX —
+                       no FX forecast. Default choice when the report takes no FX view.
+      quote_rf + model_rf: interest-rate parity, (1 + WACC)(1 + quote_rf)/(1 + model_rf) - 1.
+                       This embeds the forward rate as the FX forecast; disclose it.
+      cost_of_equity_quote: given directly."""
     rf = case.get("roll_forward") or {}
+    if rf.get("basis") == "model":
+        # Roll forward at the model-currency cost of equity and convert at SPOT FX:
+        # no currency forecast (a random-walk FX view). Equivalent to applying WACC
+        # to the quote-currency fair value.
+        return float(case["wacc"])
     if "quote_rf" in rf and "model_rf" in rf:
         return (1.0 + float(case["wacc"])) * (1.0 + float(rf["quote_rf"])) / (1.0 + float(rf["model_rf"])) - 1.0
     return float(rf["cost_of_equity_quote"])
@@ -620,13 +636,24 @@ def value_case(case):
         tp = fv_q * (1.0 + r) - d
         out["target_price_12m_quote"] = tp
         out["roll_forward"] = {"cost_of_equity_quote": r, "dividends_quote_next_12m": d,
-                               "fair_value_today_quote": fv_q}
+                               "fair_value_today_quote": fv_q, "basis": rf.get("basis")}
         spot_q = (price * (fx or 1.0)) if price else None
         if spot_q:
             out["target_upside_pct"] = (tp / spot_q - 1.0) * 100.0
             out["expected_total_return_12m_pct"] = ((tp + d) / spot_q - 1.0) * 100.0
         for res in results:
             res["target_price_12m_quote"] = res["value_per_share"] * (fx or 1.0) * (1.0 + r) - d
+        if case.get("adr_ratio") and rf.get("basis") == "model":
+            # ADR target with the ADR premium assumed to close: model-currency roll-forward,
+            # dividends converted at spot.
+            ratio = float(case["adr_ratio"])
+            out["target_price_12m_per_adr_model"] = (weighted * (1.0 + r) - d / (fx or 1.0)) * ratio
+        th = case.get("rating_thresholds")
+        if th and spot_q:
+            up = out["target_upside_pct"] / 100.0
+            buy, sell = float(th["buy"]), float(th["sell"])
+            out["rating"] = "Buy" if up > buy else ("Sell" if up < sell else "Hold")
+            out["price_triggers_quote"] = {"buy_below": tp / (1.0 + buy), "sell_above": tp / (1.0 + sell)}
     return out
 
 
@@ -641,7 +668,7 @@ def _apply_driver(scenario, case, name, value, from_year=None):
     keeping earlier years — e.g. take consensus for years 1-2 and solve for what
     the price implies from year 3."""
     s, c = deepcopy(scenario), deepcopy(case)
-    if from_year and name in ("revenue_growth", "ebit_margin"):
+    if from_year and name in ("revenue_growth", "ebit_margin") and name != "ebitda_margin":
         b = s.setdefault("driver_build", {})
         cur = b.get(name)
         if cur is None:
@@ -674,6 +701,21 @@ def _apply_driver(scenario, case, name, value, from_year=None):
     elif name == "exit_multiple":
         s.setdefault("terminal", {})["mode"] = "exit_multiple"
         s["terminal"]["multiple"] = value
+    elif name == "ebitda_margin":
+        # Cash-margin driver: EBIT_t = EBITDA - D&A_t, so D&A changes taxes only.
+        b = s.setdefault("driver_build", {})
+        n = int(s.get("horizon_years") or b.get("horizon_years") or 0)
+        da = b.get("da_pct_revenue", 0.0)
+        da_path = list(da) if isinstance(da, list) else [da] * n
+        if not da_path:
+            raise ValueError("ebitda_margin needs horizon_years or a list-valued da_pct_revenue")
+        if from_year:
+            cur = b.get("ebit_margin")
+            cur = list(cur) if isinstance(cur, list) else [cur] * len(da_path)
+            k = int(from_year) - 1
+            b["ebit_margin"] = cur[:k] + [value - d for d in da_path[k:]]
+        else:
+            b["ebit_margin"] = [value - d for d in da_path]
     elif name == "hazard_rate":
         hz = dict(s.get("hazard") or c.get("hazard") or {})
         hz.setdefault("loss_fraction", 1.0)
@@ -710,6 +752,7 @@ def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi
         "fcff_scale": (-5.0, 50.0),
         "exit_multiple": (0.1, 200.0),
         "hazard_rate": (0.0, 0.5),
+        "ebitda_margin": (0.0, 0.95),
     }
     lo = defaults[solve_for][0] if lo is None else lo
     hi = defaults[solve_for][1] if hi is None else hi
@@ -782,7 +825,7 @@ def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi
 
 
 def _fmt_driver(name, v):
-    if name in ("revenue_growth", "ebit_margin", "terminal_growth", "wacc", "hazard_rate"):
+    if name in ("revenue_growth", "ebit_margin", "terminal_growth", "wacc", "hazard_rate", "ebitda_margin"):
         return "%.2f%%" % (v * 100)
     if name == "exit_multiple":
         return "%.2fx" % v
@@ -1049,15 +1092,23 @@ def md_value(out):
         if out.get("target_price_12m_quote") is not None:
             rf = out["roll_forward"]
             L.append(
-                "**12-month target price: %s %s** = fair value %s x (1 + %.2f%% cost of equity in %s) "
+                "**12-month target price: %s %s** = fair value %s x (1 + %.2f%% roll-forward rate%s) "
                 "- %s dividends; vs spot %+.1f%%, expected 12-month total return %+.1f%%"
                 % (
                     qc, _m(out["target_price_12m_quote"], 0), _m(rf["fair_value_today_quote"], 0),
-                    rf["cost_of_equity_quote"] * 100, qc, _m(rf["dividends_quote_next_12m"], 0),
+                    rf["cost_of_equity_quote"] * 100,
+                    ", model-currency cost of equity at spot FX" if rf.get("basis") == "model"
+                    else ", cost of equity in %s" % qc,
+                    _m(rf["dividends_quote_next_12m"], 0),
                     out.get("target_upside_pct") or 0.0, out.get("expected_total_return_12m_pct") or 0.0,
                 )
             )
             L.append("")
+            if out.get("rating"):
+                pt = out["price_triggers_quote"]
+                L.append("**Rating (mechanical): %s** — buy below %s %s, sell above %s %s"
+                         % (out["rating"], qc, _m(pt["buy_below"], 0), qc, _m(pt["sell_above"], 0)))
+                L.append("")
     elif out.get("probability_weighted_value_per_share") is not None:
         L.append(
             "**Probability-weighted target price: %s %s**%s"

@@ -5,23 +5,23 @@
   "quote": true,
   "elasticity": [
     {
-      "title": "Operating drivers, growth split by period (sigma anchored on FY15-25 history)",
+      "title": "Operating drivers, growth merged (final two-number verdict)",
       "scenario": "Base",
       "drivers": [
-        "2029-36 revenue growth (duration)@driver_build.revenue_growth[2:]=0.03",
-        "2027-28 revenue growth (near term)@driver_build.revenue_growth[0:2]=0.10",
-        "Through-cycle EBIT margin@driver_build.ebit_margin=0.05",
+        "Revenue growth, whole path@driver_build.revenue_growth=0.03",
+        "Cash (EBITDA) margin@driver_build.ebit_margin=0.04",
         "Capex intensity@driver_build.capex_pct_revenue=0.04",
         "Tax rate@driver_build.tax_rate=0.02",
         "Working-capital intensity@driver_build.nwc_pct_delta_revenue=0.05"
       ]
     },
     {
-      "title": "Operating drivers, growth merged (final two-number verdict)",
+      "title": "Operating drivers, growth split by period",
       "scenario": "Base",
       "drivers": [
-        "Revenue growth, whole path@driver_build.revenue_growth=0.03",
-        "Through-cycle EBIT margin@driver_build.ebit_margin=0.05",
+        "2029-36 revenue growth (duration)@driver_build.revenue_growth[2:]=0.03",
+        "2027-28 revenue growth (near term)@driver_build.revenue_growth[0:2]=0.10",
+        "Cash (EBITDA) margin@driver_build.ebit_margin=0.04",
         "Capex intensity@driver_build.capex_pct_revenue=0.04",
         "Tax rate@driver_build.tax_rate=0.02",
         "Working-capital intensity@driver_build.nwc_pct_delta_revenue=0.05"
@@ -31,7 +31,7 @@
       "title": "Noise items: what the market watches week to week",
       "scenario": "Base",
       "drivers": [
-        "2027 EBIT margin only, +/-1pp (a full year of 'margin beats')@driver_build.ebit_margin[0:1]=0.01",
+        "2027 margin only, +/-1pp (a full year of 'margin beats')@driver_build.ebit_margin[0:1]=0.01",
         "2027 revenue growth only, +/-3pp (monthly-revenue surprise scale)@driver_build.revenue_growth[0:1]=0.03",
         "2027 capex only, +/-2.2pp of revenue (~US$5bn)@driver_build.capex_pct_revenue[0:1]=0.022",
         "Tax rate +/-1pp@driver_build.tax_rate=0.01",
@@ -41,167 +41,339 @@
   ],
   "reverse": [
     {
-      "title": "Flat 10-yr revenue CAGR implied, EBIT margin held at 58.6%, no event risk",
+      "title": "Flat 10-yr revenue CAGR implied, EBITDA margin held at 74% (2026E level), no event risk",
       "scenario": "Base",
       "solve_for": "revenue_growth",
       "set": {
         "case.hazard": null,
-        "scenarios.Base.driver_build.ebit_margin": 0.586
-      }
-    },
-    {
-      "title": "Flat 10-yr revenue CAGR implied, EBIT margin 52% (our base steady state), no event risk",
-      "scenario": "Base",
-      "solve_for": "revenue_growth",
-      "set": {
-        "case.hazard": null,
-        "scenarios.Base.driver_build.ebit_margin": 0.52
-      }
-    },
-    {
-      "title": "Consensus-like 2027-28 (+30%/+24%), base margins: implied 2029-36 growth, no event risk",
-      "scenario": "Base",
-      "solve_for": "revenue_growth",
-      "from_year": 3,
-      "set": {
-        "case.hazard": null,
-        "scenarios.Base.driver_build.revenue_growth[0:2]": [
-          0.3,
-          0.24
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.585,
+          0.575,
+          0.565,
+          0.555,
+          0.545,
+          0.535,
+          0.525,
+          0.52,
+          0.515,
+          0.51
         ]
       }
     },
     {
-      "title": "Same, with our event-risk overlay",
+      "title": "Flat 10-yr revenue CAGR implied, EBITDA margin 68.9% (FY2025 record), no event risk",
       "scenario": "Base",
       "solve_for": "revenue_growth",
-      "from_year": 3,
       "set": {
-        "scenarios.Base.driver_build.revenue_growth[0:2]": [
-          0.3,
-          0.24
+        "case.hazard": null,
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.534,
+          0.524,
+          0.514,
+          0.504,
+          0.494,
+          0.484,
+          0.474,
+          0.469,
+          0.464,
+          0.459
         ]
       }
     },
     {
-      "title": "Base growth path: implied flat EBIT margin, no event risk",
+      "title": "Consensus-like 2027-28 (+37.6%/+26%) at EPS-consistent margins: implied 2029-36 growth, no event risk",
       "scenario": "Base",
-      "solve_for": "ebit_margin",
+      "solve_for": "revenue_growth",
+      "from_year": 3,
+      "set": {
+        "scenarios.Bull.probability": 0.0,
+        "scenarios.Base.probability": 1.0,
+        "scenarios.Bear.probability": 0.0,
+        "scenarios.Bust.probability": 0.0,
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.376,
+          0.26,
+          0.12,
+          0.1,
+          0.09,
+          0.08,
+          0.07,
+          0.06,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.557,
+          0.562,
+          0.552,
+          0.542,
+          0.532,
+          0.522,
+          0.512,
+          0.507,
+          0.502,
+          0.497
+        ],
+        "case.hazard": null
+      }
+    },
+    {
+      "title": "Same, with our event-risk overlay (1.5%/yr, 80% loss)",
+      "scenario": "Base",
+      "solve_for": "revenue_growth",
+      "from_year": 3,
+      "set": {
+        "scenarios.Bull.probability": 0.0,
+        "scenarios.Base.probability": 1.0,
+        "scenarios.Bear.probability": 0.0,
+        "scenarios.Bust.probability": 0.0,
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.376,
+          0.26,
+          0.12,
+          0.1,
+          0.09,
+          0.08,
+          0.07,
+          0.06,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.557,
+          0.562,
+          0.552,
+          0.542,
+          0.532,
+          0.522,
+          0.512,
+          0.507,
+          0.502,
+          0.497
+        ]
+      }
+    },
+    {
+      "title": "Our Base growth path: implied flat EBITDA margin, no event risk",
+      "scenario": "Base",
+      "solve_for": "ebitda_margin",
       "set": {
         "case.hazard": null
       }
     },
     {
-      "title": "Base growth path: implied flat EBIT margin, with event risk",
+      "title": "Our Base growth path: implied flat EBITDA margin, with event risk",
       "scenario": "Base",
-      "solve_for": "ebit_margin"
+      "solve_for": "ebitda_margin"
     },
     {
-      "title": "Implied annual cross-strait event probability if Base operations (80% loss)",
+      "title": "Implied annual event probability, our Base operations",
       "scenario": "Base",
       "solve_for": "hazard_rate"
     },
     {
-      "title": "Implied annual cross-strait event probability if Bull operations (80% loss)",
+      "title": "Implied annual event probability, consensus-like EPS-consistent operations",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Bull.probability": 0.0,
+        "scenarios.Base.probability": 1.0,
+        "scenarios.Bear.probability": 0.0,
+        "scenarios.Bust.probability": 0.0,
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.376,
+          0.26,
+          0.12,
+          0.1,
+          0.09,
+          0.08,
+          0.07,
+          0.06,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.557,
+          0.562,
+          0.552,
+          0.542,
+          0.532,
+          0.522,
+          0.512,
+          0.507,
+          0.502,
+          0.497
+        ]
+      }
+    },
+    {
+      "title": "Implied annual event probability, our Bull operations",
       "scenario": "Bull",
       "solve_for": "hazard_rate"
     },
     {
-      "title": "Same consensus-like operations at our discount rate: implied annual event probability at the NT$2,370 close",
-      "scenario": "Base",
-      "solve_for": "hazard_rate",
-      "set": {
-        "scenarios.Base.driver_build.revenue_growth[0:2]": [
-          0.3,
-          0.24
-        ],
-        "scenarios.Base.driver_build.ebit_margin": 0.57
-      }
-    },
-    {
-      "title": "FRONTIER: steady EBIT margin 50.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
-      "scenario": "Base",
-      "solve_for": "hazard_rate",
-      "set": {
-        "scenarios.Base.driver_build.revenue_growth[0:2]": [
-          0.3,
-          0.24
-        ],
-        "scenarios.Base.driver_build.ebit_margin": 0.5
-      }
-    },
-    {
-      "title": "FRONTIER: steady EBIT margin 52.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
-      "scenario": "Base",
-      "solve_for": "hazard_rate",
-      "set": {
-        "scenarios.Base.driver_build.revenue_growth[0:2]": [
-          0.3,
-          0.24
-        ],
-        "scenarios.Base.driver_build.ebit_margin": 0.52
-      }
-    },
-    {
-      "title": "FRONTIER: steady EBIT margin 55.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
-      "scenario": "Base",
-      "solve_for": "hazard_rate",
-      "set": {
-        "scenarios.Base.driver_build.revenue_growth[0:2]": [
-          0.3,
-          0.24
-        ],
-        "scenarios.Base.driver_build.ebit_margin": 0.55
-      }
-    },
-    {
-      "title": "FRONTIER: steady EBIT margin 57.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
-      "scenario": "Base",
-      "solve_for": "hazard_rate",
-      "set": {
-        "scenarios.Base.driver_build.revenue_growth[0:2]": [
-          0.3,
-          0.24
-        ],
-        "scenarios.Base.driver_build.ebit_margin": 0.57
-      }
-    },
-    {
-      "title": "FRONTIER: steady EBIT margin 58.6% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
-      "scenario": "Base",
-      "solve_for": "hazard_rate",
-      "set": {
-        "scenarios.Base.driver_build.revenue_growth[0:2]": [
-          0.3,
-          0.24
-        ],
-        "scenarios.Base.driver_build.ebit_margin": 0.586
-      }
-    },
-    {
-      "title": "FRONTIER (our base growth path, +28%/+18%): steady EBIT margin 52.0%: implied annual event probability at NT$2,370",
-      "scenario": "Base",
-      "solve_for": "hazard_rate",
-      "set": {
-        "scenarios.Base.driver_build.ebit_margin": 0.52
-      }
-    },
-    {
-      "title": "FRONTIER (our base growth path, +28%/+18%): steady EBIT margin 57.0%: implied annual event probability at NT$2,370",
-      "scenario": "Base",
-      "solve_for": "hazard_rate",
-      "set": {
-        "scenarios.Base.driver_build.ebit_margin": 0.57
-      }
-    },
-    {
-      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 50.0%: implied annual event probability at NT$2,370",
+      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 66.3% -> implied event probability",
       "scenario": "Base",
       "solve_for": "hazard_rate",
       "set": {
         "scenarios.Base.driver_build.revenue_growth": [
-          0.32,
-          0.25,
+          0.376,
+          0.26,
+          0.12,
+          0.1,
+          0.09,
+          0.08,
+          0.07,
+          0.06,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.508,
+          0.498,
+          0.488,
+          0.478,
+          0.468,
+          0.458,
+          0.448,
+          0.443,
+          0.438,
+          0.433
+        ]
+      }
+    },
+    {
+      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 68.9% -> implied event probability",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.376,
+          0.26,
+          0.12,
+          0.1,
+          0.09,
+          0.08,
+          0.07,
+          0.06,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.534,
+          0.524,
+          0.514,
+          0.504,
+          0.494,
+          0.484,
+          0.474,
+          0.469,
+          0.464,
+          0.459
+        ]
+      }
+    },
+    {
+      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 71.0% -> implied event probability",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.376,
+          0.26,
+          0.12,
+          0.1,
+          0.09,
+          0.08,
+          0.07,
+          0.06,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.555,
+          0.545,
+          0.535,
+          0.525,
+          0.515,
+          0.505,
+          0.495,
+          0.49,
+          0.485,
+          0.48
+        ]
+      }
+    },
+    {
+      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 74.0% -> implied event probability",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.376,
+          0.26,
+          0.12,
+          0.1,
+          0.09,
+          0.08,
+          0.07,
+          0.06,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.585,
+          0.575,
+          0.565,
+          0.555,
+          0.545,
+          0.535,
+          0.525,
+          0.52,
+          0.515,
+          0.51
+        ]
+      }
+    },
+    {
+      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 77.0% -> implied event probability",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.376,
+          0.26,
+          0.12,
+          0.1,
+          0.09,
+          0.08,
+          0.07,
+          0.06,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.615,
+          0.605,
+          0.595,
+          0.585,
+          0.575,
+          0.565,
+          0.555,
+          0.55,
+          0.545,
+          0.54
+        ]
+      }
+    },
+    {
+      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 66.3% -> implied event probability",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.37,
+          0.27,
           0.18,
           0.15,
           0.12,
@@ -211,17 +383,28 @@
           0.05,
           0.04
         ],
-        "scenarios.Base.driver_build.ebit_margin": 0.5
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.508,
+          0.498,
+          0.488,
+          0.478,
+          0.468,
+          0.458,
+          0.448,
+          0.443,
+          0.438,
+          0.433
+        ]
       }
     },
     {
-      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 52.0%: implied annual event probability at NT$2,370",
+      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 68.9% -> implied event probability",
       "scenario": "Base",
       "solve_for": "hazard_rate",
       "set": {
         "scenarios.Base.driver_build.revenue_growth": [
-          0.32,
-          0.25,
+          0.37,
+          0.27,
           0.18,
           0.15,
           0.12,
@@ -231,17 +414,28 @@
           0.05,
           0.04
         ],
-        "scenarios.Base.driver_build.ebit_margin": 0.52
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.534,
+          0.524,
+          0.514,
+          0.504,
+          0.494,
+          0.484,
+          0.474,
+          0.469,
+          0.464,
+          0.459
+        ]
       }
     },
     {
-      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 55.0%: implied annual event probability at NT$2,370",
+      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 71.0% -> implied event probability",
       "scenario": "Base",
       "solve_for": "hazard_rate",
       "set": {
         "scenarios.Base.driver_build.revenue_growth": [
-          0.32,
-          0.25,
+          0.37,
+          0.27,
           0.18,
           0.15,
           0.12,
@@ -251,17 +445,28 @@
           0.05,
           0.04
         ],
-        "scenarios.Base.driver_build.ebit_margin": 0.55
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.555,
+          0.545,
+          0.535,
+          0.525,
+          0.515,
+          0.505,
+          0.495,
+          0.49,
+          0.485,
+          0.48
+        ]
       }
     },
     {
-      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 57.0%: implied annual event probability at NT$2,370",
+      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 74.0% -> implied event probability",
       "scenario": "Base",
       "solve_for": "hazard_rate",
       "set": {
         "scenarios.Base.driver_build.revenue_growth": [
-          0.32,
-          0.25,
+          0.37,
+          0.27,
           0.18,
           0.15,
           0.12,
@@ -271,17 +476,28 @@
           0.05,
           0.04
         ],
-        "scenarios.Base.driver_build.ebit_margin": 0.57
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.585,
+          0.575,
+          0.565,
+          0.555,
+          0.545,
+          0.535,
+          0.525,
+          0.52,
+          0.515,
+          0.51
+        ]
       }
     },
     {
-      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 58.6%: implied annual event probability at NT$2,370",
+      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 77.0% -> implied event probability",
       "scenario": "Base",
       "solve_for": "hazard_rate",
       "set": {
         "scenarios.Base.driver_build.revenue_growth": [
-          0.32,
-          0.25,
+          0.37,
+          0.27,
           0.18,
           0.15,
           0.12,
@@ -291,13 +507,24 @@
           0.05,
           0.04
         ],
-        "scenarios.Base.driver_build.ebit_margin": 0.586
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.615,
+          0.605,
+          0.595,
+          0.585,
+          0.575,
+          0.565,
+          0.555,
+          0.55,
+          0.545,
+          0.54
+        ]
       }
     }
   ],
   "variants": [
     {
-      "label": "As modelled (event risk 1.5%/yr, 80% loss)",
+      "label": "As modelled (1.5%/yr event risk, 80% loss, perpetual)",
       "set": {}
     },
     {
@@ -307,15 +534,21 @@
       }
     },
     {
-      "label": "Event risk halved (0.75%/yr)",
+      "label": "Event risk 0.75%/yr",
       "set": {
         "case.hazard.annual_probability": 0.0075
       }
     },
     {
-      "label": "Event risk doubled (3.0%/yr)",
+      "label": "Event risk 3.0%/yr",
       "set": {
         "case.hazard.annual_probability": 0.03
+      }
+    },
+    {
+      "label": "Event risk 4.0%/yr (forecast anchors, annualised)",
+      "set": {
+        "case.hazard.annual_probability": 0.04
       }
     },
     {
@@ -325,49 +558,153 @@
       }
     },
     {
-      "label": "Discount rate -1pp",
+      "label": "Event risk 1.5%/yr confined to 2027-36 (none after)",
       "set": {
-        "case.wacc": 0.0915
+        "case.hazard.years": 10
       }
     },
     {
-      "label": "Discount rate +1pp",
+      "label": "Cost of equity -1pp (9.58%)",
       "set": {
-        "case.wacc": 0.1115
+        "case.wacc": 0.0958
       }
     },
     {
-      "label": "Equal scenario weights",
+      "label": "Cost of equity +1pp (11.58%)",
       "set": {
-        "scenarios.Bull.probability": 0.3333333333,
-        "scenarios.Base.probability": 0.3333333334,
-        "scenarios.Bear.probability": 0.3333333333
+        "case.wacc": 0.1158
       }
     },
     {
-      "label": "Beta 1.03 (local-market beta, MoneyDJ) -> USD CoE 9.27%",
+      "label": "Beta 1.03 (local-market beta) -> 9.63%",
       "set": {
-        "case.wacc": 0.0927
+        "case.wacc": 0.0963
       }
     },
     {
-      "label": "Beta 1.37 (MarketBeat) -> USD CoE 10.69%",
+      "label": "ERP 4.20% (Oct-1 figure, mismatched date) -> 10.15%",
       "set": {
-        "case.wacc": 0.1069
+        "case.wacc": 0.1015
+      }
+    },
+    {
+      "label": "Terminal growth 4%",
+      "set": {
+        "scenarios.*.terminal.terminal_growth": 0.04
+      }
+    },
+    {
+      "label": "Base keeps 2026 cash margin (EBITDA 74%)",
+      "set": {
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.585,
+          0.575,
+          0.565,
+          0.555,
+          0.545,
+          0.535,
+          0.525,
+          0.52,
+          0.515,
+          0.51
+        ]
+      }
+    },
+    {
+      "label": "Capex intensity floored at 30.5% (FY15-25 minimum)",
+      "set": {
+        "scenarios.Base.driver_build.capex_pct_revenue": [
+          0.34,
+          0.33,
+          0.32,
+          0.31,
+          0.305,
+          0.305,
+          0.305,
+          0.305,
+          0.305,
+          0.305
+        ],
+        "scenarios.Bull.driver_build.capex_pct_revenue": [
+          0.33,
+          0.35,
+          0.34,
+          0.33,
+          0.32,
+          0.31,
+          0.305,
+          0.305,
+          0.305,
+          0.305
+        ],
+        "scenarios.Bear.driver_build.capex_pct_revenue": [
+          0.34,
+          0.37,
+          0.33,
+          0.31,
+          0.305,
+          0.305,
+          0.305,
+          0.305,
+          0.305,
+          0.305
+        ],
+        "scenarios.Bust.driver_build.capex_pct_revenue": [
+          0.34,
+          0.4,
+          0.33,
+          0.31,
+          0.305,
+          0.305,
+          0.305,
+          0.305,
+          0.305,
+          0.305
+        ]
+      }
+    },
+    {
+      "label": "Weights Bull 40 / Base 45 / Bear 12 / Bust 3",
+      "set": {
+        "scenarios.Bull.probability": 0.4,
+        "scenarios.Base.probability": 0.45,
+        "scenarios.Bear.probability": 0.12,
+        "scenarios.Bust.probability": 0.03
+      }
+    },
+    {
+      "label": "Weights Bull 60 / Base 40 / Bear 0 / Bust 0",
+      "set": {
+        "scenarios.Bull.probability": 0.6,
+        "scenarios.Base.probability": 0.4,
+        "scenarios.Bear.probability": 0.0,
+        "scenarios.Bust.probability": 0.0
+      }
+    },
+    {
+      "label": "Equal weights (bias check)",
+      "set": {
+        "scenarios.Bull.probability": 0.25,
+        "scenarios.Base.probability": 0.25,
+        "scenarios.Bear.probability": 0.25,
+        "scenarios.Bust.probability": 0.25
       }
     }
   ],
   "bridge": {
     "title": "from our 12-month target price to the FactSet median target price (NT$3,300, 2026-10-16)",
+    "measure": "target_12m",
     "target": 3300,
     "target_label": "FactSet median TP",
+    "shapley": true,
     "steps": [
       {
-        "label": "Base scenario only (drop Bull/Bear weighting)",
+        "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
         "set": {
           "scenarios.Bull.probability": 0.0,
           "scenarios.Base.probability": 1.0,
-          "scenarios.Bear.probability": 0.0
+          "scenarios.Bear.probability": 0.0,
+          "scenarios.Bust.probability": 0.0
         }
       },
       {
@@ -377,40 +714,137 @@
         }
       },
       {
-        "label": "Consensus-like 2027-28 growth (+30%/+24%)",
+        "label": "Consensus revenue growth 2027-28 (+37.6%/+26%)",
         "set": {
-          "scenarios.Base.driver_build.revenue_growth[0:2]": [
-            0.3,
-            0.24
+          "scenarios.Base.driver_build.revenue_growth": [
+            0.376,
+            0.26,
+            0.12,
+            0.1,
+            0.09,
+            0.08,
+            0.07,
+            0.06,
+            0.05,
+            0.04
           ]
         }
       },
       {
-        "label": "Hold EBIT margin at 57% (no normalisation)",
+        "label": "Consensus-EPS-consistent cash margins (EBITDA 71.2%, then 72.7%, no further normalisation)",
         "set": {
-          "scenarios.Base.driver_build.ebit_margin": 0.57
+          "scenarios.Base.driver_build.ebit_margin": [
+            0.557,
+            0.562,
+            0.552,
+            0.542,
+            0.532,
+            0.522,
+            0.512,
+            0.507,
+            0.502,
+            0.497
+          ]
         }
       },
       {
-        "label": "Discount rate 9.34% (the rate at which consensus-like operations give NT$3,300; solve #1)",
+        "label": "Cost of equity 8.92% (the level that closes the gap; solve #1)",
         "set": {
-          "case.wacc": 0.0934
+          "case.wacc": 0.089238
         }
       }
-    ],
-    "measure": "target_12m"
+    ]
   },
+  "solve": [
+    {
+      "title": "Cost of equity at which consensus-like EPS-consistent operations, no event risk, give a 12-month TP of NT$3,300",
+      "path": "case.wacc",
+      "target": 3300,
+      "measure": "target_12m",
+      "lo": 0.05,
+      "hi": 0.15,
+      "set": {
+        "scenarios.Bull.probability": 0.0,
+        "scenarios.Base.probability": 1.0,
+        "scenarios.Bear.probability": 0.0,
+        "scenarios.Bust.probability": 0.0,
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.376,
+          0.26,
+          0.12,
+          0.1,
+          0.09,
+          0.08,
+          0.07,
+          0.06,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": [
+          0.557,
+          0.562,
+          0.552,
+          0.542,
+          0.532,
+          0.522,
+          0.512,
+          0.507,
+          0.502,
+          0.497
+        ],
+        "case.hazard": null
+      }
+    },
+    {
+      "title": "Same operations at our 10.58% cost of equity: growth needed in 2029-36 is in reverse #3; event probability that brings the TP to NT$3,300 with all else ours",
+      "path": "case.hazard.annual_probability",
+      "target": 3300,
+      "measure": "target_12m",
+      "lo": 0.0,
+      "hi": 0.2,
+      "set": {}
+    },
+    {
+      "title": "FLIP: annual event probability at which our TP reaches the Hold line (-15% vs NT$2,370 = NT$2,014.5)",
+      "path": "case.hazard.annual_probability",
+      "target": 2014.5,
+      "measure": "target_12m",
+      "lo": 0.0,
+      "hi": 0.2,
+      "set": {}
+    },
+    {
+      "title": "FLIP: cost of equity at which our TP reaches the Hold line (NT$2,014.5)",
+      "path": "case.wacc",
+      "target": 2014.5,
+      "measure": "target_12m",
+      "lo": 0.05,
+      "hi": 0.15,
+      "set": {}
+    },
+    {
+      "title": "FLIP: cost of equity at which our TP reaches the Hold line with NO event risk",
+      "path": "case.wacc",
+      "target": 2014.5,
+      "measure": "target_12m",
+      "lo": 0.05,
+      "hi": 0.15,
+      "set": {
+        "case.hazard": null
+      }
+    }
+  ],
   "sensitivity": [
     {
-      "title": "Base: 10-yr revenue CAGR x steady EBIT margin (with event risk)",
+      "title": "Base: 10-yr revenue CAGR x steady EBITDA margin (with event risk)",
       "scenario": "Base",
-      "x": "ebit_margin",
+      "x": "ebitda_margin",
       "x_values": [
-        0.47,
-        0.5,
-        0.52,
-        0.55,
-        0.58
+        0.663,
+        0.689,
+        0.71,
+        0.74,
+        0.77
       ],
       "y": "revenue_growth",
       "y_values": [
@@ -422,15 +856,15 @@
       ]
     },
     {
-      "title": "Base: discount rate x terminal growth (with event risk)",
+      "title": "Base: cost of equity x terminal growth (with event risk)",
       "scenario": "Base",
       "x": "wacc",
       "x_values": [
-        0.0915,
-        0.0965,
-        0.1015,
-        0.1065,
-        0.1115
+        0.0958,
+        0.1008,
+        0.1058,
+        0.1108,
+        0.1158
       ],
       "y": "terminal_growth",
       "y_values": [
@@ -442,15 +876,15 @@
       ]
     },
     {
-      "title": "Base: annual event probability x discount rate",
+      "title": "Base: annual event probability x cost of equity",
       "scenario": "Base",
       "x": "wacc",
       "x_values": [
-        0.0915,
-        0.0965,
-        0.1015,
-        0.1065,
-        0.1115
+        0.0958,
+        0.1008,
+        0.1058,
+        0.1108,
+        0.1158
       ],
       "y": "hazard_rate",
       "y_values": [
@@ -458,40 +892,9 @@
         0.0075,
         0.015,
         0.0225,
-        0.03
+        0.03,
+        0.04
       ]
-    }
-  ],
-  "solve": [
-    {
-      "title": "USD discount rate at which consensus-like operations give a 12-month TP of NT$3,300 (FactSet median)",
-      "path": "case.wacc",
-      "target": 3300,
-      "measure": "target_12m",
-      "lo": 0.06,
-      "hi": 0.14,
-      "set": {
-        "case.hazard": null,
-        "scenarios.Bull.probability": 0.0,
-        "scenarios.Base.probability": 1.0,
-        "scenarios.Bear.probability": 0.0,
-        "scenarios.Base.driver_build.revenue_growth[0:2]": [
-          0.3,
-          0.24
-        ],
-        "scenarios.Base.driver_build.ebit_margin": 0.57
-      }
-    },
-    {
-      "title": "USD discount rate at which OUR scenarios, with no event risk, give a 12-month TP of NT$3,300",
-      "path": "case.wacc",
-      "target": 3300,
-      "measure": "target_12m",
-      "lo": 0.06,
-      "hi": 0.14,
-      "set": {
-        "case.hazard": null
-      }
     }
   ]
 }

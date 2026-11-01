@@ -8,7 +8,7 @@
   "adr_ratio": 5,
   "shares_diluted_m": 25932,
   "net_debt_m": -83573,
-  "wacc": 0.1015,
+  "wacc": 0.1058,
   "terminal_growth": 0.03,
   "midyear": true,
   "hazard": {
@@ -19,12 +19,15 @@
     "model_currency": "USD — TSMC prices wafers and guides in USD; TWD value = USD value x spot FX",
     "base_year": "FY2026E revenue US$176,120m = 1Q26 35.90 + 2Q26 40.20 + 3Q26 46.72 (6-K) + 4Q26 guidance midpoint 53.30; +43.9% vs FY2025 US$122,420m (4Q25 Management Report)",
     "net_debt": "TSMC-reported 3Q26 net cash NT$2,985.40bn (cash & marketable securities 4,016.98 less total interest-bearing debt 1,031.58) less customer temporary receipts NT$234.23bn and lease liabilities NT$36.88bn (both 30-Jun-26, latest disclosed) = NT$2,714.29bn; NCI NT$45.33bn; at 32.478",
-    "wacc": "USD cost of equity 10.15% = US 10Y 4.94% (US Treasury par curve, 2026-10-30) + beta 1.24 (TSM 5Y monthly vs S&P 500, Yahoo/StockAnalysis) x ERP 4.20% (Damodaran implied, 2026-10-01). Net cash, so WACC = cost of equity. Country risk is in the explicit hazard overlay, not the discount rate (Damodaran Taiwan CRP 0.742% would double-count it).",
+    "wacc": "USD cost of equity 10.58% = US 10Y 4.94% (US Treasury par curve, 2026-10-30) + beta 1.24 (TSM 5Y monthly; benchmark not printed by Yahoo/StockAnalysis, presumed S&P 500) x ERP 4.55%. ERP: Damodaran's implied US ERP of 4.20% (2026-10-01) was solved against a 5.29% T-bond, i.e. an implied market return of 9.49%; held constant at the 10-30 yield of 4.94% that is an ERP of 4.55% (conservative: the market fell in October, which raises the implied return). Net cash, so WACC = cost of equity. Country risk is in the hazard overlay, not the discount rate.",
     "hazard": "1.5%/yr probability of a cross-strait event destroying 80% of operating value (14% over 10 years)",
-    "capex_da": "capex/revenue 34% (2027) fading to 24.5%; D&A/revenue 15.5% -> 21%. History FY15-25: capex/revenue mean 38.3% (range 30.5-52.9%), D&A/revenue 18-28%. Terminal reinvestment = capex - D&A = 3.5pp of revenue -> RONIC ~ g / reinvestment rate ~ 36%",
+    "capex_da": "D&A/revenue 15.5% (2027) rising to 23% (FY2015-24 average ~24%); capex/revenue 34% fading to 28% in Base and Bear (Bull +2-3pp in 2028-31: growth costs capex; Bear 36% in 2028 as capex is sticky on falling revenue). Terminal Base reinvestment = capex 28% - D&A 23% + dNWC ~0.2% = 5.2% of revenue, i.e. ~14% of NOPAT, implying RONIC ~ g / reinvestment rate ~ 22%. Terminal capex is below TSMC's FY15-25 minimum (30.5%) because terminal growth is 3-4%, not the 16.5% CAGR of FY15-25.",
     "tax": "16.5% (3Q26 PBT-to-net-income gap 16.2%)",
     "sbc": "0 — TSMC employee compensation is cash profit-sharing already in COGS/opex; restricted stock awards immaterial",
-    "roll_forward": "12-month TP = fair value x (1 + TWD cost of equity) - dividends. TWD cost of equity 7.05% = (1 + 10.15%) x (1 + 1.99% TW 10Y, cnyes/Trading Economics 2026-10-30) / (1 + 4.94%) - 1 (interest-rate parity). Dividends NT$24 = 4 x NT$6.00 (3Q26 dividends paid NT$155.59bn / 25,932m sh)."
+    "roll_forward": "12-month TP = fair value x (1 + USD cost of equity) at spot FX - NT$24 dividends (4 x NT$6.00; 3Q26 dividends paid NT$155.59bn / 25,932m shares). No FX forecast: the interest-parity alternative would build in ~2.8% TWD appreciation.",
+    "margins": "Margins are driven as EBITDA (cash) margin; EBIT = EBITDA - D&A. FY2015-25 EBITDA margin (OPM + D&A/revenue) mean 66.3%, SD 2.4pp, max 68.9% (FY2025); 3Q26 73.4%, 2026E 74.2%. Bull holds 74%; Base returns to the FY2025 record of 68.9% by 2030; Bear troughs at 61% in 2028 (FY2019: 61.6%) and settles at 64.5%.",
+    "other_adjustments": "Plus 3Q26 long-term investments NT$224.63bn at book (associates and other investments), US$6916 m.",
+    "scenarios": "Bull: 2027 +37% (consensus FY27 revenue NT$7.68T, +37.6%, StockAnalysis 40 analysts 2026-10-16), 2028 +27% (Goldman Sachs +28%), 18% fading to 4%; cash margin held at 74%. Base: 2027 +32% (4Q26 guided run-rate plus ~3.5% a quarter; Goldman +32%), 2028 +18% (hyperscaler capex growth forecasts for 2028: +5% Allianz, +6% UBS, +7% DoubleLine, +12% Goldman), 12% fading to 4%; EBITDA margin back to the FY2025 record 68.9% by 2030. Bear (20%): 2023-style correction in 2028 (-10%; FY2023 -8.7%), EBITDA trough 63% (FY2019 61.6%, FY2023 67.2%), settling at 65%. Bust (5%): 2001-style revenue fall in 2028 (-25%; FY2001 -24.3%), EBITDA trough 52%, settling at 63%."
   },
   "scenarios": [
     {
@@ -35,8 +38,8 @@
       "driver_build": {
         "revenue_base_m": 176120,
         "revenue_growth": [
-          0.32,
-          0.25,
+          0.37,
+          0.27,
           0.18,
           0.15,
           0.12,
@@ -48,15 +51,15 @@
         ],
         "ebit_margin": [
           0.585,
-          0.58,
-          0.58,
-          0.58,
-          0.58,
-          0.58,
-          0.58,
-          0.58,
-          0.58,
-          0.58
+          0.575,
+          0.565,
+          0.555,
+          0.545,
+          0.535,
+          0.525,
+          0.52,
+          0.515,
+          0.51
         ],
         "tax_rate": 0.165,
         "da_pct_revenue": [
@@ -64,24 +67,24 @@
           0.165,
           0.175,
           0.185,
-          0.19,
           0.195,
-          0.2,
           0.205,
-          0.21,
-          0.21
+          0.215,
+          0.22,
+          0.225,
+          0.23
         ],
         "capex_pct_revenue": [
+          0.33,
+          0.35,
           0.34,
+          0.33,
           0.32,
+          0.31,
           0.3,
+          0.29,
           0.285,
-          0.27,
-          0.26,
-          0.255,
-          0.25,
-          0.245,
-          0.245
+          0.28
         ],
         "nwc_pct_delta_revenue": 0.05,
         "sbc_pct_revenue": 0.0
@@ -89,7 +92,19 @@
       "terminal": {
         "mode": "gordon",
         "terminal_growth": 0.03
-      }
+      },
+      "_ebitda_margin_path": [
+        0.74,
+        0.74,
+        0.74,
+        0.74,
+        0.74,
+        0.74,
+        0.74,
+        0.74,
+        0.74,
+        0.74
+      ]
     },
     {
       "name": "Base",
@@ -99,7 +114,7 @@
       "driver_build": {
         "revenue_base_m": 176120,
         "revenue_growth": [
-          0.28,
+          0.32,
           0.18,
           0.12,
           0.1,
@@ -111,16 +126,16 @@
           0.04
         ],
         "ebit_margin": [
-          0.57,
-          0.55,
-          0.53,
-          0.52,
-          0.52,
-          0.52,
-          0.52,
-          0.52,
-          0.52,
-          0.52
+          0.575,
+          0.551,
+          0.527,
+          0.504,
+          0.494,
+          0.484,
+          0.474,
+          0.469,
+          0.464,
+          0.459
         ],
         "tax_rate": 0.165,
         "da_pct_revenue": [
@@ -128,24 +143,24 @@
           0.165,
           0.175,
           0.185,
-          0.19,
           0.195,
-          0.2,
           0.205,
-          0.21,
-          0.21
+          0.215,
+          0.22,
+          0.225,
+          0.23
         ],
         "capex_pct_revenue": [
           0.34,
+          0.33,
           0.32,
+          0.31,
           0.3,
+          0.295,
+          0.29,
           0.285,
-          0.27,
-          0.26,
-          0.255,
-          0.25,
-          0.245,
-          0.245
+          0.28,
+          0.28
         ],
         "nwc_pct_delta_revenue": 0.05,
         "sbc_pct_revenue": 0.0
@@ -153,18 +168,30 @@
       "terminal": {
         "mode": "gordon",
         "terminal_growth": 0.03
-      }
+      },
+      "_ebitda_margin_path": [
+        0.73,
+        0.716,
+        0.702,
+        0.689,
+        0.689,
+        0.689,
+        0.689,
+        0.689,
+        0.689,
+        0.689
+      ]
     },
     {
       "name": "Bear",
-      "probability": 0.25,
+      "probability": 0.2,
       "method": "dcf",
       "horizon_years": 10,
       "driver_build": {
         "revenue_base_m": 176120,
         "revenue_growth": [
-          0.2,
-          -0.08,
+          0.25,
+          -0.1,
           0.06,
           0.08,
           0.07,
@@ -175,16 +202,16 @@
           0.03
         ],
         "ebit_margin": [
-          0.55,
-          0.44,
-          0.46,
-          0.48,
-          0.48,
-          0.48,
-          0.48,
-          0.48,
-          0.48,
-          0.48
+          0.555,
+          0.465,
+          0.47,
+          0.465,
+          0.455,
+          0.445,
+          0.435,
+          0.43,
+          0.425,
+          0.42
         ],
         "tax_rate": 0.165,
         "da_pct_revenue": [
@@ -192,24 +219,24 @@
           0.165,
           0.175,
           0.185,
-          0.19,
           0.195,
-          0.2,
           0.205,
-          0.21,
-          0.21
+          0.215,
+          0.22,
+          0.225,
+          0.23
         ],
         "capex_pct_revenue": [
           0.34,
-          0.32,
+          0.37,
+          0.33,
+          0.31,
           0.3,
+          0.295,
+          0.29,
           0.285,
-          0.27,
-          0.26,
-          0.255,
-          0.25,
-          0.245,
-          0.245
+          0.28,
+          0.28
         ],
         "nwc_pct_delta_revenue": 0.05,
         "sbc_pct_revenue": 0.0
@@ -217,13 +244,105 @@
       "terminal": {
         "mode": "gordon",
         "terminal_growth": 0.03
-      }
+      },
+      "_ebitda_margin_path": [
+        0.71,
+        0.63,
+        0.645,
+        0.65,
+        0.65,
+        0.65,
+        0.65,
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    {
+      "name": "Bust",
+      "probability": 0.05,
+      "method": "dcf",
+      "horizon_years": 10,
+      "driver_build": {
+        "revenue_base_m": 176120,
+        "revenue_growth": [
+          0.2,
+          -0.25,
+          0.05,
+          0.12,
+          0.08,
+          0.06,
+          0.05,
+          0.04,
+          0.035,
+          0.03
+        ],
+        "ebit_margin": [
+          0.545,
+          0.355,
+          0.425,
+          0.445,
+          0.435,
+          0.425,
+          0.415,
+          0.41,
+          0.405,
+          0.4
+        ],
+        "tax_rate": 0.165,
+        "da_pct_revenue": [
+          0.155,
+          0.165,
+          0.175,
+          0.185,
+          0.195,
+          0.205,
+          0.215,
+          0.22,
+          0.225,
+          0.23
+        ],
+        "capex_pct_revenue": [
+          0.34,
+          0.4,
+          0.33,
+          0.31,
+          0.3,
+          0.295,
+          0.29,
+          0.285,
+          0.28,
+          0.28
+        ],
+        "nwc_pct_delta_revenue": 0.05,
+        "sbc_pct_revenue": 0.0
+      },
+      "terminal": {
+        "mode": "gordon",
+        "terminal_growth": 0.03
+      },
+      "_ebitda_margin_path": [
+        0.7,
+        0.52,
+        0.6,
+        0.63,
+        0.63,
+        0.63,
+        0.63,
+        0.63,
+        0.63,
+        0.63
+      ]
     }
   ],
   "minority_interest_m": 1396,
   "roll_forward": {
-    "quote_rf": 0.0199,
-    "model_rf": 0.0494,
+    "basis": "model",
     "dividends_quote_next_12m": 24.0
+  },
+  "other_adjustments_m": 6916,
+  "rating_thresholds": {
+    "buy": 0.15,
+    "sell": -0.15
   }
 }

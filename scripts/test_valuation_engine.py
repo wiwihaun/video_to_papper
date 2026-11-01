@@ -380,5 +380,55 @@ class TestResidualIncome(unittest.TestCase):
                         ve.value_case(self._case([0.12] * 5))["scenarios"][0]["value_per_share"])
 
 
+class TestRollForwardModelBasis(unittest.TestCase):
+    def test_model_basis_uses_wacc_at_spot(self):
+        # FV US$100 x 32 = NT$3,200; basis=model -> x (1 + 10% WACC) - 20 = NT$3,500
+        case = one_year_case()
+        del case["price"]
+        case.update({"fx_quote_per_model": 32.0, "price_quote": 3000.0, "quote_currency": "TWD",
+                     "roll_forward": {"basis": "model", "dividends_quote_next_12m": 20.0}})
+        self.assertAlmostEqual(ve.value_case(case)["target_price_12m_quote"], 3500.0)
+
+
+class TestV2Features(unittest.TestCase):
+    def _case(self):
+        case = one_year_case(midyear=True, terminal_growth=0.02)
+        case["scenarios"][0] = {
+            "name": "Base", "probability": 1.0, "method": "dcf", "horizon_years": 4,
+            "driver_build": {"revenue_base_m": 1000, "revenue_growth": 0.1, "ebit_margin": 0.3,
+                             "tax_rate": 0.2, "da_pct_revenue": [0.10, 0.12, 0.14, 0.16],
+                             "capex_pct_revenue": 0.15},
+            "terminal": {"mode": "gordon", "terminal_growth": 0.02}}
+        return case
+
+    def test_ebitda_driver_sets_ebit_net_of_da(self):
+        s, _ = ve._apply_driver(self._case()["scenarios"][0], self._case(), "ebitda_margin", 0.50)
+        self.assertEqual([round(x, 10) for x in s["driver_build"]["ebit_margin"]], [0.40, 0.38, 0.36, 0.34])
+
+    def test_hazard_years_zero_equals_no_hazard(self):
+        a = ve.value_case(self._case())["scenarios"][0]["enterprise_value_m"]
+        c = self._case(); c["hazard"] = {"annual_probability": 0.05, "loss_fraction": 0.8, "years": 0}
+        self.assertAlmostEqual(ve.value_case(c)["scenarios"][0]["enterprise_value_m"], a, places=6)
+
+    def test_hazard_years_between_none_and_perpetual(self):
+        c = self._case(); c["hazard"] = {"annual_probability": 0.03, "loss_fraction": 0.8}
+        perpetual = ve.value_case(c)["scenarios"][0]["enterprise_value_m"]
+        c["hazard"]["years"] = 4
+        limited = ve.value_case(c)["scenarios"][0]["enterprise_value_m"]
+        none = ve.value_case(self._case())["scenarios"][0]["enterprise_value_m"]
+        self.assertTrue(perpetual < limited < none)
+
+    def test_rating_and_triggers(self):
+        case = one_year_case()
+        del case["price"]
+        case.update({"fx_quote_per_model": 32.0, "price_quote": 4000.0, "quote_currency": "TWD",
+                     "roll_forward": {"basis": "model", "dividends_quote_next_12m": 20.0},
+                     "rating_thresholds": {"buy": 0.15, "sell": -0.15}})
+        out = ve.value_case(case)          # TP = 3200 x 1.1 - 20 = 3500 -> -12.5% -> Hold
+        self.assertEqual(out["rating"], "Hold")
+        self.assertAlmostEqual(out["price_triggers_quote"]["sell_above"], 3500 / 0.85)
+        self.assertAlmostEqual(out["price_triggers_quote"]["buy_below"], 3500 / 1.15)
+
+
 if __name__ == "__main__":
     unittest.main()

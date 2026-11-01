@@ -1,13 +1,17 @@
-| Base case, derived | FY2026E | FY2027E | FY2028E | FY2029E |
-|---|---|---|---|---|
-| Revenue (US$bn) | 176.1 | 225.4 | 266.0 | 297.9 |
-| Revenue growth (USD) | +43.9% | +28.0% | +18.0% | +12.0% |
-| EBIT margin | 58.6% | 57.0% | 55.0% | 53.0% |
-| FCFF (US$bn) | n/a | 63.1 | 78.9 | 93.0 |
-| EPS (NT$, ours) | 112.0 | 138.8 | 159.0 | 173.3 |
-| EPS (NT$, FactSet consensus median) | 109.21 | 145.69 | 185.61 | n/a |
-| Ours vs consensus | +2.6% | -4.7% | -14.3% | n/a |
-| P/E at NT$2,370 (ours) | 21.2x | 17.1x | 14.9x | 13.7x |
-| P/E at NT$2,370 (consensus) | 21.7x | 16.3x | 12.8x | n/a |
+| | FY2023A | FY2024A | FY2025A | FY2026E | FY2027E | FY2028E | FY2029E |
+|---|---|---|---|---|---|---|---|
+| 營收 Revenue (US$bn) | 69.30 | 90.08 | 122.42 | 176.1 | 232.5 | 274.3 | 307.2 |
+| 美元營收成長 Growth (USD) | -8.7% | +30.0% | +35.9% | +43.9% | +32.0% | +18.0% | +12.0% |
+| 毛利率 GM | 54.4% | 56.1% | 59.9% | 66–67%（1Q–3Q 實際，4Q 指引） | — | — | — |
+| 營業利益率 EBIT margin | 42.6% | 45.7% | 50.8% | 58.6% | 57.5% | 55.1% | 52.7% |
+| EBITDA 利益率 | 67.2% | 68.6% | 68.9% | 約 74% | 73.0% | 71.6% | 70.2% |
+| 資本支出 Capex (US$bn) | 30.45 | 29.76 | 40.90 | 60–64（指引） | 79.0 | 90.5 | 98.3 |
+| 資本支出／營收 | 43.9% | 33.0% | 33.4% | 約 35% | 34.0% | 33.0% | 32.0% |
+| 自由現金流利益率 FCF margin | 13.5% | 30.1% | 26.3% | — | 28.3% | 28.7% | 29.0% |
+| EPS（NT$，實際／我們） | 32.34 | 45.25 | 66.25 | 112.0 | 144.2 | 164.2 | 177.6 |
+| EPS（NT$，FactSet 共識中位數） |  |  |  | 109.21 | 145.69 | 185.61 | n/a |
+| 我們 vs 共識 |  |  |  | +2.6% | -1.0% | -11.5% | n/a |
+| 本益比（NT$2,370，我們的 EPS） |  |  |  | 21.2x | 16.4x | 14.4x | 13.3x |
+| 本益比（NT$2,370，共識 EPS） |  |  |  | 21.7x | 16.3x | 12.8x | n/a |
 
-Inputs: 4Q26E EPS 33.27 (revenue US$53.3bn x 32.478, EBIT margin 57.5%, non-operating NT$34.59bn, tax 16.24%); cash yield 3.44% pre-tax; dividends NT$24/share retained-cash deduction.
+FY2023-25: TSMC 4Q management reports (EBITDA = OPM + D&A/revenue, NT$ basis; FCF = CFO - capex, TSMC definition). Forecasts: Base scenario. 4Q26E EPS 33.27; cash yield 3.44%; NTM EPS (ours) 138.9, (consensus) 139.6.
