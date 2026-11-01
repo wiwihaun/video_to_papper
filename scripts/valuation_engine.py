@@ -487,6 +487,19 @@ def run_scenario(scenario, case):
     return to_equity(res, scenario, case)
 
 
+def roll_forward_rate(case):
+    """Cost of equity in the quote currency for the 12-month roll-forward.
+
+    Either given directly ("cost_of_equity_quote"), or derived from the model-currency
+    discount rate by interest-rate parity ("quote_rf" and "model_rf"):
+        (1 + WACC) x (1 + quote_rf) / (1 + model_rf) - 1
+    Deriving it keeps the roll-forward consistent when WACC itself is varied."""
+    rf = case.get("roll_forward") or {}
+    if "quote_rf" in rf and "model_rf" in rf:
+        return (1.0 + float(case["wacc"])) * (1.0 + float(rf["quote_rf"])) / (1.0 + float(rf["model_rf"])) - 1.0
+    return float(rf["cost_of_equity_quote"])
+
+
 def value_case(case):
     scenarios = case.get("scenarios")
     if not scenarios:
@@ -527,6 +540,26 @@ def value_case(case):
         out["probability_weighted_value_per_adr"] = weighted * float(case["adr_ratio"])
     # Equal-weight value: the quality gate's test for weights chosen after the conclusion.
     out["equal_weighted_value_per_share"] = sum(r["value_per_share"] for r in results) / len(results)
+
+    # 12-month target price: today's fair value rolled forward at the cost of equity in the
+    # QUOTE currency, less dividends paid over the next 12 months. A target price is a price
+    # in a year's time; quoting today's fair value as a 12-month target understates it by
+    # roughly the cost of equity.
+    rf = case.get("roll_forward")
+    if rf and weighted is not None:
+        r = roll_forward_rate(case)
+        d = float(rf.get("dividends_quote_next_12m", 0.0))
+        fv_q = weighted * (fx or 1.0)
+        tp = fv_q * (1.0 + r) - d
+        out["target_price_12m_quote"] = tp
+        out["roll_forward"] = {"cost_of_equity_quote": r, "dividends_quote_next_12m": d,
+                               "fair_value_today_quote": fv_q}
+        spot_q = (price * (fx or 1.0)) if price else None
+        if spot_q:
+            out["target_upside_pct"] = (tp / spot_q - 1.0) * 100.0
+            out["expected_total_return_12m_pct"] = ((tp + d) / spot_q - 1.0) * 100.0
+        for res in results:
+            res["target_price_12m_quote"] = res["value_per_share"] * (fx or 1.0) * (1.0 + r) - d
     return out
 
 
@@ -946,6 +979,18 @@ def md_value(out):
         L.append("")
         L.append("Equal-weighted value (bias check): %s %s" % (cur, _m(out["equal_weighted_value_per_share"], 2)))
         L.append("")
+        if out.get("target_price_12m_quote") is not None:
+            rf = out["roll_forward"]
+            L.append(
+                "**12-month target price: %s %s** = fair value %s x (1 + %.2f%% cost of equity in %s) "
+                "- %s dividends; vs spot %+.1f%%, expected 12-month total return %+.1f%%"
+                % (
+                    qc, _m(out["target_price_12m_quote"], 0), _m(rf["fair_value_today_quote"], 0),
+                    rf["cost_of_equity_quote"] * 100, qc, _m(rf["dividends_quote_next_12m"], 0),
+                    out.get("target_upside_pct") or 0.0, out.get("expected_total_return_12m_pct") or 0.0,
+                )
+            )
+            L.append("")
     elif out.get("probability_weighted_value_per_share") is not None:
         L.append(
             "**Probability-weighted target price: %s %s**%s"
@@ -1031,7 +1076,7 @@ def md_value(out):
     return "\n".join(L)
 
 
-def md_sensitivity(out, cur=""):
+def md_sensitivity(out, cur="", dp=2):
     x, y = out["x"], out["y"]
     L = ["### Sensitivity — %s: value/share%s" % (out["scenario"], (" (%s)" % cur) if cur else "")]
     L.append("")
@@ -1040,7 +1085,7 @@ def md_sensitivity(out, cur=""):
     for yv, row in zip(y["values"], out["grid_value_per_share"]):
         L.append(
             "| **%s** | %s |"
-            % (_fmt_driver(y["driver"], yv), " | ".join(_m(c, 2) for c in row))
+            % (_fmt_driver(y["driver"], yv), " | ".join(_m(c, dp) for c in row))
         )
     return "\n".join(L)
 

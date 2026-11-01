@@ -1,0 +1,1300 @@
+{
+  "case": "reports/2330_case.json",
+  "valuation_date": "2026-11-01",
+  "value": {
+    "ticker": "2330.TW (TSM ADR 1:5)",
+    "currency": "USD",
+    "valuation_date": "2026-11-01",
+    "price": 72.97247367448735,
+    "scenarios": [
+      {
+        "hazard": {
+          "annual_probability": 0.015,
+          "loss_fraction": 0.8,
+          "cumulative_probability_10y": 0.14026955774085703,
+          "enterprise_value_no_hazard_m": 2543855.270897352,
+          "ev_haircut_pct": 16.886107516005477
+        },
+        "implied_terminal_multiples": {
+          "ev_ebitda": 8.157886709201215,
+          "ev_ebit": 11.11160431080855,
+          "ev_fcff": 14.405594405594403
+        },
+        "warnings": [],
+        "method": "dcf",
+        "wacc": 0.1015,
+        "midyear": true,
+        "horizon_years": 10,
+        "rows": [
+          {
+            "year": 1,
+            "revenue_m": 232478.40000000002,
+            "revenue_growth": 0.32000000000000006,
+            "ebit_m": 135999.864,
+            "ebit_margin": 0.585,
+            "nopat_m": 113559.88644,
+            "da_m": 36034.152,
+            "capex_m": 79042.65600000002,
+            "delta_nwc_m": 2817.9200000000014,
+            "sbc_m": 0.0,
+            "fcff_m": 67733.46243999999,
+            "discount_factor": 0.9528131652247949,
+            "survival_multiplier": 0.9939773296511684,
+            "pv_fcff_m": 64148.6476467654
+          },
+          {
+            "year": 2,
+            "revenue_m": 290598.0,
+            "revenue_growth": 0.24999999999999978,
+            "ebit_m": 168546.84,
+            "ebit_margin": 0.58,
+            "nopat_m": 140736.6114,
+            "da_m": 47948.670000000006,
+            "capex_m": 92991.36,
+            "delta_nwc_m": 2905.979999999999,
+            "sbc_m": 0.0,
+            "fcff_m": 92787.94140000001,
+            "discount_factor": 0.8650142217201952,
+            "survival_multiplier": 0.9820676697064008,
+            "pv_fcff_m": 78823.58828079533
+          },
+          {
+            "year": 3,
+            "revenue_m": 342905.63999999996,
+            "revenue_growth": 0.17999999999999994,
+            "ebit_m": 198885.27119999996,
+            "ebit_margin": 0.58,
+            "nopat_m": 166069.20145199995,
+            "da_m": 60008.48699999999,
+            "capex_m": 102871.69199999998,
+            "delta_nwc_m": 2615.381999999998,
+            "sbc_m": 0.0,
+            "fcff_m": 120590.61445199997,
+            "discount_factor": 0.7853056937995417,
+            "survival_multiplier": 0.9703366546608048,
+            "pv_fcff_m": 91891.36262691139
+          },
+          {
+            "year": 4,
+            "revenue_m": 394341.4859999999,
+            "revenue_growth": 0.1499999999999999,
+            "ebit_m": 228718.06187999994,
+            "ebit_margin": 0.58,
+            "nopat_m": 190979.58166979993,
+            "da_m": 72953.17490999999,
+            "capex_m": 112387.32350999997,
+            "delta_nwc_m": 2571.7922999999982,
+            "sbc_m": 0.0,
+            "fcff_m": 148973.64076979997,
+            "discount_factor": 0.7129420733541005,
+            "survival_multiplier": 0.9587816048408927,
+            "pv_fcff_m": 101831.78803886309
+          },
+          {
+            "year": 5,
+            "revenue_m": 441662.46431999997,
+            "revenue_growth": 0.1200000000000001,
+            "ebit_m": 256164.22930559996,
+            "ebit_margin": 0.58,
+            "nopat_m": 213897.13147017595,
+            "da_m": 83915.8682208,
+            "capex_m": 119248.8653664,
+            "delta_nwc_m": 2366.048916000003,
+            "sbc_m": 0.0,
+            "fcff_m": 176198.08540857595,
+            "discount_factor": 0.6472465486646397,
+            "survival_multiplier": 0.9473998807682793,
+            "pv_fcff_m": 108044.89556438106
+          },
+          {
+            "year": 6,
+            "revenue_m": 485828.710752,
+            "revenue_growth": 0.10000000000000009,
+            "ebit_m": 281780.65223615995,
+            "ebit_margin": 0.58,
+            "nopat_m": 235286.84461719354,
+            "da_m": 94736.59859664,
+            "capex_m": 126315.46479552,
+            "delta_nwc_m": 2208.312321600001,
+            "sbc_m": 0.0,
+            "fcff_m": 201499.66609671354,
+            "discount_factor": 0.5876046742302675,
+            "survival_multiplier": 0.936188882556755,
+            "pv_fcff_m": 110846.77243239041
+          },
+          {
+            "year": 7,
+            "revenue_m": 524695.00761216,
+            "revenue_growth": 0.08000000000000007,
+            "ebit_m": 304323.1044150528,
+            "ebit_margin": 0.58,
+            "nopat_m": 254109.79218656907,
+            "da_m": 104939.00152243202,
+            "capex_m": 133797.22694110082,
+            "delta_nwc_m": 1943.3148430080037,
+            "sbc_m": 0.0,
+            "fcff_m": 223308.25192489228,
+            "discount_factor": 0.5334586239040106,
+            "survival_multiplier": 0.9251460493184037,
+            "pv_fcff_m": 110208.68254904903
+          },
+          {
+            "year": 8,
+            "revenue_m": 561423.6581450113,
+            "revenue_growth": 0.07000000000000006,
+            "ebit_m": 325625.7217241065,
+            "ebit_margin": 0.58,
+            "nopat_m": 271897.4776396289,
+            "da_m": 115091.8499197273,
+            "capex_m": 140355.91453625282,
+            "delta_nwc_m": 1836.4325266425615,
+            "sbc_m": 0.0,
+            "fcff_m": 244796.98049646083,
+            "discount_factor": 0.48430197358512084,
+            "survival_multiplier": 0.9142688585786277,
+            "pv_fcff_m": 108391.74866129862
+          },
+          {
+            "year": 9,
+            "revenue_m": 589494.8410522619,
+            "revenue_growth": 0.050000000000000044,
+            "ebit_m": 341907.00781031186,
+            "ebit_margin": 0.58,
+            "nopat_m": 285492.3515216104,
+            "da_m": 123793.916620975,
+            "capex_m": 144426.23605780417,
+            "delta_nwc_m": 1403.5591453625298,
+            "sbc_m": 0.0,
+            "fcff_m": 263456.4729394187,
+            "discount_factor": 0.43967496467101297,
+            "survival_multiplier": 0.9035548256999483,
+            "pv_fcff_m": 104663.46788956641
+          },
+          {
+            "year": 10,
+            "revenue_m": 613074.6346943524,
+            "revenue_growth": 0.040000000000000036,
+            "ebit_m": 355583.2881227244,
+            "ebit_margin": 0.58,
+            "nopat_m": 296912.04558247485,
+            "da_m": 128745.673285814,
+            "capex_m": 150203.28550011633,
+            "delta_nwc_m": 1178.9896821045259,
+            "sbc_m": 0.0,
+            "fcff_m": 274275.44368606794,
+            "discount_factor": 0.399160203968237,
+            "survival_multiplier": 0.8930015033144489,
+            "pv_fcff_m": 97765.66352900057
+          }
+        ],
+        "pv_explicit_m": 976616.6172190213,
+        "terminal": {
+          "mode": "gordon",
+          "terminal_growth": 0.03,
+          "base_fcff_m": 274275.44368606794
+        },
+        "terminal_value_m": 3951100.7971559432,
+        "pv_terminal_m": 1137680.5175830312,
+        "terminal_pct_of_ev": 0.5380892301542775,
+        "enterprise_value_m": 2114297.1348020528,
+        "name": "Bull",
+        "probability": 0.25,
+        "bridge": {
+          "enterprise_value_m": 2114297.1348020528,
+          "less_net_debt_m": -83573.0,
+          "less_minority_interest_m": 1396.0,
+          "plus_other_adjustments_m": 0.0,
+          "equity_value_m": 2196474.1348020528,
+          "shares_diluted_m": 25932.0
+        },
+        "equity_value_m": 2196474.1348020528,
+        "value_per_share": 84.7013008947267,
+        "value_per_share_quote": 2750.928850458934,
+        "value_per_adr": 423.5065044736335,
+        "price": 72.97247367448735,
+        "upside_pct": 16.072947276748263,
+        "target_price_12m_quote": 2920.9667205481687
+      },
+      {
+        "hazard": {
+          "annual_probability": 0.015,
+          "loss_fraction": 0.8,
+          "cumulative_probability_10y": 0.14026955774085703,
+          "enterprise_value_no_hazard_m": 1802910.1257124364,
+          "ev_haircut_pct": 16.538043362961997
+        },
+        "implied_terminal_multiples": {
+          "ev_ebitda": 7.839740028148879,
+          "ev_ebit": 11.005788885670542,
+          "ev_fcff": 14.405594405594403
+        },
+        "warnings": [],
+        "method": "dcf",
+        "wacc": 0.1015,
+        "midyear": true,
+        "horizon_years": 10,
+        "rows": [
+          {
+            "year": 1,
+            "revenue_m": 225433.6,
+            "revenue_growth": 0.28,
+            "ebit_m": 128497.15199999999,
+            "ebit_margin": 0.57,
+            "nopat_m": 107295.12191999999,
+            "da_m": 34942.208,
+            "capex_m": 76647.42400000001,
+            "delta_nwc_m": 2465.6800000000003,
+            "sbc_m": 0.0,
+            "fcff_m": 63124.225919999975,
+            "discount_factor": 0.9528131652247949,
+            "survival_multiplier": 0.9939773296511684,
+            "pv_fcff_m": 59783.356418607655
+          },
+          {
+            "year": 2,
+            "revenue_m": 266011.648,
+            "revenue_growth": 0.17999999999999994,
+            "ebit_m": 146306.4064,
+            "ebit_margin": 0.55,
+            "nopat_m": 122165.849344,
+            "da_m": 43891.92192,
+            "capex_m": 85123.72736,
+            "delta_nwc_m": 2028.902399999999,
+            "sbc_m": 0.0,
+            "fcff_m": 78905.141504,
+            "discount_factor": 0.8650142217201952,
+            "survival_multiplier": 0.9820676697064008,
+            "pv_fcff_m": 67030.11504843226
+          },
+          {
+            "year": 3,
+            "revenue_m": 297933.04576,
+            "revenue_growth": 0.1200000000000001,
+            "ebit_m": 157904.5142528,
+            "ebit_margin": 0.53,
+            "nopat_m": 131850.269401088,
+            "da_m": 52138.283008,
+            "capex_m": 89379.913728,
+            "delta_nwc_m": 1596.0698880000011,
+            "sbc_m": 0.0,
+            "fcff_m": 93012.56879308801,
+            "discount_factor": 0.7853056937995417,
+            "survival_multiplier": 0.9703366546608048,
+            "pv_fcff_m": 70876.59123943075
+          },
+          {
+            "year": 4,
+            "revenue_m": 327726.35033600003,
+            "revenue_growth": 0.10000000000000009,
+            "ebit_m": 170417.70217472003,
+            "ebit_margin": 0.52,
+            "nopat_m": 142298.78131589122,
+            "da_m": 60629.37481216001,
+            "capex_m": 93402.00984576,
+            "delta_nwc_m": 1489.6652288000014,
+            "sbc_m": 0.0,
+            "fcff_m": 108036.48105349122,
+            "discount_factor": 0.7129420733541005,
+            "survival_multiplier": 0.9587816048408927,
+            "pv_fcff_m": 73848.95732060276
+          },
+          {
+            "year": 5,
+            "revenue_m": 357221.7218662401,
+            "revenue_growth": 0.09000000000000008,
+            "ebit_m": 185755.29537044486,
+            "ebit_margin": 0.52,
+            "nopat_m": 155105.67163432145,
+            "da_m": 67872.12715458561,
+            "capex_m": 96449.86490388482,
+            "delta_nwc_m": 1474.7685765120027,
+            "sbc_m": 0.0,
+            "fcff_m": 125053.16530851024,
+            "discount_factor": 0.6472465486646397,
+            "survival_multiplier": 0.9473998807682793,
+            "pv_fcff_m": 76682.7639155246
+          },
+          {
+            "year": 6,
+            "revenue_m": 385799.4596155393,
+            "revenue_growth": 0.08000000000000007,
+            "ebit_m": 200615.71900008043,
+            "ebit_margin": 0.52,
+            "nopat_m": 167514.12536506716,
+            "da_m": 75230.89462503017,
+            "capex_m": 100307.85950004021,
+            "delta_nwc_m": 1428.8868874649606,
+            "sbc_m": 0.0,
+            "fcff_m": 141008.27360259215,
+            "discount_factor": 0.5876046742302675,
+            "survival_multiplier": 0.936188882556755,
+            "pv_fcff_m": 77569.91521568435
+          },
+          {
+            "year": 7,
+            "revenue_m": 412805.42178862705,
+            "revenue_growth": 0.07000000000000006,
+            "ebit_m": 214658.81933008606,
+            "ebit_margin": 0.52,
+            "nopat_m": 179240.11414062185,
+            "da_m": 82561.08435772541,
+            "capex_m": 105265.3825560999,
+            "delta_nwc_m": 1350.2981086543878,
+            "sbc_m": 0.0,
+            "fcff_m": 155185.51783359295,
+            "discount_factor": 0.5334586239040106,
+            "survival_multiplier": 0.9251460493184037,
+            "pv_fcff_m": 76588.26453437378
+          },
+          {
+            "year": 8,
+            "revenue_m": 437573.7470959447,
+            "revenue_growth": 0.06000000000000005,
+            "ebit_m": 227538.34848989124,
+            "ebit_margin": 0.52,
+            "nopat_m": 189994.52098905918,
+            "da_m": 89702.61815466866,
+            "capex_m": 109393.43677398618,
+            "delta_nwc_m": 1238.4162653658832,
+            "sbc_m": 0.0,
+            "fcff_m": 169065.2861043758,
+            "discount_factor": 0.48430197358512084,
+            "survival_multiplier": 0.9142688585786277,
+            "pv_fcff_m": 74859.10145464797
+          },
+          {
+            "year": 9,
+            "revenue_m": 459452.434450742,
+            "revenue_growth": 0.050000000000000044,
+            "ebit_m": 238915.26591438585,
+            "ebit_margin": 0.52,
+            "nopat_m": 199494.24703851217,
+            "da_m": 96485.01123465582,
+            "capex_m": 112565.84644043178,
+            "delta_nwc_m": 1093.9343677398633,
+            "sbc_m": 0.0,
+            "fcff_m": 182319.47746499637,
+            "discount_factor": 0.43967496467101297,
+            "survival_multiplier": 0.9035548256999483,
+            "pv_fcff_m": 72430.13831619953
+          },
+          {
+            "year": 10,
+            "revenue_m": 477830.5318287717,
+            "revenue_growth": 0.040000000000000036,
+            "ebit_m": 248471.8765509613,
+            "ebit_margin": 0.52,
+            "nopat_m": 207474.01692005267,
+            "da_m": 100344.41168404205,
+            "capex_m": 117068.48029804906,
+            "delta_nwc_m": 918.9048689014861,
+            "sbc_m": 0.0,
+            "fcff_m": 189831.0434371442,
+            "discount_factor": 0.399160203968237,
+            "survival_multiplier": 0.8930015033144489,
+            "pv_fcff_m": 67665.40114060401
+          }
+        ],
+        "pv_explicit_m": 717334.6046041077,
+        "terminal": {
+          "mode": "gordon",
+          "terminal_growth": 0.03,
+          "base_fcff_m": 189831.0434371442
+        },
+        "terminal_value_m": 2734629.0173462727,
+        "pv_terminal_m": 787409.4627227733,
+        "terminal_pct_of_ev": 0.5232846434288161,
+        "enterprise_value_m": 1504744.067326881,
+        "name": "Base",
+        "probability": 0.5,
+        "bridge": {
+          "enterprise_value_m": 1504744.067326881,
+          "less_net_debt_m": -83573.0,
+          "less_minority_interest_m": 1396.0,
+          "plus_other_adjustments_m": 0.0,
+          "equity_value_m": 1586921.067326881,
+          "shares_diluted_m": 25932.0
+        },
+        "equity_value_m": 1586921.067326881,
+        "value_per_share": 61.195475371235574,
+        "value_per_share_quote": 1987.506649106989,
+        "value_per_adr": 305.9773768561779,
+        "price": 72.97247367448735,
+        "upside_pct": -16.13895995329161,
+        "target_price_12m_quote": 2103.696227952903
+      },
+      {
+        "hazard": {
+          "annual_probability": 0.015,
+          "loss_fraction": 0.8,
+          "cumulative_probability_10y": 0.14026955774085703,
+          "enterprise_value_no_hazard_m": 1047878.1196804284,
+          "ev_haircut_pct": 16.132599865962426
+        },
+        "implied_terminal_multiples": {
+          "ev_ebitda": 7.606648424039728,
+          "ev_ebit": 10.934557109557108,
+          "ev_fcff": 14.405594405594405
+        },
+        "warnings": [],
+        "method": "dcf",
+        "wacc": 0.1015,
+        "midyear": true,
+        "horizon_years": 10,
+        "rows": [
+          {
+            "year": 1,
+            "revenue_m": 211344.0,
+            "revenue_growth": 0.19999999999999996,
+            "ebit_m": 116239.20000000001,
+            "ebit_margin": 0.55,
+            "nopat_m": 97059.732,
+            "da_m": 32758.32,
+            "capex_m": 71856.96,
+            "delta_nwc_m": 1761.2,
+            "sbc_m": 0.0,
+            "fcff_m": 56199.89199999999,
+            "discount_factor": 0.9528131652247949,
+            "survival_multiplier": 0.9939773296511684,
+            "pv_fcff_m": 53225.49504814994
+          },
+          {
+            "year": 2,
+            "revenue_m": 194436.48,
+            "revenue_growth": -0.07999999999999996,
+            "ebit_m": 85552.0512,
+            "ebit_margin": 0.44,
+            "nopat_m": 71435.96275199999,
+            "da_m": 32082.019200000002,
+            "capex_m": 62219.6736,
+            "delta_nwc_m": -845.3759999999995,
+            "sbc_m": 0.0,
+            "fcff_m": 42143.684352,
+            "discount_factor": 0.8650142217201952,
+            "survival_multiplier": 0.9820676697064008,
+            "pv_fcff_m": 35801.165257858
+          },
+          {
+            "year": 3,
+            "revenue_m": 206102.6688,
+            "revenue_growth": 0.06000000000000005,
+            "ebit_m": 94807.22764800001,
+            "ebit_margin": 0.46,
+            "nopat_m": 79164.03508608001,
+            "da_m": 36067.96704,
+            "capex_m": 61830.80064,
+            "delta_nwc_m": 583.3094400000002,
+            "sbc_m": 0.0,
+            "fcff_m": 52817.892046080015,
+            "discount_factor": 0.7853056937995417,
+            "survival_multiplier": 0.9703366546608048,
+            "pv_fcff_m": 40247.80944397039
+          },
+          {
+            "year": 4,
+            "revenue_m": 222590.88230400003,
+            "revenue_growth": 0.08000000000000007,
+            "ebit_m": 106843.62350592001,
+            "ebit_margin": 0.48,
+            "nopat_m": 89214.42562744321,
+            "da_m": 41179.31322624,
+            "capex_m": 63438.40145664,
+            "delta_nwc_m": 824.4106752000007,
+            "sbc_m": 0.0,
+            "fcff_m": 66130.92672184322,
+            "discount_factor": 0.7129420733541005,
+            "survival_multiplier": 0.9587816048408927,
+            "pv_fcff_m": 45204.17489935906
+          },
+          {
+            "year": 5,
+            "revenue_m": 238172.24406528004,
+            "revenue_growth": 0.07000000000000006,
+            "ebit_m": 114322.67715133441,
+            "ebit_margin": 0.48,
+            "nopat_m": 95459.43542136424,
+            "da_m": 45252.72637240321,
+            "capex_m": 64306.50589762562,
+            "delta_nwc_m": 779.0680880640008,
+            "sbc_m": 0.0,
+            "fcff_m": 75626.58780807783,
+            "discount_factor": 0.6472465486646397,
+            "survival_multiplier": 0.9473998807682793,
+            "pv_fcff_m": 46374.32218781964
+          },
+          {
+            "year": 6,
+            "revenue_m": 252462.57870919685,
+            "revenue_growth": 0.06000000000000005,
+            "ebit_m": 121182.03778041448,
+            "ebit_margin": 0.48,
+            "nopat_m": 101187.00154664609,
+            "da_m": 49230.20284829339,
+            "capex_m": 65640.27046439119,
+            "delta_nwc_m": 714.5167321958405,
+            "sbc_m": 0.0,
+            "fcff_m": 84062.41719835244,
+            "discount_factor": 0.5876046742302675,
+            "survival_multiplier": 0.936188882556755,
+            "pv_fcff_m": 46243.489181912904
+          },
+          {
+            "year": 7,
+            "revenue_m": 265085.7076446567,
+            "revenue_growth": 0.050000000000000044,
+            "ebit_m": 127241.13966943522,
+            "ebit_margin": 0.48,
+            "nopat_m": 106246.3516239784,
+            "da_m": 53017.141528931345,
+            "capex_m": 67596.85544938747,
+            "delta_nwc_m": 631.1564467729928,
+            "sbc_m": 0.0,
+            "fcff_m": 91035.48125674928,
+            "discount_factor": 0.5334586239040106,
+            "survival_multiplier": 0.9251460493184037,
+            "pv_fcff_m": 44928.48055565569
+          },
+          {
+            "year": 8,
+            "revenue_m": 275689.135950443,
+            "revenue_growth": 0.040000000000000036,
+            "ebit_m": 132330.78525621264,
+            "ebit_margin": 0.48,
+            "nopat_m": 110496.20568893755,
+            "da_m": 56516.27286984081,
+            "capex_m": 68922.28398761075,
+            "delta_nwc_m": 530.1714152893139,
+            "sbc_m": 0.0,
+            "fcff_m": 97560.0231558783,
+            "discount_factor": 0.48430197358512084,
+            "survival_multiplier": 0.9142688585786277,
+            "pv_fcff_m": 43197.84291397875
+          },
+          {
+            "year": 9,
+            "revenue_m": 285338.2557087085,
+            "revenue_growth": 0.03499999999999992,
+            "ebit_m": 136962.36274018008,
+            "ebit_margin": 0.48,
+            "nopat_m": 114363.57288805036,
+            "da_m": 59921.03369882878,
+            "capex_m": 69907.87264863358,
+            "delta_nwc_m": 482.45598791327507,
+            "sbc_m": 0.0,
+            "fcff_m": 103894.2779503323,
+            "discount_factor": 0.43967496467101297,
+            "survival_multiplier": 0.9035548256999483,
+            "pv_fcff_m": 41274.12510629311
+          },
+          {
+            "year": 10,
+            "revenue_m": 293898.40337996976,
+            "revenue_growth": 0.030000000000000027,
+            "ebit_m": 141071.23362238548,
+            "ebit_margin": 0.48,
+            "nopat_m": 117794.48007469188,
+            "da_m": 61718.66470979365,
+            "capex_m": 72005.10882809259,
+            "delta_nwc_m": 428.00738356306397,
+            "sbc_m": 0.0,
+            "fcff_m": 107080.02857282986,
+            "discount_factor": 0.399160203968237,
+            "survival_multiplier": 0.8930015033144489,
+            "pv_fcff_m": 38168.74709392301
+          }
+        ],
+        "pv_explicit_m": 434665.65168892045,
+        "terminal": {
+          "mode": "gordon",
+          "terminal_growth": 0.03,
+          "base_fcff_m": 107080.02857282986
+        },
+        "terminal_value_m": 1542551.4605596468,
+        "pv_terminal_m": 444162.48386049346,
+        "terminal_pct_of_ev": 0.5054031225147542,
+        "enterprise_value_m": 878828.135549414,
+        "name": "Bear",
+        "probability": 0.25,
+        "bridge": {
+          "enterprise_value_m": 878828.135549414,
+          "less_net_debt_m": -83573.0,
+          "less_minority_interest_m": 1396.0,
+          "plus_other_adjustments_m": 0.0,
+          "equity_value_m": 961005.135549414,
+          "shares_diluted_m": 25932.0
+        },
+        "equity_value_m": 961005.135549414,
+        "value_per_share": 37.05865862831305,
+        "value_per_share_quote": 1203.5911149303513,
+        "value_per_adr": 185.29329314156524,
+        "price": 72.97247367448735,
+        "upside_pct": -49.215564770871254,
+        "target_price_12m_quote": 1264.4868970806062
+      }
+    ],
+    "probability_weighted_value_per_share": 61.037727566377725,
+    "probability_weighted_upside_pct": -16.35513435017655,
+    "quote_currency": "TWD",
+    "fx_quote_per_model": 32.478,
+    "price_quote": 2370.0,
+    "probability_weighted_value_per_share_quote": 1982.383315900816,
+    "adr_ratio": 5.0,
+    "probability_weighted_value_per_adr": 305.1886378318886,
+    "equal_weighted_value_per_share": 60.98514496475844,
+    "target_price_12m_quote": 2098.2115183836454,
+    "roll_forward": {
+      "cost_of_equity_quote": 0.07053540118162771,
+      "dividends_quote_next_12m": 24.0,
+      "fair_value_today_quote": 1982.383315900816
+    },
+    "target_upside_pct": -11.467868422631,
+    "expected_total_return_12m_pct": -10.455210194782893
+  },
+  "elasticity": [
+    {
+      "scenario": "Base",
+      "base_value_per_share": 61.195475371235574,
+      "drivers": [
+        {
+          "label": "2029-36 revenue growth (duration)",
+          "path": "driver_build.revenue_growth[2:]",
+          "sigma": 0.03,
+          "mode": "abs",
+          "value_minus_1sd": 52.57525898392382,
+          "value_plus_1sd": 71.44341878193309,
+          "swing": 18.868159798009273,
+          "elasticity": 0.15416302989353112,
+          "variance_share": 0.3445556715473112,
+          "cumulative_share": 0.3445556715473112
+        },
+        {
+          "label": "2027-28 revenue growth (near term)",
+          "path": "driver_build.revenue_growth[0:2]",
+          "sigma": 0.1,
+          "mode": "abs",
+          "value_minus_1sd": 52.36291112205987,
+          "value_plus_1sd": 70.76098317053938,
+          "swing": 18.398072048479506,
+          "elasticity": 0.1503221597419551,
+          "variance_share": 0.3276007912977177,
+          "cumulative_share": 0.672156462845029
+        },
+        {
+          "label": "Through-cycle EBIT margin",
+          "path": "driver_build.ebit_margin",
+          "sigma": 0.05,
+          "mode": "abs",
+          "value_minus_1sd": 54.668366979871145,
+          "value_plus_1sd": 67.72258376260004,
+          "swing": 13.054216782728894,
+          "elasticity": 0.1066599834672166,
+          "variance_share": 0.1649308710024042,
+          "cumulative_share": 0.8370873338474332
+        },
+        {
+          "label": "Capex intensity",
+          "path": "driver_build.capex_pct_revenue",
+          "sigma": 0.04,
+          "mode": "abs",
+          "value_minus_1sd": 67.44899239290211,
+          "value_plus_1sd": 54.941958349569056,
+          "swing": -12.507034043333057,
+          "elasticity": -0.10218920571709363,
+          "variance_share": 0.1513941087045623,
+          "cumulative_share": 0.9884814425519954
+        },
+        {
+          "label": "Tax rate",
+          "path": "driver_build.tax_rate",
+          "sigma": 0.02,
+          "mode": "abs",
+          "value_minus_1sd": 62.83660245449909,
+          "value_plus_1sd": 59.55434828797206,
+          "swing": -3.282254166527032,
+          "elasticity": -0.026817784702346054,
+          "variance_share": 0.010426648384456418,
+          "cumulative_share": 0.9989080909364518
+        },
+        {
+          "label": "Working-capital intensity",
+          "path": "driver_build.nwc_pct_delta_revenue",
+          "sigma": 0.05,
+          "mode": "abs",
+          "value_minus_1sd": 61.72655920787565,
+          "value_plus_1sd": 60.6643915345955,
+          "swing": -1.0621676732801504,
+          "elasticity": -0.008678482084146155,
+          "variance_share": 0.0010919090635481588,
+          "cumulative_share": 1.0
+        }
+      ],
+      "top_two_variance_share": 0.672156462845029,
+      "verdict": "Top two drivers explain 67% of tested variance: two numbers lead, but the residual is material and must be named in the report.",
+      "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
+      "title": "Operating drivers, growth split by period (sigma anchored on FY15-25 history)"
+    },
+    {
+      "scenario": "Base",
+      "base_value_per_share": 61.195475371235574,
+      "drivers": [
+        {
+          "label": "Revenue growth, whole path",
+          "path": "driver_build.revenue_growth",
+          "sigma": 0.03,
+          "mode": "abs",
+          "value_minus_1sd": 50.26458848508019,
+          "value_plus_1sd": 74.7429455849639,
+          "swing": 24.478357099883716,
+          "elasticity": 0.2000013640827894,
+          "variance_share": 0.6388430603050259,
+          "cumulative_share": 0.6388430603050259
+        },
+        {
+          "label": "Through-cycle EBIT margin",
+          "path": "driver_build.ebit_margin",
+          "sigma": 0.05,
+          "mode": "abs",
+          "value_minus_1sd": 54.668366979871145,
+          "value_plus_1sd": 67.72258376260004,
+          "swing": 13.054216782728894,
+          "elasticity": 0.1066599834672166,
+          "variance_share": 0.18169011092720772,
+          "cumulative_share": 0.8205331712322337
+        },
+        {
+          "label": "Capex intensity",
+          "path": "driver_build.capex_pct_revenue",
+          "sigma": 0.04,
+          "mode": "abs",
+          "value_minus_1sd": 67.44899239290211,
+          "value_plus_1sd": 54.941958349569056,
+          "swing": -12.507034043333057,
+          "elasticity": -0.10218920571709363,
+          "variance_share": 0.16677782780797112,
+          "cumulative_share": 0.9873109990402048
+        },
+        {
+          "label": "Tax rate",
+          "path": "driver_build.tax_rate",
+          "sigma": 0.02,
+          "mode": "abs",
+          "value_minus_1sd": 62.83660245449909,
+          "value_plus_1sd": 59.55434828797206,
+          "swing": -3.282254166527032,
+          "elasticity": -0.026817784702346054,
+          "variance_share": 0.01148613895056228,
+          "cumulative_share": 0.9987971379907671
+        },
+        {
+          "label": "Working-capital intensity",
+          "path": "driver_build.nwc_pct_delta_revenue",
+          "sigma": 0.05,
+          "mode": "abs",
+          "value_minus_1sd": 61.72655920787565,
+          "value_plus_1sd": 60.6643915345955,
+          "swing": -1.0621676732801504,
+          "elasticity": -0.008678482084146155,
+          "variance_share": 0.0012028620092329261,
+          "cumulative_share": 1.0
+        }
+      ],
+      "top_two_variance_share": 0.8205331712322337,
+      "verdict": "Top two drivers explain 82% of tested variance: a clean two-number stock.",
+      "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
+      "title": "Operating drivers, growth merged (final two-number verdict)"
+    },
+    {
+      "scenario": "Base",
+      "base_value_per_share": 61.195475371235574,
+      "drivers": [
+        {
+          "label": "2027 revenue growth only, +/-3pp (monthly-revenue surprise scale)",
+          "path": "driver_build.revenue_growth[0:1]",
+          "sigma": 0.03,
+          "mode": "abs",
+          "value_minus_1sd": 59.8430161802096,
+          "value_plus_1sd": 62.54793456226157,
+          "swing": 2.7049183820519644,
+          "elasticity": 0.022100640330374725,
+          "variance_share": 0.6481610648174205,
+          "cumulative_share": 0.6481610648174205
+        },
+        {
+          "label": "Tax rate +/-1pp",
+          "path": "driver_build.tax_rate",
+          "sigma": 0.01,
+          "mode": "abs",
+          "value_minus_1sd": 62.01603891286734,
+          "value_plus_1sd": 60.37491182960382,
+          "swing": -1.6411270832635196,
+          "elasticity": -0.013408892351173056,
+          "variance_share": 0.23859373403772138,
+          "cumulative_share": 0.8867547988551419
+        },
+        {
+          "label": "Working capital +/-5pp",
+          "path": "driver_build.nwc_pct_delta_revenue",
+          "sigma": 0.05,
+          "mode": "abs",
+          "value_minus_1sd": 61.72655920787565,
+          "value_plus_1sd": 60.6643915345955,
+          "swing": -1.0621676732801504,
+          "elasticity": -0.008678482084146155,
+          "variance_share": 0.09994492998918472,
+          "cumulative_share": 0.9866997288443266
+        },
+        {
+          "label": "2027 capex only, +/-2.2pp of revenue (~US$5bn)",
+          "path": "driver_build.capex_pct_revenue[0:1]",
+          "sigma": 0.022,
+          "mode": "abs",
+          "value_minus_1sd": 61.376605019110514,
+          "value_plus_1sd": 61.01434572336064,
+          "swing": -0.3622592957498725,
+          "elasticity": -0.002959853596628399,
+          "variance_share": 0.0116255547487161,
+          "cumulative_share": 0.9983252835930426
+        },
+        {
+          "label": "2027 EBIT margin only, +/-1pp (a full year of 'margin beats')",
+          "path": "driver_build.ebit_margin[0:1]",
+          "sigma": 0.01,
+          "mode": "abs",
+          "value_minus_1sd": 61.12672843670123,
+          "value_plus_1sd": 61.26422230576993,
+          "swing": 0.13749386906869887,
+          "elasticity": 0.001123398978720302,
+          "variance_share": 0.0016747164069572855,
+          "cumulative_share": 0.9999999999999999
+        }
+      ],
+      "top_two_variance_share": 0.8867547988551419,
+      "verdict": "Top two drivers explain 89% of tested variance: a clean two-number stock.",
+      "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
+      "title": "Noise items: what the market watches week to week"
+    }
+  ],
+  "reverse": [
+    {
+      "scenario": "Base",
+      "solved_for": "revenue_growth",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.09686694294214249,
+      "model_value_per_share_at_solution": 72.97249151611683,
+      "residual": 1.7841629485815247e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 9.69%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Flat 10-yr revenue CAGR implied, EBIT margin held at 58.6%, no event risk"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "revenue_growth",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.11523038893938065,
+      "model_value_per_share_at_solution": 72.97245935938352,
+      "residual": -1.4315103825879305e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 11.52%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Flat 10-yr revenue CAGR implied, EBIT margin 52% (our base steady state), no event risk"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "revenue_growth",
+      "from_year": 3,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.06923422962427139,
+      "model_value_per_share_at_solution": 72.97247711755932,
+      "residual": 3.443071975084422e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 6.92% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Consensus-like 2027-28 (+30%/+24%), base margins: implied 2029-36 growth, no event risk"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "revenue_growth",
+      "from_year": 3,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.10236696153879166,
+      "model_value_per_share_at_solution": 72.97248569859458,
+      "residual": 1.2024107235220072e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 10.24% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Same, with our event-risk overlay"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "ebit_margin",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.5259517580270767,
+      "model_value_per_share_at_solution": 72.97247046438594,
+      "residual": -3.2101014113550264e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies ebit_margin = 52.60%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Base growth path: implied flat EBIT margin, no event risk"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "ebit_margin",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.6150813907384872,
+      "model_value_per_share_at_solution": 72.97247778220965,
+      "residual": 4.107722304524941e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies ebit_margin = 61.51%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Base growth path: implied flat EBIT margin, with event risk"
+    },
+    {
+      "error": "no solution for hazard_rate in [0.0000, 0.5000]: implied value is below the price at both ends. The price cannot be reconciled by this driver alone — widen the bracket with --lo/--hi, or solve for a different driver.",
+      "title": "Implied annual cross-strait event probability if Base operations (80% loss)"
+    },
+    {
+      "scenario": "Bull",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.030498772859573364,
+      "model_value_per_share_at_solution": 72.97247057454727,
+      "residual": -3.0999400735254312e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 3.05%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Implied annual cross-strait event probability if Bull operations (80% loss)"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.012726038694381714,
+      "model_value_per_share_at_solution": 72.97246545354189,
+      "residual": -8.22094546037988e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.27%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Same consensus-like operations at our discount rate: implied annual event probability at the NT$2,370 close"
+    }
+  ],
+  "variants": [
+    {
+      "label": "As modelled (event risk 1.5%/yr, 80% loss)",
+      "value": 1982.383315900816,
+      "target_12m": 2098.2115183836454,
+      "scenarios": {
+        "Bull": 2750.928850458934,
+        "Base": 1987.506649106989,
+        "Bear": 1203.5911149303513
+      }
+    },
+    {
+      "label": "No event risk",
+      "value": 2356.5278961221866,
+      "target_12m": 2498.746536670862,
+      "scenarios": {
+        "Bull": 3288.9201023524683,
+        "Base": 2360.938595900375,
+        "Bear": 1415.3142903355297
+      }
+    },
+    {
+      "label": "Event risk halved (0.75%/yr)",
+      "value": 2150.659182324432,
+      "target_12m": 2278.3567905546374,
+      "scenarios": {
+        "Bull": 2992.833087178552,
+        "Base": 2155.468801895301,
+        "Bear": 1298.8660383285735
+      }
+    },
+    {
+      "label": "Event risk doubled (3.0%/yr)",
+      "value": 1724.385947907091,
+      "target_12m": 1822.016202534679,
+      "scenarios": {
+        "Bull": 2380.331325672021,
+        "Base": 1729.9575922434867,
+        "Bear": 1057.2972814693687
+      }
+    },
+    {
+      "label": "Event risk 1.5%/yr, total loss",
+      "value": 1888.847170845473,
+      "target_12m": 1998.0777638118411,
+      "scenarios": {
+        "Bull": 2616.43103748555,
+        "Base": 1894.148662408643,
+        "Bear": 1150.6603210790565
+      }
+    },
+    {
+      "label": "Discount rate -1pp",
+      "value": 2269.856703278636,
+      "target_12m": 2383.9014757023456,
+      "scenarios": {
+        "Bull": 3164.312761709206,
+        "Base": 2274.4307532665666,
+        "Bear": 1366.2525448722047
+      }
+    },
+    {
+      "label": "Discount rate +1pp",
+      "value": 1759.01004685224,
+      "target_12m": 1876.1781460368616,
+      "scenarios": {
+        "Bull": 2429.91345687617,
+        "Base": 1764.538988814028,
+        "Bear": 1077.0487529047343
+      }
+    },
+    {
+      "label": "Equal scenario weights",
+      "value": 1980.6755381661078,
+      "target_12m": 2096.3832818612905,
+      "scenarios": {
+        "Bull": 2750.928850458934,
+        "Base": 1987.506649106989,
+        "Bear": 1203.5911149303513
+      }
+    },
+    {
+      "label": "Beta 1.03 (local-market beta, MoneyDJ) -> USD CoE 9.27%",
+      "value": 2231.0910764661403,
+      "target_12m": 2345.380305238915,
+      "scenarios": {
+        "Bull": 3108.5548311987463,
+        "Base": 2235.7406040466394,
+        "Bear": 1344.3282665725371
+      }
+    },
+    {
+      "label": "Beta 1.37 (MarketBeat) -> USD CoE 10.69%",
+      "value": 1855.2228514797503,
+      "target_12m": 1971.8183182500138,
+      "scenarios": {
+        "Bull": 2568.158702220767,
+        "Base": 1860.5798747321912,
+        "Bear": 1131.572954233852
+      }
+    }
+  ],
+  "bridge": [
+    {
+      "label": "Our 12-month target price",
+      "value": 2098.2115183836454,
+      "delta": null
+    },
+    {
+      "label": "Base scenario only (drop Bull/Bear weighting)",
+      "value": 2103.696227952903,
+      "delta": 5.484709569257575
+    },
+    {
+      "label": "Remove cross-strait event risk",
+      "value": 2503.4683469273964,
+      "delta": 399.7721189744934
+    },
+    {
+      "label": "Consensus-like 2027-28 growth (+30%/+24%)",
+      "value": 2661.0565711340837,
+      "delta": 157.5882242066873
+    },
+    {
+      "label": "Hold EBIT margin at 57% (no normalisation)",
+      "value": 2924.7357260286253,
+      "delta": 263.6791548945416
+    },
+    {
+      "label": "Discount rate 9.34% (the rate at which consensus-like operations give NT$3,300; solve #1)",
+      "value": 3299.780883918907,
+      "delta": 375.04515789028164
+    }
+  ],
+  "solve": [
+    {
+      "title": "USD discount rate at which consensus-like operations give a 12-month TP of NT$3,300 (FactSet median)",
+      "solution": 0.09339580535888672
+    },
+    {
+      "title": "USD discount rate at which OUR scenarios, with no event risk, give a 12-month TP of NT$3,300",
+      "solution": 0.08414684295654296
+    }
+  ],
+  "sensitivity": [
+    {
+      "scenario": "Base",
+      "x": {
+        "driver": "ebit_margin",
+        "values": [
+          0.47,
+          0.5,
+          0.52,
+          0.55,
+          0.58
+        ]
+      },
+      "y": {
+        "driver": "revenue_growth",
+        "values": [
+          0.06,
+          0.08,
+          0.1,
+          0.12,
+          0.14
+        ]
+      },
+      "grid_value_per_share": [
+        [
+          1209.5582132084935,
+          1295.2890955822818,
+          1352.4430171648075,
+          1438.1738995385963,
+          1523.904781912385
+        ],
+        [
+          1383.9271219289433,
+          1482.6216010834285,
+          1548.4179205197518,
+          1647.112399674237,
+          1745.806878828722
+        ],
+        [
+          1586.001967829294,
+          1699.7036154259893,
+          1775.5047138237865,
+          1889.2063614204817,
+          2002.9080090171767
+        ],
+        [
+          1819.8314292218377,
+          1950.8845130217217,
+          2038.253235554978,
+          2169.3063193548614,
+          2300.359403154745
+        ],
+        [
+          2089.984481478413,
+          2241.0730419364186,
+          2341.7987489084226,
+          2492.8873093664283,
+          2643.975869824434
+        ]
+      ],
+      "title": "Base: 10-yr revenue CAGR x steady EBIT margin (with event risk)"
+    },
+    {
+      "scenario": "Base",
+      "x": {
+        "driver": "wacc",
+        "values": [
+          0.0915,
+          0.0965,
+          0.1015,
+          0.1065,
+          0.1115
+        ]
+      },
+      "y": {
+        "driver": "terminal_growth",
+        "values": [
+          0.02,
+          0.025,
+          0.03,
+          0.035,
+          0.04
+        ]
+      },
+      "grid_value_per_share": [
+        [
+          2115.5897330739936,
+          1987.1565796759967,
+          1873.1539130445617,
+          1771.3186586031118,
+          1679.8368840659714
+        ],
+        [
+          2189.8631972758594,
+          2050.1990336416466,
+          1927.0644150234923,
+          1817.7265959236415,
+          1720.024057954486
+        ],
+        [
+          2274.4307532665666,
+          2121.3914289157287,
+          1987.506649106989,
+          1869.4259578059753,
+          1764.538988814028
+        ],
+        [
+          2371.6272418273347,
+          2202.4456664118684,
+          2055.7586790914224,
+          1927.3860584513038,
+          1814.1270829604396
+        ],
+        [
+          2484.566010456319,
+          2295.5975769377046,
+          2133.4602519453874,
+          1992.8314162366287,
+          1869.7172846742158
+        ]
+      ],
+      "title": "Base: discount rate x terminal growth (with event risk)"
+    },
+    {
+      "scenario": "Base",
+      "x": {
+        "driver": "wacc",
+        "values": [
+          0.0915,
+          0.0965,
+          0.1015,
+          0.1065,
+          0.1115
+        ]
+      },
+      "y": {
+        "driver": "hazard_rate",
+        "values": [
+          0.0,
+          0.0075,
+          0.015,
+          0.0225,
+          0.03
+        ]
+      },
+      "grid_value_per_share": [
+        [
+          2763.965473821853,
+          2546.967040222913,
+          2360.938595900375,
+          2199.7791151482265,
+          2058.8863326353016
+        ],
+        [
+          2491.203532797186,
+          2311.4243638360836,
+          2155.468801895301,
+          2018.957912121157,
+          1898.5216008593607
+        ],
+        [
+          2274.4307532665666,
+          2121.3914289157287,
+          1987.506649106989,
+          1869.4259578059753,
+          1764.538988814028
+        ],
+        [
+          2098.2577771435244,
+          1965.0481674078756,
+          1847.8177892349572,
+          1743.8603474239844,
+          1651.0539900074762
+        ],
+        [
+          1952.4456024906206,
+          1834.3279338435102,
+          1729.9575922434867,
+          1637.0479251167274,
+          1553.8024263924688
+        ]
+      ],
+      "title": "Base: annual event probability x discount rate"
+    }
+  ]
+}

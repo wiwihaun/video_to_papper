@@ -55,9 +55,13 @@ would push the business's real drivers off the list. They belong in the WACC × 
 event-risk overlay.
 
 **Split growth into near-term and duration** with path slices
-(`driver_build.revenue_growth[0:2]` vs `driver_build.revenue_growth[2:]`). In the 2330 run
-(2026-11-01) duration explained ~3x the value variance of the 2027–28 growth that dominates
-sell-side debate — the kind of finding that belongs on page one.
+(`driver_build.revenue_growth[0:2]` vs `driver_build.revenue_growth[2:]`). Report whichever
+way it comes out — but only with sourced σ's. In the 2330 run (2026-11-01) a placeholder σ of
+±6pp on 2027–28 growth made duration look three times as important as the near term; once σ
+was anchored on TSMC's own history (annual USD growth SD 15.2pp → ±10pp given partial
+visibility) the two were about equal (35% vs 33% of variance). The "finding" was an artefact
+of the σ. Merge the two into one growth driver for the final two-number verdict, and use the
+split only to say which part of the growth debate carries the value.
 
 **Calibrating σ.** σ is the uncertainty of the *forecast quantity*, which is usually smaller
 than a driver's annual volatility and larger than analysts' dispersion:

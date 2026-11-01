@@ -1,0 +1,321 @@
+{
+  "case": "reports/2330_case.json",
+  "out_md": "reports/2330_numbers.md",
+  "out_json": "reports/2330_numbers.json",
+  "quote": true,
+  "elasticity": [
+    {
+      "title": "Operating drivers, growth split by period (sigma anchored on FY15-25 history)",
+      "scenario": "Base",
+      "drivers": [
+        "2029-36 revenue growth (duration)@driver_build.revenue_growth[2:]=0.03",
+        "2027-28 revenue growth (near term)@driver_build.revenue_growth[0:2]=0.10",
+        "Through-cycle EBIT margin@driver_build.ebit_margin=0.05",
+        "Capex intensity@driver_build.capex_pct_revenue=0.04",
+        "Tax rate@driver_build.tax_rate=0.02",
+        "Working-capital intensity@driver_build.nwc_pct_delta_revenue=0.05"
+      ]
+    },
+    {
+      "title": "Operating drivers, growth merged (final two-number verdict)",
+      "scenario": "Base",
+      "drivers": [
+        "Revenue growth, whole path@driver_build.revenue_growth=0.03",
+        "Through-cycle EBIT margin@driver_build.ebit_margin=0.05",
+        "Capex intensity@driver_build.capex_pct_revenue=0.04",
+        "Tax rate@driver_build.tax_rate=0.02",
+        "Working-capital intensity@driver_build.nwc_pct_delta_revenue=0.05"
+      ]
+    },
+    {
+      "title": "Noise items: what the market watches week to week",
+      "scenario": "Base",
+      "drivers": [
+        "2027 EBIT margin only, +/-1pp (a full year of 'margin beats')@driver_build.ebit_margin[0:1]=0.01",
+        "2027 revenue growth only, +/-3pp (monthly-revenue surprise scale)@driver_build.revenue_growth[0:1]=0.03",
+        "2027 capex only, +/-2.2pp of revenue (~US$5bn)@driver_build.capex_pct_revenue[0:1]=0.022",
+        "Tax rate +/-1pp@driver_build.tax_rate=0.01",
+        "Working capital +/-5pp@driver_build.nwc_pct_delta_revenue=0.05"
+      ]
+    }
+  ],
+  "reverse": [
+    {
+      "title": "Flat 10-yr revenue CAGR implied, EBIT margin held at 58.6%, no event risk",
+      "scenario": "Base",
+      "solve_for": "revenue_growth",
+      "set": {
+        "case.hazard": null,
+        "scenarios.Base.driver_build.ebit_margin": 0.586
+      }
+    },
+    {
+      "title": "Flat 10-yr revenue CAGR implied, EBIT margin 52% (our base steady state), no event risk",
+      "scenario": "Base",
+      "solve_for": "revenue_growth",
+      "set": {
+        "case.hazard": null,
+        "scenarios.Base.driver_build.ebit_margin": 0.52
+      }
+    },
+    {
+      "title": "Consensus-like 2027-28 (+30%/+24%), base margins: implied 2029-36 growth, no event risk",
+      "scenario": "Base",
+      "solve_for": "revenue_growth",
+      "from_year": 3,
+      "set": {
+        "case.hazard": null,
+        "scenarios.Base.driver_build.revenue_growth[0:2]": [
+          0.3,
+          0.24
+        ]
+      }
+    },
+    {
+      "title": "Same, with our event-risk overlay",
+      "scenario": "Base",
+      "solve_for": "revenue_growth",
+      "from_year": 3,
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth[0:2]": [
+          0.3,
+          0.24
+        ]
+      }
+    },
+    {
+      "title": "Base growth path: implied flat EBIT margin, no event risk",
+      "scenario": "Base",
+      "solve_for": "ebit_margin",
+      "set": {
+        "case.hazard": null
+      }
+    },
+    {
+      "title": "Base growth path: implied flat EBIT margin, with event risk",
+      "scenario": "Base",
+      "solve_for": "ebit_margin"
+    },
+    {
+      "title": "Implied annual cross-strait event probability if Base operations (80% loss)",
+      "scenario": "Base",
+      "solve_for": "hazard_rate"
+    },
+    {
+      "title": "Implied annual cross-strait event probability if Bull operations (80% loss)",
+      "scenario": "Bull",
+      "solve_for": "hazard_rate"
+    },
+    {
+      "title": "Same consensus-like operations at our discount rate: implied annual event probability at the NT$2,370 close",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth[0:2]": [
+          0.3,
+          0.24
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.57
+      }
+    }
+  ],
+  "variants": [
+    {
+      "label": "As modelled (event risk 1.5%/yr, 80% loss)",
+      "set": {}
+    },
+    {
+      "label": "No event risk",
+      "set": {
+        "case.hazard": null
+      }
+    },
+    {
+      "label": "Event risk halved (0.75%/yr)",
+      "set": {
+        "case.hazard.annual_probability": 0.0075
+      }
+    },
+    {
+      "label": "Event risk doubled (3.0%/yr)",
+      "set": {
+        "case.hazard.annual_probability": 0.03
+      }
+    },
+    {
+      "label": "Event risk 1.5%/yr, total loss",
+      "set": {
+        "case.hazard.loss_fraction": 1.0
+      }
+    },
+    {
+      "label": "Discount rate -1pp",
+      "set": {
+        "case.wacc": 0.0915
+      }
+    },
+    {
+      "label": "Discount rate +1pp",
+      "set": {
+        "case.wacc": 0.1115
+      }
+    },
+    {
+      "label": "Equal scenario weights",
+      "set": {
+        "scenarios.Bull.probability": 0.3333333333,
+        "scenarios.Base.probability": 0.3333333334,
+        "scenarios.Bear.probability": 0.3333333333
+      }
+    },
+    {
+      "label": "Beta 1.03 (local-market beta, MoneyDJ) -> USD CoE 9.27%",
+      "set": {
+        "case.wacc": 0.0927
+      }
+    },
+    {
+      "label": "Beta 1.37 (MarketBeat) -> USD CoE 10.69%",
+      "set": {
+        "case.wacc": 0.1069
+      }
+    }
+  ],
+  "bridge": {
+    "title": "from our 12-month target price to the FactSet median target price (NT$3,300, 2026-10-16)",
+    "target": 3300,
+    "target_label": "FactSet median TP",
+    "steps": [
+      {
+        "label": "Base scenario only (drop Bull/Bear weighting)",
+        "set": {
+          "scenarios.Bull.probability": 0.0,
+          "scenarios.Base.probability": 1.0,
+          "scenarios.Bear.probability": 0.0
+        }
+      },
+      {
+        "label": "Remove cross-strait event risk",
+        "set": {
+          "case.hazard": null
+        }
+      },
+      {
+        "label": "Consensus-like 2027-28 growth (+30%/+24%)",
+        "set": {
+          "scenarios.Base.driver_build.revenue_growth[0:2]": [
+            0.3,
+            0.24
+          ]
+        }
+      },
+      {
+        "label": "Hold EBIT margin at 57% (no normalisation)",
+        "set": {
+          "scenarios.Base.driver_build.ebit_margin": 0.57
+        }
+      },
+      {
+        "label": "Discount rate 9.34% (the rate at which consensus-like operations give NT$3,300; solve #1)",
+        "set": {
+          "case.wacc": 0.0934
+        }
+      }
+    ],
+    "measure": "target_12m"
+  },
+  "sensitivity": [
+    {
+      "title": "Base: 10-yr revenue CAGR x steady EBIT margin (with event risk)",
+      "scenario": "Base",
+      "x": "ebit_margin",
+      "x_values": [
+        0.47,
+        0.5,
+        0.52,
+        0.55,
+        0.58
+      ],
+      "y": "revenue_growth",
+      "y_values": [
+        0.06,
+        0.08,
+        0.1,
+        0.12,
+        0.14
+      ]
+    },
+    {
+      "title": "Base: discount rate x terminal growth (with event risk)",
+      "scenario": "Base",
+      "x": "wacc",
+      "x_values": [
+        0.0915,
+        0.0965,
+        0.1015,
+        0.1065,
+        0.1115
+      ],
+      "y": "terminal_growth",
+      "y_values": [
+        0.02,
+        0.025,
+        0.03,
+        0.035,
+        0.04
+      ]
+    },
+    {
+      "title": "Base: annual event probability x discount rate",
+      "scenario": "Base",
+      "x": "wacc",
+      "x_values": [
+        0.0915,
+        0.0965,
+        0.1015,
+        0.1065,
+        0.1115
+      ],
+      "y": "hazard_rate",
+      "y_values": [
+        0.0,
+        0.0075,
+        0.015,
+        0.0225,
+        0.03
+      ]
+    }
+  ],
+  "solve": [
+    {
+      "title": "USD discount rate at which consensus-like operations give a 12-month TP of NT$3,300 (FactSet median)",
+      "path": "case.wacc",
+      "target": 3300,
+      "measure": "target_12m",
+      "lo": 0.06,
+      "hi": 0.14,
+      "set": {
+        "case.hazard": null,
+        "scenarios.Bull.probability": 0.0,
+        "scenarios.Base.probability": 1.0,
+        "scenarios.Bear.probability": 0.0,
+        "scenarios.Base.driver_build.revenue_growth[0:2]": [
+          0.3,
+          0.24
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.57
+      }
+    },
+    {
+      "title": "USD discount rate at which OUR scenarios, with no event risk, give a 12-month TP of NT$3,300",
+      "path": "case.wacc",
+      "target": 3300,
+      "measure": "target_12m",
+      "lo": 0.06,
+      "hi": 0.14,
+      "set": {
+        "case.hazard": null
+      }
+    }
+  ]
+}

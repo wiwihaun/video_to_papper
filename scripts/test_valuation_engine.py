@@ -329,5 +329,19 @@ class TestPathSlices(unittest.TestCase):
             ve._get_path({"a": [1, 2]}, ["a[1]"])
 
 
+class TestRollForward(unittest.TestCase):
+    def test_twelve_month_target(self):
+        # fair value US$100 x 32 = NT$3,200; x (1 + 6%) - NT$20 dividend = NT$3,372
+        # spot NT$3,000 -> target upside +12.4%, total return (3,372 + 20)/3,000 - 1 = +13.07%
+        case = one_year_case()
+        del case["price"]
+        case.update({"fx_quote_per_model": 32.0, "price_quote": 3000.0, "quote_currency": "TWD",
+                     "roll_forward": {"cost_of_equity_quote": 0.06, "dividends_quote_next_12m": 20.0}})
+        out = ve.value_case(case)
+        self.assertAlmostEqual(out["target_price_12m_quote"], 3372.0)
+        self.assertAlmostEqual(out["target_upside_pct"], 12.4)
+        self.assertAlmostEqual(out["expected_total_return_12m_pct"], (3392 / 3000 - 1) * 100)
+
+
 if __name__ == "__main__":
     unittest.main()

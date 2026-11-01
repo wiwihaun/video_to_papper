@@ -96,8 +96,10 @@ Three rules make the ranking honest:
   and the event-risk overlay, never into the elasticity ranking, where they would crowd out
   the business.
 - **Split growth by period** with a path slice: `driver_build.revenue_growth[0:2]` (the years
-  everyone argues about) versus `driver_build.revenue_growth[2:]` (duration). The usual finding
-  — near-term growth explains far less value than duration — is itself worth a paragraph.
+  everyone argues about) versus `driver_build.revenue_growth[2:]` (duration), to see which part
+  of the growth debate carries the value — then merge them for the final verdict. Do not
+  report a split result unless both σ's are sourced: an unanchored σ can manufacture a
+  "finding" (see `references/01-driver-isolation.md`).
 - **Source every σ.** σ is the uncertainty of the forecast quantity: anchor it on the
   company's historical dispersion (stdev of annual changes) and the spread of credible views,
   and write the anchor next to the number. An unsourced σ silently decides the ranking.
