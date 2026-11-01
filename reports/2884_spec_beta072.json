@@ -1,0 +1,10 @@
+{
+ "case": "reports/2884_case.json",
+ "case_set": {
+  "case.wacc": 0.04789
+ },
+ "out_md": "reports/2884_numbers_beta072.md",
+ "out_json": "reports/2884_numbers_beta072.json",
+ "quote": false,
+ "_note": "Alternative: Damodaran Jan-2026 industry beta 0.72 (CoE 4.79%). Shown because it is the strongest argument against the Neutral; not the base case."
+}

@@ -56,16 +56,27 @@ disclosed in the report's limitations section, by name. There is no third option
 - [ ] **Consensus bridge**: if consensus publishes a target price, the gap to it is decomposed
       assumption by assumption with engine re-runs, with an order-independent (Shapley) attribution
       beside the sequential one (`"shapley": true` in the spec). The "consensus-like" operating set
-      reproduces consensus EPS (calibrate margins to it); a set that undershoots consensus EPS loads
-      the residual onto the discount rate.
+      reproduces consensus EPS (calibrate margins to it) **with revenue and EPS converted at the same
+      FX rate**; a set that undershoots consensus EPS loads the residual onto the discount rate. The
+      step solved last is a residual: show at least one alternative close (e.g. longer duration at our
+      cost of equity) and report only the attribution that survives all of them.
 - [ ] **Rating flip points are disclosed**: the input values at which the rating changes (solved in
       the spec), and the buy/sell price triggers the engine reports.
 - [ ] **Like-for-like comparisons**: fair value is compared with spot; a 12-month target price
       is compared with a 12-month target price (never fair value vs a consensus target).
 - [ ] **Target price is rolled forward**: the 12-month TP = fair value x (1 + quote-currency
       cost of equity) - dividends, and the rating uses it.
-- [ ] The Gordon terminal value's implied exit multiple is stated and is plausible against
-      sector history.
+- [ ] The Gordon terminal value's implied exit multiple (EV/EBITDA at the end of year N, or P/B
+      for a financial; before and after event risk) is stated and is plausible against sector
+      history; the exit-multiple equivalent that flips the rating is solved.
+- [ ] **Timing is consistent**: mid-year flows imply a terminal value discounted from N − 0.5; the
+      stub between the valuation date and the first forecast period is disclosed with its effect.
+- [ ] **σ rules are consistent** for drivers in the same unit (see SKILL.md, Phase 2), and the
+      ranking between them is reported only if it survives both rules.
+- [ ] **Flat reverse solves are labelled as perpetual** ("held forever"); a "for a decade" claim
+      comes from a path-slice solve.
+- [ ] **Cross-stock comparisons are like for like**: same loss fraction, same basis (equity vs EV),
+      same scenario weighting.
 
 ## C2. Economic coherence (added after the 2330 review)
 
@@ -78,7 +89,12 @@ disclosed in the report's limitations section, by name. There is no third option
 - [ ] **Growth costs capital.** A scenario with faster growth carries higher capex intensity; the
       terminal reinvestment rate is consistent with g / RONIC, and the implied RONIC is stated.
 - [ ] **Falsifiers sit where Base and Bull diverge.** A tripwire that the Base case itself satisfies
-      falsifies nothing.
+      falsifies nothing. A single-year print is not a falsifier for a decade-average driver that the
+      noise list dismisses; state falsifiers in multi-year terms and say which rating they lead to.
+- [ ] **Frontier and reverse solves move capex with growth.** A Bull growth path solved on the Base
+      capex path breaks "growth costs capital" and misstates the implied event risk.
+- [ ] **Book-value variants for a financial hold earnings fixed** (or are labelled as ROE-fixed);
+      an accounting remeasurement is not a value catalyst.
 
 ## D. Bias
 

@@ -109,6 +109,36 @@
     "source_url": "https://pages.stern.nyu.edu/~adamodar/",
     "tier": "industry data",
     "confidence": "high"
+   },
+   {
+    "item": "Damodaran industry betas, banks and life insurers (bottom-up beta)",
+    "value": "Levered beta, Jan-2026 datasets (updated 2026-01-05): Bank (Money Center) Global 0.70 (604 firms; 2021-26 average 0.42), Emerging Markets 0.59 (455; avg 0.41), US 0.76 (15); Banks (Regional) Global 0.51, EM 0.60, US 0.40; Insurance (Life) Global 0.80, EM 0.82, US 0.64; Total market Global 1.04, EM 1.08, US 0.91. Equity-weighted for E.SUN (bank ~83%, life ~17%): Global 0.72, EM 0.63, US 0.74",
+    "as_of": "2026-01-05",
+    "source_name": "Damodaran, Betas by Sector (US html; betaGlobal.xls; betaemerg.xls, Industry Averages sheet)",
+    "source_url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/Betas.html",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "EM/Global files: https://pages.stern.nyu.edu/~adamodar/pc/datasets/betaGlobal.xls and .../betaemerg.xls (converted locally to CSV). Simple averages of 2y/5y weekly regression betas; banks use levered betas directly (no unlevering)."
+   },
+   {
+    "item": "US 10-year Treasury yield",
+    "value": "4.94% on 2026-10-30 (par curve)",
+    "as_of": "2026-10-30",
+    "source_name": "US Treasury Daily Par Yield Curve (logged in reports/2330_evidence.json)",
+    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_par_yield_curve",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Cross-reference to the 2330 evidence log."
+   },
+   {
+    "item": "Mercuries Life and post-merger group assets (press)",
+    "value": "Mercuries Life total assets ~NT$1.6-1.65tn; E.SUN post-merger total assets 'over NT$5.8tn' (Nov-2025 announcement) and 'over NT$6tn' after FSC approval",
+    "as_of": "2025-11 to 2026-07",
+    "source_name": "newtalk; udn; storm.mg; uanalyze (search summaries; articles not individually verified)",
+    "source_url": "https://newtalk.tw/news/view/2025-11-05/1002940",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Not used as a model input; post-merger leverage is not known until the 3Q26 statements."
    }
   ],
   "synthesis": "",

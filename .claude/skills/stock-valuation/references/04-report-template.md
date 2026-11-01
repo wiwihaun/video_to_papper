@@ -38,7 +38,9 @@ legitimate and must be labelled as such.
 
 **Robustness cap:** conviction can be at most Medium if a one-step change in any single
 valuation parameter — cost of equity ±0.5pp, annual event probability ±0.5pp, terminal growth
-±0.5pp — flips the rating. Solve the flip points in the spec and quote them. (2884 in the first
+±0.5pp — flips the rating. Conviction is **Low** if the sourced range of a single valuation
+parameter that cannot be measured for the company (beta, for a bank whose own regression is
+unusable) spans two rating bands; say which parameter, and show the rating map. Solve the flip points in the spec and quote them. (2884 in the first
 live runs: clean two-number verdict and a narrow scenario spread would have read "High", yet a
 0.12pp higher cost of equity turned the Neutral into a Sell.)
 

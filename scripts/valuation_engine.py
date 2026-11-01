@@ -501,6 +501,13 @@ def residual_income(scenario, case):
             pv_tv = tv_df * d_next * ((1.0 - L) / (coe - g) + L * (1.0 - h) ** n * (1.0 - h) / q_den)
         equity = pv_div + pv_tv
     implied_pb = equity / bv0 if bv0 else None
+    # Steady-state P/B at the end of year N (value of the perpetuity / book then), before and
+    # after event risk (the latter conditional on no event by year N). Gate C asks for it.
+    tpb = (roe[-1] - g) / (coe - g)
+    tpb_after = None
+    if h > 0.0 and hz_years is None:
+        q_den_t = (1.0 + coe) - (1.0 + g) * (1.0 - h)
+        tpb_after = (roe[-1] - g) * ((1.0 - L) / (coe - g) + L * (1.0 - h) / q_den_t)
     hazard_info = None
     if h > 0.0:
         hazard_info = {"annual_probability": h, "loss_fraction": L,
@@ -523,6 +530,8 @@ def residual_income(scenario, case):
         "terminal_residual_income_m": ri_next,
         "pv_terminal_m": pv_tv,
         "implied_price_to_book": implied_pb,
+        "implied_terminal_pb": tpb,
+        "implied_terminal_pb_after_event_risk": tpb_after,
         "enterprise_value_m": equity,   # equity value; the bridge below must not deduct debt
         "equity_method": True,
     }
@@ -1148,7 +1157,8 @@ def md_value(out):
     L.append("")
     qcols = out.get("fx_quote_per_model") is not None
     tpcols = any(s.get("target_price_12m_quote") is not None for s in out["scenarios"])
-    qc0 = out.get("quote_currency") or "quote"
+    qc0 = out.get("quote_currency") or cur or "quote"
+    pdp = 0 if (out.get("price_quote") or out.get("price") or 0) >= 1000 else 2
     head = "| Scenario | Prob. | Method | EV (%sm) | Equity (%sm) | Value/share | Upside |" % (cur, cur)
     if qcols:
         head += " Value/share (%s) |" % qc0
@@ -1172,7 +1182,7 @@ def md_value(out):
         if qcols:
             line += " %s |" % _m(s["value_per_share"] * out["fx_quote_per_model"], 0)
         if tpcols:
-            line += " %s |" % (_m(s["target_price_12m_quote"], 0) if s.get("target_price_12m_quote") is not None else "n/a")
+            line += " %s |" % (_m(s["target_price_12m_quote"], pdp) if s.get("target_price_12m_quote") is not None else "n/a")
         L.append(line)
     L.append("")
     if out.get("probability_weighted_value_per_share_quote") is not None:
@@ -1269,6 +1279,11 @@ def md_value(out):
             L.append("Cost of equity %.2f%% · implied P/B %.2fx (no event risk %.2fx)%s" % (
                 s["cost_of_equity"] * 100, s["implied_price_to_book"], s["implied_price_to_book_no_hazard"],
                 (" · event-risk haircut %.1f%%" % s["hazard"]["ev_haircut_pct"]) if s.get("hazard") else ""))
+            L.append("")
+            L.append("Terminal value implies (at the end of year N): P/B %.2fx%s" % (
+                s["implied_terminal_pb"],
+                (" · after event risk %.2fx" % s["implied_terminal_pb_after_event_risk"])
+                if s.get("implied_terminal_pb_after_event_risk") is not None else ""))
             L.append("")
         if s["method"] == "dcf" and s["rows"] and s["rows"][0].get("revenue_m") is not None:
             L.append("#### %s — FCFF build (%sm)" % (s["name"], cur))

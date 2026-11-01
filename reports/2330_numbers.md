@@ -281,19 +281,6 @@ Measure: 12-month target price.
 | 6 | FLIP: cost of equity at which our TP reaches the Hold line with NO event risk | case.wacc | target_12m | 2,014 | 11.30% |
 | 7 | FLIP: exit EV/EBITDA multiple (all scenarios, event risk through 2036) at which our TP reaches the Hold line (NT$2,014.5) | scenarios.*.terminal.multiple | target_12m | 2,014 | 6.9609 |
 
-## 7.1 Grid — Probability-weighted 12-month TP: annual event probability x cost of equity (non-Sell cells marked)
-
-Measure: 12-month target price (probability-weighted); cells at or above 2,014 marked with *.
-
-| event probability \ cost of equity | 9.58% | 10.08% | 10.58% | 11.08% | 11.58% |
-|---|---|---|---|---|---|
-| **0.00%** | 2,522* | 2,349* | 2,199* | 2,068* | 1,953 |
-| **0.50%** | 2,361* | 2,209* | 2,075* | 1,958 | 1,854 |
-| **1.00%** | 2,223* | 2,086* | 1,966 | 1,860 | 1,766 |
-| **1.50%** | 2,102* | 1,979 | 1,870 | 1,774 | 1,687 |
-| **2.00%** | 1,996 | 1,884 | 1,784 | 1,696 | 1,617 |
-| **3.00%** | 1,818 | 1,723 | 1,638 | 1,563 | 1,494 |
-
 ## 6.1 Sensitivity — Base: 10-yr revenue CAGR x steady EBITDA margin (with event risk)
 
 ### Sensitivity — Base: value/share (TWD)
@@ -342,4 +329,17 @@ Measure: 12-month target price (probability-weighted); cells at or above 2,014 m
 | **2.25%** | 1,820 | 1,714 | 1,620 | 1,536 | 1,461 |
 | **3.00%** | 1,702 | 1,607 | 1,523 | 1,448 | 1,380 |
 | **4.00%** | 1,571 | 1,489 | 1,415 | 1,349 | 1,289 |
+
+## 7.1 Grid — Probability-weighted 12-month TP: annual event probability x cost of equity (non-Sell cells marked)
+
+Measure: 12-month target price (probability-weighted); cells at or above 2,014 marked with *.
+
+| event probability \ cost of equity | 9.58% | 10.08% | 10.58% | 11.08% | 11.58% |
+|---|---|---|---|---|---|
+| **0.00%** | 2,522* | 2,349* | 2,199* | 2,068* | 1,953 |
+| **0.50%** | 2,361* | 2,209* | 2,075* | 1,958 | 1,854 |
+| **1.00%** | 2,223* | 2,086* | 1,966 | 1,860 | 1,766 |
+| **1.50%** | 2,102* | 1,979 | 1,870 | 1,774 | 1,687 |
+| **2.00%** | 1,996 | 1,884 | 1,784 | 1,696 | 1,617 |
+| **3.00%** | 1,818 | 1,723 | 1,638 | 1,563 | 1,494 |
 

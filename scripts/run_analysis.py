@@ -105,8 +105,17 @@ def solve(case, path, target, measure, lo, hi, tol=1e-7):
     return (lo + hi) / 2.0
 
 
+def _dp(case):
+    """Decimals for per-share figures: whole units for large share prices, cents for small ones."""
+    try:
+        px = float(ve.resolve_price(case) or 0) * float(ve._fx(case) or 1.0)
+    except Exception:
+        px = 0.0
+    return 0 if px >= 1000 else 2
+
+
 def fmt_q(v, case):
-    return "%s %s" % (case.get("quote_currency") or case.get("currency") or "", ve._m(v, 0))
+    return "%s %s" % (case.get("quote_currency") or case.get("currency") or "", ve._m(v, _dp(case)))
 
 
 def main(argv=None):
@@ -115,7 +124,12 @@ def main(argv=None):
     a = ap.parse_args(argv)
     spec = json.load(open(a.spec, encoding="utf-8"))
     case = json.load(open(spec["case"], encoding="utf-8"))
+    if spec.get("case_set"):
+        # an alternative parameterisation of the same case file (e.g. a different beta), so the
+        # appendix for it is generated rather than hand-computed
+        case = apply_sets(case, spec["case_set"])
     fx = ve._fx(case) or 1.0
+    DP = _dp(case)
     use_quote = bool(spec.get("quote")) and ve._fx(case) is not None
     qcur = case.get("quote_currency") if use_quote else case.get("currency")
     md, js = [], {"case": spec["case"], "valuation_date": case.get("valuation_date")}
@@ -139,9 +153,9 @@ def main(argv=None):
         md.append("| Scenario | Value/share (%s) |" % qcur)
         md.append("|---|---|")
         for s in out["scenarios"]:
-            md.append("| %s | %s |" % (s["name"], ve._m(s["value_per_share"] * fx, 0)))
-        md.append("| **Probability-weighted** | **%s** |" % ve._m(out["probability_weighted_value_per_share"] * fx, 0))
-        md.append("| Equal-weighted (bias check) | %s |" % ve._m(out["equal_weighted_value_per_share"] * fx, 0))
+            md.append("| %s | %s |" % (s["name"], ve._m(s["value_per_share"] * fx, DP)))
+        md.append("| **Probability-weighted** | **%s** |" % ve._m(out["probability_weighted_value_per_share"] * fx, DP))
+        md.append("| Equal-weighted (bias check) | %s |" % ve._m(out["equal_weighted_value_per_share"] * fx, DP))
         md.append("")
 
     # ---- elasticity
@@ -198,9 +212,9 @@ def main(argv=None):
             tp = o.get("target_price_12m_quote")
             js["variants"].append({"label": v["label"], "value": val, "target_12m": tp, "scenarios": {
                 s["name"]: s["value_per_share"] * (fx if use_quote else 1) for s in o["scenarios"]}})
-            row = "| %s | %s | %+.1f%% |" % (v["label"], ve._m(val, 0), (val / spot - 1) * 100 if spot else 0)
+            row = "| %s | %s | %+.1f%% |" % (v["label"], ve._m(val, DP), (val / spot - 1) * 100 if spot else 0)
             if has_tp:
-                row += " %s | %+.1f%% |" % (ve._m(tp, 0), (tp / spot - 1) * 100 if spot else 0)
+                row += " %s | %+.1f%% |" % (ve._m(tp, DP), (tp / spot - 1) * 100 if spot else 0)
             md.append(row)
         md.append("")
 
@@ -219,17 +233,17 @@ def main(argv=None):
         o, q = pw_quote(c, measure)
         prev = q if (use_quote or measure == "target_12m") else o["probability_weighted_value_per_share"]
         rows = [{"label": "Our " + mlabel, "value": prev, "delta": None}]
-        md.append("| Our %s | %s | — |" % (mlabel, ve._m(prev, 0)))
+        md.append("| Our %s | %s | — |" % (mlabel, ve._m(prev, DP)))
         for st in br["steps"]:
             c = apply_sets(c, st.get("set"))
             o, q = pw_quote(c, measure)
             val = q if (use_quote or measure == "target_12m") else o["probability_weighted_value_per_share"]
             rows.append({"label": st["label"], "value": val, "delta": val - prev})
-            md.append("| + %s | %s | %+s |" % (st["label"], ve._m(val, 0), ve._m(val - prev, 0)))
+            md.append("| + %s | %s | %+s |" % (st["label"], ve._m(val, DP), ve._m(val - prev, DP)))
             prev = val
         if br.get("target"):
             md.append("| Target to explain: %s | %s | residual %+s |" % (
-                br.get("target_label", "target"), ve._m(br["target"], 0), ve._m(br["target"] - prev, 0)))
+                br.get("target_label", "target"), ve._m(br["target"], DP), ve._m(br["target"] - prev, DP)))
         md.append("")
         js["bridge"] = rows
 
@@ -272,9 +286,9 @@ def main(argv=None):
                             contribs.append(v(mask | (1 << i)) - v(mask))
                             break
                         mask |= (1 << j)
-                md.append("| %s | %+s | %+s to %+s |" % (steps[i]["label"], ve._m(phi[i], 0),
-                                                        ve._m(min(contribs), 0), ve._m(max(contribs), 0)))
-            md.append("| Total | %+s | |" % ve._m(sum(phi), 0))
+                md.append("| %s | %+s | %+s to %+s |" % (steps[i]["label"], ve._m(phi[i], DP),
+                                                        ve._m(min(contribs), DP), ve._m(max(contribs), DP)))
+            md.append("| Total | %+s | |" % ve._m(sum(phi), DP))
             md.append("")
             js["bridge_shapley"] = [{"label": steps[i]["label"], "shapley": phi[i]} for i in range(n)]
 
@@ -287,19 +301,28 @@ def main(argv=None):
         md.append("|---|---|---|---|---|---|")
         for i, sv in enumerate(spec["solve"], 1):
             c = apply_sets(case, sv.get("set"))
+            tgt = sv["target"]
+            if isinstance(tgt, str):
+                # named targets: the as-modelled measure (e.g. the no-event rate that reproduces our value)
+                if tgt not in ("as_modelled_fair_value", "as_modelled_target_12m"):
+                    raise ValueError("unknown named solve target %r" % tgt)
+                tgt = pw_quote(case, tgt.replace("as_modelled_", ""))[1]
+                sv = dict(sv, target=tgt)
             try:
-                x = solve(c, sv["path"], float(sv["target"]), sv.get("measure", "fair_value"),
+                x = solve(c, sv["path"], float(tgt), sv.get("measure", "fair_value"),
                           float(sv["lo"]), float(sv["hi"]))
                 sol = ("%.2f%%" % (x * 100)) if sv.get("percent", True) else ("%.4f" % x)
             except ValueError as exc:
                 x, sol = None, "no solution: %s" % exc
             js["solve"].append({"title": sv.get("title"), "solution": x})
             md.append("| %d | %s | %s | %s | %s | %s |" % (i, sv.get("title", ""), sv["path"],
-                                                     sv.get("measure", "fair_value"), ve._m(float(sv["target"]), 0), sol))
+                                                     sv.get("measure", "fair_value"), ve._m(float(sv["target"]), DP), sol))
         md.append("")
 
-    # ---- grids: a probability-weighted measure over two case paths (e.g. the rating's TP)
+    # ---- grids: a probability-weighted measure over two case paths (e.g. the rating's TP);
+    # rendered after the sensitivity tables so the appendix reads 6.x then 7.x
     js["grids"] = []
+    gmd = []
     for i, gd in enumerate(spec.get("grids", []), 1):
         measure = gd.get("measure", "target_12m")
         base_c = apply_sets(case, gd.get("set"))
@@ -315,25 +338,29 @@ def main(argv=None):
             rows.append(row)
         js["grids"].append({"title": gd.get("title"), "x": gd["x_values"], "y": gd["y_values"], "grid": rows})
         mark = gd.get("mark_below")
-        md.append("## 7.%d Grid — %s" % (i, gd.get("title", "")))
-        md.append("")
-        md.append("Measure: %s (probability-weighted)%s." % (
+        buy = gd.get("mark_buy")
+        dec = int(gd.get("decimals", 0))
+        gmd.append("## 7.%d Grid — %s" % (i, gd.get("title", "")))
+        gmd.append("")
+        gmd.append("Measure: %s (probability-weighted)%s%s." % (
             "12-month target price" if measure == "target_12m" else "fair value",
-            ("; cells at or above %s marked with *" % ve._m(mark, 0)) if mark else ""))
-        md.append("")
+            ("; cells at or above %s marked with *" % ve._m(mark, dec)) if mark else "",
+            ("; cells at or above %s (Buy) marked with +" % ve._m(buy, dec)) if buy else ""))
+        gmd.append("")
         fmt = lambda v, lab: ("%.2f%%" % (v * 100)) if gd.get(lab + "_percent", True) else str(v)
-        md.append("| %s \\ %s | %s |" % (gd.get("y_label", gd["y_path"]), gd.get("x_label", gd["x_path"]),
-                                         " | ".join(fmt(x, "x") for x in gd["x_values"])))
-        md.append("|---|%s" % ("---|" * len(gd["x_values"])))
+        gmd.append("| %s \\ %s | %s |" % (gd.get("y_label", gd["y_path"]), gd.get("x_label", gd["x_path"]),
+                                          " | ".join(fmt(x, "x") for x in gd["x_values"])))
+        gmd.append("|---|%s" % ("---|" * len(gd["x_values"])))
         for yv, row in zip(gd["y_values"], rows):
             cells = []
             for v in row:
                 if v is None:
                     cells.append("n/a")
                 else:
-                    cells.append(ve._m(v, 0) + ("*" if (mark is not None and v >= mark) else ""))
-            md.append("| **%s** | %s |" % (fmt(yv, "y"), " | ".join(cells)))
-        md.append("")
+                    tag = "+" if (buy is not None and v >= buy) else ("*" if (mark is not None and v >= mark) else "")
+                    cells.append(ve._m(v, dec) + tag)
+            gmd.append("| **%s** | %s |" % (fmt(yv, "y"), " | ".join(cells)))
+        gmd.append("")
 
     # ---- sensitivity
     js["sensitivity"] = []
@@ -350,6 +377,7 @@ def main(argv=None):
         md.append(ve.md_sensitivity(r, qcur or "", dp=0 if use_quote else 2))
         md.append("")
 
+    md.extend(gmd)
     out_md = spec.get("out_md")
     out_json = spec.get("out_json")
     text = "\n".join(md)

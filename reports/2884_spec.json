@@ -1,271 +1,554 @@
 {
-  "case": "reports/2884_case.json",
-  "out_md": "reports/2884_numbers.md",
-  "out_json": "reports/2884_numbers.json",
-  "quote": false,
-  "elasticity": [
-    {
-      "title": "Operating drivers (DuPont), ROA split by period",
-      "scenario": "Base",
-      "drivers": [
-        "ROA 2027-28 (near term; market-driven fees)@roa[0:2]=0.0015",
-        "ROA 2029-36 (through-cycle)@roa[2:]=0.0012",
-        "Leverage (assets / equity)@leverage=1.0:x",
-        "Payout ratio (book growth)@payout_ratio=0.10"
-      ]
-    },
-    {
-      "title": "Operating drivers (DuPont), ROA merged (final verdict)",
-      "scenario": "Base",
-      "drivers": [
-        "ROA, whole path@roa=0.0012",
-        "Leverage (assets / equity)@leverage=1.0:x",
-        "Payout ratio (book growth)@payout_ratio=0.10"
-      ]
-    },
-    {
-      "title": "Noise items",
-      "scenario": "Base",
-      "drivers": [
-        "2027 ROA only, +/-0.05pp (a quarter's fee or trading surprise)@roa[0:1]=0.0005",
-        "Payout +/-5pp (dividend headline)@payout_ratio=0.05",
-        "2027 leverage only, +/-0.5x (balance-sheet timing)@leverage[0:1]=0.5:x"
-      ]
-    }
-  ],
-  "reverse": [
-    {
-      "title": "Flat ROE implied by NT$49.05, Base only, no event risk",
-      "scenario": "Base",
-      "solve_for": "roe",
-      "set": {
-        "case.hazard": null
-      }
-    },
-    {
-      "title": "Flat ROE implied by NT$49.05, Base only, with event risk (1.5%/yr, 90% loss)",
-      "scenario": "Base",
-      "solve_for": "roe"
-    },
-    {
-      "title": "Cost of equity implied by NT$49.05 on our Base operations, no event risk",
-      "scenario": "Base",
-      "solve_for": "wacc",
-      "set": {
-        "case.hazard": null
-      }
-    },
-    {
-      "title": "Implied annual event probability, our Base operations",
-      "scenario": "Base",
-      "solve_for": "hazard_rate"
-    },
-    {
-      "title": "Implied annual event probability, our Bull operations",
-      "scenario": "Bull",
-      "solve_for": "hazard_rate"
-    }
-  ],
-  "variants": [
-    {
-      "label": "As modelled",
-      "set": {}
-    },
-    {
-      "label": "No event risk",
-      "set": {
-        "case.hazard": null
-      }
-    },
-    {
-      "label": "Event risk 0.75%/yr",
-      "set": {
-        "case.hazard.annual_probability": 0.0075
-      }
-    },
-    {
-      "label": "Event risk 3.0%/yr",
-      "set": {
-        "case.hazard.annual_probability": 0.03
-      }
-    },
-    {
-      "label": "Event risk 1.5%/yr, total loss",
-      "set": {
-        "case.hazard.loss_fraction": 1.0
-      }
-    },
-    {
-      "label": "Event risk 1.5%/yr confined to 2027-36",
-      "set": {
-        "case.hazard.years": 10
-      }
-    },
-    {
-      "label": "Cost of equity -1pp (5.06%)",
-      "set": {
-        "case.wacc": 0.0506
-      }
-    },
-    {
-      "label": "Cost of equity +1pp (7.06%)",
-      "set": {
-        "case.wacc": 0.0706
-      }
-    },
-    {
-      "label": "Unadjusted Taiwan 10Y as riskless rate (CoE 6.54%)",
-      "set": {
-        "case.wacc": 0.0654
-      }
-    },
-    {
-      "label": "Beta 0.8 (CoE 5.15%)",
-      "set": {
-        "case.wacc": 0.0515
-      }
-    },
-    {
-      "label": "Beta 1.2 (CoE 6.97%)",
-      "set": {
-        "case.wacc": 0.0697
-      }
-    },
-    {
-      "label": "Book value -10% (no bargain gain, lower consideration value)",
-      "set": {
-        "scenarios.*.book_value_m": 317627
-      }
-    },
-    {
-      "label": "Book value +10% (e.g. bargain-purchase gain on Mercuries Life)",
-      "set": {
-        "scenarios.*.book_value_m": 388211
-      }
-    },
-    {
-      "label": "Payout 55%",
-      "set": {
-        "scenarios.*.payout_ratio": 0.55
-      }
-    },
-    {
-      "label": "Payout 75%",
-      "set": {
-        "scenarios.*.payout_ratio": 0.75
-      }
-    },
-    {
-      "label": "Terminal growth 2.0%",
-      "set": {
-        "case.terminal_growth": 0.02
-      }
-    },
-    {
-      "label": "Terminal growth 3.0%",
-      "set": {
-        "case.terminal_growth": 0.03
-      }
-    },
-    {
-      "label": "Equal weights (bias check)",
-      "set": {
-        "scenarios.Bull.probability": 0.3333333333,
-        "scenarios.Base.probability": 0.3333333334,
-        "scenarios.Bear.probability": 0.3333333333
-      }
-    }
-  ],
-  "solve": [
-    {
-      "title": "FLIP: annual event probability at which the TP reaches the Sell line (-15% vs NT$49.05 = NT$41.69)",
-      "path": "case.hazard.annual_probability",
-      "target": 41.6925,
-      "measure": "target_12m",
-      "lo": 0.0,
-      "hi": 0.2,
-      "set": {}
-    },
-    {
-      "title": "FLIP: cost of equity at which the TP reaches the Sell line (NT$41.69)",
-      "path": "case.wacc",
-      "target": 41.6925,
-      "measure": "target_12m",
-      "lo": 0.03,
-      "hi": 0.15,
-      "set": {}
-    },
-    {
-      "title": "FLIP: annual event probability at which the TP reaches the Buy line (+15% = NT$56.41)",
-      "path": "case.hazard.annual_probability",
-      "target": 56.4075,
-      "measure": "target_12m",
-      "lo": 0.0,
-      "hi": 0.2,
-      "set": {}
-    }
-  ],
-  "sensitivity": [
-    {
-      "title": "Base: steady ROE x cost of equity (with event risk)",
-      "scenario": "Base",
-      "x": "wacc",
-      "x_values": [
-        0.0506,
-        0.0556,
-        0.0606,
-        0.0656,
-        0.0706
-      ],
-      "y": "roe",
-      "y_values": [
-        0.1,
-        0.11,
-        0.12,
-        0.13,
-        0.14,
-        0.15
-      ]
-    },
-    {
-      "title": "Base: annual event probability x cost of equity",
-      "scenario": "Base",
-      "x": "wacc",
-      "x_values": [
-        0.0506,
-        0.0556,
-        0.0606,
-        0.0656,
-        0.0706
-      ],
-      "y": "hazard_rate",
-      "y_values": [
-        0.0,
-        0.0075,
-        0.015,
-        0.0225,
-        0.03
-      ]
-    },
-    {
-      "title": "Base: steady ROE x terminal growth (with event risk)",
-      "scenario": "Base",
-      "x": "terminal_growth",
-      "x_values": [
-        0.015,
-        0.02,
-        0.025,
-        0.03,
-        0.035
-      ],
-      "y": "roe",
-      "y_values": [
-        0.1,
-        0.11,
-        0.12,
-        0.13,
-        0.14
-      ]
-    }
-  ]
+ "case": "reports/2884_case.json",
+ "out_md": "reports/2884_numbers.md",
+ "out_json": "reports/2884_numbers.json",
+ "quote": false,
+ "elasticity": [
+  {
+   "title": "FINAL VERDICT. Operating drivers (DuPont), ROA merged; every sigma on its own anchor",
+   "scenario": "Base",
+   "drivers": [
+    "ROA, whole path (sigma 0.12pp: SD of 2021, 2024, 2025, 1H26 ROA 0.66/0.68/0.80/0.91%)@roa=0.0012",
+    "Leverage, assets/equity (sigma 0.55x: SD of 2021-1H26 leverage 16.6/15.7/16.3/17.0x)@leverage=0.55:x",
+    "Payout ratio, book growth (sigma 10pp: 2025 66%, 2024 ~74%)@payout_ratio=0.10"
+   ]
+  },
+  {
+   "title": "ROA split by period",
+   "scenario": "Base",
+   "drivers": [
+    "ROA 2027-28 (near term; market-driven fees; sigma 0.15pp, wider than through-cycle)@roa[0:2]=0.0015",
+    "ROA 2029-36 (through-cycle; sigma 0.12pp)@roa[2:]=0.0012",
+    "Leverage, assets/equity (sigma 0.55x: SD of 2021-1H26 leverage 16.6/15.7/16.3/17.0x)@leverage=0.55:x",
+    "Payout ratio, book growth (sigma 10pp: 2025 66%, 2024 ~74%)@payout_ratio=0.10"
+   ]
+  },
+  {
+   "title": "Noise items",
+   "scenario": "Base",
+   "drivers": [
+    "Y1 ROA only, +/-0.05pp (a quarter's fee or trading surprise)@roa[0:1]=0.0005",
+    "Payout +/-5pp (dividend headline)@payout_ratio=0.05",
+    "Y1 leverage only, +/-0.5x (balance-sheet timing)@leverage[0:1]=0.5:x",
+    "Fee income +/-10% for good (~NT$3bn after tax a year, ROA +/-0.05pp whole path)@roa=0.0005"
+   ]
+  }
+ ],
+ "reverse": [
+  {
+   "title": "Flat ROE implied by NT$49.05 (held FOREVER), Base only, no event risk",
+   "scenario": "Base",
+   "solve_for": "roe",
+   "set": {
+    "case.hazard": null
+   }
+  },
+  {
+   "title": "Flat ROE implied by NT$49.05 (held FOREVER), Base only, with event risk (1.5%/yr, 90% loss)",
+   "scenario": "Base",
+   "solve_for": "roe"
+  },
+  {
+   "title": "Cost of equity implied by NT$49.05 on our Base operations, no event risk (the market's all-in rate, Base)",
+   "scenario": "Base",
+   "solve_for": "wacc",
+   "set": {
+    "case.hazard": null
+   }
+  },
+  {
+   "title": "Implied annual event probability, our Base operations (90% loss)",
+   "scenario": "Base",
+   "solve_for": "hazard_rate"
+  },
+  {
+   "title": "Implied annual event probability, our Base operations, 80% loss (TSMC-consistent)",
+   "scenario": "Base",
+   "solve_for": "hazard_rate",
+   "set": {
+    "case.hazard.loss_fraction": 0.8
+   }
+  },
+  {
+   "title": "Implied annual event probability, our Bull operations (90% loss)",
+   "scenario": "Bull",
+   "solve_for": "hazard_rate"
+  },
+  {
+   "title": "Implied annual event probability, Base operations, at the industry beta 0.72 (CoE 4.79%)",
+   "scenario": "Base",
+   "solve_for": "hazard_rate",
+   "set": {
+    "case.wacc": 0.04789
+   }
+  },
+  {
+   "title": "Implied annual event probability, Base operations, at beta 0.80 (CoE 5.15%)",
+   "scenario": "Base",
+   "solve_for": "hazard_rate",
+   "set": {
+    "case.wacc": 0.05153
+   }
+  },
+  {
+   "title": "Implied annual event probability, Base operations, at beta 0.90 (CoE 5.61%)",
+   "scenario": "Base",
+   "solve_for": "hazard_rate",
+   "set": {
+    "case.wacc": 0.05608
+   }
+  }
+ ],
+ "variants": [
+  {
+   "label": "As modelled (beta 1.0, CoE 6.06%; event risk 1.5%/yr, 90% loss)",
+   "set": {}
+  },
+  {
+   "label": "No event risk",
+   "set": {
+    "case.hazard": null
+   }
+  },
+  {
+   "label": "Event risk 0.75%/yr",
+   "set": {
+    "case.hazard.annual_probability": 0.0075
+   }
+  },
+  {
+   "label": "Event risk 2.25%/yr",
+   "set": {
+    "case.hazard.annual_probability": 0.0225
+   }
+  },
+  {
+   "label": "Event risk 3.0%/yr",
+   "set": {
+    "case.hazard.annual_probability": 0.03
+   }
+  },
+  {
+   "label": "Event risk 1.5%/yr, 80% loss (TSMC-consistent)",
+   "set": {
+    "case.hazard.loss_fraction": 0.8
+   }
+  },
+  {
+   "label": "Event risk 1.5%/yr, total loss",
+   "set": {
+    "case.hazard.loss_fraction": 1.0
+   }
+  },
+  {
+   "label": "Event risk 1.5%/yr confined to 2027-36",
+   "set": {
+    "case.hazard.years": 10
+   }
+  },
+  {
+   "label": "Beta 0.63 (Damodaran EM industry betas, equity-weighted) -> CoE 4.38%",
+   "set": {
+    "case.wacc": 0.0438
+   }
+  },
+  {
+   "label": "Beta 0.72 (Damodaran Global industry betas, equity-weighted: bottom-up) -> CoE 4.79%",
+   "set": {
+    "case.wacc": 0.04789
+   }
+  },
+  {
+   "label": "Beta 0.76 (US money-center banks) -> CoE 4.97%",
+   "set": {
+    "case.wacc": 0.04971
+   }
+  },
+  {
+   "label": "Beta 0.80 -> CoE 5.15%",
+   "set": {
+    "case.wacc": 0.05153
+   }
+  },
+  {
+   "label": "Beta 0.90 -> CoE 5.61%",
+   "set": {
+    "case.wacc": 0.05608
+   }
+  },
+  {
+   "label": "Beta 1.03 (the Sell flip) -> CoE 6.20%",
+   "set": {
+    "case.wacc": 0.06199
+   }
+  },
+  {
+   "label": "Beta 1.20 -> CoE 6.97%",
+   "set": {
+    "case.wacc": 0.06973
+   }
+  },
+  {
+   "label": "Unadjusted Taiwan 10Y (1.99 pct) as riskless rate -> CoE 6.54%",
+   "set": {
+    "case.wacc": 0.0654
+   }
+  },
+  {
+   "label": "Industry beta 0.72 AND event risk 2.25%/yr",
+   "set": {
+    "case.wacc": 0.04789,
+    "case.hazard.annual_probability": 0.0225
+   }
+  },
+  {
+   "label": "Payout 55% (dividend NT$1.43)",
+   "set": {
+    "scenarios.*.payout_ratio": 0.55,
+    "case.roll_forward.dividends_quote_next_12m": 1.43
+   }
+  },
+  {
+   "label": "Payout 75% (dividend NT$1.95)",
+   "set": {
+    "scenarios.*.payout_ratio": 0.75,
+    "case.roll_forward.dividends_quote_next_12m": 1.95
+   }
+  },
+  {
+   "label": "Terminal growth 2.0%",
+   "set": {
+    "case.terminal_growth": 0.02
+   }
+  },
+  {
+   "label": "Terminal growth 3.0%",
+   "set": {
+    "case.terminal_growth": 0.03
+   }
+  },
+  {
+   "label": "Retained profit +NT$1bn (one month's beat, added to book)",
+   "set": {
+    "scenarios.*.book_value_m": 353919
+   }
+  },
+  {
+   "label": "Equal weights (bias check)",
+   "set": {
+    "scenarios.Bull.probability": 0.3333333333,
+    "scenarios.Base.probability": 0.3333333334,
+    "scenarios.Bear.probability": 0.3333333333
+   }
+  }
+ ],
+ "solve": [
+  {
+   "title": "FLIP Buy->Neutral: annual event probability at which the TP falls to the Buy line (+15% = NT$56.41)",
+   "path": "case.hazard.annual_probability",
+   "target": 56.4075,
+   "measure": "target_12m",
+   "lo": 0.0,
+   "hi": 0.2,
+   "set": {}
+  },
+  {
+   "title": "FLIP Neutral->Sell: annual event probability at which the TP reaches the Sell line (-15% = NT$41.69)",
+   "path": "case.hazard.annual_probability",
+   "target": 41.6925,
+   "measure": "target_12m",
+   "lo": 0.0,
+   "hi": 0.2,
+   "set": {}
+  },
+  {
+   "title": "FLIP Buy->Neutral: cost of equity at which the TP falls to the Buy line (NT$56.41)",
+   "path": "case.wacc",
+   "target": 56.4075,
+   "measure": "target_12m",
+   "lo": 0.03,
+   "hi": 0.15,
+   "set": {}
+  },
+  {
+   "title": "FLIP Neutral->Sell: cost of equity at which the TP reaches the Sell line (NT$41.69)",
+   "path": "case.wacc",
+   "target": 41.6925,
+   "measure": "target_12m",
+   "lo": 0.03,
+   "hi": 0.15,
+   "set": {}
+  },
+  {
+   "title": "FLIP Neutral->Sell: terminal growth at which the TP reaches the Sell line (NT$41.69)",
+   "path": "case.terminal_growth",
+   "target": 41.6925,
+   "measure": "target_12m",
+   "lo": 0.0,
+   "hi": 0.04,
+   "set": {}
+  },
+  {
+   "title": "OUR ALL-IN RATE: no-event cost of equity that reproduces our probability-weighted fair value",
+   "path": "case.wacc",
+   "target": "as_modelled_fair_value",
+   "measure": "fair_value",
+   "lo": 0.03,
+   "hi": 0.15,
+   "set": {
+    "case.hazard": null
+   }
+  },
+  {
+   "title": "MARKET ALL-IN RATE: no-event cost of equity at which the probability-weighted fair value equals the price NT$49.05",
+   "path": "case.wacc",
+   "target": 49.05,
+   "measure": "fair_value",
+   "lo": 0.03,
+   "hi": 0.15,
+   "set": {
+    "case.hazard": null
+   }
+  },
+  {
+   "title": "PRICE-IMPLIED cost of equity WITH our event risk (1.5%/yr, 90% loss): the rate at which the probability-weighted fair value equals NT$49.05",
+   "path": "case.wacc",
+   "target": 49.05,
+   "measure": "fair_value",
+   "lo": 0.03,
+   "hi": 0.15,
+   "set": {}
+  },
+  {
+   "title": "HISTORY: no-event cost of equity at which a flat 10.0% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book)",
+   "path": "case.wacc",
+   "target": 38.0329,
+   "measure": "fair_value",
+   "lo": 0.03,
+   "hi": 0.15,
+   "set": {
+    "scenarios.Bull.probability": 0.0,
+    "scenarios.Base.probability": 1.0,
+    "scenarios.Bear.probability": 0.0,
+    "scenarios.Base.roa": null,
+    "scenarios.Base.leverage": null,
+    "scenarios.Base.roe": 0.1,
+    "scenarios.Base.payout_ratio": 0.75,
+    "case.hazard": null
+   }
+  },
+  {
+   "title": "HISTORY: no-event cost of equity at which a flat 10.5% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book)",
+   "path": "case.wacc",
+   "target": 38.0329,
+   "measure": "fair_value",
+   "lo": 0.03,
+   "hi": 0.15,
+   "set": {
+    "scenarios.Bull.probability": 0.0,
+    "scenarios.Base.probability": 1.0,
+    "scenarios.Bear.probability": 0.0,
+    "scenarios.Base.roa": null,
+    "scenarios.Base.leverage": null,
+    "scenarios.Base.roe": 0.105,
+    "scenarios.Base.payout_ratio": 0.761905,
+    "case.hazard": null
+   }
+  },
+  {
+   "title": "HISTORY: no-event cost of equity at which a flat 11.0% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book)",
+   "path": "case.wacc",
+   "target": 38.0329,
+   "measure": "fair_value",
+   "lo": 0.03,
+   "hi": 0.15,
+   "set": {
+    "scenarios.Bull.probability": 0.0,
+    "scenarios.Base.probability": 1.0,
+    "scenarios.Bear.probability": 0.0,
+    "scenarios.Base.roa": null,
+    "scenarios.Base.leverage": null,
+    "scenarios.Base.roe": 0.11,
+    "scenarios.Base.payout_ratio": 0.772727,
+    "case.hazard": null
+   }
+  },
+  {
+   "title": "ROE for 2027-36 (Y1-Y10) then Base 12% forever, with event risk: what the price needs",
+   "path": "scenarios.Base.roe[0:10]",
+   "target": 49.05,
+   "measure": "fair_value",
+   "lo": 0.03,
+   "hi": 0.4,
+   "set": {
+    "scenarios.Bull.probability": 0.0,
+    "scenarios.Base.probability": 1.0,
+    "scenarios.Bear.probability": 0.0,
+    "scenarios.Base.roa": null,
+    "scenarios.Base.leverage": null,
+    "scenarios.Base.horizon_years": 11,
+    "scenarios.Base.roe": [
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.12
+    ]
+   }
+  },
+  {
+   "title": "ROE for 2027-36 then 10.5% (2021-24 level) forever, with event risk",
+   "path": "scenarios.Base.roe[0:10]",
+   "target": 49.05,
+   "measure": "fair_value",
+   "lo": 0.03,
+   "hi": 0.4,
+   "set": {
+    "scenarios.Bull.probability": 0.0,
+    "scenarios.Base.probability": 1.0,
+    "scenarios.Bear.probability": 0.0,
+    "scenarios.Base.roa": null,
+    "scenarios.Base.leverage": null,
+    "scenarios.Base.horizon_years": 11,
+    "scenarios.Base.roe": [
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.105
+    ]
+   }
+  },
+  {
+   "title": "ROE for 2027-36 then Base 12% forever, NO event risk",
+   "path": "scenarios.Base.roe[0:10]",
+   "target": 49.05,
+   "measure": "fair_value",
+   "lo": 0.0,
+   "hi": 0.4,
+   "set": {
+    "scenarios.Bull.probability": 0.0,
+    "scenarios.Base.probability": 1.0,
+    "scenarios.Bear.probability": 0.0,
+    "scenarios.Base.roa": null,
+    "scenarios.Base.leverage": null,
+    "scenarios.Base.horizon_years": 11,
+    "scenarios.Base.roe": [
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.135,
+     0.12
+    ],
+    "case.hazard": null
+   }
+  }
+ ],
+ "sensitivity": [
+  {
+   "title": "Base: steady ROE x cost of equity (with event risk)",
+   "scenario": "Base",
+   "x": "wacc",
+   "x_values": [
+    0.04789,
+    0.05153,
+    0.05608,
+    0.06063,
+    0.06518
+   ],
+   "y": "roe",
+   "y_values": [
+    0.1,
+    0.11,
+    0.12,
+    0.13,
+    0.14,
+    0.15
+   ]
+  },
+  {
+   "title": "Base: annual event probability x cost of equity",
+   "scenario": "Base",
+   "x": "wacc",
+   "x_values": [
+    0.04789,
+    0.05153,
+    0.05608,
+    0.06063,
+    0.06518
+   ],
+   "y": "hazard_rate",
+   "y_values": [
+    0.0,
+    0.0075,
+    0.015,
+    0.0225,
+    0.03
+   ]
+  },
+  {
+   "title": "Base: cost of equity x terminal growth (with event risk)",
+   "scenario": "Base",
+   "x": "wacc",
+   "x_values": [
+    0.04789,
+    0.05153,
+    0.05608,
+    0.06063,
+    0.06518
+   ],
+   "y": "terminal_growth",
+   "y_values": [
+    0.015,
+    0.02,
+    0.025,
+    0.03
+   ]
+  }
+ ],
+ "grids": [
+  {
+   "title": "RATING MAP. Probability-weighted 12-month TP: annual event probability x cost of equity (columns = beta 0.72 / 0.80 / 0.90 / 1.00 / 1.10)",
+   "x_path": "case.wacc",
+   "x_label": "cost of equity",
+   "x_values": [
+    0.04789,
+    0.05153,
+    0.05608,
+    0.06063,
+    0.06518
+   ],
+   "y_path": "case.hazard.annual_probability",
+   "y_label": "event probability",
+   "y_values": [
+    0.0,
+    0.0075,
+    0.015,
+    0.0225,
+    0.03
+   ],
+   "measure": "target_12m",
+   "mark_below": 41.6925,
+   "mark_buy": 56.4075,
+   "decimals": 1
+  }
+ ]
 }

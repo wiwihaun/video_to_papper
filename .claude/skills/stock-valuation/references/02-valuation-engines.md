@@ -8,7 +8,18 @@ reproduced from `reports/<TICKER>_case.json` by anyone who re-runs it.
 
 For a report, prefer `scripts/run_analysis.py --spec <spec.json>`, which runs all of the below
 from one file and writes the numbers appendix. The engine commands remain available for
-one-off checks.
+one-off checks. Spec features worth knowing (see `reports/2330_spec.json`, `reports/2884_spec.json`):
+
+- `solve` bisects any case path, including a path slice (`scenarios.Base.roe[0:10]`) and a
+  wildcard (`scenarios.*.terminal.multiple`); `target` may be a number or
+  `"as_modelled_fair_value"` / `"as_modelled_target_12m"` (e.g. the no-event discount rate that
+  reproduces our own value: the "all-in rate").
+- `grids` tabulate the probability-weighted measure over two case paths: the rating map.
+  `mark_below` marks non-Sell cells with `*`, `mark_buy` marks Buy cells with `+`, `decimals`
+  sets precision.
+- `case_set` applies sets to the case before anything runs, so an alternative parameterisation
+  (2884's industry beta) gets its own generated appendix instead of hand-computed figures.
+- Case field `adr_premiums: [0, 0.133, ...]` prints 12-month ADR targets at those premiums.
 
 | Command | Phase | Purpose |
 |---|---|---|
@@ -103,7 +114,13 @@ for associates, investments and non-operating assets, with a positive sign.
 then cannot show the FCFF build, so prefer `driver_build`.
 
 FCFF = EBIT × (1 − t) + D&A − Capex − ΔNWC − SBC. Explicit cash flows use mid-year
-discounting by default; the terminal value is always discounted at the full year N.
+discounting by default. A Gordon terminal value is the value one period before its first
+flow, so under the mid-year convention it is discounted from N − 0.5 (its first flow arrives at
+N + 0.5); an exit-multiple terminal value is a year-end sale and is discounted from N. Until
+2026-11-01 the engine discounted every terminal value from N, which understated 2330 by 2.7%.
+Implied terminal multiples are stated at the end of year N, with an "after event risk" multiple
+(the value conditional on no event by year N) when a hazard is set, so they compare directly
+with exit multiples.
 
 ### SOTP scenario
 
@@ -163,7 +180,19 @@ ROA × leverage), so the two observable bank numbers can be tested separately in
 so the event hits **all** of a bank's equity — its book is a claim on the same economy — and it
 reduces exactly to residual income when h = 0. For a merger that has not yet reported a balance
 sheet, estimate post-deal book as pre-deal equity + retained earnings since + the fair value of
-shares issued, label it an estimate, and give ±10% variants (2884, 2026-11-01).
+shares issued, and label it an estimate.
+
+**Book is not a value driver when earnings are fixed.** Scenarios fix the ROE path, so a ±10%
+change in opening book silently means ±10% earnings. A purchase-price allocation (goodwill, a
+bargain-purchase gain) changes book but not earnings power or distributable capital, so it does
+not change value: when the statements arrive, re-base ROE on the new book with earnings held,
+rather than re-valuing. What does move value is real capital (OCI marks), the post-deal ROA and
+leverage, and capital needs at the acquired unit. The 2884 v1 report called the 3Q26 book "the
+most important catalyst" on exactly this artefact.
+
+The engine reports the steady-state P/B at the end of year N, before and after event risk
+(Gate C asks for it), and warns when the terminal residual income carries more than 75% of the
+value above book.
 
 Residual income_t = (ROE_t − COE) × opening book value; terminal = next-year residual income
 / (COE − g). Net debt is ignored by construction. With constant ROE and a payout that grows
@@ -182,7 +211,7 @@ Build it every time; never import a third party's WACC without its components.
 |---|---|---|
 | Risk-free rate | 10-year government bond yield **in the cash-flow currency**, on the valuation date | TWD cash flows → Taiwan 10Y; USD cash flows → US 10Y |
 | Equity risk premium | Damodaran's implied ERP (updated monthly) + country risk premium for the domicile | Cite the month used |
-| Beta | Bottom-up: unlevered industry beta, relevered at the target D/E | Regression beta as cross-check; state window and index. **Do not use a regression beta against TAIEX for non-tech Taiwan stocks**: TSMC is ~40% of the index, so a bank's beta comes out absurdly low (2884: 0.12 on 2026-10-30), which would put its cost of equity near 2% |
+| Beta | Bottom-up: unlevered industry beta, relevered at the target D/E. **Banks and insurers: use the levered sector beta directly** (debt is raw material; unlevering is meaningless), weighted by the group's equity mix | Regression beta as cross-check; state window and index. **Do not use a regression beta against TAIEX for non-tech Taiwan stocks**: TSMC is ~40% of the index, so a bank's beta comes out absurdly low (2884: 0.12 on 2026-10-30), which would put its cost of equity near 2%. **Plausibility test before use:** if the beta puts the cost of equity within ~2.5pp of terminal growth, the terminal value dominates (engine warning) and the implied P/B or EV/EBITDA leaves the stock's own trading range. Then the beta is measuring the bond yield, not the business. Say so, use a judgment beta, and publish the bottom-up result as the main alternative with a full beta × event-risk rating map (2884: Damodaran Jan-2026 bottom-up 0.72 gives Buy at 2.9x book after event risk; we used 1.0, which gives Neutral; the price is fair at 0.86) |
 | Riskless rate in TWD | Taiwan 10Y less Taiwan's sovereign default spread (Damodaran) when country risk is modelled separately by the hazard overlay | Otherwise the government yield carries part of the country risk twice |
 | Cost of debt | Yield on the company's bonds, or rating-implied spread over rf | After tax |
 | Weights | Market values of equity and debt | Target structure if current is temporary |

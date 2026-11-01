@@ -58,8 +58,10 @@ Pin down, and state in the report header, before any analysis:
   is not a research product.
 - **Stale-price check.** If another line of the same company traded after the local close
   (an ADR session, a holiday gap), the local close is stale. State the price the other line
-  implies and give upside from both. Example: 2330 closed NT$2,370 on a Friday; the ADR then
-  fell 5.95% in New York, implying ~NT$2,230 at the next open.
+  implies and give upside from both. Use a premium measured in one session: 2330 closed
+  NT$2,370 on Friday 30 Oct; the ADR then fell 5.95% in New York, but from its Thursday close,
+  which was before Taipei had reacted to the same news. Applying −5.95% to NT$2,370 counts
+  Taipei's move twice. At Thursday's 16.4% premium the ADR implied ~NT$2,267.
 
 If the ticker is ambiguous (`TSM` could be the ADR; `BABA` has HK and US lines), state
 your reading in one line and continue. Do not stop to ask.
@@ -108,6 +110,13 @@ Three rules make the ranking honest:
 - **Source every σ.** σ is the uncertainty of the forecast quantity: anchor it on the
   company's historical dispersion (stdev of annual changes) and the spread of credible views,
   and write the anchor next to the number. An unsourced σ silently decides the ranking.
+- **One σ rule per unit.** Drivers measured in the same unit (two %-of-revenue drivers such
+  as EBITDA margin and capex intensity) get σ from the same rule. Run both rules (half the
+  historical SD; half the gap between the historical mean and today). If #2 and #3 swap
+  places between the rules, the ranking is a convention artefact: merge them into one number
+  (2330: "cash conversion" = EBITDA margin less capex intensity). Note also that a model which
+  holds D&A on its own path gives extra capex no depreciation tax shield, which inflates the
+  capex elasticity by up to 1/(1 − t).
 
 It returns each driver's share of tested variance and a verdict. Then draw the line:
 
@@ -171,6 +180,14 @@ Two further solves usually carry the insight:
   prediction markets (adjusted for the carry cost of holding the "No" side), superforecaster
   and expert-survey estimates. A PM can disagree with a probability; nobody can disagree
   with an undisclosed one.
+
+- **Solve for the second number too**, not only the first. 2330: on Base growth and margins
+  with no event risk, the price implies a flat capex intensity of 23.5% of revenue, against a
+  FY2015–25 minimum of 30.5%. That one line carried page 1.
+- **A flat solve is a perpetuity.** `reverse --solve-for roe` replaces the whole path,
+  terminal included, so "13.6%" means 13.6% forever. For "for a decade, then revert" use a
+  generic solve on a path slice (`scenarios.Base.roe[0:10]` with an 11-year path ending at the
+  steady state). 2884: 13.6% forever is 15.5% for ten years, then 12%.
 
 Then judge that number against history and against physical limits — the company's own
 best decade, the size of the end market, the industry's record margin. A price implying
@@ -240,7 +257,17 @@ gap is usually the most interesting paragraph in the report.
 it and your value: re-run the engine switching one assumption at a time to the consensus-like
 setting (discount rate, event risk, margin path, growth path) and tabulate how much of the
 gap each explains. Readers trust a different number only when they can see which assumption
-makes it different.
+makes it different. Three rules from the 2330 reviews:
+
+- **Convert consensus revenue and EPS at one FX rate.** NT$ consensus growth applied to a USD
+  base overstated 2027 revenue by 2.5% and understated the EPS-consistent margin by 1.4pp.
+- **The last step is a residual, not a finding.** Whatever the bridge leaves unexplained lands
+  on the step solved last (usually the discount rate). Show the alternative closes: the same
+  consensus TP reached with a longer growth duration at your own cost of equity, for example.
+  Report only the attribution that survives every ordering and every close (2330: event risk,
+  23–41% of the gap).
+- **ADR targets carry an explicit premium.** A premium that the report itself calls structural
+  cannot be assumed to vanish in the headline ADR target; show zero premium as a sensitivity.
 
 Produce a 5×5 sensitivity grid on the two highest-elasticity drivers, and a second on
 WACC × terminal growth. Input schema, WACC construction and every engine flag:
