@@ -68,6 +68,7 @@ scripts/
   valuation_engine.py              # 估值計算引擎（純標準函式庫、可重現）
   run_analysis.py                  # 一份規格檔跑完所有分析，產生數字附錄
   test_valuation_engine.py         # 可手算驗證的單元測試
+  render_report.py                 # 把報告與數字附錄轉成可分享的 HTML 頁面（評等區間圖、目錄）
 docs/transcript/README.md          # 逐字稿取得方式
 reports/                           # 報告輸出目錄
 ```

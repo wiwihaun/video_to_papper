@@ -338,7 +338,11 @@ unresolved.
 - `reports/<TICKER>_evidence.json` — the sourced research findings (URL, date, tier)
 
 Everything is reproducible by re-running `scripts/run_analysis.py` on the spec.
-Send the report to the user with `SendUserFile`.
+Send the report to the user with `SendUserFile`. To share it as a page, render it with
+`python3 scripts/render_report.py reports/<TICKER>_<DATE>.md reports/<TICKER>_numbers.json OUT.html
+"<Name> <TICKER> 研究報告" <DATE> "<listing line>"`. The renderer adds a cover with the rating
+ladder (spot and target against the Buy/Neutral/Sell price bands) and a section index. Publish it
+as a private Artifact where the session offers one.
 
 In chat, give only: rating, target price, upside, the one-sentence thesis, and the link.
 The analysis belongs in the report, not in the reply.
