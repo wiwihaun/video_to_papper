@@ -117,6 +117,182 @@
         ],
         "scenarios.Base.driver_build.ebit_margin": 0.57
       }
+    },
+    {
+      "title": "FRONTIER: steady EBIT margin 50.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth[0:2]": [
+          0.3,
+          0.24
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.5
+      }
+    },
+    {
+      "title": "FRONTIER: steady EBIT margin 52.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth[0:2]": [
+          0.3,
+          0.24
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.52
+      }
+    },
+    {
+      "title": "FRONTIER: steady EBIT margin 55.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth[0:2]": [
+          0.3,
+          0.24
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.55
+      }
+    },
+    {
+      "title": "FRONTIER: steady EBIT margin 57.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth[0:2]": [
+          0.3,
+          0.24
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.57
+      }
+    },
+    {
+      "title": "FRONTIER: steady EBIT margin 58.6% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth[0:2]": [
+          0.3,
+          0.24
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.586
+      }
+    },
+    {
+      "title": "FRONTIER (our base growth path, +28%/+18%): steady EBIT margin 52.0%: implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.ebit_margin": 0.52
+      }
+    },
+    {
+      "title": "FRONTIER (our base growth path, +28%/+18%): steady EBIT margin 57.0%: implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.ebit_margin": 0.57
+      }
+    },
+    {
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 50.0%: implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.32,
+          0.25,
+          0.18,
+          0.15,
+          0.12,
+          0.1,
+          0.08,
+          0.07,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.5
+      }
+    },
+    {
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 52.0%: implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.32,
+          0.25,
+          0.18,
+          0.15,
+          0.12,
+          0.1,
+          0.08,
+          0.07,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.52
+      }
+    },
+    {
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 55.0%: implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.32,
+          0.25,
+          0.18,
+          0.15,
+          0.12,
+          0.1,
+          0.08,
+          0.07,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.55
+      }
+    },
+    {
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 57.0%: implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.32,
+          0.25,
+          0.18,
+          0.15,
+          0.12,
+          0.1,
+          0.08,
+          0.07,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.57
+      }
+    },
+    {
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 58.6%: implied annual event probability at NT$2,370",
+      "scenario": "Base",
+      "solve_for": "hazard_rate",
+      "set": {
+        "scenarios.Base.driver_build.revenue_growth": [
+          0.32,
+          0.25,
+          0.18,
+          0.15,
+          0.12,
+          0.1,
+          0.08,
+          0.07,
+          0.05,
+          0.04
+        ],
+        "scenarios.Base.driver_build.ebit_margin": 0.586
+      }
     }
   ],
   "variants": [

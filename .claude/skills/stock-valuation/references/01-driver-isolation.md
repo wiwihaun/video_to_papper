@@ -116,7 +116,7 @@ sentence in the report.
 | Fabless / IC design (MediaTek 2454) | Flagship SoC share / content per device | Gross margin | Monthly revenue; customer launch cycles |
 | EMS / server ODM (Hon Hai 2317, Quanta 2382) | AI-server rack volume | Operating margin (mix) | Monthly revenue; hyperscaler capex guidance |
 | EV + autonomy (Tesla) | Autonomy KPI — FSD-supervised miles / robotaxi fleet and paid miles | Auto gross margin ex-credits | Quarterly deliveries and update letter; regulator filings |
-| Banks | Net interest margin | Credit cost | Quarterly results; central-bank rate path |
+| Banks / financial holding cos (2881, 2882, 2891) | Through-cycle ROE (NIM × leverage − credit cost) | Book-value growth (payout, capital rules) | Quarterly results; central-bank rate path; FSC capital rules |
 | Life insurers | New business value / CSM growth | Investment yield vs guaranteed rate | IFRS 17 disclosures; FX hedging cost |
 | SaaS / software | Net revenue retention | FCF margin (rule of 40) | Quarterly KPIs |
 | Consumer / retail | Same-store sales growth | Gross margin | Monthly or quarterly comps |

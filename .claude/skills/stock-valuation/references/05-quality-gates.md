@@ -50,6 +50,10 @@ disclosed in the report's limitations section, by name. There is no third option
 - [ ] DCF and the multiples cross-check agree within ~25%, or the gap is reconciled in prose.
 - [ ] **Consensus bridge**: if consensus publishes a target price, the gap to it is decomposed
       assumption by assumption with engine re-runs.
+- [ ] **Like-for-like comparisons**: fair value is compared with spot; a 12-month target price
+      is compared with a 12-month target price (never fair value vs a consensus target).
+- [ ] **Target price is rolled forward**: the 12-month TP = fair value x (1 + quote-currency
+      cost of equity) - dividends, and the rating uses it.
 - [ ] The Gordon terminal value's implied exit multiple is stated and is plausible against
       sector history.
 
@@ -73,6 +77,8 @@ disclosed in the report's limitations section, by name. There is no third option
       `valuation_engine.py value --input reports/<TICKER>_case.json` reproduces every
       valuation figure in the report.
 - [ ] The sensitivity and elasticity tables in the report are the engine's own output.
+- [ ] `reports/<TICKER>_numbers.md` was regenerated from the final case and spec, and every
+      valuation figure in the report appears in it.
 - [ ] As-of date appears in the header and footer; the not-investment-advice line is present.
 
 ## Common errors this list exists to catch

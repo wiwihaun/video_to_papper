@@ -343,5 +343,42 @@ class TestRollForward(unittest.TestCase):
         self.assertAlmostEqual(out["expected_total_return_12m_pct"], (3392 / 3000 - 1) * 100)
 
 
+class TestResidualIncome(unittest.TestCase):
+    def _case(self, roe, payout=0.5, g=0.02, coe=0.10, n=5):
+        return {"ticker": "BANK", "currency": "TWD", "price": 30.0, "shares_diluted_m": 100.0,
+                "wacc": coe, "terminal_growth": g, "midyear": False,
+                "scenarios": [{"name": "Base", "probability": 1.0, "method": "residual_income",
+                               "book_value_m": 2000.0, "roe": roe, "payout_ratio": payout,
+                               "horizon_years": n}]}
+
+    def test_roe_equal_to_coe_gives_book_value(self):
+        # no excess return -> value = book (P/B = 1): 2000 / 100 sh = 20/share
+        s = ve.value_case(self._case(0.10))["scenarios"][0]
+        self.assertAlmostEqual(s["value_per_share"], 20.0, places=9)
+        self.assertAlmostEqual(s["implied_price_to_book"], 1.0, places=9)
+
+    def test_matches_justified_pb_for_constant_roe(self):
+        # constant ROE with payout chosen so book grows at g: P/B = (ROE - g)/(COE - g)
+        roe, g, coe = 0.15, 0.03, 0.10
+        payout = 1 - g / roe       # retention x ROE = g
+        s = ve.value_case(self._case(roe, payout=payout, g=g, coe=coe, n=8))["scenarios"][0]
+        self.assertAlmostEqual(s["implied_price_to_book"], (roe - g) / (coe - g), places=9)
+
+    def test_net_debt_is_ignored(self):
+        c = self._case(0.12); c["net_debt_m"] = 999999.0
+        a = ve.value_case(c)["scenarios"][0]["value_per_share"]
+        self.assertAlmostEqual(a, ve.value_case(self._case(0.12))["scenarios"][0]["value_per_share"])
+
+    def test_elasticity_and_hazard_work_on_ri(self):
+        c = self._case([0.12] * 5)
+        out = ve.elasticity(c, "Base", [ve.parse_driver_spec("ROE@roe=0.02"),
+                                        ve.parse_driver_spec("Payout@payout_ratio=0.1"),
+                                        ve.parse_driver_spec("COE@wacc=0.01")])
+        self.assertEqual(out["drivers"][0]["label"] in ("ROE", "COE"), True)
+        c["hazard"] = {"annual_probability": 0.02, "loss_fraction": 1.0}
+        self.assertLess(ve.value_case(c)["scenarios"][0]["value_per_share"],
+                        ve.value_case(self._case([0.12] * 5))["scenarios"][0]["value_per_share"])
+
+
 if __name__ == "__main__":
     unittest.main()

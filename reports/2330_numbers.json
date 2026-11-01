@@ -966,6 +966,131 @@
       "residual": -8.22094546037988e-06,
       "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.27%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
       "title": "Same consensus-like operations at our discount rate: implied annual event probability at the NT$2,370 close"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.0002975165843963623,
+      "model_value_per_share_at_solution": 72.9724874105954,
+      "residual": 1.3736108058992613e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.03%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER: steady EBIT margin 50.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.003787010908126831,
+      "model_value_per_share_at_solution": 72.97245935112231,
+      "residual": -1.4323365036261748e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.38%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER: steady EBIT margin 52.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.009112387895584106,
+      "model_value_per_share_at_solution": 72.97246727505585,
+      "residual": -6.399431498493868e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.91%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER: steady EBIT margin 55.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.012726038694381714,
+      "model_value_per_share_at_solution": 72.97246545354189,
+      "residual": -8.22094546037988e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.27%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER: steady EBIT margin 57.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.015654951333999634,
+      "model_value_per_share_at_solution": 72.97245258274906,
+      "residual": -2.109173829012434e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.57%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER: steady EBIT margin 58.6% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370"
+    },
+    {
+      "error": "no solution for hazard_rate in [0.0000, 0.5000]: implied value is below the price at both ends. The price cannot be reconciled by this driver alone — widen the bracket with --lo/--hi, or solve for a different driver.",
+      "title": "FRONTIER (our base growth path, +28%/+18%): steady EBIT margin 52.0%: implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.0073011815547943115,
+      "model_value_per_share_at_solution": 72.97245227146595,
+      "residual": -2.140302139252981e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.73%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER (our base growth path, +28%/+18%): steady EBIT margin 57.0%: implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.013352066278457642,
+      "model_value_per_share_at_solution": 72.97246334996862,
+      "residual": -1.0324518726179122e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.34%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 50.0%: implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.017524749040603638,
+      "model_value_per_share_at_solution": 72.97249506318826,
+      "residual": 2.1388700915281333e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.75%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 52.0%: implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.023906201124191284,
+      "model_value_per_share_at_solution": 72.9724876671261,
+      "residual": 1.3992638756121778e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 2.39%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 55.0%: implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.028246313333511353,
+      "model_value_per_share_at_solution": 72.97248923051563,
+      "residual": 1.555602828773317e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 2.82%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 57.0%: implied annual event probability at NT$2,370"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.031770259141922,
+      "model_value_per_share_at_solution": 72.9724826576649,
+      "residual": 8.983177551158406e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 3.18%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 58.6%: implied annual event probability at NT$2,370"
     }
   ],
   "variants": [

@@ -184,9 +184,28 @@ adding it back — the engine already does.
 
 ### Phase 6 — Value it
 
+Put every analysis the report will cite into one spec file and generate the numbers appendix
+in a single command — valuation, elasticity, reverse solves, variants, the consensus bridge,
+generic solves and sensitivity grids:
+
 ```bash
-python3 scripts/valuation_engine.py value --input reports/<TICKER>_case.json --markdown
+python3 scripts/run_analysis.py --spec reports/<TICKER>_spec.json
+# -> reports/<TICKER>_numbers.md (appendix) and reports/<TICKER>_numbers.json
 ```
+
+`reports/2330_spec.json` is a complete worked example. Every valuation figure in the report
+must appear in the appendix; if you need a new number, add it to the spec and re-run rather
+than computing it by hand.
+
+**Fair value vs target price.** The engine's per-share value is *today's* fair value. A
+12-month target price is that value rolled forward at the cost of equity in the quote
+currency, less dividends over the year: set `roll_forward` in the case file
+(`quote_rf` and `model_rf` derive the quote-currency rate from WACC by interest-rate parity).
+The rating uses the 12-month target price vs spot. **Compare like with like:** fair value
+against spot, 12-month target against 12-month target. Bridging your fair value to a
+consensus *target price* overstates the gap by roughly a year's cost of equity — the 2330
+run made exactly this error before review (implied consensus discount rate 9.03% on the
+wrong basis, 9.34% on the right one).
 
 Prefer SOTP when option pools matter; prefer a single DCF when one pool dominates.
 Always cross-check the DCF output against a multiples view on comparables — if they
@@ -249,10 +268,25 @@ anchoring on the spot price, scenario weights reverse-engineered to a conclusion
 double-counted option pools, and the two or three arithmetic errors that most often
 survive into a published note.
 
+Then verify the draft line by line against the numbers appendix — every figure, every
+comparison's basis. In the 2330 run this step caught a bridge that compared today's fair
+value with a consensus *12-month* target.
+
+For a full-depth run, also get an independent review before delivery: a numbers auditor
+(re-runs the engine against the appendix), a sector analyst (logic), a PM (is the insight
+actionable), a copy editor (fluency in the report's language) and a red team (attacks the
+central claim). Fix every critical and major finding, and say in the report what was left
+unresolved.
+
 ## Output
 
-A single markdown report at `reports/<TICKER>_<YYYY-MM-DD>.md`, plus the case JSON at
-`reports/<TICKER>_case.json` so every number is reproducible by re-running the engine.
+- `reports/<TICKER>_<YYYY-MM-DD>.md` — the report
+- `reports/<TICKER>_case.json` — model inputs, with a `_notes` field sourcing each input
+- `reports/<TICKER>_spec.json` and `reports/<TICKER>_numbers.md/.json` — the analysis spec and
+  the numbers appendix it generates
+- `reports/<TICKER>_evidence.json` — the sourced research findings (URL, date, tier)
+
+Everything is reproducible by re-running `scripts/run_analysis.py` on the spec.
 Send the report to the user with `SendUserFile`.
 
 In chat, give only: rating, target price, upside, the one-sentence thesis, and the link.

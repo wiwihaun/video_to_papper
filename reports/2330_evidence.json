@@ -1,0 +1,1011 @@
+[
+ {
+  "topic": "TSMC multi-year financial history FY2015–FY2025 (revenue NT$/US$, USD growth, GM, OPM, diluted EPS, capex, D&A, CFO, FCF) plus 3Q26 balance-sheet detail (current debt, leases, NCI, customer temporary receipts)",
+  "findings": [
+   {
+    "item": "FY2015 annual financials (consolidated, TIFRS)",
+    "value": "Net revenue NT$843.50bn / US$26.61bn; YoY +5.7% USD (+10.6% NT$); GM 48.7%; OPM 37.9%; diluted EPS NT$11.82; capex US$8.12bn (US$8,123m) = NT$257.52bn cash-flow capex; D&A NT$222.51bn; operating cash flow NT$529.89bn; FCF (TSMC definition: CFO minus capex) NT$272.37bn",
+    "as_of": "FY2015 (report dated 2016-01-14)",
+    "source_name": "TSMC 4Q15 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/english/2015/Q4/4Q15ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable to parent NT$306.57bn. The 4Q16 report repeats the same FY2015 figures as comparatives (revenue, EPS, GM, OPM, D&A, CFO, capex). FY2014 restatement for 2013 IFRS was only about NT$20m and does not affect the series."
+   },
+   {
+    "item": "FY2016 annual financials",
+    "value": "Net revenue NT$947.94bn / US$29.43bn; YoY +10.6% USD (+12.4% NT$); GM 50.1%; OPM 39.9%; diluted EPS NT$12.89; capex US$10.19bn = NT$328.05bn; D&A NT$223.83bn; CFO NT$539.84bn; FCF NT$211.79bn",
+    "as_of": "FY2016 (report dated 2017-01-12)",
+    "source_name": "TSMC 4Q16 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/english/2016/Q4/4Q16ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable NT$334.25bn. The 4Q17 report repeats the same FY2016 comparatives."
+   },
+   {
+    "item": "FY2017 annual financials",
+    "value": "Net revenue NT$977.45bn / US$32.11bn; YoY +9.1% USD (+3.1% NT$); GM 50.6%; OPM 39.4%; diluted EPS NT$13.23; capex US$10.86bn = NT$330.59bn; D&A NT$260.14bn; CFO NT$585.32bn; FCF NT$254.73bn",
+    "as_of": "FY2017 (report dated 2018-01-18)",
+    "source_name": "TSMC 4Q17 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/english/2017/Q4/4Q17ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable NT$343.11bn."
+   },
+   {
+    "item": "FY2018 annual financials",
+    "value": "Net revenue NT$1,031.47bn / US$34.20bn; YoY +6.5% USD (+5.5% NT$); GM 48.3%; OPM 37.2%; diluted EPS NT$13.54; capex US$10.46bn = NT$315.58bn; D&A NT$292.55bn; CFO NT$573.95bn; FCF NT$258.37bn",
+    "as_of": "FY2018 (report dated 2019-01-17)",
+    "source_name": "TSMC 4Q18 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/english/2018/Q4/4Q18ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable NT$351.13bn."
+   },
+   {
+    "item": "FY2019 annual financials",
+    "value": "Net revenue NT$1,069.99bn / US$34.63bn; YoY +1.3% USD (+3.7% NT$); GM 46.0%; OPM 34.8%; diluted EPS NT$13.32; capex US$14.90bn = NT$460.42bn; D&A NT$286.88bn; CFO NT$615.14bn; FCF NT$154.72bn",
+    "as_of": "FY2019 (report dated 2020-01-16)",
+    "source_name": "TSMC 4Q19 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/english/2019/Q4/4Q19ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable NT$345.26bn. This is the lowest year for GM, OPM and FCF in the FY15-25 series."
+   },
+   {
+    "item": "FY2020 annual financials",
+    "value": "Net revenue NT$1,339.26bn / US$45.51bn; YoY +31.4% USD (+25.2% NT$); GM 53.1%; OPM 42.3%; diluted EPS NT$19.97; capex US$17.24bn = NT$507.24bn; D&A NT$331.73bn; CFO NT$822.67bn; FCF NT$315.43bn",
+    "as_of": "FY2020 (report dated 2021-01-14)",
+    "source_name": "TSMC 4Q20 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2021-01/4Q20ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable NT$517.89bn. FY2020 average USD/NTD was 29.43 (from the 4Q21 report's comparative column)."
+   },
+   {
+    "item": "FY2021 annual financials",
+    "value": "Net revenue NT$1,587.42bn / US$56.82bn; YoY +24.9% USD (+18.5% NT$); GM 51.6%; OPM 40.9%; diluted EPS NT$23.01; capex US$30.04bn = NT$839.20bn; D&A NT$422.40bn; CFO NT$1,112.16bn; FCF NT$272.96bn",
+    "as_of": "FY2021 (report dated 2022-01-13)",
+    "source_name": "TSMC 4Q21 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2022-01/f7c72d6d88b224476ab812fc3ba28169ec091a86/4Q21ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable NT$596.54bn; average USD/NTD 27.94."
+   },
+   {
+    "item": "FY2022 annual financials",
+    "value": "Net revenue NT$2,263.89bn / US$75.88bn; YoY +33.5% USD (+42.6% NT$); GM 59.6%; OPM 49.5%; diluted EPS NT$39.20; capex US$36.29bn = NT$1,082.67bn; D&A NT$437.26bn; CFO NT$1,610.60bn; FCF NT$527.93bn",
+    "as_of": "FY2022 (report dated 2023-01-12)",
+    "source_name": "TSMC 4Q22 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2023-01/91107cbb4214c395a1a26e73edb31f5c1813c599/4Q22ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable NT$1,016.53bn; average USD/NTD 29.84."
+   },
+   {
+    "item": "FY2023 annual financials",
+    "value": "Net revenue NT$2,161.74bn / US$69.30bn; YoY -8.7% USD (-4.5% NT$); GM 54.4%; OPM 42.6%; diluted EPS NT$32.34; capex US$30.45bn = NT$949.82bn; D&A NT$532.19bn; CFO NT$1,241.97bn; FCF NT$292.15bn",
+    "as_of": "FY2023 (report dated 2024-01-18)",
+    "source_name": "TSMC 4Q23 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2024-01/894c1f6b900634fd7f369ef213bdfbf11c617297/4Q23ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable NT$838.50bn; average USD/NTD 31.19. D&A and CFO match the FY2025 20-F cash-flow statement (depreciation NT$522,932.7m + amortization NT$9,258.2m; CFO NT$1,241,967m)."
+   },
+   {
+    "item": "FY2024 annual financials",
+    "value": "Net revenue NT$2,894.31bn / US$90.08bn; YoY +30.0% USD (+33.9% NT$); GM 56.1%; OPM 45.7%; diluted EPS NT$45.25; capex US$29.76bn = NT$956.01bn; D&A NT$662.80bn; CFO NT$1,826.18bn; FCF NT$870.17bn",
+    "as_of": "FY2024 (report dated 2025-01-16)",
+    "source_name": "TSMC 4Q24 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2025-01/2d8b2bb6fc3b5887d24ae0635f639c1cdca834f3/4Q24ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable NT$1,173.27bn; average USD/NTD 32.13. Cross-checked to the FY2025 20-F (D&A NT$662,796.6m; CFO NT$1,826,177m)."
+   },
+   {
+    "item": "FY2025 annual financials",
+    "value": "Net revenue NT$3,809.05bn / US$122.42bn; YoY +35.9% USD (+31.6% NT$); GM 59.9%; OPM 50.8%; diluted EPS NT$66.25; capex US$40.90bn = NT$1,272.41bn; D&A NT$688.10bn; CFO NT$2,274.98bn; FCF NT$1,002.57bn",
+    "as_of": "FY2025 (report dated 2026-01-15)",
+    "source_name": "TSMC 4Q25 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-01/00fe50f72b38d74e6b9b066398f020f337cd4e9d/4Q25%20Management%20Report.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "CONFLICT with the established list: it gives FY25 revenue as ~US$122.0bn (press), but TSMC's own report says US$122.42bn. Use 122.42. Net income attributable NT$1,717.88bn; average USD/NTD 31.11. Cross-checked to the FY2025 20-F (CFO NT$2,274,976m; depreciation NT$679,684.0m + amortization NT$8,412.4m)."
+   },
+   {
+    "item": "Current portion of bonds payable and bank loans (3Q26)",
+    "value": "NT$213,198m (US$6,688m at NT$31.880), vs NT$167,410m at 30-Jun-26 and NT$76,226m at 30-Sep-25",
+    "as_of": "2026-09-30",
+    "source_name": "TSMC 3Q26 Consolidated Condensed Balance Sheet (Unaudited), FS.pdf on TSMC IR",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/3a94d1034b9e6b22446b674f7aaf3d088a12a193/FS.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "The 3Q26 Management Report liquidity table shows the same NT$213.20bn. The statements are unaudited and the 3Q26 figures are not yet board-approved."
+   },
+   {
+    "item": "Interest-bearing debt and net cash (3Q26)",
+    "value": "Bonds payable (non-current) NT$770,315m; long-term interest-bearing debts NT$818.38bn; total interest-bearing debts NT$1,031.58bn; cash & marketable securities NT$4,016.98bn; net cash reserves NT$2,985.40bn",
+    "as_of": "2026-09-30",
+    "source_name": "TSMC 3Q26 Quarterly Management Report (Debt Service table) and 3Q26 Consolidated Condensed Balance Sheet",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/f83780000ddc0c3b48e57a87eab6814c4ab35058/3Q26%20ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Total interest-bearing debt = 213.20 current + 818.38 long-term, so there are no short-term loans. DERIVED, not reported: non-current long-term bank loans of about NT$48.07bn (818.38 - 770.315). Non-current bonds fell from NT$815,037m at 2Q26 as bonds were reclassified to current."
+   },
+   {
+    "item": "Other non-current liabilities, aggregate line (3Q26)",
+    "value": "NT$271,600m (vs NT$228,385m at 30-Jun-26 and NT$162,190m at 30-Sep-25)",
+    "as_of": "2026-09-30",
+    "source_name": "TSMC 3Q26 Consolidated Condensed Balance Sheet (Unaudited)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/3a94d1034b9e6b22446b674f7aaf3d088a12a193/FS.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "This is one aggregate line. At 30-Jun-26 the reviewed balance sheet breaks it into (NT$m): LT bank loans 49,227 + deferred tax 3,907 + lease liabilities 33,276 + net defined-benefit liability 5,894 + guarantee deposits 777 + others 135,304 = 228,385. 'Others' includes non-current customer temporary receipts. The 3Q26 breakdown is not yet published."
+   },
+   {
+    "item": "Non-controlling interests and parent equity (3Q26)",
+    "value": "NCI NT$45,326m; equity attributable to shareholders of the parent NT$6,997,902m; total equity NT$7,043,228m (NCI was NT$41,953m at 30-Jun-26 and NT$37,271m at 30-Sep-25)",
+    "as_of": "2026-09-30",
+    "source_name": "TSMC 3Q26 Consolidated Condensed Balance Sheet (Unaudited)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/3a94d1034b9e6b22446b674f7aaf3d088a12a193/FS.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Net income attributable to NCI: NT$277m in 3Q26 and NT$817m in 9M26."
+   },
+   {
+    "item": "Accrued expenses and other current liabilities, aggregate (3Q26)",
+    "value": "NT$970,038m (vs NT$951,440m at 30-Jun-26 and NT$678,538m at 30-Sep-25)",
+    "as_of": "2026-09-30",
+    "source_name": "TSMC 3Q26 Consolidated Condensed Balance Sheet (Unaudited)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/3a94d1034b9e6b22446b674f7aaf3d088a12a193/FS.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Per the 2Q26 reviewed notes, this aggregate includes income tax payable, accrued profit sharing, salary/bonus, current lease liabilities, current customer temporary receipts and contract liabilities. The 3Q26 components are not disclosed."
+   },
+   {
+    "item": "Lease liabilities (latest detailed date: 30-Jun-26)",
+    "value": "Total NT$36,882,401 thousand = current NT$3,606,345k (within accrued expenses & other current liabilities) + non-current NT$33,276,056k. Dec-31-25: NT$35,428,007k; Jun-30-25: NT$35,087,798k",
+    "as_of": "2026-06-30",
+    "source_name": "TSMC 2Q26 consolidated financial statements, Note 15 (reviewed by Deloitte, review report dated 2026-08-11), SEC Form 6-K filed 2026-08-14",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000541/a2026q2consolidatedreport-.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The 30-Sep-26 value is not available (see unresolved)."
+   },
+   {
+    "item": "Temporary receipts from customers (capacity prepayments), latest detailed date 30-Jun-26",
+    "value": "Total NT$234,225,146 thousand = current NT$141,853,142k + non-current NT$92,372,004k. Dec-31-25: NT$189,858,211k; Jun-30-25: NT$221,915,273k",
+    "as_of": "2026-06-30",
+    "source_name": "TSMC 2Q26 consolidated financial statements, Note 20c (reviewed), SEC Form 6-K filed 2026-08-14",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000541/a2026q2consolidatedreport-.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "These are payments customers make to retain TSMC capacity. Once the agreement terms are met they are refunded or offset against accounts receivable, by mutual consent. The current portion sits in accrued expenses and the non-current portion in other non-current liabilities. DERIVED: up NT$44.4bn in 1H26."
+   },
+   {
+    "item": "Contract liabilities (30-Jun-26)",
+    "value": "NT$55,852,048 thousand (Dec-31-25 NT$49,954,384k; Jun-30-25 NT$56,799,375k; Jan-1-25 NT$89,435,361k)",
+    "as_of": "2026-06-30",
+    "source_name": "TSMC 2Q26 consolidated financial statements, Note 20b (reviewed), SEC Form 6-K filed 2026-08-14",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000541/a2026q2consolidatedreport-.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Classified under accrued expenses and other current liabilities. This is a separate item from temporary receipts."
+   },
+   {
+    "item": "Debt detail (30-Jun-26, reviewed)",
+    "value": "Long-term liabilities, current portion NT$167,409,865k (bonds NT$165,326,879k + bank loans NT$2,082,986k); bonds payable non-current NT$815,036,716k (gross domestic NT$554,836,000k + overseas NT$427,701,200k, less discount NT$2,173,605k and current portion); long-term bank loans non-current NT$49,226,958k; NCI NT$41,952,647k",
+    "as_of": "2026-06-30",
+    "source_name": "TSMC 2Q26 consolidated financial statements, balance sheet and Notes 17-18 (reviewed), SEC Form 6-K filed 2026-08-14",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000541/a2026q2consolidatedreport-.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Temporary receipts from customers at year-ends",
+    "value": "Dec-31-24: NT$291,101.8m (current 198,602.6m; non-current 92,499.2m). Dec-31-25: NT$189,858.2m (current 146,559.3m; non-current 43,298.9m)",
+    "as_of": "2024-12-31 and 2025-12-31",
+    "source_name": "TSMC Form 20-F for FY2025 (filed 2026-04-16), consolidated FS note on contract balances / temporary receipts",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Contractual cash obligations (FY2025 20-F)",
+    "value": "As of Dec-31-25 (NT$m): long-term debt incl. interest 1,229,859 (<1yr 156,822); capital leases 39,470; temporary receipts 189,858 (<1yr 146,559); capital purchase or other purchase obligations 1,534,575 (<1yr 1,220,393)",
+    "as_of": "2025-12-31",
+    "source_name": "TSMC Form 20-F for FY2025, Item 5 Cash Requirements table",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Purchase obligations are off-balance-sheet commitments for construction, equipment, materials and services, so they are useful for calibrating capex."
+   },
+   {
+    "item": "9M26 cash flow and capex (for FY2026 calibration)",
+    "value": "9M26 (NT$m): D&A 584,192 (2Q26 198,538; 3Q26 220,204); CFO 2,402,117; PP&E acquisitions 1,289,971. Capex in US$: 1Q26 11.10bn, 2Q26 15.70bn, 3Q26 13.84bn, YTD 40.64bn. FCF (NT$bn): 1Q26 348.21, 2Q26 287.36, 3Q26 476.56",
+    "as_of": "9M ended 2026-09-30",
+    "source_name": "TSMC 3Q26 Consolidated Condensed Cash Flow Statements (Unaudited) and 3Q26 Quarterly Management Report",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/3a94d1034b9e6b22446b674f7aaf3d088a12a193/FS.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "DERIVED: reaching the guided US$60-64bn for 2026 requires US$19.4-23.4bn of capex in 4Q26. The quarterly US$ capex and FCF figures are from the 3Q26 Management Report."
+   },
+   {
+    "item": "3Q26 other investing inflow from U.S. investment tax credits",
+    "value": "Other investing sources of NT$198.74bn in 3Q26, 'mainly attributable to U.S. Treasury Department Investment Tax Credits'",
+    "as_of": "3Q26",
+    "source_name": "TSMC 3Q26 Quarterly Management Report, cash flow commentary",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/f83780000ddc0c3b48e57a87eab6814c4ab35058/3Q26%20ManagementReport.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "This inflow is not netted against capex, so TSMC's reported FCF (CFO - capex = NT$476.56bn) excludes it. That matters for comparing FCF across periods."
+   },
+   {
+    "item": "DERIVED STAT: annual USD revenue growth, FY2015-FY2025",
+    "value": "Mean 16.38%; sample SD 15.21pp (population SD 14.50pp); median 10.6%; min -8.7% (FY23); max +35.9% (FY25). FY16-25: mean 17.45%, sample SD 15.59pp. FY20-25: mean 24.50%, sample SD 16.68pp. Sample SD of log growth: 13.28%",
+    "as_of": "FY2015-FY2025",
+    "source_name": "Derived from TSMC 4Q15-4Q25 Quarterly Management Reports (FY rows above)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-01/00fe50f72b38d74e6b9b066398f020f337cd4e9d/4Q25%20Management%20Report.pdf",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Inputs (TSMC-stated USD YoY, FY15 to FY25): 5.7, 10.6, 9.1, 6.5, 1.3, 31.4, 24.9, 33.5, -8.7, 30.0, 35.9. Recomputing from the US$ levels (26.61, 29.43, 32.11, 34.20, 34.63, 45.51, 56.82, 75.88, 69.30, 90.08, 122.42) gives the same rounded growth rates."
+   },
+   {
+    "item": "DERIVED STAT: operating margin, FY2015-FY2025",
+    "value": "Mean 41.91%; sample SD 5.02pp (population 4.78pp); median 40.9%; min 34.8% (FY19); max 50.8% (FY25). FY20-25: mean 45.30%, sample SD 4.09pp",
+    "as_of": "FY2015-FY2025",
+    "source_name": "Derived from TSMC 4Q15-4Q25 Quarterly Management Reports",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-01/00fe50f72b38d74e6b9b066398f020f337cd4e9d/4Q25%20Management%20Report.pdf",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Inputs FY15 to FY25: 37.9, 39.9, 39.4, 37.2, 34.8, 42.3, 40.9, 49.5, 42.6, 45.7, 50.8. The 3Q26 OPM of 58.7% is 3.35 sample SDs above the FY15-25 mean."
+   },
+   {
+    "item": "DERIVED STAT: gross margin, FY2015-FY2025",
+    "value": "Mean 52.58%; sample SD 4.54pp (population 4.33pp); min 46.0% (FY19); max 59.9% (FY25). FY20-25: mean 55.78%, sample SD 3.41pp",
+    "as_of": "FY2015-FY2025",
+    "source_name": "Derived from TSMC 4Q15-4Q25 Quarterly Management Reports",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-01/00fe50f72b38d74e6b9b066398f020f337cd4e9d/4Q25%20Management%20Report.pdf",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Inputs: 48.7, 50.1, 50.6, 48.3, 46.0, 53.1, 51.6, 59.6, 54.4, 56.1, 59.9. The 3Q26 GM of 66.4% is 3.04 sample SDs above the mean."
+   },
+   {
+    "item": "DERIVED STAT: USD revenue CAGR",
+    "value": "FY15 to FY25 (10 years): 16.49%; FY19 to FY25 (6 years): 23.42%",
+    "as_of": "FY2015-FY2025",
+    "source_name": "Derived from TSMC 4Q15, 4Q19 and 4Q25 Quarterly Management Reports",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-01/00fe50f72b38d74e6b9b066398f020f337cd4e9d/4Q25%20Management%20Report.pdf",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Inputs: US$26.61bn (FY15), US$34.63bn (FY19), US$122.42bn (FY25)."
+   },
+   {
+    "item": "DERIVED STAT: capex intensity, FCF margin, D&A/revenue, FY2015-FY2025",
+    "value": "Capex/revenue (US$ capex / US$ revenue), FY15 to FY25: 30.5, 34.6, 33.8, 30.6, 43.0, 37.9, 52.9, 47.8, 43.9, 33.0, 33.4% (mean 38.3%, sample SD 7.50pp). FCF / NT$ revenue: 32.3, 22.3, 26.1, 25.0, 14.5, 23.6, 17.2, 23.3, 13.5, 30.1, 26.3% (mean 23.1%, sample SD 5.99pp). D&A / NT$ revenue: 26.4, 23.6, 26.6, 28.4, 26.8, 24.8, 26.6, 19.3, 24.6, 22.9, 18.1%",
+    "as_of": "FY2015-FY2025",
+    "source_name": "Derived from TSMC 4Q15-4Q25 Quarterly Management Reports",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-01/00fe50f72b38d74e6b9b066398f020f337cd4e9d/4Q25%20Management%20Report.pdf",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Inputs are from the FY rows. NT$ cash-flow capex divided by US$ capex roughly equals the average FX rate each year (FY25 1,272.41/40.90 = 31.11, which is the reported average rate; FY23 31.19; FY24 32.12). This suggests US$ capex is cash-flow capex converted at average FX. Every year's FCF equals CFO minus NT$ capex exactly."
+   }
+  ],
+  "synthesis": "FACTS (TSMC 4Q management reports, 20-F, 3Q26 statements): From FY15 to FY25, USD revenue rose from US$26.61bn to US$122.42bn. Annual USD growth ranged from -8.7% (FY23) to +35.9% (FY25), with weak years in FY18 (+6.5%) and FY19 (+1.3%). OPM ranged from 34.8% (FY19) to 50.8% (FY25), and GM from 46.0% to 59.9%. Capex rose from US$8.12bn to US$40.90bn. TSMC-defined FCF ranged from NT$154.7bn (FY19) to NT$1,002.6bn (FY25). At 30-Sep-26, interest-bearing debt was NT$1,031.58bn (current portion NT$213.20bn), net cash NT$2,985.40bn and NCI NT$45.3bn. At 30-Jun-26, leases were NT$36.9bn and customer temporary receipts NT$234.2bn (Dec-25: NT$189.9bn; Dec-24: NT$291.1bn). TSMC's own FY25 USD revenue is US$122.42bn, not the ~US$122.0bn in the established list.\n\nDERIVED: Mean USD growth was 16.4% (sample SD 15.2pp). OPM averaged 41.9% (SD 5.0pp) and GM 52.6% (SD 4.5pp). USD revenue CAGR was 16.5% for FY15-25 and 23.4% for FY19-25. Capex/revenue ranged 30.5-52.9% (mean 38.3%); FCF margin ranged 13.5-32.3% (mean 23.1%).\n\nINFERENCE for valuation:\n(1) The 3Q26 OPM of 58.7% and GM of 66.4% sit about 3.3 and 3.0 sample SDs above their 11-year means, and above the 56%+ through-cycle GM target. A terminal margin anchored on the current run-rate assumes a regime shift that history does not yet support, especially with the guided 2-4pts of overseas-fab dilution.\n(2) Growth volatility is high (~15pp SD, a down year in FY23 and a near-stall in FY19). That argues for wide scenario bands even if the ~25% 2024-29 CAGR target is met on average.\n(3) FCF margins compressed when capex intensity spiked (FY19, FY21, FY23). 2026 capex YTD is US$40.64bn against a US$60-64bn guide, which implies US$19.4-23.4bn in 4Q26.\n(4) EV bridge: net cash is about NT$115/share (2,985.40bn / 25,932m shares). Customer temporary receipts are capacity prepayments that are later refunded or offset against receivables, so treat them as quasi-debt or operating liabilities, not free cash. Leases and NCI are each under 1% of equity.",
+  "unresolved": [
+   "Customer temporary receipts and lease liabilities at 30-Sep-26 are not disclosed in TSMC's unaudited condensed 3Q26 statements. The reviewed 3Q26 consolidated FS with notes were not published as of 2026-11-01: the 15-Oct-26 release says the 3Q26 figures 'have not been approved by Board of Directors', and last quarter the FS 6-K followed the board meeting (2Q26: board 11-Aug, 6-K 14-Aug). The latest detailed values are as of 30-Jun-26.",
+   "Non-current long-term bank loans at 30-Sep-26 are not separately reported. ~NT$48.07bn is a derivation (818.38 - 770.315), not a disclosed number. The split of the NT$213.20bn 3Q26 current portion between bonds and bank loans is also not disclosed.",
+   "The components of the 3Q26 aggregate lines (accrued expenses & other current liabilities NT$970.0bn; other non-current liabilities NT$271.6bn, up NT$43.2bn QoQ) are unknown. Whether the increase reflects more non-current customer temporary receipts cannot be confirmed until the 3Q26 notes are published.",
+   "Average USD/NTD rates for FY2015-FY2019 are not stated in the 4Q management reports retrieved. Only FY2020-25 are sourced: 29.43, 27.94, 29.84, 31.19, 32.13, 31.11.",
+   "TSMC does not explicitly document how it converts capex to US$. That it is NT$ cash capex at the average FX rate is an inference from matching implied rates.",
+   "Whether the NT$198.74bn inflow from U.S. Treasury investment tax credits in 3Q26 will recur, and how much more is receivable, is not resolved. TSMC's FCF definition excludes it.",
+   "The FY2014 US$ revenue level was not captured; TSMC states only the FY2015 USD growth of +5.7%."
+  ]
+ },
+ {
+  "topic": "Market and discount-rate parameters for TSMC (2330.TW / TSM) as of late October 2026: USD/TWD, Taiwan and US 10Y yields, CBC and Fed policy, ERP/CRP, betas, ADR premium history, historical P/E ranges",
+  "findings": [
+   {
+    "item": "USD/TWD interbank closing rate (Taipei Foreign Exchange), 2026-10-30",
+    "value": "32.478 TWD per USD (prior day 10/29: 32.492; TWD +1.4 fen d/d)",
+    "as_of": "2026-10-30",
+    "source_name": "Central Bank of the Republic of China (Taiwan) - NT$/US$ interbank closing rate table (data: Taipei Foreign Exchange Inc.)",
+    "source_url": "https://www.cbc.gov.tw/tw/lp-645-1.html",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Primary official source. Corroborated by CNA (close 32.478, +1.4 fen, turnover US$2.444bn, open 32.52) https://www.cna.com.tw/news/afe/202610300184.aspx and MoneyDJ (week +0.09%, October -1.97% for TWD). Yahoo TW used exactly this rate for the 10/30 ADR conversion (406.13 x 32.478 / 5 = NT$2,638.06)."
+   },
+   {
+    "item": "USD/TWD closing path, end-Sep to end-Oct 2026",
+    "value": "9/30: 31.852; 10/12: 31.895; 10/16: 32.338; 10/20: 32.617 (weakest TWD close in the period); 10/27: 32.452; 10/28: 32.418; 10/29: 32.492; 10/30: 32.478",
+    "as_of": "2026-09-30 to 2026-10-30",
+    "source_name": "CBC NT$/US$ interbank closing rate table",
+    "source_url": "https://www.cbc.gov.tw/tw/lp-645-1.html",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Primary. Q3-26 average used by TSMC was 31.98; 4Q26 guidance assumes 31.8, so spot is ~2% weaker TWD than TSMC's guidance FX (my arithmetic)."
+   },
+   {
+    "item": "CBC explanation of mid-October TWD depreciation and foreign equity outflows",
+    "value": "TWD fell 1.37% from 31.895 (10/12) to 32.338 (10/16); SOX -15.7% over 10/7-10/16; Taiwan stocks -5.4%; foreign investors net sold US$19.402bn of Taiwan equities 10/12-10/16, net outflows US$17.961bn (incl. dividend repatriation)",
+    "as_of": "2026-10-19 (CBC press release No.166)",
+    "source_name": "CBC press release 近期新台幣匯率貶值之說明",
+    "source_url": "https://www.cbc.gov.tw/tw/cp-302-193046-bb130-1.html",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Primary. CBC attributes the move to the global tech/AI-valuation selloff and foreign selling of Taiwan stocks."
+   },
+   {
+    "item": "Taiwan 10-year government bond yield, close 2026-10-30",
+    "value": "1.99% (-0.02pp d/d; day range 1.99-2.01%)",
+    "as_of": "2026-10-30",
+    "source_name": "cnyes (鉅亨網) TW10YY end-of-day page",
+    "source_url": "https://invest.cnyes.com/EOD/detail/TW10YY",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Vendor data, not an official TPEx print. Page's 52-week range 1.26-3.02%; the 3.02% high looks like a bad tick (Trading Economics calls 1.96% on 2026-09-24 the highest since Nov-2008). Megabills (10/27 commentary) notes the 10Y benchmark 115/9 did not trade on at least one late-October day (typhoon), so prints may be thin."
+   },
+   {
+    "item": "Taiwan 10-year government bond yield (Trading Economics series)",
+    "value": "1.99% on 2026-10-30 (eased 0.02pp); 1.96% on 2026-09-24 (highest since Nov-2008); ~1.88% in late July 2026 on tightening bets; about +0.72pp vs a year earlier",
+    "as_of": "2026-10-30",
+    "source_name": "Trading Economics - Taiwan Government Bond Yield",
+    "source_url": "https://tradingeconomics.com/taiwan/government-bond-yield",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Agrees with cnyes on the 10/30 level."
+   },
+   {
+    "item": "Taiwan 10-year central government bond auction 115甲9 (A15109, matures 2036-10-23)",
+    "value": "Weighted-average yield 1.9580%; highest accepted 2.0010%; lowest 1.8000%; coupon 2.0000%; NT$25bn issued; bids NT$45.9bn (bid-to-cover 1.84x). Previous 10Y (115甲6 reopening, issued 2026-08-12) highest accepted 1.9690%",
+    "as_of": "2026-10-20 auction (issue 2026-10-23)",
+    "source_name": "CBC press release: 115年甲類第9期（10年期）中央政府建設公債開標結果",
+    "source_url": "https://www.cbc.gov.tw/tw/cp-302-193051-3d59b-1.html",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Primary official source; best official anchor for a late-October TWD 10Y risk-free rate (~1.96-2.00%)."
+   },
+   {
+    "item": "CBC policy rate / whether CBC hiked in 2026",
+    "value": "No hike in 2026. Rediscount rate 2.00% (secured accommodation 2.375%, short-term accommodation 4.25%) held at the 2026-09-17 meeting; unchanged since the last hike in March 2024 (10th consecutive hold). 2026 meetings 3/19, 6/18, 9/17 all holds; next meeting 2026-12-17",
+    "as_of": "2026-09-17 decision (minutes published 2026-10-29)",
+    "source_name": "CBC monetary policy minutes summary, 21st Board 7th joint meeting (議事錄摘要)",
+    "source_url": "https://www.cbc.gov.tw/tw/cp-302-193114-c16ef-1.html",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Minutes text: policy rate maintained since the last hike in March 2024. Sep meeting eased selective credit controls (2nd-home mortgage LTV cap 60% to 70%). '連10凍' also per UDN https://udn.com/news/story/7239/9761172. Schedule per CBC release 2025-12-18 https://www.cbc.gov.tw/en/cp-448-189515-f1342-2.html."
+   },
+   {
+    "item": "CBC Sep-2026 board vote on holding policy rates",
+    "value": "13 in favour, 2 against (陳旭昇, 李怡庭). Minutes record one director saying it is a good time to normalize (raise) rates and another arguing the policy rate could be raised to align with rising market rates and curb TWD/import-price pressure",
+    "as_of": "2026-09-17 (published 2026-10-29)",
+    "source_name": "CBC minutes PDF 中央銀行第21屆理事會第7次理監事聯席會議貨幣政策議事錄摘要.pdf",
+    "source_url": "https://www.cbc.gov.tw/tw/dl-227958-9d4a0dd9ce61438c97c72c32b97d77ba.html",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Primary. Emerging hawkish minority. Commerzbank (via FXStreet 2026-09-18, search result not opened) reportedly sees 1Q27 as the first live hike window: https://www.fxstreet.com/news/taiwan-dollar-cbc-holds-rates-but-flags-inflation-risks-commerzbank-202609182332"
+   },
+   {
+    "item": "CBC macro forecasts at Sep-2026 meeting",
+    "value": "2026 GDP growth 11.48%, CPI 2.03%; 2027 GDP 5.82%, CPI 1.83%",
+    "as_of": "2026-09-17",
+    "source_name": "UDN/經濟日報 report on CBC Q3 board meeting",
+    "source_url": "https://udn.com/news/story/7239/9761172",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Core CPI 2026 forecast 2.16% appears only in a Newtalk search snippet (https://newtalk.tw/news/view/2026-09-17/1060425, not opened)."
+   },
+   {
+    "item": "US 10-year Treasury yield (par/CMT) close 2026-10-30",
+    "value": "4.94% (10/29: 4.98%; 10/28: 5.05%; 10/27: 4.99%; 10/26: 5.00%). Same day 2Y 4.56%, 5Y 4.71%, 30Y 5.31%",
+    "as_of": "2026-10-30",
+    "source_name": "U.S. Department of the Treasury - Daily Treasury Par Yield Curve Rates, October 2026",
+    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Primary official source. Supersedes the established 5.10% (10/15) as the latest level. Press (wrenews) cites 5.29% at end-September, i.e., about -35bp in October."
+   },
+   {
+    "item": "FRED DGS10 latest observations",
+    "value": "10/23: 5.00%; 10/26: 5.00%; 10/27: 4.99%; 10/28: 5.05%; 10/29: 4.98%; 10/30 not yet posted (next release 2026-11-02)",
+    "as_of": "2026-10-29 (page updated 2026-10-30 3:16 PM CDT)",
+    "source_name": "FRED, Federal Reserve Bank of St. Louis - DGS10",
+    "source_url": "https://fred.stlouisfed.org/series/DGS10",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Consistent with the Treasury table; FRED should show 4.94% for 10/30 once updated."
+   },
+   {
+    "item": "US Fed policy rate (context for USD risk-free/ERP)",
+    "value": "Fed funds target held at 3.75-4.00% on 2026-10-28 (10-2 vote; Cook and Hammack preferred a 25bp hike), after a 25bp hike on 2026-09-16 (first since 2023)",
+    "as_of": "2026-10-28",
+    "source_name": "Federal Reserve FOMC statement, Oct 28, 2026",
+    "source_url": "https://federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+    "tier": "other",
+    "confidence": "high",
+    "note": "Statement: 'Inflation remains elevated'; activity 'expanding at a strong pace'. September hike per UDN https://udn.com/news/story/7239/9761172."
+   },
+   {
+    "item": "Damodaran implied equity risk premium (US, monthly)",
+    "value": "4.20% on 2026-10-01 (TTM cash yield with adjusted payout; other methods 3.30-5.67%) using the 10Y T-bond 5.29% as riskfree; add the US default spread 0.22% (i.e., 4.42%) if using the adjusted riskfree 5.07%. Previous month: 4.14% with T-bond 4.75%",
+    "as_of": "2026-10-01",
+    "source_name": "Damodaran Online home page (NYU Stern)",
+    "source_url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/home.htm",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "Latest monthly implied ERP available at time of check (Nov-1 update not yet seen)."
+   },
+   {
+    "item": "Damodaran country risk premium for Taiwan - July 2026 update",
+    "value": "Moody's Aa3; rating-based default spread 0.477%; country risk premium 0.742%; total ERP 4.942% (mature-market ERP 4.20%; US ERP 4.42%; equity/bond volatility multiplier 1.5545)",
+    "as_of": "2026-07-01 (default spreads corrected 2026-07-09)",
+    "source_name": "Damodaran ctrypremJuly26.xlsx, 'ERPs by country' sheet",
+    "source_url": "https://pages.stern.nyu.edu/~adamodar/pc/datasets/ctrypremJuly26.xlsx",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "CONFLICT with the established Jan-2026 figures (CRP 0.78%, total ERP 5.01%; ctryprem.html still shows the January table). Trust the July file: Damodaran's home page states CRPs were updated Jan 2026, Apr 1 and Jul 1, 2026."
+   },
+   {
+    "item": "Damodaran industry betas, semiconductors (cross-check for bottom-up beta)",
+    "value": "US semis (66 firms): levered beta 1.52, unlevered 1.49, unlevered cash-corrected 1.50. Emerging-market semis (546 firms): levered 1.94, unlevered 1.85, cash-corrected 1.98 (2021-26 avg 1.78). Global semis (675 firms): levered 1.88, cash-corrected 1.87",
+    "as_of": "January 2026 dataset",
+    "source_name": "Damodaran Betas by Sector (US html; betaemerg.xls; betaGlobal.xls)",
+    "source_url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/Betas.html",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "Simple averages of 2y/5y weekly regression betas across firms (small-cap heavy), so they overstate a mega-cap like TSMC. EM/Global files: https://pages.stern.nyu.edu/~adamodar/pc/datasets/betaemerg.xls and .../betaGlobal.xls"
+   },
+   {
+    "item": "TSM ADR beta (5Y monthly)",
+    "value": "1.24",
+    "as_of": "Page at 2026-10-30 US close (fetched 2026-11-01)",
+    "source_name": "Yahoo Finance - TSM key statistics",
+    "source_url": "https://finance.yahoo.com/quote/TSM/key-statistics/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Benchmark not printed on page; Yahoo's 5Y-monthly beta is conventionally vs the S&P 500 (secondary descriptions only)."
+   },
+   {
+    "item": "TSM ADR beta (5Y)",
+    "value": "1.24",
+    "as_of": "2026-10-30 close (page updated 2026-11-01)",
+    "source_name": "StockAnalysis.com - TSM statistics",
+    "source_url": "https://stockanalysis.com/stocks/tsm/statistics/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Benchmark not stated on page; likely same vendor basis as Yahoo."
+   },
+   {
+    "item": "TSM ADR beta (1Y)",
+    "value": "1.31",
+    "as_of": "Fetched 2026-11-01 (market closed; last close 2026-10-30)",
+    "source_name": "TradingView - NYSE:TSM",
+    "source_url": "https://www.tradingview.com/symbols/NYSE-TSM/",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "Benchmark and as-of not shown on page; 1-year window."
+   },
+   {
+    "item": "TSM ADR beta",
+    "value": "1.37",
+    "as_of": "Page last updated 2026-10-30",
+    "source_name": "MarketBeat - NYSE:TSM",
+    "source_url": "https://www.marketbeat.com/stocks/NYSE/TSM/",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "Methodology/window not stated."
+   },
+   {
+    "item": "2330.TW beta (5Y monthly) on Yahoo",
+    "value": "1.24",
+    "as_of": "Page at 2026-10-30 Taipei close",
+    "source_name": "Yahoo Finance - 2330.TW key statistics",
+    "source_url": "https://finance.yahoo.com/quote/2330.TW/key-statistics/",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "Identical to the ADR value; benchmark undisclosed. Inference: not a TAIEX beta (likely S&P 500 basis or mapped from the ADR). Do not use as a local-market beta."
+   },
+   {
+    "item": "2330 beta vs Taiwan market (MoneyDJ 投資風險)",
+    "value": "貝他值 1.03; daily return std. dev. 2.02%",
+    "as_of": "2026-10-30 (投資風險(10/30))",
+    "source_name": "MoneyDJ 理財網 - 台積電(2330)基本資料",
+    "source_url": "https://www.moneydj.com/Z/ZC/ZCA/ZCA_2330.DJHTM",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Taiwan data vendor; benchmark presumably TAIEX but window/frequency not disclosed on page. Same 1.03 shown on Fubon e-broker (MoneyDJ engine) https://fubon-ebrokerdj.fbs.com.tw/Z/ZC/ZCX/ZCX_2330.djhtm."
+   },
+   {
+    "item": "2330 beta (1Y)",
+    "value": "0.95",
+    "as_of": "Fetched 2026-11-01 (last close 2026-10-30)",
+    "source_name": "TradingView - TWSE:2330 (FactSet data)",
+    "source_url": "https://tw.tradingview.com/symbols/TWSE-2330/",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "Benchmark not shown (likely local index); 1-year window."
+   },
+   {
+    "item": "2330.TW adjusted beta range used in vendor WACC",
+    "value": "Adjusted beta 1.09-1.25 (1.09 selected); vendor CAPM: rf 2.25% (range 2.0-2.5%), ERP 6.5%, cost of equity 10.2% (range 8.6-11.8%), WACC 10.1% (8.5-11.7%)",
+    "as_of": "Page showing price NT$2,370 (2026-10-30 close)",
+    "source_name": "valueinvesting.io - 2330.TW WACC",
+    "source_url": "https://valueinvesting.io/2330.TW/valuation/wacc",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "Index, window and as-of date not stated."
+   },
+   {
+    "item": "2330 beta (GuruFocus China)",
+    "value": "1.53 (three-year basis per snippet)",
+    "as_of": "'today' per search snippet (late Oct 2026)",
+    "source_name": "GuruFocus.cn - TPE:2330 β贝塔系数",
+    "source_url": "https://www.gurufocus.cn/stock/TPE:2330/term/beta",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "Seen only in search results; page returned 403. Benchmark unknown."
+   },
+   {
+    "item": "TSMC weight in TAIEX (context for local beta)",
+    "value": "41.9%; each NT$1 move in 2330 moves TAIEX ~8 points",
+    "as_of": "2025-12-27",
+    "source_name": "經濟日報 (money.udn.com)",
+    "source_url": "https://money.udn.com/money/story/5607/9228533",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "With ~40%+ index weight, a beta vs TAIEX is mechanically pulled toward 1 (inference)."
+   },
+   {
+    "item": "ADR premium mid-2024",
+    "value": "21% as of 2024-06-14 (highest since 2009); five-year average under 8%; briefly ~30% earlier in 2024",
+    "as_of": "2024-06-14",
+    "source_name": "MoneyDJ via TechNews, citing Bloomberg (2024-06-17)",
+    "source_url": "https://technews.tw/?p=1242464",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Bloomberg-compiled data."
+   },
+   {
+    "item": "ADR premium Oct-2024 and long history",
+    "value": "ADRs cost ~20% more than Taiwan shares (Oct 2024); premium went from ~0% to 20% over the prior two years; ~80% at the 2000 tech-bubble peak; ~20% at the 2021 peak",
+    "as_of": "October 2024 (Bloomberg monthly series through 2024-10-25)",
+    "source_name": "Acadian Asset Management, Owen Lamont, 'TSMC: Totally Stupid Market Chaos'",
+    "source_url": "https://www.acadian-asset.com/investment-insights/owenomics/tsmc-totally-stupid-market-chaos",
+    "tier": "other",
+    "confidence": "medium",
+    "note": "Argues past premium spikes coincided with US bubbles and Taiwan pricing proved right."
+   },
+   {
+    "item": "ADR premium 4Q24",
+    "value": "24.6% at 2024-12-20 close (highest since 2024-10-17); 4Q24 daily average 19%",
+    "as_of": "2024-12-20",
+    "source_name": "Bloomberg-compiled data via MoneyDJ/TechNews (2024-12-24)",
+    "source_url": "https://finance.technews.tw/2024/12/24/us-investors-pay-biggest-premium-for-tsmc-shares-in-two-months/",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Original Bloomberg story syndicated at BNN Bloomberg 2024-12-23 (seen in results)."
+   },
+   {
+    "item": "ADR premium 1Q25",
+    "value": "Near 19% as of Friday 2025-02-21; 1Q25 quarterly average the highest since 2002; five-year average about 10%",
+    "as_of": "2025-02-21",
+    "source_name": "Taipei Times (Bloomberg), 2025-02-25",
+    "source_url": "https://www.taipeitimes.com/News/biz/archives/2025/02/25/2003832441",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Includes Goldman sales-desk commentary."
+   },
+   {
+    "item": "ADR premium April-May 2025 and 5-year range",
+    "value": "As wide as 34% in April 2025; shrank to 12% by early May 2025; ranged between 5% and 30% over the last five years",
+    "as_of": "2025-05-08",
+    "source_name": "Dow Jones article via iTiger ('A Popular Arbitrage Involving Taiwan Semiconductor Is Suddenly Paying off')",
+    "source_url": "https://www.itiger.com/news/2533934335",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "34% is a daily extreme during the April-2025 tariff shock (Taiwan holiday/limit-down timing); not representative."
+   },
+   {
+    "item": "ADR premium monthly averages 2025 and decade average",
+    "value": "July 2025 average 24% (widest monthly spread since April 2009), up from 17% in April 2025; 7.4% average over the past decade",
+    "as_of": "July 2025 (published 2025-08-01)",
+    "source_name": "Bloomberg, 'TSMC Stock Price Dislocation Reaches Widest Level in 16 Years'",
+    "source_url": "https://www.bloomberg.com/news/articles/2025-08-01/tsmc-stock-price-dislocation-reaches-widest-level-in-16-years",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Page paywalled (403); figures from search-result excerpts quoting Bloomberg-compiled data."
+   },
+   {
+    "item": "ADR premium per Goldman Sachs (Aug 2025)",
+    "value": "~20% at time of writing; since 2023 the premium rose sharply, peaking in the high-20% range; ~3-week cycles typically fluctuated 10-20%, shifting to 15-25% in 2025",
+    "as_of": "2025-08-08",
+    "source_name": "Investing.com summarizing Goldman Sachs note",
+    "source_url": "https://www.investing.com/news/stock-market-news/goldman-sachs-on-tsm-shares-adr-premium-signals-shortterm-rebound-likely-4179778",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Structural cause: ordinary shares not freely convertible into ADRs."
+   },
+   {
+    "item": "ADR premium Oct-2025",
+    "value": "26.8% (ADR US$294.03 at 2025-10-07 US close vs NT$1,415 Taipei close on 2025-10-08)",
+    "as_of": "2025-10-08",
+    "source_name": "今周刊 Business Today",
+    "source_url": "https://www.businesstoday.com.tw/article/category/183008/post/202510080065/",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Press calculation with mismatched dates. Bloomberg headline 2025-10-15 'TSMC ADR Premium Hits 20-Year High' (figure not retrieved; paywalled): https://www.bloomberg.com/news/articles/2025-10-15/tsmc-adr-premium-tops-two-decade-high-as-global-buyers-pile-in"
+   },
+   {
+    "item": "ADR premium start of 2026",
+    "value": "More than 20% (逾20%) as ADR closed at a record US$319.61 (+5.17%) on 2026-01-02",
+    "as_of": "2026-01-02",
+    "source_name": "經濟日報/UDN (2026-01-04)",
+    "source_url": "https://udn.com/news/story/6811/9243040",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Exact figure not given."
+   },
+   {
+    "item": "ADR premium April 2026 and UBS view",
+    "value": "April 2026 average 17% (one-year low), briefly ~10% on a daily basis; nearly 26% in December 2025; UBS: historical average around 22%; long-only could shift to ADRs near ~10%, reverse trade near ~30%",
+    "as_of": "April 2026 (Bloomberg story dated 2026-04-23)",
+    "source_name": "GuruFocus via TradingView, summarizing Bloomberg 'Sinking TSMC ADR Premium Offers Trading Window, UBS Desk Says'",
+    "source_url": "https://www.tradingview.com/news/gurufocus:a03f848c7094b:0-tsmc-adr-premium-falls-to-17-one-year-low-ubs-flags-trade-opportunity/",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "UBS 'historical average ~22%' window unstated; conflicts with Bloomberg's 7.4% decade average (different windows)."
+   },
+   {
+    "item": "ADR premium May 2026",
+    "value": "May 2026 average 13.7% (two-year low; fifth straight monthly decline) vs 26% in December 2025",
+    "as_of": "May 2026 (published 2026-06-01)",
+    "source_name": "GuruFocus via Yahoo Finance, Bloomberg-compiled data",
+    "source_url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-adr-premium-falls-two-172103819.html",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Drivers: local buying (Taipei shares +50% YTD vs ADR <40%), rule changes letting local funds hold more domestic stocks."
+   },
+   {
+    "item": "ADR premium daily, 2026-05-27",
+    "value": "~15.4% (ADR record close US$422.73 vs Taipei 2,300; ADR-implied NT$2,655.17)",
+    "as_of": "2026-05-27",
+    "source_name": "ETtoday 財經雲 (2026-05-28)",
+    "source_url": "https://finance.ettoday.net/news/3173413",
+    "tier": "press",
+    "confidence": "medium",
+    "note": ""
+   },
+   {
+    "item": "ADR premium daily, 2026-06-02",
+    "value": "18.04% (ADR record close US$446.69; FX 31.445; ADR-implied NT$2,809.23)",
+    "as_of": "2026-06-02",
+    "source_name": "ETtoday 財經雲 (2026-06-03)",
+    "source_url": "https://finance.ettoday.net/news/3176661",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Highest 2026 daily print found after January."
+   },
+   {
+    "item": "ADR premium daily, 2026-07-15",
+    "value": "10.75% (ADR US$419.48 vs Taipei 2,440), day before 2Q26 call",
+    "as_of": "2026-07-15",
+    "source_name": "經濟日報/UDN (2026-07-16)",
+    "source_url": "https://udn.com/news/story/6811/9630729",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "UDN converts with Bloomberg FX at 5:30pm New York."
+   },
+   {
+    "item": "ADR premium daily, 2026-07-21",
+    "value": "14.16% (ADR US$424.61, +5.55%; ADR-implied NT$2,751.30 vs Taipei 2,410)",
+    "as_of": "2026-07-21",
+    "source_name": "經濟日報/UDN (2026-07-22)",
+    "source_url": "https://udn.com/news/story/6811/9642866",
+    "tier": "press",
+    "confidence": "medium",
+    "note": ""
+   },
+   {
+    "item": "ADR premium daily, 2026-08-10",
+    "value": "13.30% (ADR US$418.47; ADR-implied NT$2,696.58 vs Taipei 2,380)",
+    "as_of": "2026-08-10",
+    "source_name": "經濟日報/UDN (2026-08-11)",
+    "source_url": "https://udn.com/news/story/6811/9683402",
+    "tier": "press",
+    "confidence": "medium",
+    "note": ""
+   },
+   {
+    "item": "ADR premium daily, 2026-09-01 (lowest 2026 print found)",
+    "value": "7.41% (ADR US$414.00; ADR-implied NT$2,620.83 vs Taipei 2,440)",
+    "as_of": "2026-09-01",
+    "source_name": "經濟日報/UDN (2026-09-02)",
+    "source_url": "https://udn.com/news/story/6811/9728689",
+    "tier": "press",
+    "confidence": "medium",
+    "note": ""
+   },
+   {
+    "item": "ADR premium daily, 2026-09-15",
+    "value": "10.58% (ADR US$413.75; ADR-implied NT$2,637.33 vs Taipei 2,385)",
+    "as_of": "2026-09-15",
+    "source_name": "經濟日報/UDN (2026-09-16)",
+    "source_url": "https://udn.com/news/story/6811/9757222",
+    "tier": "press",
+    "confidence": "medium",
+    "note": ""
+   },
+   {
+    "item": "ADR premium daily, 2026-10-26",
+    "value": "15.97% (ADR US$424.37; ADR-implied NT$2,765.79 vs Taipei 2,385)",
+    "as_of": "2026-10-26",
+    "source_name": "經濟日報/UDN (2026-10-27)",
+    "source_url": "https://udn.com/news/story/6811/9838736",
+    "tier": "press",
+    "confidence": "medium",
+    "note": ""
+   },
+   {
+    "item": "ADR premium daily, 2026-10-29",
+    "value": "16.37% (ADR US$431.81, -1.75%; ADR-implied NT$2,810.44 vs Taipei 2,415)",
+    "as_of": "2026-10-29",
+    "source_name": "經濟日報/UDN (2026-10-30)",
+    "source_url": "https://money.udn.com/money/story/123398/9846124",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Same report: SOX -1.4%, TAIEX futures night -643 to 45,926."
+   },
+   {
+    "item": "ADR premium 2026-10-30 (derived)",
+    "value": "~11.3% = NT$2,638.06 (ADR US$406.13 x 32.478 / 5) vs Taipei close NT$2,370",
+    "as_of": "2026-10-30",
+    "source_name": "Yahoo奇摩股市 news: 台積電ADR30日下跌25.68美元跌幅5.95%折台股2638.06元 (conversion) + established 2,370 close",
+    "source_url": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BBadr30%E6%97%A5%E4%B8%8B%E8%B7%8C25-68%E7%BE%8E%E5%85%83%E8%B7%8C%E5%B9%855-95-%E6%8A%98%E5%8F%B0%E8%82%A12638-06%E5%85%83-213603342.html",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "DERIVED by me (2,638.06/2,370 - 1 = 11.31%); inputs sourced. Taipei did not trade 10/31 (Saturday); premium will reset on the 11/2 Taipei open."
+   },
+   {
+    "item": "Post-Taipei-close moves on 2026-10-30 (US session / night session)",
+    "value": "SOX -829.398 pts (-7.2%) to 10,688.801; Intel -28.58%; TSM ADR -5.95%; TAIEX futures night session -867 to 44,433; TSMC single-stock futures night session -87 to NT$2,289",
+    "as_of": "2026-10-30 US session (reported 2026-10-31)",
+    "source_name": "CNA 中央社",
+    "source_url": "https://www.cna.com.tw/news/afe/202610310073.aspx",
+    "tier": "press",
+    "confidence": "high",
+    "note": "2,289 is 3.4% below the 2,370 spot close (my arithmetic)."
+   },
+   {
+    "item": "Historical forward (NTM) P/E, 5-year, per TIKR",
+    "value": "~17x forward earnings now; 5-year average 18x; peak 25x in July 2024",
+    "as_of": "2026-10-28",
+    "source_name": "Yahoo Finance article 'TSMC Gains 3% on Reported 20% Price Hike for AI Chip Packaging' (chart: TIKR forward NTM P/E, last 5 years)",
+    "source_url": "https://finance.yahoo.com/technology/ai/articles/tsmc-gains-3-reported-20-163555398.html",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Best explicit 5-yr forward stat found. ~17x matches 2330 local price on FactSet consensus (inference), so likely local-listing basis; ADR-based NTM P/E would be ~11-18% higher given the premium."
+   },
+   {
+    "item": "Forward NTM P/E per TIKR (earlier article)",
+    "value": "19.48x forward earnings vs a 19.32x chart average (window unstated); near-24x peak in mid-2026",
+    "as_of": "2026-10-15",
+    "source_name": "Yahoo Finance article 'TSMC Posts a Sixth Straight Record Quarter...' (TIKR chart)",
+    "source_url": "https://finance.yahoo.com/markets/stocks/articles/tsmc-posts-sixth-straight-record-091406917.html",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Conflicts in level/peak with the Oct-28 TIKR piece (different window/basis); prefer the Oct-28 5-year statistics."
+   },
+   {
+    "item": "TSM ADR forward P/E at quarter-ends (Yahoo valuation measures)",
+    "value": "9/30/2025: 24.53; 12/31/2025: 22.33; 3/31/2026: 24.65; 6/30/2026: 30.87; 9/30/2026: 21.59; current (10/30/2026): 18.24. Trailing P/E current 26.32",
+    "as_of": "2025-09-30 to 2026-10-30",
+    "source_name": "Yahoo Finance - TSM key statistics",
+    "source_url": "https://finance.yahoo.com/quote/TSM/key-statistics/",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "EPS basis undisclosed (appears to be current-fiscal-year estimate, which inflates mid-year readings, e.g., 30.87 at 6/30/26 vs TIKR's ~24x NTM peak). Use for direction only."
+   },
+   {
+    "item": "2330.TW forward and trailing P/E (Yahoo)",
+    "value": "Forward P/E 16.42; trailing P/E 24.32 (EPS TTM 97.47)",
+    "as_of": "2026-10-30 close",
+    "source_name": "Yahoo Finance - 2330.TW key statistics",
+    "source_url": "https://finance.yahoo.com/quote/2330.TW/key-statistics/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "16.42x is consistent with ~2027E EPS of NT$144 (inference)."
+   },
+   {
+    "item": "TSM ADR forward P/E (StockAnalysis)",
+    "value": "Forward PE 19.07; trailing PE 27.18",
+    "as_of": "2026-10-30 close (page updated 2026-11-01)",
+    "source_name": "StockAnalysis.com - TSM statistics",
+    "source_url": "https://stockanalysis.com/stocks/tsm/statistics/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "ADR basis."
+   },
+   {
+    "item": "Forward P/E per TechNews",
+    "value": "Forward P/E ~25.4x; reached ~29x at the late-2024 and 2025 highs",
+    "as_of": "2026-09-21",
+    "source_name": "TechNews 科技新報",
+    "source_url": "https://finance.technews.tw/2026/09/21/tsmc-leverages-its-production-capacity-to-build-an-unparalleled-market-moat/",
+    "tier": "press",
+    "confidence": "low",
+    "note": "No data source or EPS basis stated; inconsistent with TIKR (likely current-FY or ADR basis)."
+   },
+   {
+    "item": "Forward 12M P/E per Zacks",
+    "value": "25.84x vs median 24.33x (window unclear, chart labeled one-year) and sector 24.98x",
+    "as_of": "mid-2026 (article cites May-2026 revenue; date not shown)",
+    "source_name": "Zacks via TradingView 'TSMC Outpaces Sector & Peers in a Year'",
+    "source_url": "https://www.tradingview.com/news/zacks:d79c86e09094b:0-tsmc-outpaces-sector-peers-in-a-year-is-the-stock-still-a-buy/",
+    "tier": "press",
+    "confidence": "low",
+    "note": "ADR basis."
+   },
+   {
+    "item": "Forward P/E vs 5-year average per Intellectia",
+    "value": "Forward P/E 21.41 (2026-10-22) vs five-year average 18.59",
+    "as_of": "2026-10-22",
+    "source_name": "Intellectia.ai - TSM valuation",
+    "source_url": "https://intellectia.ai/stock/TSM/valuation",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "Seen only in search snippet; page returned 403. Directionally consistent with TIKR's 18x 5-yr average."
+   },
+   {
+    "item": "Forward and trailing P/E averages per FinanceCharts",
+    "value": "Forward P/E 21.41 vs 3-year average 24.90; trailing P/E 27.29 vs 5-year average 23.84 and 10-year average 23.36",
+    "as_of": "October 2026",
+    "source_name": "FinanceCharts - TSM PE ratio",
+    "source_url": "https://www.financecharts.com/stocks/TSM/value/pe-ratio",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "Seen only in search snippets; pages returned 403. ADR basis."
+   },
+   {
+    "item": "2330 trailing P/E annual highs/lows (exchange-provided)",
+    "value": "High/low: 2026 YTD 34.87/25.90; 2025 28.38/17.35; 2024 32.69/16.68; 2023 17.17/12.54; 2022 30.91/12.62; 2021 35.53/25.83; 2020 28.17/18.62; 2019 27.17/15.38. Current 27.47; trailing-1-year range 22.47-34.87",
+    "as_of": "2026-10-30",
+    "source_name": "MoneyDJ 理財網 - 台積電(2330)基本資料 (P/E data provided by TWSE)",
+    "source_url": "https://www.moneydj.com/Z/ZC/ZCA/ZCA_2330.DJHTM",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "Trailing basis on last four reported quarters (currently through 2Q26, so it lags; Yahoo TTM incl. 3Q26 gives 24.32)."
+   },
+   {
+    "item": "2330 monthly trailing P/E, May-2021 to Oct-2026",
+    "value": "Min 12.81 (Apr-2023); max 32.60 (Jul-2026); Oct-2026 27.47",
+    "as_of": "2021-05 to 2026-10",
+    "source_name": "HiStock 嗨投資 - 台積電 本益比",
+    "source_url": "https://histock.tw/stock/2330/%E6%9C%AC%E7%9B%8A%E6%AF%94",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "DERIVED by me from the 65 monthly values shown (Aug-2023 missing): mean 23.06x, median 24.44x, SD 5.85x."
+   },
+   {
+    "item": "10-year average P/E cited by Motley Fool",
+    "value": "~23x 10-year average vs ~31x current",
+    "as_of": "2026-08-18",
+    "source_name": "民視財經 (FTV) citing The Motley Fool",
+    "source_url": "https://finance.ftvnews.com.tw/news/detail/2026817W0208",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Trailing vs forward not specified; likely ADR trailing."
+   },
+   {
+    "item": "Local strategist P/E range",
+    "value": "Historical P/E range 20-30x; overheating signal above 29x; ~25x at the time",
+    "as_of": "2026-04-27",
+    "source_name": "CNA via UDN, quoting 國泰證期 蔡明翰",
+    "source_url": "https://udn.com/news/story/7253/9467603",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Basis (trailing/forward) not stated."
+   }
+  ],
+  "synthesis": "FACT: On 2026-10-30 USD/TWD closed at 32.478 (CBC/Taipei Forex), the US 10Y CMT at 4.94% (Treasury; FRED's latest print was 4.98% for 10/29) and Taiwan's 10Y at ~1.99% (cnyes, Trading Economics), after the Oct-20 10Y auction cleared at 1.958% (CBC). The CBC has not hiked in 2026: rediscount rate 2.00%, unchanged since March 2024, but the Sep-17 hold passed 13-2 with two hawkish dissents; next meeting Dec 17. The Fed hiked to 3.75-4.00% in September and held on Oct 28 with two dissents for a hike. Damodaran: implied US ERP 4.20% on Oct 1 (rf 5.29%); July-2026 Taiwan CRP 0.742% (total ERP 4.942%) vs 0.78%/5.01% in January. TSM ADR beta: 1.24 (5Y monthly; Yahoo, StockAnalysis), 1.31 (1Y, TradingView), 1.37 (MarketBeat). Local-share beta: 1.03 (MoneyDJ), 0.95 (1Y, TradingView); Yahoo's 2330.TW 1.24 duplicates the ADR value and is not a documented TAIEX beta. Bloomberg-compiled ADR premium averages: ~19% (4Q24), 17% (Apr-25), 24% (Jul-25), ~26% (Dec-25), 17% (Apr-26), 13.7% (May-26); 2026 daily prints ran 7.4% (Sep 1) to 18.0% (Jun 2); 16.4% on Oct 29 and ~11.3% on Oct 30. Decade/five-year averages are cited at 7.4-10%. TIKR (via Yahoo, Oct 28) shows ~17x NTM P/E vs a 5-yr average of 18x and a 25x peak (Jul-2024); TWSE trailing P/E spanned 12.5x-35.5x over 2019-2026.\n\nINFERENCE (mine): A USD CAPM (rf 4.94%, beta 1.24-1.37, ERP 4.20-4.42% plus CRP 0.74%) gives ~10-12% cost of equity; a TWD CAPM (rf ~2.0%, beta ~1.0, ERP 4.94%) gives ~7%. The gap is mostly the ~2.95pp rate differential and should be bridged via inflation/FX, not mixed across frames. ADR betas and multiples embed a premium that compressed sharply in 2026, so value the local line and translate. At NT$2,370, FactSet consensus implies ~21.7x 2026E, ~16.3x 2027E and ~17x NTM EPS - at or slightly below the 5-yr forward average, i.e., no premium-to-history multiple is being paid.",
+  "unresolved": [
+   "No provider found that documents a 5Y-monthly beta for 2330.TW against TAIEX. MoneyDJ (1.03) and TradingView (0.95, 1Y) do not state their benchmark or window. Yahoo's 2330.TW figure of 1.24 is identical to the ADR's, so it is not a usable local beta. Getting one would need a self-run regression on TWSE monthly data, and raw price CSV APIs are blocked in this environment.",
+   "The beta benchmark for TSM on Yahoo and StockAnalysis (S&P 500) is not printed on either page; it is assumed from Yahoo's usual convention.",
+   "FRED DGS10 had not posted 2026-10-30 when checked (next release 2026-11-02). The 4.94% figure comes from Treasury's daily par yield curve, which is the underlying source.",
+   "No official TPEx benchmark 10Y closing yield was retrieved for 2026-10-30. The 1.99% figure comes from cnyes and Trading Economics, and the 10Y benchmark traded thinly on some late-October days (typhoon).",
+   "Bloomberg's own pages are paywalled: the 2025-08-01 article (24% July-2025 average, 7.4% decade average), the 2025-10-15 'two-decade high' article (percentage never found), and the 2026-04-23 UBS piece. Figures come from syndications or search excerpts.",
+   "Long-run ADR premium averages conflict: 7.4% over the past decade (Bloomberg, Aug-2025), about 10% five-year (Bloomberg via Taipei Times, Feb-2025), under 8% five-year (Bloomberg via MoneyDJ, Jun-2024), and about 22% 'historical average' (UBS, Apr-2026, window not stated). No continuous daily 2024-2026 premium series was obtained, so the range comes from scattered daily prints and monthly averages.",
+   "No primary (Bloomberg/FactSet/LSEG) 5Y or 10Y forward P/E history for 2330.TW or TSM was accessible. The forward figures found mix bases (ADR vs local listing; current-FY vs NTM EPS). The Intellectia (18.59 five-year average) and FinanceCharts (24.90 three-year average) pages returned 403 and were seen only in search snippets.",
+   "The CBC minutes text extracted does not say how large a hike the two dissenting directors favoured.",
+   "Taiwan's core CPI forecast (2.16%) and Commerzbank's view that 1Q27 is the first live hike window come from search snippets that were not opened.",
+   "The WhisperAI connector now shows as connected in this session, matching the user's 'authorization complete' message. It was not needed for this track."
+  ]
+ },
+ {
+  "topic": "Facts gathered directly in the main session (2026-11-01)",
+  "findings": [
+   {
+    "item": "3Q26 results",
+    "value": "Revenue NT$1,494.24bn / US$46.72bn; GM 66.4%; OPM 58.7%; net income NT$763.06bn; diluted EPS NT$29.43; 4Q26 guidance US$52.3-54.3bn, GM 65-67%, OPM 56.5-58.5% at 31.8",
+    "as_of": "2026-10-15",
+    "source_name": "TSMC 3Q26 earnings release, SEC 6-K",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001046179/000104617926000726/a3q26e_withguidancexfinal.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "3Q26 node and platform mix",
+    "value": "N2 8%, N3 33%, N5 28%, N7 10%; HPC 68% (+22% QoQ), smartphone 21%, IoT 4%, auto 4%, DCE 1%",
+    "as_of": "3Q26",
+    "source_name": "TSMC 3Q26 6-K / earnings call",
+    "source_url": "https://www.fool.com/earnings/call-transcripts/2026/10/15/tsmc-tsm-q3-2026-earnings-call-transcript/",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "FY2026 guidance and capex",
+    "value": "2026 revenue growth ~44% in USD; capex US$60-64bn reiterated; 2026-28 capex significantly higher than prior three years; overseas fab GM dilution ~2pts near term widening to 3-4pts later in five-year period; N2 capacity more than double in 2027; Arizona fab 2 volume production 3Q27; AI accelerator CAGR previously mid-to-high 50s% 2024-29",
+    "as_of": "2026-10-15",
+    "source_name": "TSMC 3Q26 earnings call",
+    "source_url": "https://www.fool.com/earnings/call-transcripts/2026/10/15/tsmc-tsm-q3-2026-earnings-call-transcript/",
+    "tier": "guidance",
+    "confidence": "high"
+   },
+   {
+    "item": "Long-term targets",
+    "value": "GM 56%+ through the cycle; ROE high-20s%; revenue CAGR approaching 25% (USD, 2024-2029)",
+    "as_of": "2026-01-15 (reaffirmed 2026-04-16)",
+    "source_name": "TSMC 4Q25 investor presentation (SEC 6-K)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000008/a4q25presentatione.htm",
+    "tier": "guidance",
+    "confidence": "high"
+   },
+   {
+    "item": "September 2026 revenue",
+    "value": "NT$511.857bn, -0.6% MoM, +54.6% YoY; 9M26 NT$3,898.727bn +41.1%",
+    "as_of": "2026-10-08",
+    "source_name": "TSMC monthly revenue report",
+    "source_url": "https://pr.tsmc.com/system/files/newspdf/attachment/8774bca661e0743c52a8bb9c62c82f9c86f2b444/September%202026%20%28C%29_final_wmn.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "FactSet consensus",
+    "value": "EPS 2026E 109.21 (42 analysts, 98.4-115.1), 2027E 145.69, 2028E 185.61; TP median NT$3,300 (33 analysts, 2,700-5,000); 39 positive/3 neutral/0 negative",
+    "as_of": "2026-10-15/16",
+    "source_name": "cnyes 鉅亨速報 (FactSet survey)",
+    "source_url": "https://news.cnyes.com/news/id/6632423",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "2330 close and 10/30 US session",
+    "value": "2330 NT$2,370 (-1.86%) on 2026-10-30; TAIEX 45,211.83; then Intel -28% on Q4 outlook, SOX -7.2%, TSM ADR US$406.13 (-5.95%), ADR-implied NT$2,638.06 at 32.478; TSMC single-stock futures night session NT$2,289",
+    "as_of": "2026-10-30",
+    "source_name": "壹蘋新聞網; Yahoo奇摩股市; Focus Taiwan; CNA",
+    "source_url": "https://focustaiwan.tw/business/202610310008",
+    "tier": "press",
+    "confidence": "high"
+   },
+   {
+    "item": "Cross-strait event-probability anchors",
+    "value": "Polymarket: invade by 2026-12-31 2%, by 2027-06-30 6%, by 2027-12-31 10%; blockade in 2026 2%. Good Judgment: 88% no accusation of weapon use before July 2028. Metaculus: China controls >=half of Taiwan by 2030 13% (snapshot date unclear). CSIS Jan-2024 survey: minority of US experts and 17% of Taiwanese experts think PRC can effectively invade within 5 years",
+    "as_of": "2026-11-01 (Polymarket); others various",
+    "source_name": "Polymarket; Good Judgment substack; Metaculus; CSIS ChinaPower",
+    "source_url": "https://polymarket.com/predictions/china",
+    "tier": "other",
+    "confidence": "medium"
+   },
+   {
+    "item": "Hyperscaler/AI context",
+    "value": "Nasdaq -7.8% from 2026-10-06 high amid AI financing worries (late Oct 2026)",
+    "as_of": "2026-10-30",
+    "source_name": "BigGo Finance / Benzinga",
+    "source_url": "https://www.benzinga.com/markets/tech/26/10/62749985/chip-stocks-1-trillion-wipeout-intel-nvidia-amd-tsmc-broadcom",
+    "tier": "press",
+    "confidence": "medium"
+   }
+  ],
+  "synthesis": "",
+  "unresolved": []
+ }
+]

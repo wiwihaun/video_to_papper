@@ -398,6 +398,70 @@ def sotp(scenario, case):
     return {"method": "sotp", "segments": pools, "enterprise_value_m": total, "warnings": sub_warnings}
 
 
+def residual_income(scenario, case):
+    """
+    Residual-income (excess-return) model for banks, insurers and other balance-sheet
+    businesses, where FCFF is meaningless because debt is raw material, not financing.
+
+        BV_t   = BV_{t-1} + NI_t - dividends_t,  NI_t = ROE_t x BV_{t-1}, dividends = payout x NI
+        RI_t   = (ROE_t - COE) x BV_{t-1}
+        Value  = BV_0 + sum RI_t / (1+COE)^t + RI_{N+1} / (COE - g) / (1+COE)^N
+
+    Inputs (scenario or case): book_value_m (equity attributable to shareholders at the
+    valuation date), roe (scalar or path), payout_ratio (scalar or path), cost_of_equity
+    (falls back to wacc), terminal_growth, horizon_years. The terminal ROE is the last path
+    value; a terminal RI is perpetual — set the last ROE to what the franchise can sustain.
+    Result is EQUITY value (no EV bridge): net_debt is ignored by construction.
+    The hazard overlay applies to the residual-income stream (book value is assumed safe).
+    """
+    coe = float(scenario.get("cost_of_equity", case.get("cost_of_equity", case.get("wacc"))))
+    g = float(scenario.get("terminal_growth", case.get("terminal_growth")))
+    if g >= coe:
+        raise ValueError("terminal growth (%.4f) >= cost of equity (%.4f)" % (g, coe))
+    bv0 = float(scenario.get("book_value_m", case.get("book_value_m")))
+    n = int(scenario.get("horizon_years", case.get("horizon_years", 10)))
+    roe = _as_path(scenario.get("roe", case.get("roe")), n, "roe")
+    payout = _as_path(scenario.get("payout_ratio", case.get("payout_ratio", 0.5)), n, "payout_ratio")
+    h, L = _hazard(scenario, case)
+
+    rows, bv, pv = [], bv0, 0.0
+    for t in range(1, n + 1):
+        ni = roe[t - 1] * bv
+        ri = (roe[t - 1] - coe) * bv
+        df = 1.0 / (1.0 + coe) ** t
+        mult = (1.0 - L) + L * (1.0 - h) ** t
+        pv += ri * df * mult
+        div = payout[t - 1] * ni
+        rows.append({"year": t, "book_value_open_m": bv, "roe": roe[t - 1], "net_income_m": ni,
+                     "residual_income_m": ri, "dividends_m": div, "pv_residual_income_m": ri * df * mult})
+        bv = bv + ni - div
+    ri_next = (roe[-1] - coe) * bv
+    tv = ri_next / (coe - g)
+    tv_df = 1.0 / (1.0 + coe) ** n
+    if h == 0.0:
+        pv_tv = tv * tv_df
+    else:
+        q_den = (1.0 + coe) - (1.0 + g) * (1.0 - h)
+        pv_tv = tv_df * ri_next * ((1.0 - L) / (coe - g) + L * (1.0 - h) ** n * (1.0 - h) / q_den)
+    equity = bv0 + pv + pv_tv
+    implied_pb = equity / bv0 if bv0 else None
+    return {
+        "warnings": ([] if abs(pv_tv) <= 0.75 * abs(equity - bv0) or equity == bv0 else
+                     ["terminal residual income is %.0f%% of value above book: the explicit years are not "
+                      "carrying the valuation" % (abs(pv_tv) / abs(equity - bv0) * 100)]),
+        "method": "residual_income",
+        "cost_of_equity": coe,
+        "rows": rows,
+        "book_value_m": bv0,
+        "pv_residual_income_m": pv,
+        "terminal_residual_income_m": ri_next,
+        "pv_terminal_m": pv_tv,
+        "implied_price_to_book": implied_pb,
+        "enterprise_value_m": equity,   # equity value; the bridge below must not deduct debt
+        "equity_method": True,
+    }
+
+
 def multiple_only(scenario, case):
     metric = float(scenario["metric_m"])
     mult = float(scenario["multiple"])
@@ -416,14 +480,17 @@ def multiple_only(scenario, case):
 # bridge to per-share
 # --------------------------------------------------------------------------- #
 
-ENGINES = {"dcf": dcf, "sotp": sotp, "multiple": multiple_only}
+ENGINES = {"dcf": dcf, "sotp": sotp, "multiple": multiple_only, "residual_income": residual_income}
 
 
 def to_equity(result, scenario, case):
     """EV -> equity value -> per share, with the bridge itemised."""
     ev = result["enterprise_value_m"]
-    net_debt = float(scenario.get("net_debt_m", case.get("net_debt_m", 0.0)))
-    minority = float(scenario.get("minority_interest_m", case.get("minority_interest_m", 0.0)))
+    if result.get("equity_method"):
+        net_debt, minority = 0.0, 0.0   # residual income already values equity directly
+    else:
+        net_debt = float(scenario.get("net_debt_m", case.get("net_debt_m", 0.0)))
+        minority = float(scenario.get("minority_interest_m", case.get("minority_interest_m", 0.0)))
     other = float(scenario.get("other_adjustments_m", scenario.get("other_claims_m", 0.0)))
     shares = float(scenario.get("shares_diluted_m", case["shares_diluted_m"]))
     if shares <= 0:

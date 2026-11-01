@@ -13,7 +13,16 @@
 ```
 
 或 `TSMC`、`分析 2454`、`NVDA 目標價`。技能會自動觸發，報告輸出到
-`reports/<代號>_<日期>.md`，模型參數存在 `reports/<代號>_case.json`，任何數字都能重算驗證。
+`reports/<代號>_<日期>.md`，並附上可重算驗證的全套檔案：
+
+| 檔案 | 內容 |
+|---|---|
+| `reports/<代號>_case.json` | 模型輸入，`_notes` 欄位逐項註明來源 |
+| `reports/<代號>_spec.json` | 報告用到的所有分析（估值、彈性、反向 DCF、變體、共識拆解、敏感度） |
+| `reports/<代號>_numbers.md／.json` | 由規格檔產生的數字附錄——報告中每個估值數字都在這裡 |
+| `reports/<代號>_evidence.json` | 研究證據：每個數字的來源網址、日期與證據等級 |
+
+**完整範例：台積電（2330），2026-11-01** — [`reports/2330_2026-11-01.md`](reports/2330_2026-11-01.md)
 
 想在其他專案也能用：把 `.claude/skills/stock-valuation/` 複製到 `~/.claude/skills/`，
 並把 `scripts/valuation_engine.py` 一起帶過去（技能用相對路徑呼叫它）。
@@ -55,31 +64,46 @@
     05-quality-gates.md            # 交付前硬性檢查
 scripts/
   valuation_engine.py              # 估值計算引擎（純標準函式庫、可重現）
-  test_valuation_engine.py         # 18 個可手算驗證的測試
+  run_analysis.py                  # 一份規格檔跑完所有分析，產生數字附錄
+  test_valuation_engine.py         # 可手算驗證的單元測試
 docs/transcript/README.md          # 逐字稿取得方式
 reports/                           # 報告輸出目錄
 ```
 
 ## 估值引擎
 
-所有計算都經過 `scripts/valuation_engine.py`，不在文字裡心算：
+所有計算都經過 `scripts/valuation_engine.py`，不在文字裡心算。寫報告時，用一份規格檔一次產生全部數字：
 
 ```bash
-# 第 2 階段：哪些驅動因子真正影響價值
-python3 scripts/valuation_engine.py elasticity --input reports/2330_case.json --markdown \
-  --driver "晶圓量@driver_build.units=0.12:rel" --driver "營益率@driver_build.ebit_margin=0.03" ...
-
-# 第 4 階段：現價隱含的營收成長率
-python3 scripts/valuation_engine.py reverse --input reports/2330_case.json --solve-for revenue_growth
-
-# 第 6 階段：三情境估值與機率加權目標價
-python3 scripts/valuation_engine.py value --input reports/2330_case.json --markdown
-
-# 敏感度矩陣
-python3 scripts/valuation_engine.py sensitivity --input reports/2330_case.json \
-  --x wacc --x-values 0.08,0.085,0.09,0.095,0.10 \
-  --y terminal_growth --y-values 0.015,0.02,0.025,0.03,0.035 --markdown
+python3 scripts/run_analysis.py --spec reports/2330_spec.json
 ```
+
+也可以單獨執行各個分析：
+
+```bash
+# 第 2 階段：哪些驅動因子真正影響價值（可用路徑切片分開測近期與遠期成長）
+python3 scripts/valuation_engine.py elasticity --input reports/2330_case.json --markdown \
+  --driver "2029-36 成長@driver_build.revenue_growth[2:]=0.03" \
+  --driver "營業利益率@driver_build.ebit_margin=0.05"
+
+# 第 4 階段：前兩年採共識，求 2029 年起的隱含成長
+python3 scripts/valuation_engine.py reverse --input reports/2330_case.json \
+  --solve-for revenue_growth --from-year 3
+
+# 第 4 階段：股價隱含的年化事件機率
+python3 scripts/valuation_engine.py reverse --input reports/2330_case.json --solve-for hazard_rate
+
+# 第 6 階段：三情境估值、機率加權公允價值與 12 個月目標價
+python3 scripts/valuation_engine.py value --input reports/2330_case.json --markdown
+```
+
+引擎功能：
+
+- **雙幣別**：以經濟幣別建模（台積電用美元），每股價值以即期匯率換回報價幣別，並換算 ADR。
+- **12 個月目標價**：公允價值以報價幣別股權成本（依利率平價由 WACC 推得）滾動 12 個月，扣除股利。
+- **事件風險覆蓋層**：「年化發生機率 × 營運價值損失比例」，終值有封閉解；可反推股價隱含的機率。
+- **反向 DCF**：可只從第 N 年起求解（例如前兩年採共識，求之後的隱含成長）。
+- **彈性測試**：支援路徑切片，可分開檢驗近期成長與成長延續期間。
 
 內建護欄：終值成長率 ≥ WACC 會拒絕計算；情境機率加總不為 1 會拒絕（不會偷偷正規化）；
 終值占 EV 超過 75%、選擇權型價值池超過 40%、終值成長率高於 3.5% 都會發出警告。

@@ -154,6 +154,18 @@ _Variance shares assume drivers are independent and locally linear. Correlated d
 | 7 | Implied annual cross-strait event probability if Base operations (80% loss) | Base | hazard_rate | — | no solution: no solution for hazard_rate in [0.0000, 0.5000] | — |
 | 8 | Implied annual cross-strait event probability if Bull operations (80% loss) | Bull | hazard_rate | — | 3.05% (10y cumulative 26.6%) | -3.10e-06 |
 | 9 | Same consensus-like operations at our discount rate: implied annual event probability at the NT$2,370 close | Base | hazard_rate | — | 1.27% (10y cumulative 12.0%) | -8.22e-06 |
+| 10 | FRONTIER: steady EBIT margin 50.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370 | Base | hazard_rate | — | 0.03% (10y cumulative 0.3%) | 1.37e-05 |
+| 11 | FRONTIER: steady EBIT margin 52.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370 | Base | hazard_rate | — | 0.38% (10y cumulative 3.7%) | -1.43e-05 |
+| 12 | FRONTIER: steady EBIT margin 55.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370 | Base | hazard_rate | — | 0.91% (10y cumulative 8.7%) | -6.40e-06 |
+| 13 | FRONTIER: steady EBIT margin 57.0% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370 | Base | hazard_rate | — | 1.27% (10y cumulative 12.0%) | -8.22e-06 |
+| 14 | FRONTIER: steady EBIT margin 58.6% (2027-28 consensus-like +30%/+24%, base growth thereafter): implied annual event probability at NT$2,370 | Base | hazard_rate | — | 1.57% (10y cumulative 14.6%) | -2.11e-05 |
+| 15 | FRONTIER (our base growth path, +28%/+18%): steady EBIT margin 52.0%: implied annual event probability at NT$2,370 | Base | hazard_rate | — | no solution: no solution for hazard_rate in [0.0000, 0.5000] | — |
+| 16 | FRONTIER (our base growth path, +28%/+18%): steady EBIT margin 57.0%: implied annual event probability at NT$2,370 | Base | hazard_rate | — | 0.73% (10y cumulative 7.1%) | -2.14e-05 |
+| 17 | FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 50.0%: implied annual event probability at NT$2,370 | Base | hazard_rate | — | 1.34% (10y cumulative 12.6%) | -1.03e-05 |
+| 18 | FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 52.0%: implied annual event probability at NT$2,370 | Base | hazard_rate | — | 1.75% (10y cumulative 16.2%) | 2.14e-05 |
+| 19 | FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 55.0%: implied annual event probability at NT$2,370 | Base | hazard_rate | — | 2.39% (10y cumulative 21.5%) | 1.40e-05 |
+| 20 | FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 57.0%: implied annual event probability at NT$2,370 | Base | hazard_rate | — | 2.82% (10y cumulative 24.9%) | 1.56e-05 |
+| 21 | FRONTIER-BULLGROWTH: Bull growth path (+32%/+25%, 18% fading to 4%), steady EBIT margin 58.6%: implied annual event probability at NT$2,370 | Base | hazard_rate | — | 3.18% (10y cumulative 27.6%) | 8.98e-06 |
 
 ## 4. Variants (independent what-ifs, probability-weighted value per share)
 

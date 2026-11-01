@@ -6,6 +6,10 @@ reproduced from `reports/<TICKER>_case.json` by anyone who re-runs it.
 
 ## Commands
 
+For a report, prefer `scripts/run_analysis.py --spec <spec.json>`, which runs all of the below
+from one file and writes the numbers appendix. The engine commands remain available for
+one-off checks.
+
 | Command | Phase | Purpose |
 |---|---|---|
 | `elasticity` | 2 | Rank candidate drivers by the swing a 1σ move causes in value per share. |
@@ -52,8 +56,15 @@ Optional case fields:
   "fx_quote_per_model": 32.478,     // quote units per 1 model unit (TWD per USD)
   "price_quote": 2370,              // spot in the quote currency (replaces "price")
   "adr_ratio": 5,                   // shares per ADR: adds value per ADR to the output
-  "hazard": {"annual_probability": 0.015, "loss_fraction": 0.8}   // event-risk overlay
+  "hazard": {"annual_probability": 0.015, "loss_fraction": 0.8},  // event-risk overlay
+  "roll_forward": {"quote_rf": 0.0199, "model_rf": 0.0494,         // 12-month target price:
+                   "dividends_quote_next_12m": 24.0}               // FV x (1 + r_quote) - dividends
 ```
+
+With `roll_forward`, `value` also reports `target_price_12m_quote`, `target_upside_pct` and
+`expected_total_return_12m_pct`. `r_quote` is derived from WACC by interest-rate parity —
+`(1 + WACC)(1 + quote_rf)/(1 + model_rf) − 1` — so it stays consistent when WACC is varied;
+or give `cost_of_equity_quote` directly.
 
 Any of `wacc`, `net_debt_m`, `shares_diluted_m`, `price`, `minority_interest_m`, `hazard` can
 be overridden per scenario. `other_adjustments_m` on a scenario is **added** to equity — use it
@@ -124,12 +135,32 @@ do not run it through the EV bridge.
 | One pool is >70% of value and cash-generative | DCF | EV/EBITDA or P/E vs history and peers |
 | Several pools with different economics or risk | SOTP | Group DCF |
 | Option pools (unlaunched products, pipelines, ventures) | SOTP with `probability_of_success` | Reverse DCF on core alone: what is the market paying for the options? |
-| Banks, insurers | Excess-return model / P/B vs ROE−COE (do outside the engine; show the formula) | Dividend discount |
+| Banks, insurers, financial holding companies (e.g. 2881, 2882, 2891) | `residual_income` (excess return on book) | Justified P/B = (ROE − g)/(COE − g); dividend discount |
 | Deep cyclicals (memory, shipping, commodities) | Mid-cycle normalised earnings × mid-cycle multiple | DCF with cycle in the explicit forecast |
 | Holding companies | NAV with look-through, minus a justified discount | Historical discount range |
 
 For financials the FCFF framework does not apply — debt is raw material, not financing.
-Use P/B = (ROE − g) / (COE − g) and state each input.
+Use the `residual_income` method, which values equity directly:
+
+```jsonc
+{
+  "name": "Base", "probability": 0.5, "method": "residual_income",
+  "book_value_m": 1250000,          // equity attributable to shareholders, latest balance sheet
+  "roe": [0.11, 0.115, 0.12, 0.12, 0.12, 0.115, 0.11, 0.11, 0.11, 0.11],
+  "payout_ratio": 0.6,              // scalar or path; book grows by retained earnings
+  "horizon_years": 10
+  // cost_of_equity (else wacc) and terminal_growth come from the case
+}
+```
+
+Residual income_t = (ROE_t − COE) × opening book value; terminal = next-year residual income
+/ (COE − g). Net debt is ignored by construction. With constant ROE and a payout that grows
+book at g, it reproduces the justified P/B exactly (tested). The two numbers for a financial
+are usually **through-cycle ROE** (net interest margin × leverage, less credit cost) and
+**book-value growth** (payout policy and capital requirements) — test them with
+`elasticity --driver "ROE@roe=0.015" --driver "Payout@payout_ratio=0.1"`. For a life insurer,
+read ROE through IFRS 17: contractual service margin release and investment spread, and the
+hedging cost of the FX book.
 
 ## WACC
 
