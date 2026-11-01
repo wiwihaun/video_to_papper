@@ -17,8 +17,9 @@ one-off checks.
 | `value` | 6 | Value every scenario; probability-weighted target price; model warnings. |
 | `sensitivity` | 6 | 2-D grid of value per share over any two solvable drivers. |
 
-`reverse` and `sensitivity` can move: `revenue_growth`, `ebit_margin`, `terminal_growth`,
-`wacc`, `fcff_scale`, `exit_multiple`, `hazard_rate`. `reverse --from-year N` keeps years
+`reverse` and `sensitivity` can move: `revenue_growth`, `ebit_margin`, `ebitda_margin`
+(sets EBIT = EBITDA − the D&A path, so D&A changes only taxes), `terminal_growth`, `wacc`,
+`fcff_scale`, `exit_multiple`, `hazard_rate`. `reverse --from-year N` keeps years
 before N as given and solves only from year N on. `elasticity` can move **any numeric field**
 by dotted path, including part of a path with a trailing slice
 (`driver_build.revenue_growth[2:]`), which is what makes operating KPIs and growth duration
@@ -62,7 +63,10 @@ Optional case fields:
 ```
 
 With `roll_forward`, `value` also reports `target_price_12m_quote`, `target_upside_pct` and
-`expected_total_return_12m_pct`. `r_quote` is derived from WACC by interest-rate parity —
+`expected_total_return_12m_pct`; with `"basis": "model"` the roll-forward uses the model-currency
+cost of equity at spot FX (no currency forecast — the default), and with `adr_ratio` it reports an
+ADR target assuming the ADR premium closes. With `"rating_thresholds": {"buy": 0.15, "sell":
+-0.15}` it also returns the mechanical rating and the buy/sell price triggers. `r_quote` is derived from WACC by interest-rate parity —
 `(1 + WACC)(1 + quote_rf)/(1 + model_rf) − 1` — so it stays consistent when WACC is varied;
 or give `cost_of_equity_quote` directly.
 
@@ -215,7 +219,10 @@ Properties worth knowing, all covered by tests:
   of ~0.8pp is therefore an implicit ~0.8% a year probability of total loss. Use the overlay
   **or** a CRP, never both.
 - `reverse --solve-for hazard_rate` returns the event probability the price implies, given
-  your operating case. That converts a valuation gap into a number a PM can hold a view on.
+  your operating case.
+- `"years": N` inside `hazard` confines new events to the first N years (the terminal value then
+  carries survival to year N only). A perpetual hazard charges far more than "N% over a decade"
+  suggests — in 2330 about half the event-risk cost sat after year 10 — so show both. That converts a valuation gap into a number a PM can hold a view on.
 - External anchors for h: prediction-market prices (a long-dated "Yes" price overstates the
   probability by roughly the carry cost of holding "No" — at 5% rates, ~5pp a year), Good
   Judgment superforecasts, Metaculus, and expert surveys such as CSIS. Cite date and source.

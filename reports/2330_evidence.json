@@ -2651,6 +2651,520 @@
   ]
  },
  {
+  "topic": "TSMC (2330.TW / TSM): the strongest sourced bear case as of late Oct 2026. Covers AI capex digestion, customer concentration, Intel and Samsung competition, Section 232/301 tariffs, Taiwan geopolitics, TWD sensitivity, Taiwan electricity, overseas and N2 margin dilution, and pricing.",
+  "findings": [
+   {
+    "item": "Top-10 customers' share of net revenue",
+    "value": "~70% (2023), ~76% (2024), ~78% (2025)",
+    "as_of": "FY2025 (20-F filed 2026-04-16)",
+    "source_name": "TSMC Form 20-F FY2025, Risk Factors",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Largest customer's share of net revenue",
+    "value": "25% (2023), 22% (2024), 19% (2025)",
+    "as_of": "FY2025",
+    "source_name": "TSMC Form 20-F FY2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The 20-F does not name customers. Per press, the largest customer changed from Apple (2024) to NVIDIA (2025)."
+   },
+   {
+    "item": "Second-largest customer's share of net revenue",
+    "value": "11% (2023), 12% (2024), 17% (2025)",
+    "as_of": "FY2025",
+    "source_name": "TSMC Form 20-F FY2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Top-2 customers together were 36% of 2025 revenue (computed 19% + 17%)."
+   },
+   {
+    "item": "Client A (identified as NVIDIA via Jensen Huang's statement) and Client B (Apple) revenue, 2025",
+    "value": "Client A NT$726.9bn (US$23.2bn), 19% of revenue (12% in 2024), more than double YoY. Client B NT$645.1bn, +3.33% YoY, share 22% -> 17%.",
+    "as_of": "FY2025 (article 2026-02-27)",
+    "source_name": "Taiwan News, citing TSMC financial report",
+    "source_url": "https://www.taiwannews.com.tw/news/6310676",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "The shares match the 20-F's 19% and 17%. The customer identities come from press, not from TSMC."
+   },
+   {
+    "item": "Conflicting 4Q25 customer-share report",
+    "value": "NVIDIA 13% and Apple 11% of 4Q25 revenue",
+    "as_of": "4Q25 (article 2026-01-24)",
+    "source_name": "Taiwan News",
+    "source_url": "https://www.taiwannews.com.tw/news/6289054",
+    "tier": "press",
+    "confidence": "low",
+    "note": "This conflicts with the full-year 19%/17% in the 20-F, and its basis is unclear. Trust the 20-F."
+   },
+   {
+    "item": "Top-10 customers' share of accounts receivable",
+    "value": "84% at 2026-06-30; 84% at 2025-12-31; 83% at 2025-06-30",
+    "as_of": "2026-06-30",
+    "source_name": "TSMC 2Q26 consolidated financial statements (6-K filed 2026-08-14)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000541/a2026q2consolidatedreport-.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Revenue from US-headquartered customers",
+    "value": "2Q26: NT$970.89bn of NT$1,270.38bn (76.4%, computed). 1H26: NT$1,818.63bn of NT$2,404.48bn (75.6%, computed). China 2Q26: NT$76.73bn (6.0%, computed).",
+    "as_of": "2Q26 / 1H26",
+    "source_name": "TSMC 2Q26 consolidated financial statements, revenue by geography (by customer HQ)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000541/a2026q2consolidatedreport-.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Concentration question on the 2Q26 call",
+    "value": "Arete (Jim Fontanelli): exposure to the top five customers is 'meaningfully larger than at any point in your history'. C.C. Wei: 'No, that's not our concern.'",
+    "as_of": "2026-07-16",
+    "source_name": "TSMC 2Q26 earnings call transcript (LSEG StreetEvents, TSMC IR)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "CEO hedge on the AI demand path and on customer forecasts",
+    "value": "C.C. Wei: demand very strong 'all the way to probably 2029, 2030... Whether in between there's a dip or not, I'm not very sure.' On aggregated customer forecasts: 'You put all the truth together, it's not a truth.'",
+    "as_of": "2026-07-16",
+    "source_name": "TSMC 2Q26 earnings call transcript",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Consumer weakness and caution on 2027",
+    "value": "'consumer and price-sensitive end market segments are being challenged due to the impact of rising component prices and more economic uncertainties... we are being prudent in our business planning going into 2027'",
+    "as_of": "2026-10-15",
+    "source_name": "TSMC 3Q26 earnings call transcript (C.C. Wei prepared remarks)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "The same wording appeared on the 2Q26 call (2026-07-16)."
+   },
+   {
+    "item": "Signs of a secondary wafer market",
+    "value": "TD Cowen: 'some customers talk about a secondary wafer market where one customer passes their wafer allocation to another'. Wei: TSMC does not allow customers to sublet or auction capacity; some collaborate through mask licensing; 'the amount is very, very small'.",
+    "as_of": "2026-10-15",
+    "source_name": "TSMC 3Q26 earnings call transcript",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "Suggests some customers have more allocation than they need."
+   },
+   {
+    "item": "Alphabet capex and free cash flow",
+    "value": "3Q26 purchases of PP&E US$51.355bn. FCF -US$9.065bn in 3Q26 and -US$5.855bn in 2Q26. TTM capex US$159.804bn vs TTM operating cash flow US$179.551bn. Google Cloud revenue +103%.",
+    "as_of": "3Q26 (8-K 2026-10-28)",
+    "source_name": "Alphabet 8-K Exhibit 99.1, Q3 2026",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Amazon capex and free cash flow",
+    "value": "TTM free cash flow an outflow of US$42.4bn, driven by a US$94.8bn YoY rise in net PP&E purchases. 2026 cash capex guided to ~US$220bn.",
+    "as_of": "3Q26 (8-K 2026-10-29)",
+    "source_name": "Amazon 8-K Exhibit 99.1, Q3 2026",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Meta capex and free cash flow",
+    "value": "3Q26 capex incl. finance-lease principal US$34.91bn; FCF -US$2.12bn. 2026 capex US$135-145bn (narrowed from US$130-145bn). 2027 plans still in development, but Meta expects to 'continue investing aggressively'. Says some investments 'will take longer to generate returns'.",
+    "as_of": "3Q26 (8-K 2026-10-21)",
+    "source_name": "Meta 8-K Exhibit 99.1, Q3 2026",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Microsoft capex",
+    "value": "FY27 Q1 (Sep-26 quarter) additions to PP&E US$39.367bn; operating cash flow US$58.0bn; Azure +48%",
+    "as_of": "2026-10-28",
+    "source_name": "Microsoft FY27 Q1 press release",
+    "source_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Chip selloff on 2026-10-30",
+    "value": "SOX -7.1%, its second drop of more than 6% in just over a week; -21% from the June record. TSM -5.4% intraday (~US$108bn). 23 chipmakers lost ~US$1.01tn. Big-4 hyperscaler 3Q capex >US$200bn; FY ~US$735bn (per Swissquote).",
+    "as_of": "2026-10-30",
+    "source_name": "BigGo Finance",
+    "source_url": "https://finance.biggo.com/news/e843ba2b-1691-487d-b819-4b3f6dc2f1b9",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Intraday figures. CNA reports the TSM close at -5.95% and SOX -7.20%."
+   },
+   {
+    "item": "Taiwan market reaction to AI-spending fears",
+    "value": "2026-10-30: Taiex -2.49% on 'concerns that large AI investments would not earn comparable returns'; foreign net sales NT$112.47bn that day. October 2026 foreign institutional net sales NT$994.3bn (US$30.59bn). TSMC futures -3.66% overnight after the ADR fell 5.95%.",
+    "as_of": "2026-10-30 / 2026-10-31",
+    "source_name": "CNA / Focus Taiwan",
+    "source_url": "https://focustaiwan.tw/business/202610310008",
+    "tier": "press",
+    "confidence": "high",
+    "note": "See also https://focustaiwan.tw/business/202610300015. Analysts also cited Anthropic's planned mid-November IPO as pulling funds out of Asia."
+   },
+   {
+    "item": "OpenAI revenue shortfall sentiment shock",
+    "value": "On 2026-10-08 OpenAI said annualized revenue was close to US$50bn at end-September, ~US$20bn below earlier figures. Chips -3.4% that day; TSM -3.01% to US$457.99. TSM record close was US$485.80 on 2026-10-05.",
+    "as_of": "2026-10-08",
+    "source_name": "Gotrade News (citing Admirals)",
+    "source_url": "https://www.heygotrade.com/en/news/tsmc-q3-earnings-preview-faces-high-bar-amid-ai-stock-jitters/",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Secondary source; no OpenAI primary statement found. From the record close to the US$406.13 close on 2026-10-30, TSM fell 16.4% (computed)."
+   },
+   {
+    "item": "PC and memory-cost demand drag (Intel 3Q26)",
+    "value": "Intel 4Q26 revenue guided to US$15-16bn vs US$17.1bn expected. CFO Zinsner: 'We see the PC slowdown continuing at least through the first half of next year.' Counterpoint: global PC shipments -4% YoY in Q2 on soaring memory and component costs.",
+    "as_of": "2026-10-29",
+    "source_name": "CNBC",
+    "source_url": "https://www.cnbc.com/2026/10/29/intel-intc-q3-earnings-report-2026-.html",
+    "tier": "press",
+    "confidence": "high"
+   },
+   {
+    "item": "Memory price inflation squeezing device demand",
+    "value": "TrendForce expects 4Q26 DRAM contract prices +10-15% QoQ and NAND +15-20% QoQ",
+    "as_of": "2026-10-30",
+    "source_name": "BigGo Finance (citing TrendForce)",
+    "source_url": "https://finance.biggo.com/news/e843ba2b-1691-487d-b819-4b3f6dc2f1b9",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Overseas fab gross-margin dilution",
+    "value": "~2% for FY2026, widening to 3-4% 'in the next few years', i.e., 3-4 ppt in the second part of the five-year period",
+    "as_of": "2026-10-15",
+    "source_name": "TSMC 3Q26 earnings call transcript (CFO Wendell Huang)",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "The 2Q26 call framed it as 2-3% early, widening to 3-4% later."
+   },
+   {
+    "item": "N2 ramp margin dilution",
+    "value": "N2 expected to dilute 2H26 GM by ~3-4 ppt (2Q26 call). 3Q26 GM fell 1.3 ppt QoQ to 66.4%, 'primarily due to' N2. 4Q26 GM guided -40bp to 66% midpoint on continued N2 dilution plus overseas fabs.",
+    "as_of": "2026-07-16 / 2026-10-15",
+    "source_name": "TSMC 2Q26 and 3Q26 earnings call transcripts",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "3Q26 gross margin vs bullish expectations",
+    "value": "Actual 66.4% vs Morgan Stanley forecast 67.5% and Hudson Labs consensus 66.5%",
+    "as_of": "2026-10-15",
+    "source_name": "TrendForce News; Gotrade (citing Admirals)",
+    "source_url": "https://www.trendforce.com/news/?p=65330",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Capex cost inflation",
+    "value": "CFO Huang: 'The tool price inflation is real. The tool price, material, labor costs, et cetera.' (3Q26). C.C. Wei on the 2026 capex raise: second reason is 'inflation. Now we buy the tools with inflation price' (2Q26).",
+    "as_of": "2026-10-15 / 2026-07-16",
+    "source_name": "TSMC 3Q26 and 2Q26 earnings call transcripts",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Capex escalation and US commitment",
+    "value": "2026 capex guidance: US$52-56bn (Jan), 'closer to US$56bn' (Apr), US$60-64bn (Jul). Additional US$100bn Arizona investment announced 2026-07-16, bringing the total to US$265bn. TSM fell >5% on 2026-07-17 partly on the capex and FCF read-through.",
+    "as_of": "2026-07-16/17",
+    "source_name": "TSMC 2Q26 earnings call transcript; TradingKey",
+    "source_url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262036881-tsmc-tsm-breaks-q2-2026-records-tradingkey",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "The capex and US$265bn figures are from the 2Q26 transcript. The stock-reaction explanation is from TradingKey (press)."
+   },
+   {
+    "item": "MOEA approvals of TSMC capital injections into Arizona",
+    "value": "Seven approvals since Dec 2020 totalling US$44bn, including US$20bn in July (2026)",
+    "as_of": "2026-09-26",
+    "source_name": "CNA / Focus Taiwan",
+    "source_url": "https://focustaiwan.tw/business/202609260007",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Government grants received (mainly overseas subsidiaries)",
+    "value": "NT$0.59bn in 1H26 vs NT$67.13bn in 1H25",
+    "as_of": "1H26",
+    "source_name": "TSMC 2Q26 consolidated financial statements, Note 28",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000541/a2026q2consolidatedreport-.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The filing gives no reason for the drop. Fewer subsidy offsets as overseas dilution widens is an inference."
+   },
+   {
+    "item": "Self-imposed pricing restraint",
+    "value": "C.C. Wei: 'we don't suddenly increase our price by... 4x or 5x... I'm really jealous about memory company's 86% gross margin.' JPMorgan: TSMC is 'no longer the most profitable semiconductor manufacturing company'.",
+    "as_of": "2026-07-16",
+    "source_name": "TSMC 2Q26 earnings call transcript",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Price-hike reports and location-based pricing",
+    "value": "Stifel cited 'reports of significant price increases across your mature and advanced nodes'. Wei: pricing depends on segment, location and technology; 'in the US, it will be a little bit different from the one we produce in Taiwan'.",
+    "as_of": "2026-10-15",
+    "source_name": "TSMC 3Q26 earnings call transcript",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high",
+    "note": "No direct 2026 evidence of customers pushing back on price was found."
+   },
+   {
+    "item": "Intel Foundry status",
+    "value": "18A in high-volume production at Arizona, but Intel 'has no major external customers for its new chips yet'. CEO Tan: 'a couple of customers ready to announce the next two quarters' and 'tremendous progress' on 14A. US$23bn equity offering in Aug 2026; US government holds a 10% stake.",
+    "as_of": "2026-10-29",
+    "source_name": "CNBC",
+    "source_url": "https://www.cnbc.com/2026/10/29/intel-intc-q3-earnings-report-2026-.html",
+    "tier": "press",
+    "confidence": "high"
+   },
+   {
+    "item": "Competitor leading-edge timelines",
+    "value": "Intel 18A-P in pilot production; 14A risk production 2028, HVM 2029 (Reuters). Samsung SF1.4 mass production pushed from 2027 to 2029 (The Bell). TSMC 1.4nm pilot as early as 3Q27, mass production 2H28 (EDN).",
+    "as_of": "2026-06-30",
+    "source_name": "TrendForce News",
+    "source_url": "https://www.trendforce.com/news/2026/06/30/news-samsung-reportedly-restarts-1-4nm-push-targets-2029-mass-production-to-close-gap-with-tsmc-intel/",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Risk that an IDM customer pulls work back in-house",
+    "value": "Morgan Stanley: 'one of your IDM customer is spending capex very aggressively... may insource more than outsource to you'. Wei: 'we take into consideration of their internal capacity'; declined to comment on the specific customer.",
+    "as_of": "2026-10-15",
+    "source_name": "TSMC 3Q26 earnings call transcript",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Advanced packaging competition (Intel EMIB-T)",
+    "value": "Macquarie: EMIB-T is 'gaining traction'. Wei: 'our packaging capacity is so tight that now it limits my customers' growth... we welcome that additional flexibility' (2Q26). On 3Q26: 'our competitors offer a very competitive solution'.",
+    "as_of": "2026-07-16 / 2026-10-15",
+    "source_name": "TSMC 2Q26 and 3Q26 earnings call transcripts",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Customers engaging rival foundries; customer-built fab (Terafab)",
+    "value": "2Q26: IR head Jeff Su: 'according to the news, many of our customers are engaging with our foundry competitors'; Wei: switching takes 'about five years'. 3Q26: Wei confirmed talks with 'one of our customers who try to build a fab, Terafab' to use that capacity, but 'the fab got to be run by TSMC'.",
+    "as_of": "2026-07-16 / 2026-10-15",
+    "source_name": "TSMC 2Q26 and 3Q26 earnings call transcripts",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/eba4fac72873bf546b669bd2b5d973df5c93215d/TSMC%203Q26%20Transcript.pdf",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Section 232 semiconductor tariff, phase 1",
+    "value": "25% ad valorem on 'certain advanced computing chips and certain derivative products', effective 2026-01-15. Exempt: imports for US data centers, repairs, R&D, startups, non-data-center consumer, civil industrial and public-sector uses. The President 'may consider imposing significant tariffs' on semiconductors broadly, plus a tariff offset program, depending on negotiations.",
+    "as_of": "2026-01-14",
+    "source_name": "White House Proclamation, 'Adjusting Imports of Semiconductors...'",
+    "source_url": "https://www.whitehouse.gov/presidential-actions/2026/01/adjusting-imports-of-semiconductors-semiconductor-manufacturing-equipment-and-their-derivative-products-into-the-united-states/",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Primary government document. The Annex with HTS codes and performance thresholds was not read."
+   },
+   {
+    "item": "US-Taiwan trade and investment agreement",
+    "value": "Reciprocal tariff on Taiwanese goods 'no more than 15 percent'. Taiwanese firms building US chip capacity may import up to 2.5x planned capacity free of Section 232 duty during construction, then 1.5x new US capacity after completion. A 'lower preferential Section 232 rate' applies above quota (no figure given). At least US$250bn direct investment plus US$250bn credit guarantees.",
+    "as_of": "2026-01-15",
+    "source_name": "US Department of Commerce press release (GovDelivery copy)",
+    "source_url": "https://content.govdelivery.com/accounts/USDOC/bulletins/4049bf0",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC's own view of tariff uncertainty",
+    "value": "IEEPA tariffs declared unlawful by the Supreme Court in Feb 2026, replaced by a Section 122 tariff. USTR opened Section 301 probes (overcapacity, forced labor) targeting economies including Taiwan in Mar 2026. Details of preferential Section 232 treatment 'including any offsets, are still unclear'.",
+    "as_of": "2026-04-16",
+    "source_name": "TSMC Form 20-F FY2025, Risk Factors",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Section 301 forced-labor tariff on Taiwan",
+    "value": "Combined MFN + Section 301 tariff of 10% on certain Taiwan goods, effective 2026-07-24 (US time). Goods with MFN ≥10% get no extra duty. Taiwan and the EU were the only two of 60 economies at 10%. Vice Premier Cheng Li-chiun: the rate is 'not final', pending the separate overcapacity probe. TIER: mature-node foundries 'could face greater exposure'.",
+    "as_of": "2026-07-24",
+    "source_name": "CNA / Focus Taiwan",
+    "source_url": "https://focustaiwan.tw/business/202607240007",
+    "tier": "press",
+    "confidence": "high",
+    "note": "See also https://focustaiwan.tw/business/202607240020. Whether chips (HTS 8541/8542) are covered was not confirmed."
+   },
+   {
+    "item": "Chip-specific Section 232 measures still unsettled",
+    "value": "Taiwan secured preferential Section 232 treatment for most exports other than semiconductors. 'Uncertainty remains over proposed semiconductor measures'; Taipei is seeking tariff-free semiconductor quotas.",
+    "as_of": "2026-06-01",
+    "source_name": "DIGITIMES (summary; paywalled)",
+    "source_url": "https://www.digitimes.com/news/a20260601PD224/taiwan-semiconductors-exports-production-manufacturing.html",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "US Treasury FX report on Taiwan (pressure toward a stronger TWD)",
+    "value": "Taiwan stays on the monitoring list (meets 2 of 3 criteria). Current-account surplus 19.6% of GDP in 2025 (14.1% in 2024). US goods and services surplus with the US US$145bn (+US$72bn). Net FX purchases US$7.7bn (0.8% of GDP), mainly to slow TWD appreciation.",
+    "as_of": "2026-07-23",
+    "source_name": "CNA / Focus Taiwan, reporting the US Treasury semiannual FX report",
+    "source_url": "https://focustaiwan.tw/business/202607240006",
+    "tier": "press",
+    "confidence": "high"
+   },
+   {
+    "item": "TSMC FX sensitivity, current",
+    "value": "Every 1% depreciation of the USD against the NT$ cuts operating margin by ~0.3 ppt (based on 2025 results)",
+    "as_of": "FY2025 (filed 2026-04-16)",
+    "source_name": "TSMC Form 20-F FY2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Preferred figure: latest primary source. Average rate went from NT$32.13 (2024) to NT$31.11 (2025) per USD, which hurt 2025 revenue."
+   },
+   {
+    "item": "TSMC FX sensitivity, older figure",
+    "value": "Each 1% NT$ appreciation could cut operating margin by ~0.4 ppt",
+    "as_of": "2025-05-06 / 2025-06-03",
+    "source_name": "Taipei Times (attributed to TSMC); DIGITIMES (unattributed)",
+    "source_url": "https://www.taipeitimes.com/News/biz/archives/2025/05/06/2003836374",
+    "tier": "press",
+    "confidence": "medium",
+    "note": "Conflicts with the 20-F's 0.3 ppt. Trust the 20-F: it is newer, primary, and lower sensitivity is consistent with higher margins. DIGITIMES: https://www.digitimes.com/news/a20250603PD206.html. Neither the 2Q26 nor the 3Q26 call restated a figure."
+   },
+   {
+    "item": "Spot USD/TWD vs guidance",
+    "value": "NT$32.478 close on 2026-10-30, vs 31.8 assumed in 4Q26 guidance (NT$ 2.1% weaker than assumed, computed)",
+    "as_of": "2026-10-30",
+    "source_name": "CNA / Focus Taiwan forex close",
+    "source_url": "https://focustaiwan.tw/business/202610300012",
+    "tier": "press",
+    "confidence": "high",
+    "note": "The weak NT$ is currently a tailwind; the bear risk is a reversal."
+   },
+   {
+    "item": "2026 TWD weakness and central bank stance",
+    "value": "NT$ -3.23% vs USD from 1 Jan to 21 Oct 2026. Foreign net outflows US$54.3bn since early July (US$23.3bn in 1H26). The CBC sold a net US$17.04bn in 1H26 to smooth volatility. 2026-10-19: the CBC 'may intervene when necessary to maintain the Taiwan dollar's dynamic stability' after the steepest weekly fall in over a year (to 32.338).",
+    "as_of": "2026-10-19 / 2026-10-27",
+    "source_name": "CNA / Focus Taiwan",
+    "source_url": "https://focustaiwan.tw/business/202610270018",
+    "tier": "press",
+    "confidence": "high",
+    "note": "See also https://focustaiwan.tw/business/202610190010."
+   },
+   {
+    "item": "Taiwan electricity rates frozen; large increase requested",
+    "value": "Average rate held at NT$3.7823/kWh from Oct 2026, unchanged from the March review. Taipower proposed a 12.83% increase at the September meeting; the government declined. A third review is due in December 2026.",
+    "as_of": "2026-09-18 / 2026-10-22",
+    "source_name": "CNA / Focus Taiwan",
+    "source_url": "https://focustaiwan.tw/business/202609180019",
+    "tier": "press",
+    "confidence": "high",
+    "note": "March 2026 freeze: https://focustaiwan.tw/business/202603270015. Last increase was +0.71% (avg) in Sep 2025."
+   },
+   {
+    "item": "Taipower finances (pressure for future hikes)",
+    "value": "2026 fuel costs up >NT$160bn; power-sector gas prices up >70% since the conflict began in late Feb 2026. Accumulated losses heading to NT$420.0bn (record NT$421.1bn at end-2024). Borrowing NT$1.85tn. A NT$71.1bn supplementary budget is pending.",
+    "as_of": "2026-10-22",
+    "source_name": "CNA / Focus Taiwan",
+    "source_url": "https://focustaiwan.tw/business/202610220015",
+    "tier": "press",
+    "confidence": "high",
+    "note": "A 2026-10-19 CNA piece gives NT$371.2bn accumulated losses since 2020, 2026 losses of NT$20.3bn, and a 50% gas share of the 2025 power mix (https://focustaiwan.tw/politics/202610190026). The figures differ by basis and date."
+   },
+   {
+    "item": "Semiconductor electricity demand",
+    "value": "Sector use topped 4.5bn kWh in Sep 2026 (record), +11.55% YoY. TRI forecasts >50bn kWh for 2026.",
+    "as_of": "2026-09 (published 2026-10-21)",
+    "source_name": "CNA / Focus Taiwan (Taiwan Research Institute data)",
+    "source_url": "https://focustaiwan.tw/business/202610210010",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "TSMC's own power and utility risk language",
+    "value": "'we have encountered and anticipate continued increases in utility prices. Higher electricity prices could increase our manufacturing costs.' TSMC also cites past power outages and dips.",
+    "as_of": "FY2025 (filed 2026-04-16)",
+    "source_name": "TSMC Form 20-F FY2025",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+    "tier": "filing",
+    "confidence": "high"
+   },
+   {
+    "item": "Last large PLA drill: Justice Mission 2025",
+    "value": "29-30 Dec 2025. 130 aircraft in 24h; 14 warships plus 14 coast guard ships; 27 rockets fired. Live-fire zones crossed into Taiwan's territorial waters for the first time since 2022. Focus on blockading Keelung and Kaohsiung.",
+    "as_of": "2025-12-30",
+    "source_name": "Wikipedia (citing Taiwan MND and others)",
+    "source_url": "https://en.wikipedia.org/wiki/Justice_Mission_2025",
+    "tier": "other",
+    "confidence": "medium"
+   },
+   {
+    "item": "2026 cross-strait military and gray-zone activity",
+    "value": "MND (2026-10-15) is watching for large-scale drills in the Nov-Dec peak season. No large-scale encirclement exercise had been held in 2026 by that date. 2026-11-01: China Coast Guard flotilla (Hushi CCG 1308, Meishan CCG 2303) ran 'routine law enforcement patrols' off eastern Taiwan; Beijing said it 'stepped up control over the surrounding waters'.",
+    "as_of": "2026-10-15 / 2026-11-01",
+    "source_name": "CNA / Focus Taiwan",
+    "source_url": "https://focustaiwan.tw/politics/202611010009",
+    "tier": "press",
+    "confidence": "high",
+    "note": "See also https://focustaiwan.tw/politics/202610150010. The 20-F notes that markets have treated ROC-PRC developments as 'occasions to depress' TSMC's share price."
+   },
+   {
+    "item": "Most bearish visible sell-side rating",
+    "value": "TD Cowen (Krish Sankar): Hold, PT US$400→US$440 (2026-07-17). TipRanks 3-month average PT US$564.89 (range US$500-670); no Sell ratings shown.",
+    "as_of": "2026-10-16",
+    "source_name": "TipRanks (aggregator)",
+    "source_url": "https://www.tipranks.com/stocks/tsm/forecast",
+    "tier": "consensus",
+    "confidence": "medium"
+   },
+   {
+    "item": "Independent (non-sell-side) bearish notes",
+    "value": "2026-10-13: Seeking Alpha contributor downgraded to Hold on FCF pressure from capex raised to US$64bn. 2026-10-29: 'TSMC: The Cracks Are Showing' rated Sell on the capex cycle and margin pressure from technology transitions.",
+    "as_of": "2026-10-13 / 2026-10-29",
+    "source_name": "Seeking Alpha (seen in search results only; full text paywalled/403)",
+    "source_url": "https://seekingalpha.com/article/4959425-tsmc-the-cracks-are-showing",
+    "tier": "press",
+    "confidence": "low",
+    "note": "Other article: https://seekingalpha.com/article/4953750-tsmc-earnings-preview-high-growth-likely-but-mind-the-capex-downgrade"
+   }
+  ],
+  "synthesis": "FACTS. Revenue is concentrated. In 2025 the top-10 customers were 78% of revenue, the largest 19% and the second 17% (20-F). Top-10 customers held 84% of receivables at 2Q26, and US-headquartered customers were ~76% of 2Q26 revenue (computed from the 2Q26 statements).\n\nThe AI buyers' cash generation has turned negative. Alphabet's FCF was -US$9.1bn in 3Q26, Meta's -US$2.1bn, and Amazon's -US$42.4bn TTM on ~US$220bn of 2026 capex. TSMC's CEO said he is 'not very sure' there will be no dip before 2029-30. He also said aggregated customer forecasts are 'not a truth'. TSMC flagged consumer weakness from component inflation and is 'prudent' on 2027.\n\nMargin headwinds are quantified:\n- N2 dilution of 3-4 ppt in 2H26.\n- Overseas-fab dilution of ~2 ppt in 2026, widening to 3-4 ppt.\n- Tool-price inflation that management calls 'real'.\n- FX: ~0.3 ppt of operating margin per 1% NT$ appreciation (20-F).\n- Taipower requested a 12.83% tariff increase; it was deferred to a December review.\n\nTariff damage so far is narrow. Phase-1 Section 232 exempts US data-center use, and the US-Taiwan deal gives tariff-free quotas of 2.5x/1.5x capacity. But the broad chip tariff and the Section 301 overcapacity ruling are still open.\n\nThe share-loss threat is mostly later-dated. Intel has no major external 18A customer yet and plans 14A volume production in 2029; Samsung's 1.4nm has slipped to 2029.\n\nINFERENCE (not sourced). The strongest bear case is cyclical and margin-driven, not share loss.\n- The capex budget (US$60-64bn in 2026, 'significantly higher' over 2026-28) is sized for continued growth. With hyperscalers already FCF-negative, a 2027 capex pause would hit TSMC's FCF and ROE harder than its revenue.\n- The headwinds stack. A reversion of the NT$ from 32.48 to the 2025 average of 31.11 is ~4.4%, or ~1.3 ppt of operating margin by the 20-F rule. Add overseas fabs at 3-4 ppt, the N2 and A14 ramps, and electricity. Together these support a downside case with gross margin in the high-50s to low-60s, versus ~66% now and still above the 56% long-term floor.\n- With the top two customers at 36% of revenue, one customer's digestion can move growth by double digits.\n- Geopolitics belongs in the discount rate and multiple, not in earnings. 2026 shows gray-zone escalation but, as of mid-October, no encirclement drill.",
+  "unresolved": [
+   "The web-search budget for this turn ran out mid-research. Later work used only direct fetches of known primary or press URLs, so the items below could not be searched. The user can send a follow-up to continue.",
+   "NVIDIA, Apple and Broadcom shares of TSMC revenue in 2026 year-to-date. TSMC discloses only the annual top-2 (20-F / annual report). No Broadcom share was found.",
+   "Direct 2026 evidence of customers (NVIDIA, Apple, Qualcomm, AMD) pushing back on TSMC price increases, and the size of 2027 price hikes. The only evidence is the 'reports of significant price increases' cited by Stifel on the 3Q26 call.",
+   "A JLPascual Sell rating with a US$262 target (2026-10-18) appeared only in a search-engine summary. It was not on the TipRanks page fetched, so it is unverified.",
+   "No 2026 downgrade of TSMC by a major sell-side broker was found. FactSet shows 0 negative ratings (already established).",
+   "Outcome of the USTR Section 301 overcapacity probe on Taiwan and the final Taiwan rate. Also unknown: whether chips (HTS 8541/8542) fall under the 10% forced-labor Section 301 tariff, and whether any broader 'significant' Section 232 chip tariff or offset program was imposed by 2026-10-30. Neither the Federal Register nor CBP guidance was checked.",
+   "TSMC's electricity consumption and electricity cost as a share of COGS. Without them, the impact of the proposed 12.83% Taipower increase cannot be quantified. The December 2026 review outcome is pending.",
+   "Samsung SF2/SF2P customer wins in 2026 (e.g., terms of Tesla AI5/AI6 and any Qualcomm, AMD or OpenAI orders) were not verified.",
+   "Names of Intel 18A/14A external customers: Intel says announcements will come 'in the next two quarters'. None were confirmed as of 2026-10-29.",
+   "2027 capex guidance from Alphabet, Microsoft and Amazon earnings calls was not retrieved; the press releases do not contain it.",
+   "The OpenAI annualized-revenue figure (~US$50bn, ~US$20bn below earlier figures) comes only from a secondary source citing Admirals. No primary source was found.",
+   "No 2026 TSMC statement of FX sensitivity on gross margin (as opposed to operating margin) was found. The 2Q26 and 3Q26 calls gave no figure.",
+   "The basis of Taiwan News' 2026-01-24 report (NVIDIA 13%, Apple 11% of 4Q25 revenue) is unexplained. It conflicts with the 20-F annual shares.",
+   "Cause of the drop in government grants (NT$67.13bn in 1H25 to NT$0.59bn in 1H26), e.g., CHIPS Act disbursement timing, is not explained in the filing.",
+   "No 2026 large-scale PLA exercise had occurred as of 2026-10-15. Developments in the Nov-Dec 2026 'peak season' after 2026-11-01 are unknown."
+  ]
+ },
+ {
   "topic": "Facts gathered directly in the main session (2026-11-01)",
   "findings": [
    {

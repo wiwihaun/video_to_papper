@@ -35,7 +35,12 @@ disclosed in the report's limitations section, by name. There is no third option
       debt are all in the same currency — and that currency is the business's *economic*
       currency, or the forecast uses forward FX.
 - [ ] **Event risk counted once**: either a hazard overlay or a country-risk premium, not
-      both. If a hazard is used, its probability is compared with dated external anchors.
+      both. If a hazard is used, its probability is compared with dated external anchors **after
+      annualising them**: annual = 1 − (1 − p)^(1/years); for prediction markets also subtract the
+      carry cost of holding "No". Describe the chosen rate's position (low end / middle / high end)
+      consistently everywhere in the report.
+- [ ] **Dates match inside the cost of equity**: an implied ERP is paired with the risk-free rate
+      it was solved against, or re-derived by holding the implied market return constant.
 - [ ] Terminal growth < WACC, and ≤ long-run nominal GDP for the currency, or argued.
 - [ ] Every engine warning is resolved or explained in section 5.5.
 - [ ] Net-debt sign: net cash is entered as a **negative** `net_debt_m`, so it adds to equity.
@@ -49,13 +54,31 @@ disclosed in the report's limitations section, by name. There is no third option
       by omission, for issuers with material equity compensation).
 - [ ] DCF and the multiples cross-check agree within ~25%, or the gap is reconciled in prose.
 - [ ] **Consensus bridge**: if consensus publishes a target price, the gap to it is decomposed
-      assumption by assumption with engine re-runs.
+      assumption by assumption with engine re-runs, with an order-independent (Shapley) attribution
+      beside the sequential one (`"shapley": true` in the spec). The "consensus-like" operating set
+      reproduces consensus EPS (calibrate margins to it); a set that undershoots consensus EPS loads
+      the residual onto the discount rate.
+- [ ] **Rating flip points are disclosed**: the input values at which the rating changes (solved in
+      the spec), and the buy/sell price triggers the engine reports.
 - [ ] **Like-for-like comparisons**: fair value is compared with spot; a 12-month target price
       is compared with a 12-month target price (never fair value vs a consensus target).
 - [ ] **Target price is rolled forward**: the 12-month TP = fair value x (1 + quote-currency
       cost of equity) - dividends, and the rating uses it.
 - [ ] The Gordon terminal value's implied exit multiple is stated and is plausible against
       sector history.
+
+## C2. Economic coherence (added after the 2330 review)
+
+- [ ] **Margins are cash margins.** When D&A intensity changes over the forecast, drive the margin
+      as EBITDA and set EBIT = EBITDA − D&A (`ebitda_margin` driver). A falling EBIT margin with a
+      rising D&A ratio can leave cash margins at a record — the 2330 v1 "normalisation" was exactly
+      that, and it was invisible until the EBITDA and FCF margins were tabulated.
+- [ ] **EBITDA margin, FCF margin and capex intensity are shown beside 10 years of history**, and
+      any forecast outside the historical range is argued, not just assumed.
+- [ ] **Growth costs capital.** A scenario with faster growth carries higher capex intensity; the
+      terminal reinvestment rate is consistent with g / RONIC, and the implied RONIC is stated.
+- [ ] **Falsifiers sit where Base and Bull diverge.** A tripwire that the Base case itself satisfies
+      falsifies nothing.
 
 ## D. Bias
 

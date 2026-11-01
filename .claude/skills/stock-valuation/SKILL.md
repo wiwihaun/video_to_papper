@@ -127,6 +127,12 @@ Full method, including the elasticity test and the common failure modes, in
 Depth on one or two things, not breadth on twenty. Sourcing rules, the hierarchy of
 evidence, and what each market's filings are called: `references/03-data-sources.md`.
 
+**Budget the search.** Web search is capped per turn (200 calls in the 2330 run) and the cap is
+shared by every research agent. The 2330 run spent it on parallel research tracks before the
+consensus revenue line was found. Fetch the five things the valuation cannot do without first —
+latest results and guidance, price and share count, balance sheet, consensus revenue *and* EPS,
+risk-free rate and ERP — then broaden. Tell each research agent its search allowance.
+
 Non-negotiable: **every number in the report carries a source and a date.** Company
 filing beats management guidance beats sell-side consensus beats press. Label consensus
 as consensus. If you could not source something, write "not sourced" rather than
@@ -176,6 +182,11 @@ where undisclosed bias enters a model.
 premium charges a small cost every year forever; a blockade or expropriation is a jump. The
 overlay (annual probability × fraction of operating value lost) prices the jump explicitly,
 and with full loss it is mathematically identical to raising WACC — so never use both.
+
+**Drive margins as cash.** If depreciation intensity moves over the forecast (it does for any
+capex-heavy business), set margins as EBITDA with `ebitda_margin` and let EBIT follow, and put
+EBITDA margin, FCF margin and capex intensity next to ten years of history. Faster-growth
+scenarios carry higher capex intensity: growth costs capital.
 
 Guardrails: terminal growth must not exceed long-run nominal GDP for the market
 (~3% USD, ~2.5% TWD) without an argument; if PV of terminal value exceeds ~75% of EV,
