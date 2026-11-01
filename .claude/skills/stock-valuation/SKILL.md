@@ -70,6 +70,11 @@ Break the business into value pools, not reporting segments. A pool is a block o
 with its own economics and its own risk of being worth zero. For each, record a
 first-pass share of EV. Keep it to three to six pools.
 
+For banks, insurers and financial holding companies, value **equity** directly with the
+`residual_income` method (debt is raw material, not financing); the pools are the business
+lines — bank, insurer, securities — and the drivers are ROA and leverage (see
+`references/02-valuation-engines.md`).
+
 Separate **cash-generating pools** (value today) from **option pools** (value only if
 something lands). Option pools carry an explicit probability of success and must never
 be folded silently into a DCF — `valuation_engine.py` has `probability_of_success` on
@@ -148,6 +153,9 @@ python3 scripts/valuation_engine.py reverse --input reports/<TICKER>_case.json \
   --scenario Base --solve-for revenue_growth
 ```
 
+For a financial, solve for the steady ROE the price implies (`reverse --solve-for roe`), with and
+without event risk.
+
 Report it as a sentence of the form: *"At 1,180, the market is paying for X% revenue
 CAGR for ten years at a Y% EBIT margin. The question is not whether the company is good.
 It is whether that is achievable."*
@@ -169,10 +177,13 @@ best decade, the size of the end market, the industry's record margin. A price i
 a result no company in the sector has ever delivered is the finding, and often the whole
 report.
 
-### Phase 5 — Forecast the numbers: three scenarios
+### Phase 5 — Forecast the numbers: scenarios
 
-Only now build your own view. Bull / Base / Bear, each **defined by the Phase 2 numbers
-and nothing else** — the scenarios must differ in those drivers, not in a vague mood.
+Only now build your own view. Bull / Base / Bear — plus a tail scenario when the company's
+own history contains one (2330: a 2001-style Bust at 5%) — each **defined by the Phase 2
+numbers and nothing else**: the scenarios must differ in those drivers, not in a vague mood.
+Anchor each scenario on evidence: consensus, the company's guidance and long-term targets, its
+own past cycles.
 
 Assign probabilities that sum to exactly 1.0 and **justify each weight in one line**.
 The engine refuses to normalise weights for you, deliberately: unexamined weights are
@@ -209,10 +220,12 @@ must appear in the appendix; if you need a new number, add it to the spec and re
 than computing it by hand.
 
 **Fair value vs target price.** The engine's per-share value is *today's* fair value. A
-12-month target price is that value rolled forward at the cost of equity in the quote
-currency, less dividends over the year: set `roll_forward` in the case file
-(`quote_rf` and `model_rf` derive the quote-currency rate from WACC by interest-rate parity).
-The rating uses the 12-month target price vs spot. **Compare like with like:** fair value
+12-month target price is that value rolled forward one year at the cost of equity, less
+dividends over the year: set `"roll_forward": {"basis": "model", "dividends_quote_next_12m": d}`
+— model-currency cost of equity, converted at spot FX, i.e. no currency forecast. Add
+`"rating_thresholds"` and the engine returns the mechanical rating and the buy/sell price
+triggers; solve the rating's flip points in the spec. The rating uses the 12-month target price
+vs spot. **Compare like with like:** fair value
 against spot, 12-month target against 12-month target. Bridging your fair value to a
 consensus *target price* overstates the gap by roughly a year's cost of equity — the 2330
 run made exactly this error before review (implied consensus discount rate 9.03% on the
