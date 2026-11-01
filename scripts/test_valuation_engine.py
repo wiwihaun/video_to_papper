@@ -36,11 +36,27 @@ class TestDCF(unittest.TestCase):
         self.assertAlmostEqual(s["enterprise_value_m"], 1000.0, places=9)
         self.assertAlmostEqual(s["value_per_share"], 100.0, places=9)
 
-    def test_midyear_discounts_cash_flow_but_not_tv(self):
-        # PV(FCF) = 100/1.1^0.5; PV(TV) still 1000/1.1
+    def test_midyear_shifts_gordon_tv_half_a_year(self):
+        # Flows at 0.5, 1.5, 2.5, ...: PV(FCF) = 100/1.1^0.5; TV = 1000 sits at year 0.5,
+        # so PV(TV) = 1000/1.1^0.5 and EV = 1100/1.1^0.5 = whole perpetuity 100/0.1 x 1.1^0.5
         out = ve.value_case(one_year_case(midyear=True))
         s = out["scenarios"][0]
         self.assertAlmostEqual(s["pv_explicit_m"], 100 / 1.1 ** 0.5, places=9)
+        self.assertAlmostEqual(s["pv_terminal_m"], 1000 / 1.1 ** 0.5, places=9)
+        self.assertAlmostEqual(s["enterprise_value_m"], 1000 * 1.1 ** 0.5, places=9)
+
+    def test_implied_multiple_is_stated_at_year_end(self):
+        # mid-year Gordon value 1000 sits at year 0.5; at the end of year 1 it is 1000 x 1.1^0.5,
+        # i.e. 10.49x the final FCFF of 100 (an exit multiple of 10.49x gives the same EV)
+        s = ve.value_case(one_year_case(midyear=True))["scenarios"][0]
+        self.assertAlmostEqual(s["implied_terminal_multiples"]["ev_fcff"], 10 * 1.1 ** 0.5, places=9)
+
+    def test_midyear_exit_multiple_is_a_year_end_sale(self):
+        # exit value 10 x 100 = 1000 at the end of year 1: PV = 1000/1.1 under either convention
+        case = one_year_case(midyear=True)
+        case["scenarios"][0]["terminal"] = {"mode": "exit_multiple", "multiple": 10.0,
+                                            "metric_name": "fcff"}
+        s = ve.value_case(case)["scenarios"][0]
         self.assertAlmostEqual(s["pv_terminal_m"], 1000 / 1.1, places=9)
 
     def test_fcff_build_line_items(self):
@@ -286,6 +302,14 @@ class TestHazardOverlay(unittest.TestCase):
         d = self._case(); d["wacc"] = (1 + 0.10) / (1 - h) - 1
         self.assertAlmostEqual(with_hazard, ve.value_case(d)["scenarios"][0]["enterprise_value_m"], places=6)
 
+    def test_total_loss_equivalence_holds_mid_year(self):
+        # same identity with mid-year flows: every flow (explicit and terminal) at t - 0.5
+        h = 0.02
+        c = self._case(midyear=True); c["hazard"] = {"annual_probability": h, "loss_fraction": 1.0}
+        with_hazard = ve.value_case(c)["scenarios"][0]["enterprise_value_m"]
+        d = self._case(midyear=True); d["wacc"] = (1 + 0.10) / (1 - h) - 1
+        self.assertAlmostEqual(with_hazard, ve.value_case(d)["scenarios"][0]["enterprise_value_m"], places=6)
+
     def test_partial_loss_lies_between(self):
         base = ve.value_case(self._case())["scenarios"][0]["enterprise_value_m"]
         c = self._case(); c["hazard"] = {"annual_probability": 0.02, "loss_fraction": 0.5}
@@ -468,6 +492,23 @@ class TestDuPont(unittest.TestCase):
         b["scenarios"][0].update({"roa": 0.0075, "leverage": 16.0})
         self.assertAlmostEqual(ve.value_case(a)["scenarios"][0]["value_per_share"],
                                ve.value_case(b)["scenarios"][0]["value_per_share"], places=9)
+
+
+class TestCapexDriverAndBroadcast(unittest.TestCase):
+    def test_capex_intensity_driver_sets_flat_path(self):
+        case = one_year_case()
+        case["scenarios"][0] = {"name": "Base", "probability": 1.0, "method": "dcf", "horizon_years": 3,
+            "driver_build": {"revenue_base_m": 100, "revenue_growth": 0.1, "ebit_margin": 0.3,
+                             "capex_pct_revenue": [0.4, 0.3, 0.2]}}
+        s, _ = ve._apply_driver(case["scenarios"][0], case, "capex_intensity", 0.25)
+        self.assertEqual(s["driver_build"]["capex_pct_revenue"], [0.25, 0.25, 0.25])
+        s, _ = ve._apply_driver(case["scenarios"][0], case, "capex_intensity", 0.25, from_year=2)
+        self.assertEqual(s["driver_build"]["capex_pct_revenue"], [0.4, 0.25, 0.25])
+
+    def test_slice_set_broadcasts_scalar(self):
+        d = {"g": [0.3, 0.2, 0.1, 0.1]}
+        ve._set_path(d, ["g[2:]"], 0.05)
+        self.assertEqual(d["g"], [0.3, 0.2, 0.05, 0.05])
 
 
 if __name__ == "__main__":

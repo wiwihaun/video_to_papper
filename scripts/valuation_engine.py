@@ -51,6 +51,7 @@ SOLVABLE = (
     "ebitda_margin",
     "roe",
     "payout_ratio",
+    "capex_intensity",
 )
 
 
@@ -179,16 +180,18 @@ def terminal_value(rows, terminal, wacc):
             name = terminal.get("metric_name", "custom")
         else:
             name = terminal.get("metric_name", "ebitda")
-            metrics = {
-                "ebitda": last["ebit_m"] + last["da_m"],
-                "ebit": last["ebit_m"],
-                "fcff": last["fcff_m"],
-                "revenue": last["revenue_m"],
-                "nopat": last["nopat_m"],
+            metrics = {   # lazy: an explicit-FCFF scenario has no EBIT or revenue lines
+                "ebitda": lambda: last["ebit_m"] + last["da_m"],
+                "ebit": lambda: last["ebit_m"],
+                "fcff": lambda: last["fcff_m"],
+                "revenue": lambda: last["revenue_m"],
+                "nopat": lambda: last["nopat_m"],
             }
             if name not in metrics:
                 raise ValueError("unknown terminal metric_name: %s" % name)
-            metric = metrics[name]
+            metric = metrics[name]()
+            if metric is None:
+                raise ValueError("terminal metric %s is not available for this scenario" % name)
         return mult * metric, {
             "mode": "exit_multiple",
             "metric_name": name,
@@ -204,7 +207,12 @@ def terminal_value(rows, terminal, wacc):
 # --------------------------------------------------------------------------- #
 
 def discount_factors(years, wacc, midyear):
-    """Cash-flow discount factors. TV is always discounted at full year N."""
+    """Explicit cash-flow discount factors (mid-year: flow t arrives at t - 0.5).
+
+    The terminal value is timed in dcf(): a Gordon value sits one period before its first
+    flow, so under the mid-year convention it is discounted from N - 0.5 (first terminal flow
+    at N + 0.5, half a year after the year-N flow). An exit-multiple value is a sale at the end
+    of year N and is discounted from N either way."""
     out = []
     for t in range(1, years + 1):
         exp = t - 0.5 if midyear else t
@@ -288,19 +296,25 @@ def dcf(scenario, case):
         terminal["multiple"] = scenario["multiple"]
 
     tv, tv_detail = terminal_value(rows, terminal, wacc)
-    tv_df = 1.0 / (1.0 + wacc) ** n
+    # Gordon value = value one period before its first flow. Mid-year flows put that flow at
+    # N + 0.5, so the value sits at N - 0.5; an exit multiple is a sale at the end of year N.
+    tv_time = n - 0.5 if (midyear and tv_detail["mode"] == "gordon") else float(n)
+    tv_df = 1.0 / (1.0 + wacc) ** tv_time
     pv_tv_no_hazard = tv * tv_df
+    tv_detail["discounted_from_year"] = tv_time
     if h == 0.0:
         pv_tv = pv_tv_no_hazard
     elif hz_years is not None:
         # events possible only through hz_years: terminal flows carry survival to that date
-        pv_tv = pv_tv_no_hazard * ((1.0 - L) + L * (1.0 - h) ** min(float(hz_years), n))
+        # (exact while hz_years <= the first terminal flow, tv_time + 1)
+        pv_tv = pv_tv_no_hazard * ((1.0 - L) + L * (1.0 - h) ** min(float(hz_years), tv_time + 1.0))
     elif tv_detail["mode"] == "gordon":
-        # Closed form: sum over t > N of CF_N (1+g)^(t-N) [(1-L) + L(1-h)^t] / (1+r)^t
+        # Closed form, flows at tau_k = tv_time + k (k >= 1):
+        #   sum CF_N (1+g)^k [(1-L) + L(1-h)^tau_k] / (1+r)^tau_k
         g, cf = tv_detail["terminal_growth"], tv_detail["base_fcff_m"]
         q_den = (1.0 + wacc) - (1.0 + g) * (1.0 - h)
         pv_tv = tv_df * cf * (1.0 + g) * (
-            (1.0 - L) / (wacc - g) + L * (1.0 - h) ** n * (1.0 - h) / q_den
+            (1.0 - L) / (wacc - g) + L * (1.0 - h) ** tv_time * (1.0 - h) / q_den
         )
     else:
         pv_tv = pv_tv_no_hazard * ((1.0 - L) + L * (1.0 - h) ** n)
@@ -323,14 +337,26 @@ def dcf(scenario, case):
         warnings.append("final-year FCFF is negative, so the Gordon terminal value is negative.")
     last = rows[-1]
     implied = {}
+    # Implied multiples are stated at the end of year N, the date an exit multiple refers to
+    # (a mid-year Gordon value sits at N - 0.5, so roll it forward half a year).
+    tv_at_n = tv * (1.0 + wacc) ** (n - tv_time)
+    after = None
+    if h > 0.0 and hz_years is None and tv_detail["mode"] == "gordon":
+        # same value conditional on no event by year N, i.e. what a buyer in year N would pay
+        g = tv_detail["terminal_growth"]
+        s_off = tv_time - n
+        q_den = (1.0 + wacc) - (1.0 + g) * (1.0 - h)
+        after = tv_at_n * (wacc - g) * ((1.0 - L) / (wacc - g) + L * (1.0 - h) ** (s_off + 1.0) / q_den)
     if last.get("ebit_m") is not None:
         ebitda = last["ebit_m"] + (last.get("da_m") or 0.0)
         if ebitda > 0:
-            implied["ev_ebitda"] = tv / ebitda
+            implied["ev_ebitda"] = tv_at_n / ebitda
+            if after is not None:
+                implied["ev_ebitda_after_event_risk"] = after / ebitda
         if last["ebit_m"] > 0:
-            implied["ev_ebit"] = tv / last["ebit_m"]
+            implied["ev_ebit"] = tv_at_n / last["ebit_m"]
     if last["fcff_m"] > 0:
-        implied["ev_fcff"] = tv / last["fcff_m"]
+        implied["ev_fcff"] = tv_at_n / last["fcff_m"]
     hazard_info = None
     if h > 0.0:
         hazard_info = {
@@ -680,6 +706,11 @@ def value_case(case):
             # dividends converted at spot.
             ratio = float(case["adr_ratio"])
             out["target_price_12m_per_adr_model"] = (weighted * (1.0 + r) - d / (fx or 1.0)) * ratio
+            # ADR targets if the ADR keeps a premium to the local line (premium p: ADR = local x (1+p))
+            prem = case.get("adr_premiums")
+            if prem:
+                out["target_price_12m_per_adr_at_premium"] = {
+                    "%.4f" % float(p): out["target_price_12m_per_adr_model"] * (1.0 + float(p)) for p in prem}
         th = case.get("rating_thresholds")
         if th and spot_q:
             up = out["target_upside_pct"] / 100.0
@@ -700,7 +731,7 @@ def _apply_driver(scenario, case, name, value, from_year=None):
     keeping earlier years — e.g. take consensus for years 1-2 and solve for what
     the price implies from year 3."""
     s, c = deepcopy(scenario), deepcopy(case)
-    if from_year and name in ("revenue_growth", "ebit_margin") and name != "ebitda_margin":
+    if from_year and name in ("revenue_growth", "ebit_margin"):
         b = s.setdefault("driver_build", {})
         cur = b.get(name)
         if cur is None:
@@ -748,6 +779,13 @@ def _apply_driver(scenario, case, name, value, from_year=None):
             b["ebit_margin"] = cur[:k] + [value - d for d in da_path[k:]]
         else:
             b["ebit_margin"] = [value - d for d in da_path]
+    elif name == "capex_intensity":
+        b = s.setdefault("driver_build", {})
+        n = int(s.get("horizon_years") or b.get("horizon_years") or 0)
+        cur = b.get("capex_pct_revenue", 0.0)
+        path = list(cur) if isinstance(cur, list) else [cur] * n
+        k = int(from_year) - 1 if from_year else 0
+        b["capex_pct_revenue"] = path[:k] + [value] * (len(path) - k)
     elif name == "roe":
         # residual-income scenarios: a flat ROE replaces any ROE / DuPont path
         s["roe"] = value
@@ -793,6 +831,7 @@ def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi
         "hazard_rate": (0.0, 0.5),
         "ebitda_margin": (0.0, 0.95),
         "roe": (-0.10, 0.60),
+        "capex_intensity": (0.0, 0.80),
         "payout_ratio": (0.0, 1.0),
     }
     lo = defaults[solve_for][0] if lo is None else lo
@@ -867,7 +906,7 @@ def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi
 
 def _fmt_driver(name, v):
     if name in ("revenue_growth", "ebit_margin", "terminal_growth", "wacc", "hazard_rate", "ebitda_margin",
-                "roe", "payout_ratio"):
+                "roe", "payout_ratio", "capex_intensity"):
         return "%.2f%%" % (v * 100)
     if name == "exit_multiple":
         return "%.2fx" % v
@@ -945,6 +984,8 @@ def _set_path(obj, parts, value):
     last = parts[-1]
     if sl is not None:
         target = obj[int(last)] if isinstance(obj, list) else obj[last]
+        if not isinstance(value, list):
+            value = [value] * len(target[sl])          # broadcast a scalar over the slice
         target[sl] = value
         return
     if isinstance(obj, list):
@@ -1105,10 +1146,18 @@ def md_value(out):
     L = []
     L.append("### Valuation summary — %s (as of %s)" % (out.get("ticker", "n/a"), out.get("valuation_date", "n/a")))
     L.append("")
-    L.append("| Scenario | Prob. | Method | EV (%sm) | Equity (%sm) | Value/share | Upside |" % (cur, cur))
-    L.append("|---|---|---|---|---|---|---|")
+    qcols = out.get("fx_quote_per_model") is not None
+    tpcols = any(s.get("target_price_12m_quote") is not None for s in out["scenarios"])
+    qc0 = out.get("quote_currency") or "quote"
+    head = "| Scenario | Prob. | Method | EV (%sm) | Equity (%sm) | Value/share | Upside |" % (cur, cur)
+    if qcols:
+        head += " Value/share (%s) |" % qc0
+    if tpcols:
+        head += " 12m TP (%s) |" % qc0
+    L.append(head)
+    L.append("|---" * (7 + int(qcols) + int(tpcols)) + "|")
     for s in out["scenarios"]:
-        L.append(
+        line = (
             "| %s | %s | %s | %s | %s | %s | %s |"
             % (
                 s["name"],
@@ -1120,6 +1169,11 @@ def md_value(out):
                 ("%+.1f%%" % s["upside_pct"]) if s.get("upside_pct") is not None else "n/a",
             )
         )
+        if qcols:
+            line += " %s |" % _m(s["value_per_share"] * out["fx_quote_per_model"], 0)
+        if tpcols:
+            line += " %s |" % (_m(s["target_price_12m_quote"], 0) if s.get("target_price_12m_quote") is not None else "n/a")
+        L.append(line)
     L.append("")
     if out.get("probability_weighted_value_per_share_quote") is not None:
         qc = out.get("quote_currency") or "quote"
@@ -1154,6 +1208,13 @@ def md_value(out):
                 )
             )
             L.append("")
+            if out.get("target_price_12m_per_adr_model") is not None:
+                parts = ["%s %s with no ADR premium" % (cur, _m(out["target_price_12m_per_adr_model"], 2))]
+                for k, v in (out.get("target_price_12m_per_adr_at_premium") or {}).items():
+                    if float(k) != 0.0:
+                        parts.append("%s %s at a %.1f%% premium" % (cur, _m(v, 2), float(k) * 100))
+                L.append("12-month target per ADR: " + "; ".join(parts))
+                L.append("")
             if out.get("rating"):
                 pt = out["price_triggers_quote"]
                 L.append("**Rating (mechanical): %s** — buy below %s %s, sell above %s %s"
@@ -1250,8 +1311,9 @@ def md_value(out):
             if im:
                 L.append("")
                 L.append(
-                    "Terminal value implies: %s"
-                    % " · ".join("%s %.1fx" % (k.replace("_", "/").upper(), v) for k, v in sorted(im.items()))
+                    "Terminal value implies (at the end of year N): %s"
+                    % " · ".join("%s %.1fx" % (k.replace("_after_event_risk", " after event risk").replace("_", "/").upper(), v)
+                                 for k, v in sorted(im.items()))
                 )
             L.append("")
         if s["method"] == "sotp":

@@ -12,13 +12,14 @@
           "annual_probability": 0.015,
           "loss_fraction": 0.8,
           "cumulative_probability_10y": 0.14026955774085703,
-          "enterprise_value_no_hazard_m": 2107539.721376716,
-          "ev_haircut_pct": 16.129672509957317
+          "enterprise_value_no_hazard_m": 2169504.066606391,
+          "ev_haircut_pct": 16.097957650052308
         },
         "implied_terminal_multiples": {
-          "ev_ebitda": 6.86630412125135,
-          "ev_ebit": 9.962872646521566,
-          "ev_fcff": 13.588390501319259
+          "ev_ebitda": 7.220401171771591,
+          "ev_ebitda_after_event_risk": 6.206259751900649,
+          "ev_ebit": 10.476660523747013,
+          "ev_fcff": 14.289147256753727
         },
         "warnings": [],
         "method": "dcf",
@@ -191,42 +192,44 @@
         "terminal": {
           "mode": "gordon",
           "terminal_growth": 0.03,
-          "base_fcff_m": 241735.4969483268
+          "base_fcff_m": 241735.4969483268,
+          "discounted_from_year": 9.5
         },
         "terminal_value_m": 3284796.3305643345,
-        "pv_terminal_m": 916498.3902240775,
-        "terminal_pct_of_ev": 0.5184986130614709,
-        "enterprise_value_m": 1767600.466301385,
+        "pv_terminal_m": 969156.1446706244,
+        "terminal_pct_of_ev": 0.5324278355806049,
+        "enterprise_value_m": 1820258.2207479319,
         "name": "Bull",
         "probability": 0.25,
         "bridge": {
-          "enterprise_value_m": 1767600.466301385,
+          "enterprise_value_m": 1820258.2207479319,
           "less_net_debt_m": -83573.0,
           "less_minority_interest_m": 1396.0,
           "plus_other_adjustments_m": 6916.0,
-          "equity_value_m": 1856693.466301385,
+          "equity_value_m": 1909351.2207479319,
           "shares_diluted_m": 25932.0
         },
-        "equity_value_m": 1856693.466301385,
-        "value_per_share": 71.59854489824869,
-        "value_per_share_quote": 2325.377541205321,
-        "value_per_adr": 357.99272449124345,
+        "equity_value_m": 1909351.2207479319,
+        "value_per_share": 73.6291539699187,
+        "value_per_share_quote": 2391.32766263502,
+        "value_per_adr": 368.14576984959353,
         "price": 72.97247367448735,
-        "upside_pct": -1.882804168551866,
-        "target_price_12m_quote": 2547.402485064844
+        "upside_pct": 0.8999013770050412,
+        "target_price_12m_quote": 2620.3301293418044
       },
       {
         "hazard": {
           "annual_probability": 0.015,
           "loss_fraction": 0.8,
           "cumulative_probability_10y": 0.14026955774085703,
-          "enterprise_value_no_hazard_m": 1490848.3001229644,
-          "ev_haircut_pct": 15.534233340220926
+          "enterprise_value_no_hazard_m": 1532700.2487452496,
+          "ev_haircut_pct": 15.520171671830118
         },
         "implied_terminal_multiples": {
-          "ev_ebitda": 6.534692946628908,
-          "ev_ebit": 9.809157821846007,
-          "ev_fcff": 13.58839050131926
+          "ev_ebitda": 6.8716887245023495,
+          "ev_ebitda_after_event_risk": 5.906525710122627,
+          "ev_ebit": 10.315018586453418,
+          "ev_fcff": 14.289147256753726
         },
         "warnings": [],
         "method": "dcf",
@@ -399,42 +402,44 @@
         "terminal": {
           "mode": "gordon",
           "terminal_growth": 0.03,
-          "base_fcff_m": 163272.95254979577
+          "base_fcff_m": 163272.95254979577,
+          "discounted_from_year": 9.5
         },
         "terminal_value_m": 2218616.637549995,
-        "pv_terminal_m": 619021.2032079293,
-        "terminal_pct_of_ev": 0.49157675941331236,
-        "enterprise_value_m": 1259256.446433146,
+        "pv_terminal_m": 654587.2957002027,
+        "terminal_pct_of_ev": 0.505542092465774,
+        "enterprise_value_m": 1294822.5389254196,
         "name": "Base",
         "probability": 0.5,
         "bridge": {
-          "enterprise_value_m": 1259256.446433146,
+          "enterprise_value_m": 1294822.5389254196,
           "less_net_debt_m": -83573.0,
           "less_minority_interest_m": 1396.0,
           "plus_other_adjustments_m": 6916.0,
-          "equity_value_m": 1348349.446433146,
+          "equity_value_m": 1383915.5389254196,
           "shares_diluted_m": 25932.0
         },
-        "equity_value_m": 1348349.446433146,
-        "value_per_share": 51.99558254022621,
-        "value_per_share_quote": 1688.7125297414668,
-        "value_per_adr": 259.97791270113106,
+        "equity_value_m": 1383915.5389254196,
+        "value_per_share": 53.367096210296914,
+        "value_per_share_quote": 1733.2565507180232,
+        "value_per_adr": 266.8354810514846,
         "price": 72.97247367448735,
-        "upside_pct": -28.746306761963424,
-        "target_price_12m_quote": 1843.3783153881138
+        "upside_pct": -26.866812205990588,
+        "target_price_12m_quote": 1892.6350937839898
       },
       {
         "hazard": {
           "annual_probability": 0.015,
           "loss_fraction": 0.8,
           "cumulative_probability_10y": 0.14026955774085703,
-          "enterprise_value_no_hazard_m": 846848.8161156616,
-          "ev_haircut_pct": 15.095612636145317
+          "enterprise_value_no_hazard_m": 869821.2554521628,
+          "ev_haircut_pct": 15.09359632151358
         },
         "implied_terminal_multiples": {
-          "ev_ebitda": 6.2557540085244545,
-          "ev_ebit": 9.681524060811656,
-          "ev_fcff": 13.58839050131926
+          "ev_ebitda": 6.578364834389678,
+          "ev_ebitda_after_event_risk": 5.654400625910644,
+          "ev_ebit": 10.180802719888787,
+          "ev_fcff": 14.289147256753727
         },
         "warnings": [],
         "method": "dcf",
@@ -607,42 +612,44 @@
         "terminal": {
           "mode": "gordon",
           "terminal_growth": 0.03,
-          "base_fcff_m": 89620.15201711326
+          "base_fcff_m": 89620.15201711326,
+          "discounted_from_year": 9.5
         },
         "terminal_value_m": 1217793.6223961299,
-        "pv_terminal_m": 339779.3294415462,
-        "terminal_pct_of_ev": 0.4725643303901911,
-        "enterprise_value_m": 719011.7992210588,
+        "pv_terminal_m": 359301.4766559792,
+        "terminal_pct_of_ev": 0.48650637982199074,
+        "enterprise_value_m": 738533.9464354919,
         "name": "Bear",
         "probability": 0.2,
         "bridge": {
-          "enterprise_value_m": 719011.7992210588,
+          "enterprise_value_m": 738533.9464354919,
           "less_net_debt_m": -83573.0,
           "less_minority_interest_m": 1396.0,
           "plus_other_adjustments_m": 6916.0,
-          "equity_value_m": 808104.7992210588,
+          "equity_value_m": 827626.9464354919,
           "shares_diluted_m": 25932.0
         },
-        "equity_value_m": 808104.7992210588,
-        "value_per_share": 31.16245562320912,
-        "value_per_share_quote": 1012.0942337305859,
-        "value_per_adr": 155.8122781160456,
+        "equity_value_m": 827626.9464354919,
+        "value_per_share": 31.91527635490868,
+        "value_per_share_quote": 1036.5443454547242,
+        "value_per_adr": 159.5763817745434,
         "price": 72.97247367448735,
-        "upside_pct": -57.29560195229596,
-        "target_price_12m_quote": 1095.1738036592817
+        "upside_pct": -56.263951668577036,
+        "target_price_12m_quote": 1122.2107372038338
       },
       {
         "hazard": {
           "annual_probability": 0.015,
           "loss_fraction": 0.8,
           "cumulative_probability_10y": 0.14026955774085703,
-          "enterprise_value_no_hazard_m": 651496.1496469476,
-          "ev_haircut_pct": 15.3052816040516
+          "enterprise_value_no_hazard_m": 669487.9817785999,
+          "ev_haircut_pct": 15.297595256646645
         },
         "implied_terminal_multiples": {
-          "ev_ebitda": 6.094149181220421,
-          "ev_ebit": 9.598284960422163,
-          "ev_fcff": 13.58839050131926
+          "ev_ebitda": 6.4084260050246105,
+          "ev_ebitda_after_event_risk": 5.508330554195397,
+          "ev_ebit": 10.093270957913761,
+          "ev_fcff": 14.289147256753727
         },
         "warnings": [],
         "method": "dcf",
@@ -815,275 +822,372 @@
         "terminal": {
           "mode": "gordon",
           "terminal_growth": 0.03,
-          "base_fcff_m": 70189.79164929432
+          "base_fcff_m": 70189.79164929432,
+          "discounted_from_year": 9.5
         },
         "terminal_value_m": 953766.2981368488,
-        "pv_terminal_m": 266112.4736285318,
-        "terminal_pct_of_ev": 0.4822775546753263,
-        "enterprise_value_m": 551782.8293039289,
+        "pv_terminal_m": 281402.06435882027,
+        "terminal_pct_of_ev": 0.4962365553624356,
+        "enterprise_value_m": 567072.4200342174,
         "name": "Bust",
         "probability": 0.05,
         "bridge": {
-          "enterprise_value_m": 551782.8293039289,
+          "enterprise_value_m": 567072.4200342174,
           "less_net_debt_m": -83573.0,
           "less_minority_interest_m": 1396.0,
           "plus_other_adjustments_m": 6916.0,
-          "equity_value_m": 640875.8293039289,
+          "equity_value_m": 656165.4200342174,
           "shares_diluted_m": 25932.0
         },
-        "equity_value_m": 640875.8293039289,
-        "value_per_share": 24.713706204840694,
-        "value_per_share_quote": 802.6517501208161,
-        "value_per_adr": 123.56853102420347,
+        "equity_value_m": 656165.4200342174,
+        "value_per_share": 25.30330942596859,
+        "value_per_share_quote": 821.8008835366079,
+        "value_per_adr": 126.51654712984295,
         "price": 72.97247367448735,
-        "upside_pct": -66.1328375476449,
-        "target_price_12m_quote": 863.5723052835984
+        "upside_pct": -65.32485723474228,
+        "target_price_12m_quote": 884.7474170147809
       }
     ],
-    "probability_weighted_value_per_share": 51.365603929559136,
-    "probability_weighted_upside_pct": -29.609616690961115,
+    "probability_weighted_value_per_share": 52.7390573399083,
+    "probability_weighted_upside_pct": -27.72746395419655,
     "quote_currency": "TWD",
     "fx_quote_per_model": 32.478,
     "price_quote": 2370.0,
-    "probability_weighted_value_per_share_quote": 1668.2520844242217,
+    "probability_weighted_value_per_share_quote": 1712.859104285542,
     "adr_ratio": 5.0,
-    "probability_weighted_value_per_adr": 256.82801964779566,
-    "equal_weighted_value_per_share": 44.867572316631176,
-    "target_price_12m_quote": 1820.7531549563041,
+    "probability_weighted_value_per_adr": 263.6952866995415,
+    "equal_weighted_value_per_share": 46.05370899027322,
+    "target_price_12m_quote": 1870.0795975189521,
     "roll_forward": {
       "cost_of_equity_quote": 0.1058,
       "dividends_quote_next_12m": 24.0,
-      "fair_value_today_quote": 1668.2520844242217,
+      "fair_value_today_quote": 1712.859104285542,
       "basis": "model"
     },
-    "target_upside_pct": -23.174972364712907,
-    "expected_total_return_12m_pct": -22.1623141368648,
-    "target_price_12m_per_adr_model": 280.3056153328875,
+    "target_upside_pct": -21.093687868398646,
+    "expected_total_return_12m_pct": -20.08102964055054,
+    "target_price_12m_per_adr_model": 287.89943923870806,
+    "target_price_12m_per_adr_at_premium": {
+      "0.0000": 287.89943923870806,
+      "0.1330": 326.1900646574562,
+      "0.1637": 335.02857744208455
+    },
     "rating": "Sell",
     "price_triggers_quote": {
-      "buy_below": 1583.263613005482,
-      "sell_above": 2142.062535242711
+      "buy_below": 1626.1561717556108,
+      "sell_above": 2200.0936441399435
     }
   },
   "elasticity": [
     {
       "scenario": "Base",
-      "base_value_per_share": 51.99558254022621,
+      "base_value_per_share": 53.367096210296914,
       "drivers": [
         {
-          "label": "Revenue growth, whole path",
+          "label": "Revenue growth, whole path (sigma 3pp: spread of views on the 10-yr average, industry trend vs AI continuation)",
           "path": "driver_build.revenue_growth",
           "sigma": 0.03,
           "mode": "abs",
-          "value_minus_1sd": 43.17863725877346,
-          "value_plus_1sd": 62.88247955914305,
-          "swing": 19.703842300369587,
-          "elasticity": 0.18947611833299277,
-          "variance_share": 0.5953206345607516,
-          "cumulative_share": 0.5953206345607516
+          "unit": "pp",
+          "value_minus_1sd": 44.2248590784472,
+          "value_plus_1sd": 64.66758436027807,
+          "swing": 20.442725281830867,
+          "elasticity": 0.19152930113786615,
+          "variance_share": 0.7501257010455381,
+          "cumulative_share": 0.7501257010455381
         },
         {
-          "label": "Capex intensity",
-          "path": "driver_build.capex_pct_revenue",
-          "sigma": 0.04,
-          "mode": "abs",
-          "value_minus_1sd": 58.11288105252175,
-          "value_plus_1sd": 45.87828402793068,
-          "swing": -12.234597024591068,
-          "elasticity": -0.11765035053820017,
-          "variance_share": 0.2295241717419185,
-          "cumulative_share": 0.8248448063026701
-        },
-        {
-          "label": "Cash (EBITDA) margin",
+          "label": "Cash (EBITDA) margin (rule B, 3.85pp)",
           "path": "driver_build.ebit_margin",
-          "sigma": 0.04,
+          "sigma": 0.0385,
           "mode": "abs",
-          "value_minus_1sd": 46.887638282459434,
-          "value_plus_1sd": 57.103526797993,
-          "swing": 10.215888515533564,
-          "elasticity": 0.09823804269939736,
-          "variance_share": 0.16002999064275983,
-          "cumulative_share": 0.9848747969454299
+          "unit": "pp",
+          "value_minus_1sd": 48.31763268102245,
+          "value_plus_1sd": 58.41655973957138,
+          "swing": 10.09892705854893,
+          "elasticity": 0.09461754316511223,
+          "variance_share": 0.18306567937013443,
+          "cumulative_share": 0.9331913804156725
         },
         {
-          "label": "Tax rate",
+          "label": "Capex intensity (rule B, 1.65pp)",
+          "path": "driver_build.capex_pct_revenue",
+          "sigma": 0.0165,
+          "mode": "abs",
+          "unit": "pp",
+          "value_minus_1sd": 55.95877980102804,
+          "value_plus_1sd": 50.7754126195658,
+          "swing": -5.183367181462238,
+          "elasticity": -0.04856332412238436,
+          "variance_share": 0.048225907642065254,
+          "cumulative_share": 0.9814172880577378
+        },
+        {
+          "label": "Tax rate (sigma 2pp)",
           "path": "driver_build.tax_rate",
           "sigma": 0.02,
           "mode": "abs",
-          "value_minus_1sd": 53.47036053864363,
-          "value_plus_1sd": 50.52080454180879,
-          "swing": -2.949555996834839,
-          "elasticity": -0.028363524868222457,
-          "variance_share": 0.013340201245737256,
-          "cumulative_share": 0.9982149981911671
+          "unit": "pp",
+          "value_minus_1sd": 54.87987270698564,
+          "value_plus_1sd": 51.85431971360819,
+          "swing": -3.0255529933774454,
+          "elasticity": -0.028346614376909645,
+          "variance_share": 0.016431075416747338,
+          "cumulative_share": 0.9978483634744851
         },
         {
-          "label": "Working-capital intensity",
+          "label": "Working-capital intensity (sigma 5pp of revenue change)",
           "path": "driver_build.nwc_pct_delta_revenue",
           "sigma": 0.05,
           "mode": "abs",
-          "value_minus_1sd": 52.53504942369065,
-          "value_plus_1sd": 51.4561156567618,
-          "swing": -1.0789337669288486,
-          "elasticity": -0.010375244532495958,
-          "variance_share": 0.0017850018088327911,
-          "cumulative_share": 0.9999999999999999
+          "unit": "pp",
+          "value_minus_1sd": 53.91452322830787,
+          "value_plus_1sd": 52.81966919228597,
+          "swing": -1.0948540360219,
+          "elasticity": -0.01025776287047311,
+          "variance_share": 0.002151636525514985,
+          "cumulative_share": 1.0000000000000002
         }
       ],
-      "top_two_variance_share": 0.8248448063026701,
-      "verdict": "Top two drivers explain 82% of tested variance: a clean two-number stock.",
+      "top_two_variance_share": 0.9331913804156725,
+      "verdict": "Top two drivers explain 93% of tested variance: a clean two-number stock.",
       "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
-      "title": "Operating drivers, growth merged (final two-number verdict)"
+      "title": "FINAL VERDICT. Operating drivers, growth merged; sigma rule B for the two %-of-revenue drivers: half the gap between the FY2015-25 mean and today (EBITDA 66.3% vs 1-3Q26 74.0% -> 3.85pp; capex 38.3% vs 2026E ~35% -> 1.65pp)"
     },
     {
       "scenario": "Base",
-      "base_value_per_share": 51.99558254022621,
+      "base_value_per_share": 53.367096210296914,
       "drivers": [
         {
-          "label": "2029-36 revenue growth (duration)",
+          "label": "Revenue growth, whole path (sigma 3pp: spread of views on the 10-yr average, industry trend vs AI continuation)",
+          "path": "driver_build.revenue_growth",
+          "sigma": 0.03,
+          "mode": "abs",
+          "unit": "pp",
+          "value_minus_1sd": 44.2248590784472,
+          "value_plus_1sd": 64.66758436027807,
+          "swing": 20.442725281830867,
+          "elasticity": 0.19152930113786615,
+          "variance_share": 0.724343467615661,
+          "cumulative_share": 0.724343467615661
+        },
+        {
+          "label": "Capex intensity (rule A, 3.75pp)",
+          "path": "driver_build.capex_pct_revenue",
+          "sigma": 0.0375,
+          "mode": "abs",
+          "unit": "pp",
+          "value_minus_1sd": 59.25728618923128,
+          "value_plus_1sd": 47.47690623136256,
+          "swing": -11.780379957868718,
+          "elasticity": -0.11037119118723714,
+          "variance_share": 0.24053903222622328,
+          "cumulative_share": 0.9648824998418843
+        },
+        {
+          "label": "Cash (EBITDA) margin (rule A, 1.2pp)",
+          "path": "driver_build.ebit_margin",
+          "sigma": 0.012,
+          "mode": "abs",
+          "unit": "pp",
+          "value_minus_1sd": 51.79323744792564,
+          "value_plus_1sd": 54.94095497266817,
+          "swing": 3.147717524742532,
+          "elasticity": 0.029491182285229862,
+          "variance_share": 0.0171734862585784,
+          "cumulative_share": 0.9820559861004627
+        },
+        {
+          "label": "Tax rate (sigma 2pp)",
+          "path": "driver_build.tax_rate",
+          "sigma": 0.02,
+          "mode": "abs",
+          "unit": "pp",
+          "value_minus_1sd": 54.87987270698564,
+          "value_plus_1sd": 51.85431971360819,
+          "swing": -3.0255529933774454,
+          "elasticity": -0.028346614376909645,
+          "variance_share": 0.01586633030628381,
+          "cumulative_share": 0.9979223164067466
+        },
+        {
+          "label": "Working-capital intensity (sigma 5pp of revenue change)",
+          "path": "driver_build.nwc_pct_delta_revenue",
+          "sigma": 0.05,
+          "mode": "abs",
+          "unit": "pp",
+          "value_minus_1sd": 53.91452322830787,
+          "value_plus_1sd": 52.81966919228597,
+          "swing": -1.0948540360219,
+          "elasticity": -0.01025776287047311,
+          "variance_share": 0.0020776835932534237,
+          "cumulative_share": 1.0
+        }
+      ],
+      "top_two_variance_share": 0.9648824998418843,
+      "verdict": "Top two drivers explain 96% of tested variance: a clean two-number stock.",
+      "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
+      "title": "ROBUSTNESS. Same drivers, sigma rule A for the two %-of-revenue drivers: half the FY2015-25 annual SD (EBITDA 2.36pp -> 1.2pp; capex 7.5pp -> 3.75pp)"
+    },
+    {
+      "scenario": "Base",
+      "base_value_per_share": 53.367096210296914,
+      "drivers": [
+        {
+          "label": "2029-36 revenue growth (duration, sigma 3pp)",
           "path": "driver_build.revenue_growth[2:]",
           "sigma": 0.03,
           "mode": "abs",
-          "value_minus_1sd": 45.08368226666419,
-          "value_plus_1sd": 60.19610355792054,
-          "swing": 15.112421291256346,
-          "elasticity": 0.14532408863353605,
-          "variance_share": 0.3174805478458587,
-          "cumulative_share": 0.3174805478458587
+          "unit": "pp",
+          "value_minus_1sd": 46.18216228440858,
+          "value_plus_1sd": 61.89826409556847,
+          "swing": 15.716101811159895,
+          "elasticity": 0.14724524029965444,
+          "variance_share": 0.39409915833622405,
+          "cumulative_share": 0.39409915833622405
         },
         {
-          "label": "2027-28 revenue growth (near term)",
+          "label": "2027-28 revenue growth (near term, sigma 10pp: ~2/3 of the FY15-25 annual SD of 15.2pp, as 2027 capacity is largely booked)",
           "path": "driver_build.revenue_growth[0:2]",
           "sigma": 0.1,
           "mode": "abs",
-          "value_minus_1sd": 44.7551161212798,
-          "value_plus_1sd": 59.8239177580344,
-          "swing": 15.0688016367546,
-          "elasticity": 0.14490463324549419,
-          "variance_share": 0.3156504762872921,
-          "cumulative_share": 0.6331310241331508
+          "unit": "pp",
+          "value_minus_1sd": 45.91530256945979,
+          "value_plus_1sd": 61.42436925182003,
+          "swing": 15.509066682360242,
+          "elasticity": 0.1453055139185917,
+          "variance_share": 0.3837842666572678,
+          "cumulative_share": 0.7778834249934918
         },
         {
-          "label": "Capex intensity",
-          "path": "driver_build.capex_pct_revenue",
-          "sigma": 0.04,
-          "mode": "abs",
-          "value_minus_1sd": 58.11288105252175,
-          "value_plus_1sd": 45.87828402793068,
-          "swing": -12.234597024591068,
-          "elasticity": -0.11765035053820017,
-          "variance_share": 0.20807904977375374,
-          "cumulative_share": 0.8412100739069046
-        },
-        {
-          "label": "Cash (EBITDA) margin",
+          "label": "Cash (EBITDA) margin (rule B, 3.85pp)",
           "path": "driver_build.ebit_margin",
-          "sigma": 0.04,
+          "sigma": 0.0385,
           "mode": "abs",
-          "value_minus_1sd": 46.887638282459434,
-          "value_plus_1sd": 57.103526797993,
-          "swing": 10.215888515533564,
-          "elasticity": 0.09823804269939736,
-          "variance_share": 0.14507791547850607,
-          "cumulative_share": 0.9862879893854106
+          "unit": "pp",
+          "value_minus_1sd": 48.31763268102245,
+          "value_plus_1sd": 58.41655973957138,
+          "swing": 10.09892705854893,
+          "elasticity": 0.09461754316511223,
+          "variance_share": 0.16272950788886145,
+          "cumulative_share": 0.9406129328823533
         },
         {
-          "label": "Tax rate",
+          "label": "Capex intensity (rule B, 1.65pp)",
+          "path": "driver_build.capex_pct_revenue",
+          "sigma": 0.0165,
+          "mode": "abs",
+          "unit": "pp",
+          "value_minus_1sd": 55.95877980102804,
+          "value_plus_1sd": 50.7754126195658,
+          "swing": -5.183367181462238,
+          "elasticity": -0.04856332412238436,
+          "variance_share": 0.04286864826377313,
+          "cumulative_share": 0.9834815811461264
+        },
+        {
+          "label": "Tax rate (sigma 2pp)",
           "path": "driver_build.tax_rate",
           "sigma": 0.02,
           "mode": "abs",
-          "value_minus_1sd": 53.47036053864363,
-          "value_plus_1sd": 50.52080454180879,
-          "swing": -2.949555996834839,
-          "elasticity": -0.028363524868222457,
-          "variance_share": 0.012093786802223325,
-          "cumulative_share": 0.9983817761876339
+          "unit": "pp",
+          "value_minus_1sd": 54.87987270698564,
+          "value_plus_1sd": 51.85431971360819,
+          "swing": -3.0255529933774454,
+          "elasticity": -0.028346614376909645,
+          "variance_share": 0.014605800638610986,
+          "cumulative_share": 0.9980873817847373
         },
         {
-          "label": "Working-capital intensity",
+          "label": "Working-capital intensity (sigma 5pp of revenue change)",
           "path": "driver_build.nwc_pct_delta_revenue",
           "sigma": 0.05,
           "mode": "abs",
-          "value_minus_1sd": 52.53504942369065,
-          "value_plus_1sd": 51.4561156567618,
-          "swing": -1.0789337669288486,
-          "elasticity": -0.010375244532495958,
-          "variance_share": 0.0016182238123660126,
-          "cumulative_share": 0.9999999999999999
+          "unit": "pp",
+          "value_minus_1sd": 53.91452322830787,
+          "value_plus_1sd": 52.81966919228597,
+          "swing": -1.0948540360219,
+          "elasticity": -0.01025776287047311,
+          "variance_share": 0.001912618215262662,
+          "cumulative_share": 1.0
         }
       ],
-      "top_two_variance_share": 0.6331310241331508,
-      "verdict": "Top two drivers explain 63% of tested variance: two numbers lead, but the residual is material and must be named in the report.",
+      "top_two_variance_share": 0.7778834249934918,
+      "verdict": "Top two drivers explain 78% of tested variance: a clean two-number stock.",
       "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
-      "title": "Operating drivers, growth split by period"
+      "title": "Growth split by period (rule B sigmas for margin and capex)"
     },
     {
       "scenario": "Base",
-      "base_value_per_share": 51.99558254022621,
+      "base_value_per_share": 53.367096210296914,
       "drivers": [
         {
           "label": "2027 revenue growth only, +/-3pp (monthly-revenue surprise scale)",
           "path": "driver_build.revenue_growth[0:1]",
           "sigma": 0.03,
           "mode": "abs",
-          "value_minus_1sd": 50.899242516459275,
-          "value_plus_1sd": 53.09192256399317,
-          "swing": 2.192680047533898,
-          "elasticity": 0.021085253212016025,
-          "variance_share": 0.5788429035467774,
-          "cumulative_share": 0.5788429035467774
+          "unit": "pp",
+          "value_minus_1sd": 52.2395854213011,
+          "value_plus_1sd": 54.494606999292756,
+          "swing": 2.2550215779916556,
+          "elasticity": 0.02112745247657451,
+          "variance_share": 0.5823971070883814,
+          "cumulative_share": 0.5823971070883814
         },
         {
           "label": "Tax rate +/-1pp",
           "path": "driver_build.tax_rate",
           "sigma": 0.01,
           "mode": "abs",
-          "value_minus_1sd": 52.73297153943493,
-          "value_plus_1sd": 51.258193541017505,
-          "swing": -1.474777998417423,
-          "elasticity": -0.014181762434111261,
-          "variance_share": 0.2618565753569453,
-          "cumulative_share": 0.8406994789037227
+          "unit": "pp",
+          "value_minus_1sd": 54.12348445864128,
+          "value_plus_1sd": 52.61070796195255,
+          "swing": -1.5127764966887298,
+          "elasticity": -0.014173307188454888,
+          "variance_share": 0.262100193817097,
+          "cumulative_share": 0.8444973009054784
         },
         {
           "label": "Working capital +/-5pp",
           "path": "driver_build.nwc_pct_delta_revenue",
           "sigma": 0.05,
           "mode": "abs",
-          "value_minus_1sd": 52.53504942369065,
-          "value_plus_1sd": 51.4561156567618,
-          "swing": -1.0789337669288486,
-          "elasticity": -0.010375244532495958,
-          "variance_share": 0.14015214675003895,
-          "cumulative_share": 0.9808516256537616
+          "unit": "pp",
+          "value_minus_1sd": 53.91452322830787,
+          "value_plus_1sd": 52.81966919228597,
+          "swing": -1.0948540360219,
+          "elasticity": -0.01025776287047311,
+          "variance_share": 0.1372872647852662,
+          "cumulative_share": 0.9817845656907446
         },
         {
           "label": "2027 capex only, +/-2.2pp of revenue (~US$5bn)",
           "path": "driver_build.capex_pct_revenue[0:1]",
           "sigma": 0.022,
           "mode": "abs",
-          "value_minus_1sd": 52.18200896132388,
-          "value_plus_1sd": 51.80915611912855,
+          "unit": "pp",
+          "value_minus_1sd": 53.55352263139458,
+          "value_plus_1sd": 53.18066978919925,
           "swing": -0.37285284219532855,
-          "elasticity": -0.0035854280688832766,
-          "variance_share": 0.01673728841356335,
-          "cumulative_share": 0.997588914067325
+          "elasticity": -0.0034932839583970885,
+          "variance_share": 0.01592182041668793,
+          "cumulative_share": 0.9977063861074325
         },
         {
           "label": "2027 margin only, +/-1pp (a full year of 'margin beats')",
           "path": "driver_build.ebit_margin[0:1]",
           "sigma": 0.01,
           "mode": "abs",
-          "value_minus_1sd": 51.92482523949141,
-          "value_plus_1sd": 52.06633984096101,
+          "unit": "pp",
+          "value_minus_1sd": 53.29633890956211,
+          "value_plus_1sd": 53.437853511031705,
           "swing": 0.14151460146959494,
-          "elasticity": 0.0013608329261443762,
-          "variance_share": 0.0024110859326750863,
-          "cumulative_share": 1.0
+          "elasticity": 0.0013258600478462082,
+          "variance_share": 0.002293613892567339,
+          "cumulative_share": 0.9999999999999998
         }
       ],
-      "top_two_variance_share": 0.8406994789037227,
+      "top_two_variance_share": 0.8444973009054784,
       "verdict": "Top two drivers explain 84% of tested variance: a clean two-number stock.",
       "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
       "title": "Noise items: what the market watches week to week"
@@ -1095,21 +1199,21 @@
       "solved_for": "revenue_growth",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.1289578601717949,
-      "model_value_per_share_at_solution": 72.9724712303797,
-      "residual": -2.4441076504899684e-06,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 12.90%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "Flat 10-yr revenue CAGR implied, EBITDA margin held at 74% (2026E level), no event risk"
+      "implied_value": 0.12477964907884598,
+      "model_value_per_share_at_solution": 72.97247918321841,
+      "residual": 5.5087310641965814e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 12.48%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Flat 10-yr revenue CAGR implied, EBITDA margin held at 74% (1-3Q26 reported level, 74.0%), no event risk"
     },
     {
       "scenario": "Base",
       "solved_for": "revenue_growth",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.14626511186361313,
-      "model_value_per_share_at_solution": 72.97248117985195,
-      "residual": 7.5053646071410185e-06,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 14.63%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "implied_value": 0.14196262508630753,
+      "model_value_per_share_at_solution": 72.97246466235224,
+      "residual": -9.012135109287556e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 14.20%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
       "title": "Flat 10-yr revenue CAGR implied, EBITDA margin 68.9% (FY2025 record), no event risk"
     },
     {
@@ -1117,21 +1221,21 @@
       "solved_for": "revenue_growth",
       "from_year": 3,
       "target_price": 72.97247367448735,
-      "implied_value": 0.08036413043737411,
-      "model_value_per_share_at_solution": 72.97248000338124,
-      "residual": 6.328893888962739e-06,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 8.04% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "Consensus-like 2027-28 (+37.6%/+26%) at EPS-consistent margins: implied 2029-36 growth, no event risk"
+      "implied_value": 0.07367410510778427,
+      "model_value_per_share_at_solution": 72.97246887616926,
+      "residual": -4.798318087750886e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 7.37% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Consensus 2027-28 (USD at spot: +34.3%/+26%) at EPS-consistent margins: implied 2029-36 growth, no event risk"
     },
     {
       "scenario": "Base",
       "solved_for": "revenue_growth",
       "from_year": 3,
       "target_price": 72.97247367448735,
-      "implied_value": 0.11290185898542404,
-      "model_value_per_share_at_solution": 72.97248709753755,
-      "residual": 1.3423050205574327e-05,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 11.29% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "implied_value": 0.10557644814252853,
+      "model_value_per_share_at_solution": 72.97246140651002,
+      "residual": -1.2267977325564061e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 10.56% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
       "title": "Same, with our event-risk overlay (1.5%/yr, 80% loss)"
     },
     {
@@ -1139,10 +1243,10 @@
       "solved_for": "ebitda_margin",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.7730651602149009,
-      "model_value_per_share_at_solution": 72.97247650761703,
-      "residual": 2.8331296846317855e-06,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies ebitda_margin = 77.31%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "implied_value": 0.7604032054543493,
+      "model_value_per_share_at_solution": 72.97247640176118,
+      "residual": 2.7272738378769645e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies ebitda_margin = 76.04%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
       "title": "Our Base growth path: implied flat EBITDA margin, no event risk"
     },
     {
@@ -1150,18 +1254,47 @@
       "solved_for": "ebitda_margin",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.8578778848052024,
-      "model_value_per_share_at_solution": 72.97247420773208,
-      "residual": 5.332447301498178e-07,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies ebitda_margin = 85.79%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "implied_value": 0.842970262467861,
+      "model_value_per_share_at_solution": 72.9724712230766,
+      "residual": -2.451410750836658e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies ebitda_margin = 84.30%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
       "title": "Our Base growth path: implied flat EBITDA margin, with event risk"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "capex_intensity",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.23468356132507323,
+      "model_value_per_share_at_solution": 72.97246520043468,
+      "residual": -8.47405266313217e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies capex_intensity = 23.47%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Our Base growth and margins: implied flat capex intensity (capex/revenue), no event risk"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "capex_intensity",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.16783823966979983,
+      "model_value_per_share_at_solution": 72.97247188600505,
+      "residual": -1.7884822938185607e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies capex_intensity = 16.78%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Our Base growth and margins: implied flat capex intensity, with event risk"
     },
     {
       "error": "no solution for hazard_rate in [0.0000, 0.5000]: implied value is below the price at both ends. The price cannot be reconciled by this driver alone — widen the bracket with --lo/--hi, or solve for a different driver.",
       "title": "Implied annual event probability, our Base operations"
     },
     {
-      "error": "no solution for hazard_rate in [0.0000, 0.5000]: implied value is below the price at both ends. The price cannot be reconciled by this driver alone — widen the bracket with --lo/--hi, or solve for a different driver.",
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.002773195505142212,
+      "model_value_per_share_at_solution": 72.97249416572178,
+      "residual": 2.0491234437258754e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.28%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
       "title": "Implied annual event probability, consensus-like EPS-consistent operations"
     },
     {
@@ -1169,358 +1302,562 @@
       "solved_for": "hazard_rate",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.013135284185409546,
-      "model_value_per_share_at_solution": 72.97246295338853,
-      "residual": -1.0721098817612074e-05,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.31%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "implied_value": 0.01589486002922058,
+      "model_value_per_share_at_solution": 72.97247980186383,
+      "residual": 6.1273764799807395e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.59%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
       "title": "Implied annual event probability, our Bull operations"
     },
     {
       "error": "no solution for hazard_rate in [0.0000, 0.5000]: implied value is below the price at both ends. The price cannot be reconciled by this driver alone — widen the bracket with --lo/--hi, or solve for a different driver.",
-      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 66.3% -> implied event probability"
+      "title": "FRONTIER consensus-2027/28 + base duration (Base capex path; consensus capex not sourced): flat EBITDA 66.3% -> implied event probability"
     },
     {
       "error": "no solution for hazard_rate in [0.0000, 0.5000]: implied value is below the price at both ends. The price cannot be reconciled by this driver alone — widen the bracket with --lo/--hi, or solve for a different driver.",
-      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 68.9% -> implied event probability"
+      "title": "FRONTIER consensus-2027/28 + base duration (Base capex path; consensus capex not sourced): flat EBITDA 68.9% -> implied event probability"
     },
     {
       "error": "no solution for hazard_rate in [0.0000, 0.5000]: implied value is below the price at both ends. The price cannot be reconciled by this driver alone — widen the bracket with --lo/--hi, or solve for a different driver.",
-      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 71.0% -> implied event probability"
+      "title": "FRONTIER consensus-2027/28 + base duration (Base capex path; consensus capex not sourced): flat EBITDA 71.0% -> implied event probability"
     },
     {
       "scenario": "Base",
       "solved_for": "hazard_rate",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.002413421869277954,
-      "model_value_per_share_at_solution": 72.97249360129521,
-      "residual": 1.9926807865999763e-05,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.24%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 74.0% -> implied event probability"
+      "implied_value": 0.0027088820934295654,
+      "model_value_per_share_at_solution": 72.97248916718671,
+      "residual": 1.5492699361630002e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.27%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER consensus-2027/28 + base duration (Base capex path; consensus capex not sourced): flat EBITDA 74.0% -> implied event probability"
     },
     {
       "scenario": "Base",
       "solved_for": "hazard_rate",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.008216828107833862,
-      "model_value_per_share_at_solution": 72.97245211236427,
-      "residual": -2.15621230807983e-05,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.82%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "FRONTIER base-duration: consensus 2027-28 growth, base duration, flat EBITDA 77.0% -> implied event probability"
+      "implied_value": 0.00854066014289856,
+      "model_value_per_share_at_solution": 72.9724574201462,
+      "residual": -1.6254341147714513e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.85%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER consensus-2027/28 + base duration (Base capex path; consensus capex not sourced): flat EBITDA 77.0% -> implied event probability"
     },
     {
       "error": "no solution for hazard_rate in [0.0000, 0.5000]: implied value is below the price at both ends. The price cannot be reconciled by this driver alone — widen the bracket with --lo/--hi, or solve for a different driver.",
-      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 66.3% -> implied event probability"
+      "title": "FRONTIER Bull growth path (Bull capex path: growth costs capital): flat EBITDA 66.3% -> implied event probability"
     },
     {
       "scenario": "Base",
       "solved_for": "hazard_rate",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.003495544195175171,
-      "model_value_per_share_at_solution": 72.97247579847277,
-      "residual": 2.1239854248733536e-06,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.35%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 68.9% -> implied event probability"
+      "implied_value": 0.004513472318649292,
+      "model_value_per_share_at_solution": 72.97246708503548,
+      "residual": -6.589451871263918e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.45%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER Bull growth path (Bull capex path: growth costs capital): flat EBITDA 68.9% -> implied event probability"
     },
     {
       "scenario": "Base",
       "solved_for": "hazard_rate",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.008037060499191284,
-      "model_value_per_share_at_solution": 72.97248077169344,
-      "residual": 7.097206093931163e-06,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.80%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 71.0% -> implied event probability"
+      "implied_value": 0.009151309728622437,
+      "model_value_per_share_at_solution": 72.97247338351978,
+      "residual": -2.9096756293256476e-07,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.92%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER Bull growth path (Bull capex path: growth costs capital): flat EBITDA 71.0% -> implied event probability"
     },
     {
       "scenario": "Base",
       "solved_for": "hazard_rate",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.014640182256698608,
-      "model_value_per_share_at_solution": 72.97248387908026,
-      "residual": 1.0204592911122745e-05,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.46%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 74.0% -> implied event probability"
+      "implied_value": 0.01589486002922058,
+      "model_value_per_share_at_solution": 72.97247980186383,
+      "residual": 6.1273764799807395e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.59%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER Bull growth path (Bull capex path: growth costs capital): flat EBITDA 74.0% -> implied event probability"
     },
     {
       "scenario": "Base",
       "solved_for": "hazard_rate",
       "from_year": null,
       "target_price": 72.97247367448735,
-      "implied_value": 0.021387547254562378,
-      "model_value_per_share_at_solution": 72.97245443256284,
-      "residual": -1.9241924505308816e-05,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 2.14%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "FRONTIER bull-duration: Bull growth path, flat EBITDA 77.0% -> implied event probability"
+      "implied_value": 0.022785454988479614,
+      "model_value_per_share_at_solution": 72.9724681039655,
+      "residual": -5.57052185001794e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 2.28%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "FRONTIER Bull growth path (Bull capex path: growth costs capital): flat EBITDA 77.0% -> implied event probability"
     }
   ],
   "variants": [
     {
       "label": "As modelled (1.5%/yr event risk, 80% loss, perpetual)",
-      "value": 1668.2520844242217,
-      "target_12m": 1820.7531549563041,
+      "value": 1712.859104285542,
+      "target_12m": 1870.0795975189521,
       "scenarios": {
-        "Bull": 2325.377541205321,
-        "Base": 1688.7125297414668,
-        "Bear": 1012.0942337305859,
-        "Bust": 802.6517501208161
+        "Bull": 2391.32766263502,
+        "Base": 1733.2565507180232,
+        "Bear": 1036.5443454547242,
+        "Bust": 821.8008835366079
       }
     },
     {
       "label": "No event risk",
-      "value": 1957.9813564240183,
-      "target_12m": 2141.1357839336792,
+      "value": 2010.4721017549762,
+      "target_12m": 2199.1800501206526,
       "scenarios": {
-        "Bull": 2751.1274689523752,
-        "Base": 1978.7649832405384,
-        "Bear": 1172.2010760375003,
-        "Bust": 927.5356471631021
+        "Bull": 2828.733438579453,
+        "Base": 2031.1815954322155,
+        "Bear": 1200.9724351602401,
+        "Bust": 950.0691472391396
       }
     },
     {
       "label": "Event risk 0.75%/yr",
-      "value": 1799.3034414577828,
-      "target_12m": 1965.669745564016,
+      "value": 1847.5793466136886,
+      "target_12m": 2019.0532414854167,
       "scenarios": {
-        "Bull": 2517.844971730248,
-        "Base": 1819.9414897076383,
-        "Bear": 1084.5676460454672,
-        "Bust": 859.1584892461624
+        "Bull": 2589.2194284202224,
+        "Base": 1868.1492143799512,
+        "Bear": 1111.0287563889833,
+        "Bust": 879.882620817215
       }
     },
     {
       "label": "Event risk 3.0%/yr",
-      "value": 1464.8765797237616,
-      "target_12m": 1595.8605218585353,
+      "value": 1503.3907320896774,
+      "target_12m": 1638.4494715447652,
       "scenarios": {
-        "Bull": 2027.1822778737298,
-        "Base": 1484.9192448901383,
-        "Bear": 899.38699044045,
-        "Bust": 714.8797944433978
+        "Bull": 2084.124280123393,
+        "Base": 1523.379003381408,
+        "Bear": 920.497464335248,
+        "Bust": 731.4133500215092
       }
     },
     {
       "label": "Event risk 4.0%/yr (forecast anchors, annualised)",
-      "value": 1360.2474111863812,
-      "target_12m": 1480.1615872899001,
+      "value": 1395.4101590583264,
+      "target_12m": 1519.0445538866973,
       "scenarios": {
-        "Bull": 1874.0888227196924,
-        "Base": 1379.9824501509836,
-        "Bear": 841.2511104527418,
-        "Bust": 669.6751668083605
+        "Bull": 1926.0758754115382,
+        "Base": 1415.095537366197,
+        "Bear": 860.5246041017149,
+        "Bust": 684.7700140400086
       }
     },
     {
       "label": "Event risk 1.5%/yr, total loss",
-      "value": 1595.819766424273,
-      "target_12m": 1740.6574977119608,
+      "value": 1638.4558549181834,
+      "target_12m": 1787.804484368527,
       "scenarios": {
-        "Bull": 2218.9400592685574,
-        "Base": 1616.1994163666993,
-        "Bear": 972.0675231538573,
-        "Bust": 771.4307758602447
+        "Bull": 2281.976218648911,
+        "Base": 1658.7752895394756,
+        "Bear": 995.4373230283453,
+        "Bust": 789.7338176109748
       }
     },
     {
       "label": "Event risk 1.5%/yr confined to 2027-36 (none after)",
-      "value": 1795.5058753385417,
-      "target_12m": 1961.4703969493592,
+      "value": 1842.1063377630508,
+      "target_12m": 2013.0011882983813,
       "scenarios": {
-        "Bull": 2513.5183986147667,
-        "Base": 1815.7865990125458,
-        "Bear": 1081.8449011109283,
-        "Bust": 857.2799191278336
+        "Bull": 2582.415764211732,
+        "Base": 1862.3212471959025,
+        "Bear": 1107.3876635778677,
+        "Bust": 877.2848079318558
       }
     },
     {
       "label": "Cost of equity -1pp (9.58%)",
-      "value": 1889.4487509684152,
-      "target_12m": 2046.4579413111896,
+      "value": 1940.0356316530613,
+      "target_12m": 2101.8910451654247,
       "scenarios": {
-        "Bull": 2650.451534480775,
-        "Base": 1910.1471809976993,
-        "Bear": 1134.3139673219837,
-        "Bust": 897.9896676995049
+        "Bull": 2725.242698164744,
+        "Base": 1960.6626173877762,
+        "Bear": 1162.0417753746299,
+        "Bust": 919.7058668612204
       }
     },
     {
       "label": "Cost of equity +1pp (11.58%)",
-      "value": 1494.143934362215,
-      "target_12m": 1643.1658019613594,
+      "value": 1533.7485897661008,
+      "target_12m": 1687.3566764610152,
       "scenarios": {
-        "Bull": 2069.835491600098,
-        "Base": 1514.3218959841768,
-        "Bear": 915.7321670080069,
-        "Bust": 727.5536013700142
+        "Bull": 2128.3897694063257,
+        "Base": 1553.8706173864264,
+        "Bear": 937.4403701659737,
+        "Bust": 744.5552937622266
       }
     },
     {
-      "label": "Beta 1.03 (local-market beta) -> 9.63%",
-      "value": 1876.9821666918608,
-      "target_12m": 2033.735549344287,
+      "label": "Beta 1.31 (TSM 1Y, TradingView) -> 10.90%",
+      "value": 1651.0925386372521,
+      "target_12m": 1807.0616253487126,
       "scenarios": {
-        "Bull": 2632.1201476356073,
-        "Base": 1897.6701419481703,
-        "Bear": 1127.4307337547893,
-        "Bust": 892.6182411583223
+        "Bull": 2300.6157789323365,
+        "Base": 1671.405803115135,
+        "Bear": 1002.3862633700243,
+        "Bust": 795.1687934519106
+      }
+    },
+    {
+      "label": "Beta 1.37 (TSM, MarketBeat) -> 11.17%",
+      "value": 1602.3817204696552,
+      "target_12m": 1757.3677586461156,
+      "scenarios": {
+        "Bull": 2229.1046070035736,
+        "Base": 1622.6208700573002,
+        "Bear": 975.4352842784733,
+        "Bust": 774.1615366883373
+      }
+    },
+    {
+      "label": "Beta 1.50 (bottom-up, US semis unlevered cash-corrected, Damodaran) -> 11.77%",
+      "value": 1503.9298016903383,
+      "target_12m": 1656.942339349291,
+      "scenarios": {
+        "Bull": 2084.6497957416523,
+        "Base": 1523.995937092203,
+        "Bear": 920.9245258094901,
+        "Bust": 731.6895809385159
+      }
+    },
+    {
+      "label": "Half-step on both: cost of equity 10.08% and event risk 1.0%/yr",
+      "value": 1916.9223822386537,
+      "target_12m": 2086.14815836831,
+      "scenarios": {
+        "Bull": 2691.189798078714,
+        "Base": 1937.5488852259543,
+        "Bear": 1149.3126904719313,
+        "Bust": 909.7590402322345
+      }
+    },
+    {
+      "label": "Exit multiple 6.5x EV/EBITDA (all scenarios; hazard through 2036)",
+      "value": 1780.451766111295,
+      "target_12m": 1944.8235629658698,
+      "scenarios": {
+        "Bull": 2442.2458790485894,
+        "Base": 1810.9959631297827,
+        "Bear": 1101.1831155897207,
+        "Bust": 883.1138333262454
+      }
+    },
+    {
+      "label": "Exit multiple 7.6x EV/EBITDA (UMC 2027E)",
+      "value": 1930.8262572792034,
+      "target_12m": 2111.107675299343,
+      "scenarios": {
+        "Bull": 2656.2750612892078,
+        "Base": 1962.8913765521904,
+        "Bear": 1188.2757871957608,
+        "Bust": 953.1329248330838
+      }
+    },
+    {
+      "label": "Exit multiple 10.1x EV/EBITDA (TSMC 2027E, MarketScreener)",
+      "value": 2272.586464478996,
+      "target_12m": 2489.0261124208732,
+      "scenarios": {
+        "Bull": 3142.7050209269764,
+        "Base": 2308.1082252394813,
+        "Bear": 1386.2136772094896,
+        "Bust": 1112.2672237122626
       }
     },
     {
       "label": "ERP 4.20% (Oct-1 figure, mismatched date) -> 10.15%",
-      "value": 1756.5750566662946,
-      "target_12m": 1910.8674249179232,
+      "value": 1803.6165568755907,
+      "target_12m": 1962.6836373984631,
       "scenarios": {
-        "Bull": 2455.1291729529867,
-        "Base": 1777.1446567540524,
-        "Bear": 1060.9201003334615,
-        "Bust": 840.7282996865852
+        "Bull": 2524.6785994935494,
+        "Base": 1824.1197198406712,
+        "Bear": 1086.7046055383414,
+        "Bust": 860.9225194839923
       }
     },
     {
       "label": "Terminal growth 4%",
-      "value": 1777.01457696201,
-      "target_12m": 1941.0227192045907,
+      "value": 1827.833124873967,
+      "target_12m": 1997.2178694856327,
       "scenarios": {
-        "Bull": 2486.179576673368,
-        "Base": 1797.3214160586354,
-        "Bear": 1071.7094042174758,
-        "Bust": 849.3418784171055
+        "Bull": 2561.3132533030566,
+        "Base": 1848.0681924903695,
+        "Bear": 1099.5641942924174,
+        "Bust": 871.1575288906914
       }
     },
     {
-      "label": "Base keeps 2026 cash margin (EBITDA 74%)",
-      "value": 1764.452733142248,
-      "target_12m": 1927.1318323086978,
+      "label": "Base holds the 1-3Q26 cash margin (EBITDA 74%)",
+      "value": 1811.9222147103021,
+      "target_12m": 1979.6235850266519,
       "scenarios": {
-        "Bull": 2325.377541205321,
-        "Base": 1881.1138271775194,
-        "Bear": 1012.0942337305859,
-        "Bust": 802.6517501208161
+        "Bull": 2391.32766263502,
+        "Base": 1931.3827715675438,
+        "Bear": 1036.5443454547242,
+        "Bust": 821.8008835366079
       }
     },
     {
       "label": "Capex intensity floored at 30.5% (FY15-25 minimum)",
-      "value": 1590.9120628050182,
-      "target_12m": 1735.230559049789,
+      "value": 1632.2430701500894,
+      "target_12m": 1780.9343869719687,
       "scenarios": {
-        "Bull": 2229.247526604091,
-        "Base": 1606.433653711795,
-        "Bear": 961.7034191990575,
-        "Bust": 760.8534091657272
+        "Bull": 2290.788355912818,
+        "Base": 1647.6167944409235,
+        "Bear": 984.110871996982,
+        "Bust": 778.3081910405367
       }
     },
     {
       "label": "Weights Bull 40 / Base 45 / Bear 12 / Bust 3",
-      "value": 1835.6025154170834,
-      "target_12m": 2005.8092615482105,
+      "value": 1885.5358608377835,
+      "target_12m": 2061.025554914421,
       "scenarios": {
-        "Bull": 2325.377541205321,
-        "Base": 1688.7125297414668,
-        "Bear": 1012.0942337305859,
-        "Bust": 802.6517501208161
+        "Bull": 2391.32766263502,
+        "Base": 1733.2565507180232,
+        "Bear": 1036.5443454547242,
+        "Bust": 821.8008835366079
       }
     },
     {
       "label": "Weights Bull 60 / Base 40 / Bear 0 / Bust 0",
-      "value": 2070.7115366197795,
-      "target_12m": 2265.792817194152,
+      "value": 2128.0992178682213,
+      "target_12m": 2329.252115118679,
       "scenarios": {
-        "Bull": 2325.377541205321,
-        "Base": 1688.7125297414668,
-        "Bear": 1012.0942337305859,
-        "Bust": 802.6517501208161
+        "Bull": 2391.32766263502,
+        "Base": 1733.2565507180232,
+        "Bear": 1036.5443454547242,
+        "Bust": 821.8008835366079
       }
     },
     {
       "label": "Equal weights (bias check)",
-      "value": 1457.2090136995473,
-      "target_12m": 1587.3817273489592,
+      "value": 1495.7323605860938,
+      "target_12m": 1629.9808443361023,
       "scenarios": {
-        "Bull": 2325.377541205321,
-        "Base": 1688.7125297414668,
-        "Bear": 1012.0942337305859,
-        "Bust": 802.6517501208161
+        "Bull": 2391.32766263502,
+        "Base": 1733.2565507180232,
+        "Bear": 1036.5443454547242,
+        "Bust": 821.8008835366079
+      }
+    },
+    {
+      "label": "Bull only, at our risk inputs (10.58%, 1.5%/yr)",
+      "value": 2391.32766263502,
+      "target_12m": 2620.3301293418044,
+      "scenarios": {
+        "Bull": 2391.32766263502,
+        "Base": 1733.2565507180232,
+        "Bear": 1036.5443454547242,
+        "Bust": 821.8008835366079
+      }
+    },
+    {
+      "label": "Bull only, no event risk",
+      "value": 2828.733438579453,
+      "target_12m": 3104.013436381159,
+      "scenarios": {
+        "Bull": 2828.733438579453,
+        "Base": 2031.1815954322155,
+        "Bear": 1200.9724351602401,
+        "Bust": 950.0691472391396
+      }
+    },
+    {
+      "label": "Bull only, half-step risk (cost of equity 10.08%, event risk 1.0%/yr)",
+      "value": 2691.189798078714,
+      "target_12m": 2938.4617297250484,
+      "scenarios": {
+        "Bull": 2691.189798078714,
+        "Base": 1937.5488852259543,
+        "Bear": 1149.3126904719313,
+        "Bust": 909.7590402322345
+      }
+    },
+    {
+      "label": "Bull 35% (others pro rata: 43.3/17.3/4.3)",
+      "value": 1803.3215411921678,
+      "target_12m": 1970.112960250299,
+      "scenarios": {
+        "Bull": 2391.32766263502,
+        "Base": 1733.2565507180232,
+        "Bear": 1036.5443454547242,
+        "Bust": 821.8008835366079
+      }
+    },
+    {
+      "label": "Bull 40% (others pro rata: 40/16/4)",
+      "value": 1848.5528159554374,
+      "target_12m": 2020.1297038835226,
+      "scenarios": {
+        "Bull": 2391.32766263502,
+        "Base": 1733.2565507180232,
+        "Bear": 1036.5443454547242,
+        "Bust": 821.8008835366079
+      }
+    },
+    {
+      "label": "Multiples-consistent: no event risk, cost of equity 9.58%, Base holds 74% EBITDA",
+      "value": 2461.9244619606266,
+      "target_12m": 2673.776825416455,
+      "scenarios": {
+        "Bull": 3289.545683164267,
+        "Base": 2621.145595325054,
+        "Bear": 1373.6063305856173,
+        "Bust": 1084.879547798192
       }
     }
   ],
   "bridge": [
     {
       "label": "Our 12-month target price",
-      "value": 1820.7531549563041,
+      "value": 1870.0795975189521,
       "delta": null
     },
     {
       "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
-      "value": 1843.3783153881138,
-      "delta": 22.625160431809718
+      "value": 1892.6350937839898,
+      "delta": 22.55549626503762
     },
     {
       "label": "Remove cross-strait event risk",
-      "value": 2164.1183184673873,
-      "delta": 320.7400030792735
+      "value": 2222.0806082289437,
+      "delta": 329.4455144449539
     },
     {
-      "label": "Consensus revenue growth 2027-28 (+37.6%/+26%)",
-      "value": 2390.039056180885,
-      "delta": 225.9207377134976
+      "label": "Consensus revenue growth 2027-28 (USD at spot: +34.3%/+26%)",
+      "value": 2397.8409326530145,
+      "delta": 175.76032442407086
     },
     {
-      "label": "Consensus-EPS-consistent cash margins (EBITDA 71.2%, then 72.7%, no further normalisation)",
-      "value": 2590.6966714366063,
-      "delta": 200.65761525572134
+      "label": "Consensus-EPS-consistent cash margins (EBITDA 72.6% in 2027, 74.1% from 2028)",
+      "value": 2683.8063057845443,
+      "delta": 285.96537313152976
     },
     {
-      "label": "Cost of equity 8.92% (the level that closes the gap; solve #1)",
-      "value": 3299.9773977963696,
-      "delta": 709.2807263597633
+      "label": "Cost of equity 9.13% (the level that closes the gap; solve #1)",
+      "value": 3300.008060882733,
+      "delta": 616.2017550981886
     }
   ],
   "bridge_shapley": [
     {
       "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
-      "shapley": 141.54960924797663
+      "shapley": 147.71397381037474
     },
     {
       "label": "Remove cross-strait event risk",
-      "shapley": 445.7192606734258
+      "shapley": 442.11596476062107
     },
     {
-      "label": "Consensus revenue growth 2027-28 (+37.6%/+26%)",
-      "shapley": 192.34207088174492
+      "label": "Consensus revenue growth 2027-28 (USD at spot: +34.3%/+26%)",
+      "shapley": 149.44232570667197
     },
     {
-      "label": "Consensus-EPS-consistent cash margins (EBITDA 71.2%, then 72.7%, no further normalisation)",
-      "shapley": 155.96495408365655
+      "label": "Consensus-EPS-consistent cash margins (EBITDA 72.6% in 2027, 74.1% from 2028)",
+      "shapley": 218.75292551533494
     },
     {
-      "label": "Cost of equity 8.92% (the level that closes the gap; solve #1)",
-      "shapley": 543.6483479532617
+      "label": "Cost of equity 9.13% (the level that closes the gap; solve #1)",
+      "shapley": 471.9032735707782
     }
   ],
   "solve": [
     {
-      "title": "Cost of equity at which consensus-like EPS-consistent operations, no event risk, give a 12-month TP of NT$3,300",
-      "solution": 0.08923754692077639
+      "title": "Cost of equity at which consensus 2027-28 + EPS-consistent margins + OUR Base duration, no event risk, give a 12-month TP of NT$3,300",
+      "solution": 0.09134812355041505
     },
     {
-      "title": "Same operations at our 10.58% cost of equity: growth needed in 2029-36 is in reverse #3; event probability that brings the TP to NT$3,300 with all else ours",
-      "solution": null
+      "title": "Same operations with our BULL duration (18% fading to 4%): cost of equity that gives NT$3,300",
+      "solution": 0.10041642189025882
     },
     {
-      "title": "FLIP: annual event probability at which our TP reaches the Hold line (-15% vs NT$2,370 = NT$2,014.5)",
-      "solution": 0.005258989334106446
+      "title": "At OUR 10.58% cost of equity, consensus 2027-28 + margins, no event risk: flat 2029-36 growth that gives NT$3,300",
+      "solution": 0.11783480644226073
+    },
+    {
+      "title": "FLIP: annual event probability at which our TP reaches the Hold line (NT$2,014.5)",
+      "solution": 0.007709932327270509
     },
     {
       "title": "FLIP: cost of equity at which our TP reaches the Hold line (NT$2,014.5)",
-      "solution": 0.0970689296722412
+      "solution": 0.09927945137023926
     },
     {
       "title": "FLIP: cost of equity at which our TP reaches the Hold line with NO event risk",
-      "solution": 0.11075692176818847
+      "solution": 0.11304783821105958
+    },
+    {
+      "title": "FLIP: exit EV/EBITDA multiple (all scenarios, event risk through 2036) at which our TP reaches the Hold line (NT$2,014.5)",
+      "solution": 6.960922436788678
+    }
+  ],
+  "grids": [
+    {
+      "title": "Probability-weighted 12-month TP: annual event probability x cost of equity (non-Sell cells marked)",
+      "x": [
+        0.0958,
+        0.1008,
+        0.1058,
+        0.1108,
+        0.1158
+      ],
+      "y": [
+        0.0,
+        0.005,
+        0.01,
+        0.015,
+        0.02,
+        0.03
+      ],
+      "grid": [
+        [
+          2522.1406219973596,
+          2349.0691484072877,
+          2199.1800501206526,
+          2068.1621851836935,
+          1952.709599518945
+        ],
+        [
+          2361.3290729213613,
+          2208.51391662967,
+          2075.192332324483,
+          1957.9038044662398,
+          1853.960409778851
+        ],
+        [
+          2222.651509652687,
+          2086.14815836831,
+          1966.3491860266988,
+          1860.4003985688541,
+          1766.0633723253757
+        ],
+        [
+          2101.8910451654247,
+          1978.7062062656555,
+          1870.0795975189521,
+          1773.598241605879,
+          1687.3566764610152
+        ],
+        [
+          1995.8363697551738,
+          1883.658567821747,
+          1784.36209827315,
+          1695.8609615017353,
+          1616.5003713068393
+        ],
+        [
+          1818.4203809107512,
+          1723.1907426691187,
+          1638.4494715447652,
+          1562.5450280966684,
+          1494.1623034530674
+        ]
+      ]
     }
   ],
   "sensitivity": [
@@ -1548,42 +1885,103 @@
       },
       "grid_value_per_share": [
         [
-          1058.5642157123996,
-          1129.1223754831071,
-          1186.1116583748326,
-          1267.524919648726,
-          1348.938180922619
+          1085.1294735242384,
+          1157.5557427760973,
+          1216.0538833256762,
+          1299.6226555393596,
+          1383.1914277530432
         ],
         [
-          1201.605478717047,
-          1282.6759714554505,
-          1348.1559848210845,
-          1441.698861057705,
-          1535.2417372943248
+          1233.5401455796916,
+          1316.8627049032584,
+          1384.1616951261392,
+          1480.3031097302553,
+          1576.4445243343712
         ],
         [
-          1366.9986806824834,
-          1460.226005364921,
-          1535.5249983776594,
-          1643.0949883958574,
-          1750.6649784140557
+          1405.2602323686615,
+          1501.193200244952,
+          1578.6775204527257,
+          1689.3694064638305,
+          1800.0612924749357
         ],
         [
-          1557.9841972013803,
-          1665.2538659621991,
-          1751.8947522690155,
-          1875.667446993038,
-          1999.4401417170607
+          1603.678938432727,
+          1714.188449697309,
+          1803.4461318725484,
+          1930.9571064086053,
+          2058.4680809446622
         ],
         [
-          1778.216663766292,
-          1901.6864476854412,
-          2001.4120423893696,
-          2143.8771776806952,
-          2286.342312972022
+          1832.6195856988093,
+          1959.9565300130052,
+          2062.8056004206255,
+          2209.732843860083,
+          2356.660087299541
         ]
       ],
       "title": "Base: 10-yr revenue CAGR x steady EBITDA margin (with event risk)"
+    },
+    {
+      "scenario": "Base",
+      "x": {
+        "driver": "capex_intensity",
+        "values": [
+          0.22,
+          0.25,
+          0.28,
+          0.31,
+          0.34
+        ]
+      },
+      "y": {
+        "driver": "revenue_growth",
+        "values": [
+          0.06,
+          0.08,
+          0.1,
+          0.12,
+          0.14
+        ]
+      },
+      "grid_value_per_share": [
+        [
+          1417.8832152340997,
+          1317.8008533015445,
+          1217.7184913689896,
+          1117.6361294364344,
+          1017.553767503879
+        ],
+        [
+          1610.2879546718636,
+          1495.1485359843,
+          1380.0091172967361,
+          1264.8696986091722,
+          1149.7302799216081
+        ],
+        [
+          1832.6102542823562,
+          1700.0451213349254,
+          1567.4799883874946,
+          1434.9148554400633,
+          1302.3497224926325
+        ],
+        [
+          2089.1973864901142,
+          1936.4896325547168,
+          1783.7818786193195,
+          1631.0741246839225,
+          1478.3663707485255
+        ],
+        [
+          2384.954533159261,
+          2208.9937625730845,
+          2033.0329919869075,
+          1857.0722214007315,
+          1681.1114508145545
+        ]
+      ],
+      "title": "Base: 10-yr revenue CAGR x flat capex intensity (with event risk)"
     },
     {
       "scenario": "Base",
@@ -1609,39 +2007,39 @@
       },
       "grid_value_per_share": [
         [
-          1791.999218247503,
-          1691.9071702542,
-          1602.5352469219915,
-          1522.275198906683,
-          1449.8245927259754
+          1836.3324313092241,
+          1733.7903893640212,
+          1642.1505743092143,
+          1559.7845814751045,
+          1485.373109180289
         ],
         [
-          1847.4546337198879,
-          1739.2826777930236,
-          1643.2816403668878,
-          1557.5317655732779,
-          1480.4968164656318
+          1894.6909514777933,
+          1783.7613915771915,
+          1685.2281186742027,
+          1597.1434237316062,
+          1517.9481230322237
         ],
         [
-          1910.1471809976993,
-          1792.448986314589,
-          1688.7125297414668,
-          1596.6148239191364,
-          1514.3218959841768
+          1960.6626173877762,
+          1839.838318777134,
+          1733.2565507180232,
+          1638.5556821388482,
+          1553.8706173864264
         ],
         [
-          1981.6128766382608,
-          1852.5501237854064,
-          1739.6937689956096,
-          1640.188995549324,
-          1551.8164045757392
+          2035.8625554678483,
+          1903.226973906027,
+          1787.1506232560703,
+          1684.725148610393,
+          1593.6888749092777
         ],
         [
-          2063.8632847193267,
-          1921.0573111690062,
-          1797.3214160586354,
-          1689.0840436225062,
-          1593.617422656969
+          2122.4056887905645,
+          1975.477865787474,
+          1848.0681924903695,
+          1736.5304215483102,
+          1638.0790361337658
         ]
       ],
       "title": "Base: cost of equity x terminal growth (with event risk)"
@@ -1671,46 +2069,46 @@
       },
       "grid_value_per_share": [
         [
-          2284.3723572374156,
-          2120.5462447337572,
-          1978.7649832405384,
-          1854.915447931546,
-          1745.844453104013
+          2344.3866914756372,
+          2176.5562403339086,
+          2031.1815954322155,
+          1904.0837963921254,
+          1792.0583861478176
         ],
         [
-          2077.1249229371015,
-          1939.9326230195597,
-          1819.9414897076383,
-          1714.1475412873813,
-          1620.2060418927204
+          2132.0161039993122,
+          1991.315197978146,
+          1868.1492143799512,
+          1759.465128776277,
+          1662.879233351345
         ],
         [
-          1910.1471809976993,
-          1792.448986314589,
-          1688.7125297414668,
-          1596.6148239191364,
-          1514.3218959841768
+          1960.6626173877762,
+          1839.838318777134,
+          1733.2565507180232,
+          1638.5556821388482,
+          1553.8706173864264
         ],
         [
-          1772.9012958283176,
-          1669.8811685707303,
-          1578.5770769736046,
-          1497.1023945296977,
-          1423.9583146609052
+          1819.6222219035826,
+          1713.7802884115265,
+          1619.8973439102388,
+          1536.0548568996946,
+          1460.7281158352832
         ],
         [
-          1658.2197628256665,
-          1566.513475862923,
-          1484.9192448901383,
-          1411.8402019507341,
-          1346.0046305868843
+          1701.6119275197632,
+          1607.3319488969125,
+          1523.379003381408,
+          1448.1288571658586,
+          1380.2874816752008
         ],
         [
-          1531.9033176123562,
-          1451.6347529962552,
-          1379.9824501509836,
-          1315.5996750012418,
-          1257.4146024731156
+          1571.4407065368064,
+          1488.8661444409424,
+          1415.095537366197,
+          1348.7587851829594,
+          1288.7649862342455
         ]
       ],
       "title": "Base: annual event probability x cost of equity"

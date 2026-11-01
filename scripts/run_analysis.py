@@ -298,6 +298,43 @@ def main(argv=None):
                                                      sv.get("measure", "fair_value"), ve._m(float(sv["target"]), 0), sol))
         md.append("")
 
+    # ---- grids: a probability-weighted measure over two case paths (e.g. the rating's TP)
+    js["grids"] = []
+    for i, gd in enumerate(spec.get("grids", []), 1):
+        measure = gd.get("measure", "target_12m")
+        base_c = apply_sets(case, gd.get("set"))
+        rows = []
+        for yv in gd["y_values"]:
+            row = []
+            for xv in gd["x_values"]:
+                c2 = apply_sets(base_c, {gd["y_path"]: yv, gd["x_path"]: xv})
+                try:
+                    row.append(pw_quote(c2, measure)[1])
+                except (ValueError, ZeroDivisionError):
+                    row.append(None)
+            rows.append(row)
+        js["grids"].append({"title": gd.get("title"), "x": gd["x_values"], "y": gd["y_values"], "grid": rows})
+        mark = gd.get("mark_below")
+        md.append("## 7.%d Grid — %s" % (i, gd.get("title", "")))
+        md.append("")
+        md.append("Measure: %s (probability-weighted)%s." % (
+            "12-month target price" if measure == "target_12m" else "fair value",
+            ("; cells at or above %s marked with *" % ve._m(mark, 0)) if mark else ""))
+        md.append("")
+        fmt = lambda v, lab: ("%.2f%%" % (v * 100)) if gd.get(lab + "_percent", True) else str(v)
+        md.append("| %s \\ %s | %s |" % (gd.get("y_label", gd["y_path"]), gd.get("x_label", gd["x_path"]),
+                                         " | ".join(fmt(x, "x") for x in gd["x_values"])))
+        md.append("|---|%s" % ("---|" * len(gd["x_values"])))
+        for yv, row in zip(gd["y_values"], rows):
+            cells = []
+            for v in row:
+                if v is None:
+                    cells.append("n/a")
+                else:
+                    cells.append(ve._m(v, 0) + ("*" if (mark is not None and v >= mark) else ""))
+            md.append("| **%s** | %s |" % (fmt(yv, "y"), " | ".join(cells)))
+        md.append("")
+
     # ---- sensitivity
     js["sensitivity"] = []
     for i, sv in enumerate(spec.get("sensitivity", []), 1):
