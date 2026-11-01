@@ -1,0 +1,123 @@
+[
+ {
+  "topic": "E.SUN FHC (2884) — facts gathered in the main session, 2026-11-01",
+  "findings": [
+   {
+    "item": "Price and market data",
+    "value": "Close NT$49.05 on 2026-10-30 (+0.05); P/E 20.35 (peer average 13.69); market cap NT$869,338m; reported BVPS NT$17.40; P/B 2.82; beta 0.12; daily SD 1.35%; 1-yr high NT$50.10",
+    "as_of": "2026-10-30",
+    "source_name": "MoneyDJ engine via Fubon e-broker (ZCX_2884); Yahoo TW quote",
+    "source_url": "https://fubon-ebrokerdj.fbs.com.tw/Z/ZC/ZCX/ZCX_2884.djhtm",
+    "tier": "industry data",
+    "confidence": "high"
+   },
+   {
+    "item": "9M26 self-reported earnings",
+    "value": "September net income NT$3.81bn; 9M NT$31.85bn (+21.54% YoY); EPS NT$1.95 (record); first figures including Mercuries Life; IFRS 3 fair-value remeasurement makes consolidated life P&L differ from Mercuries' standalone (Sept NT$1.911bn; 9M NT$6.023bn)",
+    "as_of": "2026-10-15",
+    "source_name": "Liberty Times; uAnalyze",
+    "source_url": "https://ec.ltn.com.tw/article/breakingnews/5607578",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "1H26 results",
+    "value": "Net income NT$21.43bn (+27.8%); EPS 1.32; ROE 15.46%; ROA 0.91%; net fee income NT$19.84bn (+39.9%); wealth management fees NT$9.27bn (+30.7%); 1Q26 ROE 14.43%, EPS 0.62",
+    "as_of": "2026-08-13",
+    "source_name": "TechNews; NOWnews (investor conference)",
+    "source_url": "https://technews.tw/2026/08/13/back-to-health/",
+    "tier": "company release",
+    "confidence": "high"
+   },
+   {
+    "item": "Merger with Mercuries Life",
+    "value": "Share swap 0.2486 adjusted to 0.2596 E.SUN shares per Mercuries Life share after E.SUN's 2026-07 ex-dividend; Mercuries Life 5,899.5m shares; conversion record date 2026-09-01; post-merger share capital NT$177.2bn; renamed E.SUN Life on 2026-12-01; FSC approval 2026-07-07",
+    "as_of": "2026-09-01",
+    "source_name": "Liberty Times; Commercial Times; ETtoday; uAnalyze",
+    "source_url": "https://ec.ltn.com.tw/article/breakingnews/5236029",
+    "tier": "press",
+    "confidence": "high"
+   },
+   {
+    "item": "Capital injection into Mercuries Life",
+    "value": "NT$16bn in 2026 and NT$6bn in 2027 (NT$22bn); RBC target ~125% (new basis) / >250% (old basis); no cash capital increase at the holding company for 2-3 years",
+    "as_of": "2026-08",
+    "source_name": "uAnalyze; Storm Media",
+    "source_url": "https://uanalyze.com.tw/articles/9619938318",
+    "tier": "press",
+    "confidence": "medium"
+   },
+   {
+    "item": "Dividends",
+    "value": "Cash dividend NT$1.4 (ex-date 2026-07-01, paid 2026-07-27), no stock dividend; prior year NT$1.2; policy: higher EPS -> higher dividend, cash yield >= 4%",
+    "as_of": "2026-07",
+    "source_name": "winvest; roo.cash; investor conference",
+    "source_url": "https://winvest.tw/News/Detail/88432",
+    "tier": "press",
+    "confidence": "high"
+   },
+   {
+    "item": "ROE / ROA history",
+    "value": "2021 ROE 10.96%, ROA 0.66%, EPS 1.54, NI NT$20.57bn; 1H22 ROE 7.52%; 2024 ROE 10.66%, ROA 0.68%, EPS 1.63, NI NT$26.08bn; 2025 ROE 13.04%, ROA 0.80%, EPS 2.12, NI NT$34.29bn",
+    "as_of": "annual self-reported results",
+    "source_name": "cnyes; newtalk; company releases",
+    "source_url": "https://newtalk.tw/news/view/2025-02-27/958386",
+    "tier": "company release",
+    "confidence": "medium"
+   },
+   {
+    "item": "P/B history",
+    "value": "Monthly P/B May-2021 to Oct-2026 (65 months): mean 1.91x, median 1.86x, SD 0.21x, min 1.62x (Oct-2023), max 2.82x (Oct-2026); 2026: Jun 1.96, Jul 2.20, Aug 2.28, Sep 2.58, Oct 2.82",
+    "as_of": "2026-10",
+    "source_name": "HiStock",
+    "source_url": "https://histock.tw/stock/2884/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "Peer P/B",
+    "value": "Mega FHC 1.86x (2026-09-03); SinoPac FHC 2.45x (2026-10-13)",
+    "as_of": "2026-09/10",
+    "source_name": "StatementDog",
+    "source_url": "https://statementdog.com/analysis/2886/pb",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "Local broker target prices",
+    "value": "Feb-2026: Buy, TP 33 -> 40 (EPS 2026E 2.27, 2027E 2.45); Mar-2026: Neutral, TP 31 -> 35; Aug-2026: Buy, TP 37 -> 43 (2026 loan growth 14%, NIM 1.32%). No 2026 FactSet consensus found.",
+    "as_of": "2026-02 to 2026-08",
+    "source_name": "Want Rich (China Times)",
+    "source_url": "https://wantrich.chinatimes.com/news/20260815900004-420101",
+    "tier": "consensus",
+    "confidence": "low"
+   },
+   {
+    "item": "Price at end-July",
+    "value": "Monthly close NT$35.85 (July 2026)",
+    "as_of": "2026-07",
+    "source_name": "WantGoo (via search result)",
+    "source_url": "https://www.wantgoo.com/stock/2884/enterprise-value/price-book-ratio",
+    "tier": "industry data",
+    "confidence": "medium"
+   },
+   {
+    "item": "Taiwan riskless rate inputs",
+    "value": "Taiwan 10Y 1.99% (2026-10-30); Taiwan default spread 0.477%, CRP 0.742% (Damodaran Jul-2026); Damodaran implied US ERP 4.20% vs 5.29% T-bond (2026-10-01)",
+    "as_of": "2026-10-30",
+    "source_name": "cnyes / Trading Economics; Damodaran",
+    "source_url": "https://pages.stern.nyu.edu/~adamodar/",
+    "tier": "industry data",
+    "confidence": "high"
+   }
+  ],
+  "synthesis": "",
+  "unresolved": [
+   "Post-merger book value and purchase-price allocation (3Q26 statements due mid/late Nov 2026)",
+   "2026 FactSet consensus EPS and target price",
+   "NIM, credit cost and fee breakdown for 3Q26",
+   "Full annual ROE series 2016-2020 and 2022-2023",
+   "Mercuries Life CSM and TW-ICS capital ratio after the injection"
+  ]
+ }
+]

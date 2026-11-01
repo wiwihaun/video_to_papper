@@ -36,6 +36,12 @@ Bear-to-Bull spread is under 2x; **Low** when the verdict is "not a two-number s
 option pools are >40% of EV; **Medium** otherwise. A high-upside, low-conviction call is
 legitimate and must be labelled as such.
 
+**Robustness cap:** conviction can be at most Medium if a one-step change in any single
+valuation parameter — cost of equity ±0.5pp, annual event probability ±0.5pp, terminal growth
+±0.5pp — flips the rating. Solve the flip points in the spec and quote them. (2884 in the first
+live runs: clean two-number verdict and a narrow scenario spread would have read "High", yet a
+0.12pp higher cost of equity turned the Neutral into a Sell.)
+
 The user may supply house thresholds; use theirs if given.
 
 ---

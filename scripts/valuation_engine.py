@@ -49,6 +49,8 @@ SOLVABLE = (
     "exit_multiple",
     "hazard_rate",
     "ebitda_margin",
+    "roe",
+    "payout_ratio",
 )
 
 
@@ -428,36 +430,66 @@ def residual_income(scenario, case):
         raise ValueError("terminal growth (%.4f) >= cost of equity (%.4f)" % (g, coe))
     bv0 = float(scenario.get("book_value_m", case.get("book_value_m")))
     n = int(scenario.get("horizon_years", case.get("horizon_years", 10)))
-    roe = _as_path(scenario.get("roe", case.get("roe")), n, "roe")
+    if scenario.get("roe", case.get("roe")) is None and scenario.get("roa") is not None:
+        # DuPont: ROE = ROA x leverage (assets / equity) — both disclosed quarterly by banks
+        roa = _as_path(scenario.get("roa"), n, "roa")
+        lev = _as_path(scenario.get("leverage"), n, "leverage")
+        roe = [a * b for a, b in zip(roa, lev)]
+    else:
+        roe = _as_path(scenario.get("roe", case.get("roe")), n, "roe")
     payout = _as_path(scenario.get("payout_ratio", case.get("payout_ratio", 0.5)), n, "payout_ratio")
     h, L = _hazard(scenario, case)
 
-    rows, bv, pv = [], bv0, 0.0
+    rows, bv, pv, pv_div = [], bv0, 0.0, 0.0
+    hz_years = (scenario.get("hazard", case.get("hazard")) or {}).get("years")
     for t in range(1, n + 1):
         ni = roe[t - 1] * bv
         ri = (roe[t - 1] - coe) * bv
         df = 1.0 / (1.0 + coe) ** t
-        mult = (1.0 - L) + L * (1.0 - h) ** t
-        pv += ri * df * mult
         div = payout[t - 1] * ni
+        exp = min(t, float(hz_years)) if hz_years is not None else t
+        mult = (1.0 - L) + L * (1.0 - h) ** exp
+        pv += ri * df
+        pv_div += div * df * mult
         rows.append({"year": t, "book_value_open_m": bv, "roe": roe[t - 1], "net_income_m": ni,
-                     "residual_income_m": ri, "dividends_m": div, "pv_residual_income_m": ri * df * mult})
+                     "residual_income_m": ri, "dividends_m": div, "survival_multiplier": mult,
+                     "pv_dividend_m": div * df * mult})
         bv = bv + ni - div
     ri_next = (roe[-1] - coe) * bv
-    tv = ri_next / (coe - g)
     tv_df = 1.0 / (1.0 + coe) ** n
+    pv_tv_ri = ri_next / (coe - g) * tv_df
+    equity_no_hazard = bv0 + pv + pv_tv_ri            # residual-income value
+
+    # Event risk hits the WHOLE equity of a bank (its book is loans to the same economy), so
+    # with a hazard the value is computed in dividend-discount form — identical to residual
+    # income when h = 0 (clean surplus) — with the survival multiplier on every dividend.
     if h == 0.0:
-        pv_tv = tv * tv_df
+        equity = equity_no_hazard
+        pv_tv = pv_tv_ri
     else:
-        q_den = (1.0 + coe) - (1.0 + g) * (1.0 - h)
-        pv_tv = tv_df * ri_next * ((1.0 - L) / (coe - g) + L * (1.0 - h) ** n * (1.0 - h) / q_den)
-    equity = bv0 + pv + pv_tv
+        d_next = (roe[-1] - g) * bv                   # steady state: book grows at g after year N
+        if hz_years is not None:
+            pv_tv = d_next / (coe - g) * tv_df * ((1.0 - L) + L * (1.0 - h) ** min(float(hz_years), n))
+        else:
+            q_den = (1.0 + coe) - (1.0 + g) * (1.0 - h)
+            pv_tv = tv_df * d_next * ((1.0 - L) / (coe - g) + L * (1.0 - h) ** n * (1.0 - h) / q_den)
+        equity = pv_div + pv_tv
     implied_pb = equity / bv0 if bv0 else None
+    hazard_info = None
+    if h > 0.0:
+        hazard_info = {"annual_probability": h, "loss_fraction": L,
+                       "cumulative_probability_10y": 1.0 - (1.0 - h) ** 10,
+                       "enterprise_value_no_hazard_m": equity_no_hazard,
+                       "ev_haircut_pct": (1.0 - equity / equity_no_hazard) * 100.0 if equity_no_hazard else None}
+    above_book = equity_no_hazard - bv0
     return {
-        "warnings": ([] if abs(pv_tv) <= 0.75 * abs(equity - bv0) or equity == bv0 else
+        "hazard": hazard_info,
+        "warnings": ([] if abs(pv_tv_ri) <= 0.75 * abs(above_book) or above_book == 0 else
                      ["terminal residual income is %.0f%% of value above book: the explicit years are not "
-                      "carrying the valuation" % (abs(pv_tv) / abs(equity - bv0) * 100)]),
+                      "carrying the valuation" % (abs(pv_tv_ri) / abs(above_book) * 100)]),
         "method": "residual_income",
+        "equity_value_no_hazard_m": equity_no_hazard,
+        "implied_price_to_book_no_hazard": equity_no_hazard / bv0 if bv0 else None,
         "cost_of_equity": coe,
         "rows": rows,
         "book_value_m": bv0,
@@ -716,6 +748,13 @@ def _apply_driver(scenario, case, name, value, from_year=None):
             b["ebit_margin"] = cur[:k] + [value - d for d in da_path[k:]]
         else:
             b["ebit_margin"] = [value - d for d in da_path]
+    elif name == "roe":
+        # residual-income scenarios: a flat ROE replaces any ROE / DuPont path
+        s["roe"] = value
+        s.pop("roa", None)
+        s.pop("leverage", None)
+    elif name == "payout_ratio":
+        s["payout_ratio"] = value
     elif name == "hazard_rate":
         hz = dict(s.get("hazard") or c.get("hazard") or {})
         hz.setdefault("loss_fraction", 1.0)
@@ -753,6 +792,8 @@ def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi
         "exit_multiple": (0.1, 200.0),
         "hazard_rate": (0.0, 0.5),
         "ebitda_margin": (0.0, 0.95),
+        "roe": (-0.10, 0.60),
+        "payout_ratio": (0.0, 1.0),
     }
     lo = defaults[solve_for][0] if lo is None else lo
     hi = defaults[solve_for][1] if hi is None else hi
@@ -825,7 +866,8 @@ def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi
 
 
 def _fmt_driver(name, v):
-    if name in ("revenue_growth", "ebit_margin", "terminal_growth", "wacc", "hazard_rate", "ebitda_margin"):
+    if name in ("revenue_growth", "ebit_margin", "terminal_growth", "wacc", "hazard_rate", "ebitda_margin",
+                "roe", "payout_ratio"):
         return "%.2f%%" % (v * 100)
     if name == "exit_multiple":
         return "%.2fx" % v
@@ -934,10 +976,12 @@ def parse_driver_spec(spec):
     if "=" not in spec:
         raise ValueError("driver spec %r must look like PATH=SIGMA" % spec)
     path, sig = spec.rsplit("=", 1)
-    mode = "abs"
+    mode, unit = "abs", "pp"
     if sig.endswith(":rel"):
         mode, sig = "rel", sig[:-4]
-    return {"label": (label or path).strip(), "path": path.strip(), "sigma": float(sig), "mode": mode}
+    elif sig.endswith(":x"):          # absolute move in a multiple (e.g. leverage), shown as "x"
+        unit, sig = "x", sig[:-2]
+    return {"label": (label or path).strip(), "path": path.strip(), "sigma": float(sig), "mode": mode, "unit": unit}
 
 
 def elasticity(case, scenario_name, specs):
@@ -973,6 +1017,7 @@ def elasticity(case, scenario_name, specs):
                 "path": path,
                 "sigma": spec["sigma"],
                 "mode": spec["mode"],
+                "unit": spec.get("unit", "pp"),
                 "value_minus_1sd": values[-1],
                 "value_plus_1sd": values[1],
                 "swing": swing,
@@ -1018,7 +1063,12 @@ def md_elasticity(out, cur=""):
     L.append("| Rank | Driver | 1σ move | Value @ −1σ | Value @ +1σ | Swing | Elasticity | Var. share | Cumulative |")
     L.append("|---|---|---|---|---|---|---|---|---|")
     for i, r in enumerate(out["drivers"], 1):
-        sig = ("±%.0f%%" % (r["sigma"] * 100)) if r["mode"] == "rel" else ("±%s" % _fmt_abs(r["sigma"]))
+        if r["mode"] == "rel":
+            sig = "±%.0f%%" % (r["sigma"] * 100)
+        elif r.get("unit") == "x":
+            sig = "±%.2fx" % r["sigma"]
+        else:
+            sig = "±%s" % _fmt_abs(r["sigma"])
         L.append(
             "| %d | %s | %s | %s | %s | %s | %s | %s | %s |"
             % (
@@ -1111,7 +1161,7 @@ def md_value(out):
                 L.append("")
     elif out.get("probability_weighted_value_per_share") is not None:
         L.append(
-            "**Probability-weighted target price: %s %s**%s"
+            "**Probability-weighted fair value: %s %s**%s"
             % (
                 cur,
                 _m(out["probability_weighted_value_per_share"], 2),
@@ -1130,7 +1180,35 @@ def md_value(out):
             L.append("- WARNING (%s): %s" % (name, w))
         L.append("")
 
+    if out.get("target_price_12m_quote") is not None and out.get("probability_weighted_value_per_share_quote") is None:
+        rf = out["roll_forward"]
+        L.append("**12-month target price: %s %s** = fair value %s x (1 + %.2f%% cost of equity) - %s dividends; "
+                 "vs spot %+.1f%%, expected 12-month total return %+.1f%%"
+                 % (cur, _m(out["target_price_12m_quote"], 2), _m(rf["fair_value_today_quote"], 2),
+                    rf["cost_of_equity_quote"] * 100, _m(rf["dividends_quote_next_12m"], 2),
+                    out.get("target_upside_pct") or 0.0, out.get("expected_total_return_12m_pct") or 0.0))
+        L.append("")
+        if out.get("rating"):
+            pt = out["price_triggers_quote"]
+            L.append("**Rating (mechanical): %s** — buy below %s %s, sell above %s %s"
+                     % (out["rating"], cur, _m(pt["buy_below"], 2), cur, _m(pt["sell_above"], 2)))
+            L.append("")
+
     for s in out["scenarios"]:
+        if s["method"] == "residual_income":
+            L.append("#### %s — residual income (%sm)" % (s["name"], cur))
+            L.append("")
+            L.append("| Year | Opening book | ROE | Net income | Residual income | Dividends | Survival |")
+            L.append("|---|---|---|---|---|---|---|")
+            for r in s["rows"]:
+                L.append("| %d | %s | %.2f%% | %s | %s | %s | %.3f |" % (
+                    r["year"], _m(r["book_value_open_m"]), r["roe"] * 100, _m(r["net_income_m"]),
+                    _m(r["residual_income_m"]), _m(r["dividends_m"]), r["survival_multiplier"]))
+            L.append("")
+            L.append("Cost of equity %.2f%% · implied P/B %.2fx (no event risk %.2fx)%s" % (
+                s["cost_of_equity"] * 100, s["implied_price_to_book"], s["implied_price_to_book_no_hazard"],
+                (" · event-risk haircut %.1f%%" % s["hazard"]["ev_haircut_pct"]) if s.get("hazard") else ""))
+            L.append("")
         if s["method"] == "dcf" and s["rows"] and s["rows"][0].get("revenue_m") is not None:
             L.append("#### %s — FCFF build (%sm)" % (s["name"], cur))
             L.append("")

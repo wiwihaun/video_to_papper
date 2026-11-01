@@ -430,5 +430,45 @@ class TestV2Features(unittest.TestCase):
         self.assertAlmostEqual(out["price_triggers_quote"]["buy_below"], 3500 / 1.15)
 
 
+class TestResidualIncomeHazard(unittest.TestCase):
+    def _case(self, roe=0.13, payout=0.65, coe=0.07, g=0.025):
+        return {"ticker": "BANK", "currency": "TWD", "price": 30.0, "shares_diluted_m": 100.0,
+                "wacc": coe, "terminal_growth": g,
+                "scenarios": [{"name": "Base", "probability": 1.0, "method": "residual_income",
+                               "book_value_m": 2000.0, "roe": [0.15, 0.14, 0.13, roe, roe],
+                               "payout_ratio": payout, "horizon_years": 5}]}
+
+    def test_tiny_hazard_converges_to_residual_income(self):
+        # DDM-with-hazard and RI must agree as h -> 0 (clean-surplus identity)
+        base = ve.value_case(self._case())["scenarios"][0]["value_per_share"]
+        c = self._case(); c["hazard"] = {"annual_probability": 1e-9, "loss_fraction": 0.9}
+        self.assertAlmostEqual(ve.value_case(c)["scenarios"][0]["value_per_share"], base, places=5)
+
+    def test_total_loss_equals_higher_cost_of_equity(self):
+        h = 0.02
+        c = self._case(); c["hazard"] = {"annual_probability": h, "loss_fraction": 1.0}
+        with_h = ve.value_case(c)["scenarios"][0]["value_per_share"]
+        d = self._case(coe=(1.07) / (1 - h) - 1)
+        self.assertAlmostEqual(with_h, ve.value_case(d)["scenarios"][0]["value_per_share"], places=6)
+
+    def test_hazard_hits_book_value_too(self):
+        # with ROE == COE the no-hazard value equals book; a hazard must take value BELOW book
+        c = self._case(roe=0.07); c["scenarios"][0]["roe"] = 0.07
+        c["hazard"] = {"annual_probability": 0.02, "loss_fraction": 0.9}
+        self.assertLess(ve.value_case(c)["scenarios"][0]["value_per_share"], 20.0)
+
+
+class TestDuPont(unittest.TestCase):
+    def test_roa_times_leverage_equals_roe(self):
+        a = {"ticker": "B", "currency": "TWD", "price": 30.0, "shares_diluted_m": 100.0, "wacc": 0.07,
+             "terminal_growth": 0.025, "scenarios": [{"name": "Base", "probability": 1.0,
+             "method": "residual_income", "book_value_m": 2000.0, "roe": 0.12, "payout_ratio": 0.6, "horizon_years": 5}]}
+        b = deepcopy(a)
+        del b["scenarios"][0]["roe"]
+        b["scenarios"][0].update({"roa": 0.0075, "leverage": 16.0})
+        self.assertAlmostEqual(ve.value_case(a)["scenarios"][0]["value_per_share"],
+                               ve.value_case(b)["scenarios"][0]["value_per_share"], places=9)
+
+
 if __name__ == "__main__":
     unittest.main()
