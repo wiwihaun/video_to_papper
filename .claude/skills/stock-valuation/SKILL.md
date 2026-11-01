@@ -46,11 +46,20 @@ Pin down, and state in the report header, before any analysis:
   not exist in Taiwan. Disambiguate dual listings — TSMC trades as `2330.TW` and as the `TSM` ADR (1 ADR =
   5 common shares), and a target price is meaningless until you say which line it is for.
   Default to the primary local listing and give the ADR equivalent alongside.
-- **Reporting currency vs trading currency**, and the FX assumption if they differ.
+- **Economic currency vs reporting currency.** Model in the currency the business actually
+  earns in, not the one it reports in. TSMC reports in TWD but prices wafers and guides in
+  USD, so its DCF runs in USD at a USD discount rate and converts per-share value at spot FX
+  (`fx_quote_per_model` in the case file). Mixing a TWD discount rate with USD-driven cash
+  flows at flat FX is an interest-parity error worth tens of percent — see
+  `references/02-valuation-engines.md`.
 - **Fiscal year end**, and whether the market quotes calendar or fiscal years.
 - **Spot price, as-of date and time, shares outstanding (diluted), and net debt.**
   Every valuation in this repo is stamped with its as-of date. An undated target price
   is not a research product.
+- **Stale-price check.** If another line of the same company traded after the local close
+  (an ADR session, a holiday gap), the local close is stale. State the price the other line
+  implies and give upside from both. Example: 2330 closed NT$2,370 on a Friday; the ADR then
+  fell 5.95% in New York, implying ~NT$2,230 at the next open.
 
 If the ticker is ambiguous (`TSM` could be the ADR; `BABA` has HK and US lines), state
 your reading in one line and continue. Do not stop to ask.
@@ -79,6 +88,19 @@ python3 scripts/valuation_engine.py elasticity --input reports/<TICKER>_case.jso
   --driver "EBIT margin@driver_build.ebit_margin=0.03" \
   --driver "WACC@wacc=0.005"   # ...and at least two more
 ```
+
+Three rules make the ranking honest:
+
+- **Operating drivers only.** WACC, terminal growth and event risk are valuation parameters,
+  not drivers — they fail the observable/forecastable test. They go into the WACC × g grid
+  and the event-risk overlay, never into the elasticity ranking, where they would crowd out
+  the business.
+- **Split growth by period** with a path slice: `driver_build.revenue_growth[0:2]` (the years
+  everyone argues about) versus `driver_build.revenue_growth[2:]` (duration). The usual finding
+  — near-term growth explains far less value than duration — is itself worth a paragraph.
+- **Source every σ.** σ is the uncertainty of the forecast quantity: anchor it on the
+  company's historical dispersion (stdev of annual changes) and the spread of credible views,
+  and write the anchor next to the number. An unsourced σ silently decides the ranking.
 
 It returns each driver's share of tested variance and a verdict. Then draw the line:
 
@@ -122,6 +144,18 @@ Report it as a sentence of the form: *"At 1,180, the market is paying for X% rev
 CAGR for ten years at a Y% EBIT margin. The question is not whether the company is good.
 It is whether that is achievable."*
 
+Two further solves usually carry the insight:
+
+- **Take consensus for the visible years and solve for the rest:**
+  `reverse --solve-for revenue_growth --from-year 3`. "If consensus is right for 2027–28, the
+  price implies Z% a year from 2029" is sharper than any flat CAGR.
+- **If a discrete event risk is material** (war, expropriation, a binary trial), solve for the
+  annual event probability the price implies: `reverse --solve-for hazard_rate`, with the
+  operating case held at your base. Then set that number beside external anchors —
+  prediction markets (adjusted for the carry cost of holding the "No" side), superforecaster
+  and expert-survey estimates. A PM can disagree with a probability; nobody can disagree
+  with an undisclosed one.
+
 Then judge that number against history and against physical limits — the company's own
 best decade, the size of the end market, the industry's record margin. A price implying
 a result no company in the sector has ever delivered is the finding, and often the whole
@@ -135,6 +169,11 @@ and nothing else** — the scenarios must differ in those drivers, not in a vagu
 Assign probabilities that sum to exactly 1.0 and **justify each weight in one line**.
 The engine refuses to normalise weights for you, deliberately: unexamined weights are
 where undisclosed bias enters a model.
+
+**Discrete event risk goes in the `hazard` overlay, not the discount rate.** A country-risk
+premium charges a small cost every year forever; a blockade or expropriation is a jump. The
+overlay (annual probability × fraction of operating value lost) prices the jump explicitly,
+and with full loss it is mathematically identical to raising WACC — so never use both.
 
 Guardrails: terminal growth must not exceed long-run nominal GDP for the market
 (~3% USD, ~2.5% TWD) without an argument; if PV of terminal value exceeds ~75% of EV,
@@ -151,6 +190,12 @@ Prefer SOTP when option pools matter; prefer a single DCF when one pool dominate
 Always cross-check the DCF output against a multiples view on comparables — if they
 disagree by more than about 25%, find out why and write the reconciliation down. That
 gap is usually the most interesting paragraph in the report.
+
+**Bridge to consensus.** When consensus publishes a target price, decompose the gap between
+it and your value: re-run the engine switching one assumption at a time to the consensus-like
+setting (discount rate, event risk, margin path, growth path) and tabulate how much of the
+gap each explains. Readers trust a different number only when they can see which assumption
+makes it different.
 
 Produce a 5×5 sensitivity grid on the two highest-elasticity drivers, and a second on
 WACC × terminal growth. Input schema, WACC construction and every engine flag:
@@ -182,6 +227,17 @@ Write to `reports/<TICKER>_<YYYY-MM-DD>.md`, following
 - Separate **fact** (sourced, dated) from **estimate** (yours, labelled) from
   **consensus** (theirs, labelled). Never blend them in one sentence.
 - No recommendation without a target price, and no target price without a horizon.
+
+Write for insight, not coverage:
+
+- **The first paragraph states what the price implies and where you differ.** Not the
+  company's history, not the sector backdrop.
+- **Every section opens with its conclusion** in one sentence, then the evidence.
+- **Quantify every claim that can be quantified.** "Margins face pressure" is not analysis;
+  "overseas fabs cost 2pp of gross margin now, 3–4pp by 2030 per management" is.
+- **Name the disagreement.** If the view differs from consensus, say which assumption
+  differs and by how much (the consensus bridge). If it does not differ, say that too.
+- **Prefer plain sentences to hedges.** One clear "we think" beats three "may potentially".
 
 ### Phase 9 — Quality gates
 

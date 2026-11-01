@@ -10,13 +10,17 @@ disclosed in the report's limitations section, by name. There is no third option
 - [ ] One spot price and one as-of date are used throughout, and both appear in the header.
 - [ ] Shares are **diluted**, and consistent across the case JSON, the per-share figures and
       the market cap. ADR ratio and FX are applied if an ADR value is quoted.
+- [ ] **Stale price**: if an ADR or other line traded after the local close, the implied local
+      price is stated and upside is shown from both.
 - [ ] Units are consistent: everything in the case JSON is in millions of one currency.
       (Taiwan statements are in NT$ thousands; summaries often use 億. Check the conversion.)
 
 ## B. Method — the two-numbers discipline
 
-- [ ] `elasticity` was run on **at least five** candidate drivers, and each σ has a stated
-      source.
+- [ ] `elasticity` was run on **at least five** candidate *operating* drivers (no WACC, no
+      terminal growth, no hazard in the ranking), and each σ has a stated source.
+- [ ] Growth was tested split by period (near-term vs duration), and the report says which
+      matters more.
 - [ ] The engine's verdict is reported verbatim, including when it says "not a two-number
       stock".
 - [ ] The noise list is present, and each item carries a numeric elasticity.
@@ -28,7 +32,10 @@ disclosed in the report's limitations section, by name. There is no third option
 ## C. Arithmetic
 
 - [ ] **Currency consistency**: cash flows, WACC (risk-free rate), terminal growth and net
-      debt are all in the same currency.
+      debt are all in the same currency — and that currency is the business's *economic*
+      currency, or the forecast uses forward FX.
+- [ ] **Event risk counted once**: either a hazard overlay or a country-risk premium, not
+      both. If a hazard is used, its probability is compared with dated external anchors.
 - [ ] Terminal growth < WACC, and ≤ long-run nominal GDP for the currency, or argued.
 - [ ] Every engine warning is resolved or explained in section 5.5.
 - [ ] Net-debt sign: net cash is entered as a **negative** `net_debt_m`, so it adds to equity.
@@ -41,6 +48,8 @@ disclosed in the report's limitations section, by name. There is no third option
 - [ ] SBC is expensed (the engine does this; check that `sbc_pct_revenue` is set, not zero
       by omission, for issuers with material equity compensation).
 - [ ] DCF and the multiples cross-check agree within ~25%, or the gap is reconciled in prose.
+- [ ] **Consensus bridge**: if consensus publishes a target price, the gap to it is decomposed
+      assumption by assumption with engine re-runs.
 - [ ] The Gordon terminal value's implied exit multiple is stated and is plausible against
       sector history.
 

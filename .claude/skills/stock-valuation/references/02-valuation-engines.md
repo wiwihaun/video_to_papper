@@ -14,8 +14,15 @@ reproduced from `reports/<TICKER>_case.json` by anyone who re-runs it.
 | `sensitivity` | 6 | 2-D grid of value per share over any two solvable drivers. |
 
 `reverse` and `sensitivity` can move: `revenue_growth`, `ebit_margin`, `terminal_growth`,
-`wacc`, `fcff_scale`, `exit_multiple`. `elasticity` can move **any numeric field** by
-dotted path, which is what makes operating KPIs testable.
+`wacc`, `fcff_scale`, `exit_multiple`, `hazard_rate`. `reverse --from-year N` keeps years
+before N as given and solves only from year N on. `elasticity` can move **any numeric field**
+by dotted path, including part of a path with a trailing slice
+(`driver_build.revenue_growth[2:]`), which is what makes operating KPIs and growth duration
+testable.
+
+`value` also reports, per DCF scenario, the **terminal multiples implied** by the Gordon value
+(EV/EBITDA, EV/EBIT, EV/FCFF), the **event-risk haircut** when a hazard is set, and, for the
+case, the **equal-weighted value** used by the bias gate.
 
 Exit code 2 with a message on stderr means the model is invalid (g ≥ WACC, weights not
 summing to 1, missing driver, unsolvable bracket). Fix the input; do not work around it.
@@ -38,8 +45,18 @@ summing to 1, missing driver, unsolvable bracket). Fix the input; do not work ar
 }
 ```
 
-Any of `wacc`, `net_debt_m`, `shares_diluted_m`, `price`, `minority_interest_m` can be
-overridden per scenario. `other_adjustments_m` on a scenario is **added** to equity — use it
+Optional case fields:
+
+```jsonc
+  "quote_currency": "TWD",          // currency the stock is quoted in, if different
+  "fx_quote_per_model": 32.478,     // quote units per 1 model unit (TWD per USD)
+  "price_quote": 2370,              // spot in the quote currency (replaces "price")
+  "adr_ratio": 5,                   // shares per ADR: adds value per ADR to the output
+  "hazard": {"annual_probability": 0.015, "loss_fraction": 0.8}   // event-risk overlay
+```
+
+Any of `wacc`, `net_debt_m`, `shares_diluted_m`, `price`, `minority_interest_m`, `hazard` can
+be overridden per scenario. `other_adjustments_m` on a scenario is **added** to equity — use it
 for associates, investments and non-operating assets, with a positive sign.
 
 ### DCF scenario
@@ -126,6 +143,16 @@ Build it every time; never import a third party's WACC without its components.
 | Cost of debt | Yield on the company's bonds, or rating-implied spread over rf | After tax |
 | Weights | Market values of equity and debt | Target structure if current is temporary |
 
+**Model in the economic currency.** Choose the currency the business earns in, not the one it
+reports in. A company that prices in USD and reports in TWD (TSMC, most Taiwan tech exporters)
+should be modelled in USD, discounted at a USD rate, and converted per share at spot FX.
+
+The trap this avoids: discounting at a TWD rate (Taiwan 10Y ~1.5–2%) while converting USD
+cash flows at today's FX. Under interest-rate parity, a ~3pp lower TWD rate is the market's
+forecast that TWD appreciates ~3% a year against USD; a TWD DCF that takes the low rate but
+keeps FX flat books that ~3pp twice — compounded over a terminal-value horizon, that is tens
+of percent of value. Either model in USD, or model in TWD with forward FX. Never mix.
+
 **Currency consistency is the most common fatal error.** Cash flows, WACC, terminal growth
 and net debt must all be in one currency. A TWD forecast discounted at a USD WACC overstates
 the discount rate by roughly the inflation differential and understates value. If the
@@ -143,6 +170,25 @@ result at spot FX and the ADR ratio — do not convert the cash flows.
   the Gordon value and state it: "our terminal value implies 14x terminal EBITDA versus a
   10-year sector median of 11x."
 
+## Event-risk overlay (`hazard`)
+
+For a discrete jump risk — war or blockade, expropriation, a binary regulatory event — set
+`"hazard": {"annual_probability": h, "loss_fraction": L}`. Each year the event occurs with
+probability h; once it does, operating cash flows are cut by L for good. The expected
+multiplier on the cash flow at time t is `(1 − L) + L(1 − h)^t`, and the terminal value uses
+the closed form of the same series. Net cash is left outside the overlay (stated assumption).
+
+Properties worth knowing, all covered by tests:
+
+- With L = 1 the overlay equals discounting at `(1 + WACC)/(1 − h) − 1`. A country-risk premium
+  of ~0.8pp is therefore an implicit ~0.8% a year probability of total loss. Use the overlay
+  **or** a CRP, never both.
+- `reverse --solve-for hazard_rate` returns the event probability the price implies, given
+  your operating case. That converts a valuation gap into a number a PM can hold a view on.
+- External anchors for h: prediction-market prices (a long-dated "Yes" price overstates the
+  probability by roughly the carry cost of holding "No" — at 5% rates, ~5pp a year), Good
+  Judgment superforecasts, Metaculus, and expert surveys such as CSIS. Cite date and source.
+
 ## Reverse DCF in practice
 
 Solve for **each** Phase 2 number in turn, holding the others at the neutral base:
@@ -150,6 +196,13 @@ Solve for **each** Phase 2 number in turn, holding the others at the neutral bas
 ```bash
 python3 scripts/valuation_engine.py reverse --input reports/2330_case.json --scenario Base --solve-for revenue_growth
 python3 scripts/valuation_engine.py reverse --input reports/2330_case.json --scenario Base --solve-for ebit_margin
+```
+
+Take consensus for the visible years and solve for the rest:
+
+```bash
+python3 scripts/valuation_engine.py reverse --input reports/2330_case.json --scenario Base \
+  --solve-for revenue_growth --from-year 3
 ```
 
 If the bracket fails ("no solution"), the price cannot be reconciled by that driver alone

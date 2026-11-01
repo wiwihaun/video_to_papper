@@ -47,6 +47,7 @@ SOLVABLE = (
     "wacc",
     "fcff_scale",
     "exit_multiple",
+    "hazard_rate",
 )
 
 
@@ -208,6 +209,28 @@ def discount_factors(years, wacc, midyear):
     return out
 
 
+def _hazard(scenario, case):
+    """
+    Discrete-event (jump) risk overlay, e.g. a geopolitical disruption.
+
+    {"annual_probability": h, "loss_fraction": L}: each year the event occurs with
+    probability h; once it occurs, operating cash flows from then on are cut by L
+    permanently. Expected multiplier on a cash flow at time t is
+        (1 - L) + L * (1 - h)^t.
+    Applied to operating value (EV) only — net cash is assumed recoverable. With L = 1 the
+    overlay is exactly equivalent to discounting at (1 + WACC) / (1 - h) - 1, which is why
+    a country-risk premium in the discount rate is itself an implicit hazard rate.
+    """
+    hz = scenario.get("hazard", case.get("hazard")) or {}
+    h = float(hz.get("annual_probability", 0.0))
+    L = float(hz.get("loss_fraction", 1.0))
+    if not 0.0 <= h < 1.0:
+        raise ValueError("hazard annual_probability must be in [0, 1)")
+    if not 0.0 <= L <= 1.0:
+        raise ValueError("hazard loss_fraction must be in [0, 1]")
+    return h, L
+
+
 def dcf(scenario, case):
     wacc = float(scenario.get("wacc", case["wacc"]))
     midyear = bool(scenario.get("midyear", case.get("midyear", True)))
@@ -239,11 +262,17 @@ def dcf(scenario, case):
 
     n = len(rows)
     dfs = discount_factors(n, wacc, midyear)
+    h, L = _hazard(scenario, case)
     pv_explicit = 0.0
-    for r, df in zip(rows, dfs):
+    pv_explicit_no_hazard = 0.0
+    for t, (r, df) in enumerate(zip(rows, dfs), 1):
+        exp = t - 0.5 if midyear else t
+        mult = (1.0 - L) + L * (1.0 - h) ** exp
         r["discount_factor"] = df
-        r["pv_fcff_m"] = r["fcff_m"] * df
+        r["survival_multiplier"] = mult
+        r["pv_fcff_m"] = r["fcff_m"] * df * mult
         pv_explicit += r["pv_fcff_m"]
+        pv_explicit_no_hazard += r["fcff_m"] * df
 
     terminal = dict(scenario.get("terminal", {"mode": "gordon"}))
     if terminal.get("mode", "gordon") == "gordon" and "terminal_growth" not in terminal:
@@ -253,9 +282,21 @@ def dcf(scenario, case):
 
     tv, tv_detail = terminal_value(rows, terminal, wacc)
     tv_df = 1.0 / (1.0 + wacc) ** n
-    pv_tv = tv * tv_df
+    pv_tv_no_hazard = tv * tv_df
+    if h == 0.0:
+        pv_tv = pv_tv_no_hazard
+    elif tv_detail["mode"] == "gordon":
+        # Closed form: sum over t > N of CF_N (1+g)^(t-N) [(1-L) + L(1-h)^t] / (1+r)^t
+        g, cf = tv_detail["terminal_growth"], tv_detail["base_fcff_m"]
+        q_den = (1.0 + wacc) - (1.0 + g) * (1.0 - h)
+        pv_tv = tv_df * cf * (1.0 + g) * (
+            (1.0 - L) / (wacc - g) + L * (1.0 - h) ** n * (1.0 - h) / q_den
+        )
+    else:
+        pv_tv = pv_tv_no_hazard * ((1.0 - L) + L * (1.0 - h) ** n)
 
     ev = pv_explicit + pv_tv
+    ev_no_hazard = pv_explicit_no_hazard + pv_tv_no_hazard
     warnings = []
     tv_share = (pv_tv / ev) if ev else None
     if tv_share is not None and tv_share > 0.75:
@@ -270,7 +311,28 @@ def dcf(scenario, case):
         )
     if rows[-1]["fcff_m"] < 0 and tv_detail.get("mode") == "gordon":
         warnings.append("final-year FCFF is negative, so the Gordon terminal value is negative.")
+    last = rows[-1]
+    implied = {}
+    if last.get("ebit_m") is not None:
+        ebitda = last["ebit_m"] + (last.get("da_m") or 0.0)
+        if ebitda > 0:
+            implied["ev_ebitda"] = tv / ebitda
+        if last["ebit_m"] > 0:
+            implied["ev_ebit"] = tv / last["ebit_m"]
+    if last["fcff_m"] > 0:
+        implied["ev_fcff"] = tv / last["fcff_m"]
+    hazard_info = None
+    if h > 0.0:
+        hazard_info = {
+            "annual_probability": h,
+            "loss_fraction": L,
+            "cumulative_probability_10y": 1.0 - (1.0 - h) ** 10,
+            "enterprise_value_no_hazard_m": ev_no_hazard,
+            "ev_haircut_pct": (1.0 - ev / ev_no_hazard) * 100.0 if ev_no_hazard else None,
+        }
     return {
+        "hazard": hazard_info,
+        "implied_terminal_multiples": implied,
         "warnings": warnings,
         "method": "dcf",
         "wacc": wacc,
@@ -384,12 +446,35 @@ def to_equity(result, scenario, case):
     if equity <= 0:
         result["warnings"].append("equity value is non-positive: claims exceed enterprise value.")
 
-    price = scenario.get("price", case.get("price"))
+    price = scenario.get("price", resolve_price(case))
+    fx = _fx(case)
+    if fx:
+        result["value_per_share_quote"] = per_share * fx
+    if case.get("adr_ratio"):
+        result["value_per_adr"] = per_share * float(case["adr_ratio"])
     if price:
         price = float(price)
         result["price"] = price
         result["upside_pct"] = (per_share / price - 1.0) * 100.0
     return result
+
+
+def _fx(case):
+    fx = case.get("fx_quote_per_model")
+    return float(fx) if fx else None
+
+
+def resolve_price(case):
+    """Spot price in the MODEL currency. Accepts `price` directly, or `price_quote`
+    (in quote currency) plus `fx_quote_per_model` (quote units per 1 model unit)."""
+    if case.get("price") is not None:
+        return float(case["price"])
+    if case.get("price_quote") is not None:
+        fx = _fx(case)
+        if not fx:
+            raise ValueError("price_quote given without fx_quote_per_model")
+        return float(case["price_quote"]) / fx
+    return None
 
 
 def run_scenario(scenario, case):
@@ -419,16 +504,29 @@ def value_case(case):
             )
         weighted = sum(r["value_per_share"] * r["probability"] for r in results)
 
+    price = resolve_price(case)
     out = {
         "ticker": case.get("ticker"),
         "currency": case.get("currency"),
         "valuation_date": case.get("valuation_date"),
-        "price": case.get("price"),
+        "price": price,
         "scenarios": results,
         "probability_weighted_value_per_share": weighted,
     }
-    if weighted and case.get("price"):
-        out["probability_weighted_upside_pct"] = (weighted / float(case["price"]) - 1.0) * 100.0
+    if weighted and price:
+        out["probability_weighted_upside_pct"] = (weighted / price - 1.0) * 100.0
+    fx = _fx(case)
+    if fx:
+        out["quote_currency"] = case.get("quote_currency")
+        out["fx_quote_per_model"] = fx
+        out["price_quote"] = price * fx if price else None
+        if weighted is not None:
+            out["probability_weighted_value_per_share_quote"] = weighted * fx
+    if case.get("adr_ratio") and weighted is not None:
+        out["adr_ratio"] = float(case["adr_ratio"])
+        out["probability_weighted_value_per_adr"] = weighted * float(case["adr_ratio"])
+    # Equal-weight value: the quality gate's test for weights chosen after the conclusion.
+    out["equal_weighted_value_per_share"] = sum(r["value_per_share"] for r in results) / len(results)
     return out
 
 
@@ -436,9 +534,29 @@ def value_case(case):
 # reverse DCF
 # --------------------------------------------------------------------------- #
 
-def _apply_driver(scenario, case, name, value):
-    """Return a (scenario, case) pair with one driver overridden."""
+def _apply_driver(scenario, case, name, value, from_year=None):
+    """Return a (scenario, case) pair with one driver overridden.
+
+    from_year (1-based) overrides a path driver only from that forecast year on,
+    keeping earlier years — e.g. take consensus for years 1-2 and solve for what
+    the price implies from year 3."""
     s, c = deepcopy(scenario), deepcopy(case)
+    if from_year and name in ("revenue_growth", "ebit_margin"):
+        b = s.setdefault("driver_build", {})
+        cur = b.get(name)
+        if cur is None:
+            raise ValueError("--from-year needs an existing %s path in driver_build" % name)
+        horizon = int(s.get("horizon_years") or b.get("horizon_years") or 0)
+        path = list(cur) if isinstance(cur, list) else [cur] * horizon
+        if not path:
+            raise ValueError("--from-year needs horizon_years or a list-valued %s" % name)
+        if horizon and len(path) < horizon:
+            path += [path[-1]] * (horizon - len(path))
+        k = int(from_year) - 1
+        if not 0 < k < len(path):
+            raise ValueError("from_year must be between 2 and %d" % len(path))
+        b[name] = path[:k] + [value] * (len(path) - k)
+        return s, c
     if name == "revenue_growth":
         s.setdefault("driver_build", {})["revenue_growth"] = value
         for k in ("revenue_m", "units", "unit_price"):
@@ -456,12 +574,18 @@ def _apply_driver(scenario, case, name, value):
     elif name == "exit_multiple":
         s.setdefault("terminal", {})["mode"] = "exit_multiple"
         s["terminal"]["multiple"] = value
+    elif name == "hazard_rate":
+        hz = dict(s.get("hazard") or c.get("hazard") or {})
+        hz.setdefault("loss_fraction", 1.0)
+        hz["annual_probability"] = value
+        s["hazard"] = hz
     else:
         raise ValueError("cannot solve for %s (expected one of %s)" % (name, ", ".join(SOLVABLE)))
     return s, c
 
 
-def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi=None, tol=1e-7):
+def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi=None, tol=1e-7,
+                  from_year=None):
     """
     Bisect for the driver value at which the model's per-share value equals the
     market price. This is the market-implied expectation — the number the price
@@ -473,7 +597,10 @@ def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi
             "scenario %r not found (have: %s)" % (scenario_name, ", ".join(scenarios) or "none")
         )
     base = scenarios[scenario_name]
-    price = float(target_price if target_price is not None else case["price"])
+    price = target_price if target_price is not None else resolve_price(case)
+    if price is None:
+        raise ValueError("no price: set price, or price_quote with fx_quote_per_model")
+    price = float(price)
 
     defaults = {
         "revenue_growth": (-0.50, 2.00),
@@ -482,12 +609,13 @@ def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi
         "wacc": (0.02, 0.60),
         "fcff_scale": (-5.0, 50.0),
         "exit_multiple": (0.1, 200.0),
+        "hazard_rate": (0.0, 0.5),
     }
     lo = defaults[solve_for][0] if lo is None else lo
     hi = defaults[solve_for][1] if hi is None else hi
 
     def f(x):
-        s, c = _apply_driver(base, case, solve_for, x)
+        s, c = _apply_driver(base, case, solve_for, x, from_year)
         try:
             return run_scenario(s, c)["value_per_share"] - price
         except (ValueError, ZeroDivisionError, OverflowError):
@@ -528,30 +656,33 @@ def reverse_solve(case, scenario_name, solve_for, target_price=None, lo=None, hi
             lo, f_lo = mid, f_mid
 
     implied = (lo + hi) / 2.0
-    s, c = _apply_driver(base, case, solve_for, implied)
+    s, c = _apply_driver(base, case, solve_for, implied, from_year)
     check = run_scenario(s, c)
+    span = (" from forecast year %d onward" % from_year) if from_year else ""
     return {
         "scenario": scenario_name,
         "solved_for": solve_for,
+        "from_year": from_year,
         "target_price": price,
         "implied_value": implied,
         "model_value_per_share_at_solution": check["value_per_share"],
         "residual": check["value_per_share"] - price,
         "interpretation": (
-            "At %s, the current price of %.2f implies %s = %s. "
+            "At %s, the current price of %.2f implies %s = %s%s. "
             "The analyst's job is to judge whether that is achievable, not to re-derive it."
             % (
                 case.get("valuation_date", "the valuation date"),
                 price,
                 solve_for,
                 _fmt_driver(solve_for, implied),
+                span,
             )
         ),
     }
 
 
 def _fmt_driver(name, v):
-    if name in ("revenue_growth", "ebit_margin", "terminal_growth", "wacc"):
+    if name in ("revenue_growth", "ebit_margin", "terminal_growth", "wacc", "hazard_rate"):
         return "%.2f%%" % (v * 100)
     if name == "exit_multiple":
         return "%.2fx" % v
@@ -596,16 +727,41 @@ def _walk(obj, part):
     return obj[int(part)] if isinstance(obj, list) else obj[part]
 
 
+def _split_slice(parts):
+    """Allow a trailing list slice: 'driver_build.revenue_growth[2:]' -> (parts, slice(2, None))."""
+    last = parts[-1]
+    if "[" in last and last.endswith("]"):
+        key, spec = last[:-1].split("[", 1)
+        if ":" not in spec:
+            raise ValueError("slice %r must contain ':' (use .N for a single element)" % last)
+        lo, hi = spec.split(":", 1)
+        sl = slice(int(lo) if lo.strip() else None, int(hi) if hi.strip() else None)
+        return parts[:-1] + [key], sl
+    return parts, None
+
+
 def _get_path(obj, parts):
+    parts, sl = _split_slice(parts)
     for part in parts:
         obj = _walk(obj, part)
+    if sl is not None:
+        if not isinstance(obj, list):
+            raise ValueError("slice applied to a non-list driver")
+        if not obj[sl]:
+            raise ValueError("empty slice")
+        return obj[sl]
     return obj
 
 
 def _set_path(obj, parts, value):
+    parts, sl = _split_slice(parts)
     for part in parts[:-1]:
         obj = _walk(obj, part)
     last = parts[-1]
+    if sl is not None:
+        target = obj[int(last)] if isinstance(obj, list) else obj[last]
+        target[sl] = value
+        return
     if isinstance(obj, list):
         obj[int(last)] = value
     else:
@@ -624,6 +780,8 @@ def parse_driver_spec(spec):
     PATH=SIGMA[:rel]         label defaults to the path.
     PATH is dotted, relative to the scenario; prefix with "case." for case-level
     fields. List indices are plain integers: segments.1.driver_build.ebit_margin.
+    A trailing slice moves part of a path only: driver_build.revenue_growth[2:]
+    (years 3 onward) or driver_build.revenue_growth[0:2] (years 1-2).
     SIGMA is a plausible one-standard-deviation move. ':rel' makes it a relative
     move (0.15 = +/-15%); the default is an absolute move (0.02 = +/-2pp).
     """
@@ -770,7 +928,25 @@ def md_value(out):
             )
         )
     L.append("")
-    if out.get("probability_weighted_value_per_share") is not None:
+    if out.get("probability_weighted_value_per_share_quote") is not None:
+        qc = out.get("quote_currency") or "quote"
+        L.append(
+            "**Probability-weighted value per share: %s %s**  (= %s %s at %.4f %s/%s; spot %s %s, %+.1f%%)"
+            % (
+                qc, _m(out["probability_weighted_value_per_share_quote"], 0),
+                cur, _m(out["probability_weighted_value_per_share"], 2),
+                out["fx_quote_per_model"], qc, cur,
+                qc, _m(out["price_quote"], 0) if out.get("price_quote") else "n/a",
+                out.get("probability_weighted_upside_pct") or 0.0,
+            )
+        )
+        if out.get("probability_weighted_value_per_adr") is not None:
+            L.append("")
+            L.append("Per ADR (%s, ratio %g): %s" % (cur, out["adr_ratio"], _m(out["probability_weighted_value_per_adr"], 2)))
+        L.append("")
+        L.append("Equal-weighted value (bias check): %s %s" % (cur, _m(out["equal_weighted_value_per_share"], 2)))
+        L.append("")
+    elif out.get("probability_weighted_value_per_share") is not None:
         L.append(
             "**Probability-weighted target price: %s %s**%s"
             % (
@@ -817,6 +993,25 @@ def md_value(out):
                     (s["terminal_pct_of_ev"] or 0) * 100, s["wacc"] * 100,
                 )
             )
+            hz = s.get("hazard")
+            if hz:
+                L.append("")
+                L.append(
+                    "Event-risk overlay: %.2f%%/yr probability, %.0f%% loss of operating value "
+                    "(%.1f%% cumulative over 10 years) — EV haircut %.1f%% vs no-event value %s"
+                    % (
+                        hz["annual_probability"] * 100, hz["loss_fraction"] * 100,
+                        hz["cumulative_probability_10y"] * 100, hz["ev_haircut_pct"],
+                        _m(hz["enterprise_value_no_hazard_m"]),
+                    )
+                )
+            im = s.get("implied_terminal_multiples") or {}
+            if im:
+                L.append("")
+                L.append(
+                    "Terminal value implies: %s"
+                    % " · ".join("%s %.1fx" % (k.replace("_", "/").upper(), v) for k, v in sorted(im.items()))
+                )
             L.append("")
         if s["method"] == "sotp":
             L.append("#### %s — sum of the parts (%sm)" % (s["name"], cur))
@@ -873,6 +1068,8 @@ def main(argv=None):
     r.add_argument("--price", type=float, default=None)
     r.add_argument("--lo", type=float, default=None)
     r.add_argument("--hi", type=float, default=None)
+    r.add_argument("--from-year", type=int, default=None,
+                   help="solve only from this forecast year on, keeping earlier years as given")
 
     s = sub.add_parser("sensitivity", help="2-D sensitivity grid")
     s.add_argument("--input", required=True)
@@ -902,7 +1099,8 @@ def main(argv=None):
             else:
                 print(json.dumps(out, indent=2, ensure_ascii=False))
         elif a.cmd == "reverse":
-            out = reverse_solve(case, a.scenario, a.solve_for, a.price, a.lo, a.hi)
+            out = reverse_solve(case, a.scenario, a.solve_for, a.price, a.lo, a.hi,
+                                from_year=a.from_year)
             print(json.dumps(out, indent=2, ensure_ascii=False))
         elif a.cmd == "elasticity":
             out = elasticity(case, a.scenario, [parse_driver_spec(d) for d in a.driver])

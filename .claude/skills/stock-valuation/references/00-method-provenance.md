@@ -33,6 +33,37 @@ Three routes were attempted on 2026-11-01 from the cloud container:
 Retrying with different YouTube player clients was **not** attempted: that is
 bot-check circumvention, and the session's policy correctly refuses it.
 
+Later on 2026-11-01, after the user re-authorised WhisperAI, `transcribe_url` was tried with
+the YouTube URL and rejected it ("serves text/html, not audio or video") — the service needs a
+direct media file, and no minutes were consumed. The account is on a free plan with a 5-minute
+monthly limit, which is shorter than the video. No third-party transcript of this video was
+found (`you-tldr.com/transcript/F7WEN5wOGZs` returns 404).
+
+## Corroborating evidence from the author's other videos
+
+A third-party auto-caption transcript of a *different* Terry Chen video, 〈我們需要聊一下特斯拉〉
+(`you-tldr.com/transcript/eiqrVenTXD4`, transcribed 2025-07-25, auto-captions with errors), was
+read on 2026-11-01. It is **not** the source video, but it shows the author's general approach:
+
+- He tells investors to watch **the rate of progress of the key autonomy metric, not its current
+  level** ("pay attention to the speed of V12's progress, not its current status").
+- He explicitly dismisses most news flow as noise ("A lot of noise. A lot of FUD"; "ignore a lot
+  of boring fake news").
+- He treats the car and energy businesses as the comparatively valuable-by-arithmetic parts and
+  the autonomy option as the part where "the most difficult place to calculate the valuation"
+  lies.
+- He does **not** perform explicit valuation arithmetic in that video — no DCF, no target price
+  derived from inputs; his stated practice is dollar-cost averaging plus buying dips.
+
+Search-engine summaries of his channel add, without a transcript to verify: he rarely covers
+quarterly reports because his horizon is long; he argues FSD "has not really started to make
+money", which is what makes Tesla hard to value; and he frames the Tesla bet as a bet on
+execution.
+
+What this changes: it strengthens Layer 1 (focus on one or two rate-of-progress KPIs, discard
+news flow) and it confirms Layer 2 (the valuation arithmetic) is this skill's own addition, not
+the author's. Both points are already reflected in the layering below.
+
 ## What this skill is actually built on
 
 The workflow has two distinguishable layers. Keep them distinguishable.

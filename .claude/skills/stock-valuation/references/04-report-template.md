@@ -15,6 +15,10 @@ Write to `reports/<TICKER>_<YYYY-MM-DD>.md`.
 - Dates in ISO format (2026-11-01). Fiscal periods as 1Q26, FY26, 2026E.
 - `E` suffix for estimates (2027E), `A` for actuals. Consensus labelled "cons."
 - Every table has a source line under it.
+- Each section opens with its conclusion in one sentence. The first paragraph of the report
+  states what the price implies and where we differ — never company history.
+- Taiwan usage for Chinese terms: 營收, 毛利率, 營業利益率, 資本支出, 自由現金流, 本益比,
+  目標價, 每股盈餘, 淨現金, 法說會; 「億／兆」for NT$ narrative figures, millions in tables.
 
 ## Rating framework
 
@@ -46,6 +50,7 @@ The user may supply house thresholds; use theirs if given.
 | **評等 Rating** | [Buy / Hold / Sell] · Conviction: [High / Medium / Low] |
 | **目標價 Target Price** | [CCY] [TP] (12 個月, probability-weighted) |
 | **現價 Price** | [CCY] [spot] ([YYYY-MM-DD] 收盤) |
+| **跨市場隱含價 Implied by later-trading line** | [e.g. ADR close after local close implies CCY x; upside from that price y%] — omit if not applicable |
 | **潛在漲跌幅 Upside** | [+/-x.x%] |
 | **ADR / 其他掛牌** | [e.g. TSM: US$[x] equivalent at [FX], 1 ADR = 5 shares] |
 | **市值 Market cap** | [CCY]m [x] · 稀釋股數 [x]m · 淨現金(負債) [x]m |
@@ -113,7 +118,23 @@ If DCF and multiples differ by more than ~25%: the reconciliation, in prose.]
 | 同業 Peer | 代碼 | EV/EBITDA FY1 | P/E FY1 | 營收成長 FY1 | 營益率 | 來源 |
 |---|---|---|---|---|---|---|
 
-### 5.5 模型警示 Model warnings
+### 5.5 與市場共識的差距拆解 Bridge to Consensus
+[Start from the consensus target price. Switch one assumption at a time from ours to the
+consensus-like setting and re-run the engine. Every row is an engine output.]
+
+| 步驟 Step | 假設變動 Assumption switched | 每股價值 Value/sh | 差距貢獻 Contribution |
+|---|---|---|---|
+| 我們的價值 Our value | — | [x] | |
+| + [assumption 1] | [ours → consensus-like] | [x] | [+x] |
+| + [assumption 2] | | [x] | [+x] |
+| ≈ 共識目標價 Consensus TP | | [x] | |
+
+### 5.6 事件風險定價 Pricing Discrete Event Risk
+[Only when a jump risk is material. The implied annual probability from the reverse solve;
+external anchors with dates (prediction markets carry-adjusted, superforecasters, expert
+surveys); the probability used in the TP and why; value at 0%, our h, and 2x our h.]
+
+### 5.7 模型警示 Model warnings
 [Every engine warning, each either resolved or explained. "None" if none.]
 
 ## 6. 雜訊清單 Noise List

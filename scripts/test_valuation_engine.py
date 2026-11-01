@@ -190,5 +190,144 @@ class TestElasticity(unittest.TestCase):
         self.assertIn("not yet a test", out["verdict"])
 
 
+class TestQuoteCurrencyAndFromYear(unittest.TestCase):
+    def _fade_case(self):
+        case = one_year_case(midyear=True, terminal_growth=0.02)
+        case["scenarios"][0] = {
+            "name": "Base", "probability": 1.0, "method": "dcf", "horizon_years": 5,
+            "driver_build": {"revenue_base_m": 1000, "revenue_growth": [0.30, 0.20, 0.12, 0.12, 0.12],
+                             "ebit_margin": 0.30, "tax_rate": 0.2, "da_pct_revenue": 0.05,
+                             "capex_pct_revenue": 0.08},
+            "terminal": {"mode": "gordon", "terminal_growth": 0.02},
+        }
+        return case
+
+    def test_from_year_solve_keeps_early_years(self):
+        # price set at the model value; solving years 3-5 must return 12% and keep 30%/20%
+        case = self._fade_case()
+        case["price"] = ve.value_case(case)["scenarios"][0]["value_per_share"]
+        res = ve.reverse_solve(case, "Base", "revenue_growth", from_year=3)
+        self.assertAlmostEqual(res["implied_value"], 0.12, places=6)
+        s, _ = ve._apply_driver(case["scenarios"][0], case, "revenue_growth", 0.05, from_year=3)
+        self.assertEqual(s["driver_build"]["revenue_growth"], [0.30, 0.20, 0.05, 0.05, 0.05])
+
+    def test_from_year_out_of_range(self):
+        case = self._fade_case()
+        with self.assertRaises(ValueError):
+            ve._apply_driver(case["scenarios"][0], case, "revenue_growth", 0.1, from_year=1)
+
+    def test_quote_currency_conversion(self):
+        # model in USD: EV 1000, 10 shares -> US$100/share; fx 32 -> NT$3,200/share
+        # price_quote NT$2,400 -> US$75 -> upside +33.3%
+        case = one_year_case()
+        del case["price"]
+        case.update({"quote_currency": "TWD", "fx_quote_per_model": 32.0, "price_quote": 2400.0, "adr_ratio": 5})
+        out = ve.value_case(case)
+        self.assertAlmostEqual(out["price"], 75.0)
+        self.assertAlmostEqual(out["probability_weighted_value_per_share_quote"], 3200.0)
+        self.assertAlmostEqual(out["probability_weighted_upside_pct"], (100 / 75 - 1) * 100)
+        self.assertAlmostEqual(out["probability_weighted_value_per_adr"], 500.0)
+
+    def test_reverse_uses_quote_price(self):
+        case = one_year_case()
+        del case["price"]
+        case.update({"fx_quote_per_model": 32.0, "price_quote": 3200.0})  # = US$100 = model value
+        case["scenarios"][0] = self._fade_case()["scenarios"][0]
+        v = ve.value_case(case)["scenarios"][0]["value_per_share"]
+        case["price_quote"] = v * 32.0
+        res = ve.reverse_solve(case, "Base", "ebit_margin")
+        self.assertAlmostEqual(res["implied_value"], 0.30, places=6)
+
+    def test_implied_terminal_multiple(self):
+        # rev 1100, EBIT 220, D&A 55 -> EBITDA 275; FCFF = 176 + 55 = 231 (no capex/NWC)
+        # Gordon g=0, WACC 10%: TV = 231/0.10 = 2310 -> 2310/275 = 8.4x EV/EBITDA
+        case = one_year_case()
+        case["scenarios"][0] = {
+            "name": "Base", "probability": 1.0, "method": "dcf", "horizon_years": 1,
+            "driver_build": {"revenue_base_m": 1000, "revenue_growth": 0.10, "ebit_margin": 0.20,
+                             "tax_rate": 0.20, "da_pct_revenue": 0.05},
+            "terminal": {"mode": "gordon", "terminal_growth": 0.0},
+        }
+        s = ve.value_case(case)["scenarios"][0]
+        self.assertAlmostEqual(s["terminal_value_m"], 2310.0)
+        self.assertAlmostEqual(s["implied_terminal_multiples"]["ev_ebitda"], 8.4)
+
+    def test_equal_weighted_value(self):
+        case = one_year_case()
+        a = deepcopy(case["scenarios"][0]); a["name"] = "A"; a["probability"] = 0.8
+        b = deepcopy(a); b["name"] = "B"; b["probability"] = 0.2; b["net_debt_m"] = -1000.0
+        case["scenarios"] = [a, b]
+        out = ve.value_case(case)
+        self.assertAlmostEqual(out["equal_weighted_value_per_share"], 150.0)          # (100+200)/2
+        self.assertAlmostEqual(out["probability_weighted_value_per_share"], 120.0)    # 0.8*100+0.2*200
+
+
+class TestHazardOverlay(unittest.TestCase):
+    def _case(self, midyear=False):
+        case = one_year_case(midyear=midyear, terminal_growth=0.02)
+        case["scenarios"][0] = {
+            "name": "Base", "probability": 1.0, "method": "dcf", "horizon_years": 5,
+            "driver_build": {"revenue_base_m": 1000, "revenue_growth": 0.10, "ebit_margin": 0.25,
+                             "tax_rate": 0.2, "da_pct_revenue": 0.05, "capex_pct_revenue": 0.07},
+            "terminal": {"mode": "gordon", "terminal_growth": 0.02},
+        }
+        return case
+
+    def test_zero_hazard_is_identity(self):
+        a = ve.value_case(self._case())["scenarios"][0]["enterprise_value_m"]
+        c = self._case(); c["hazard"] = {"annual_probability": 0.0, "loss_fraction": 0.8}
+        self.assertAlmostEqual(ve.value_case(c)["scenarios"][0]["enterprise_value_m"], a, places=9)
+
+    def test_total_loss_hazard_equals_higher_discount_rate(self):
+        # L = 1: E[CF_t] = CF_t (1-h)^t  <=>  discounting at (1+r)/(1-h) - 1. Exact, incl. terminal.
+        h = 0.02
+        c = self._case(); c["hazard"] = {"annual_probability": h, "loss_fraction": 1.0}
+        with_hazard = ve.value_case(c)["scenarios"][0]["enterprise_value_m"]
+        d = self._case(); d["wacc"] = (1 + 0.10) / (1 - h) - 1
+        self.assertAlmostEqual(with_hazard, ve.value_case(d)["scenarios"][0]["enterprise_value_m"], places=6)
+
+    def test_partial_loss_lies_between(self):
+        base = ve.value_case(self._case())["scenarios"][0]["enterprise_value_m"]
+        c = self._case(); c["hazard"] = {"annual_probability": 0.02, "loss_fraction": 0.5}
+        half = ve.value_case(c)["scenarios"][0]["enterprise_value_m"]
+        c["hazard"]["loss_fraction"] = 1.0
+        full = ve.value_case(c)["scenarios"][0]["enterprise_value_m"]
+        self.assertTrue(full < half < base)
+
+    def test_reverse_solve_recovers_hazard(self):
+        c = self._case(midyear=True); c["hazard"] = {"annual_probability": 0.015, "loss_fraction": 0.8}
+        c["price"] = ve.value_case(c)["scenarios"][0]["value_per_share"]
+        c["hazard"]["annual_probability"] = 0.0
+        res = ve.reverse_solve(c, "Base", "hazard_rate")
+        self.assertAlmostEqual(res["implied_value"], 0.015, places=6)
+
+
+class TestPathSlices(unittest.TestCase):
+    def test_slice_bumps_only_part_of_a_path(self):
+        case = one_year_case(midyear=True, terminal_growth=0.02)
+        case["scenarios"][0] = {
+            "name": "Base", "probability": 1.0, "method": "dcf", "horizon_years": 4,
+            "driver_build": {"revenue_base_m": 1000, "revenue_growth": [0.3, 0.2, 0.1, 0.1],
+                             "ebit_margin": 0.3, "tax_rate": 0.2},
+            "terminal": {"mode": "gordon", "terminal_growth": 0.02},
+        }
+        s = deepcopy(case["scenarios"][0])
+        ve._set_path(s, ["driver_build", "revenue_growth[2:]"],
+                     ve._bump(ve._get_path(s, ["driver_build", "revenue_growth[2:]"]), 0.05, "abs"))
+        self.assertEqual([round(x, 10) for x in s["driver_build"]["revenue_growth"]], [0.3, 0.2, 0.15, 0.15])
+        out = ve.elasticity(case, "Base", [
+            ve.parse_driver_spec("Near@driver_build.revenue_growth[0:2]=0.05"),
+            ve.parse_driver_spec("Late@driver_build.revenue_growth[2:]=0.05"),
+            ve.parse_driver_spec("Margin@driver_build.ebit_margin=0.03"),
+        ])
+        self.assertEqual(len(out["drivers"]), 3)
+
+    def test_slice_errors(self):
+        with self.assertRaises(ValueError):
+            ve._get_path({"a": [1, 2]}, ["a[5:]"])
+        with self.assertRaises(ValueError):
+            ve._get_path({"a": [1, 2]}, ["a[1]"])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -49,6 +49,28 @@ The third row is a legitimate finding, not a failure. Diversified conglomerates,
 companies and early-stage businesses often have no dominant driver, and claiming two numbers
 for them would be false precision.
 
+**Test operating drivers only.** Leave WACC, terminal growth and event risk out of the
+ranking: they are valuation parameters that no data release reveals, and their large swings
+would push the business's real drivers off the list. They belong in the WACC × g grid and the
+event-risk overlay.
+
+**Split growth into near-term and duration** with path slices
+(`driver_build.revenue_growth[0:2]` vs `driver_build.revenue_growth[2:]`). In the 2330 run
+(2026-11-01) duration explained ~3x the value variance of the 2027–28 growth that dominates
+sell-side debate — the kind of finding that belongs on page one.
+
+**Calibrating σ.** σ is the uncertainty of the *forecast quantity*, which is usually smaller
+than a driver's annual volatility and larger than analysts' dispersion:
+
+| Driver type | Anchor for σ |
+|---|---|
+| Next 1–2 years' growth | Historical one-year forecast error, or the gap between guidance/consensus and the last downturn's print |
+| Growth duration (years 3+) | Spread of credible long-run views (industry growth vs bull case), as ± around your base |
+| Through-cycle margin | Half the gap between the current level and the 10-year average, or management's floor vs current |
+| Capex intensity | Range of the last cycle (peak vs trough capex/revenue), halved |
+
+Write the anchor next to each σ in the report.
+
 **Test at least five candidates.** With fewer than three the engine refuses to call a
 verdict, because a ranking of two is not a test.
 
