@@ -157,6 +157,14 @@ Use the `residual_income` method, which values equity directly:
 }
 ```
 
+Use the DuPont form when you can: `"roa": [...], "leverage": [...]` instead of `"roe"` (ROE =
+ROA × leverage), so the two observable bank numbers can be tested separately in `elasticity`
+(`roa[2:]`, `leverage=1.0:x`). With a hazard, the method values equity in dividend-discount form
+so the event hits **all** of a bank's equity — its book is a claim on the same economy — and it
+reduces exactly to residual income when h = 0. For a merger that has not yet reported a balance
+sheet, estimate post-deal book as pre-deal equity + retained earnings since + the fair value of
+shares issued, label it an estimate, and give ±10% variants (2884, 2026-11-01).
+
 Residual income_t = (ROE_t − COE) × opening book value; terminal = next-year residual income
 / (COE − g). Net debt is ignored by construction. With constant ROE and a payout that grows
 book at g, it reproduces the justified P/B exactly (tested). The two numbers for a financial
@@ -174,7 +182,8 @@ Build it every time; never import a third party's WACC without its components.
 |---|---|---|
 | Risk-free rate | 10-year government bond yield **in the cash-flow currency**, on the valuation date | TWD cash flows → Taiwan 10Y; USD cash flows → US 10Y |
 | Equity risk premium | Damodaran's implied ERP (updated monthly) + country risk premium for the domicile | Cite the month used |
-| Beta | Bottom-up: unlevered industry beta, relevered at the target D/E | Regression beta as cross-check; state window and index |
+| Beta | Bottom-up: unlevered industry beta, relevered at the target D/E | Regression beta as cross-check; state window and index. **Do not use a regression beta against TAIEX for non-tech Taiwan stocks**: TSMC is ~40% of the index, so a bank's beta comes out absurdly low (2884: 0.12 on 2026-10-30), which would put its cost of equity near 2% |
+| Riskless rate in TWD | Taiwan 10Y less Taiwan's sovereign default spread (Damodaran) when country risk is modelled separately by the hazard overlay | Otherwise the government yield carries part of the country risk twice |
 | Cost of debt | Yield on the company's bonds, or rating-implied spread over rf | After tax |
 | Weights | Market values of equity and debt | Target structure if current is temporary |
 
