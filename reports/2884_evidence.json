@@ -149,5 +149,547 @@
    "Full annual ROE series 2016-2020 and 2022-2023",
    "Mercuries Life CSM and TW-ICS capital ratio after the injection"
   ]
+ },
+ {
+  "topic": "Rates, peers and E.SUN history gathered 2026-11-02 for the v3 rewrite (research agents; primary sources where possible)",
+  "findings": [
+   {
+    "item": "Taiwan 10Y government bond yield, monthly series May-2021 to Sep-2026 (CBC '十年期政府公債次級市場利率', monthly AVERAGE, % p.a.)",
+    "value": "2021: May 0.41, Jun 0.43, Jul 0.40, Aug 0.41, Sep 0.43, Oct 0.50, Nov 0.57, Dec 0.64 | 2022: Jan 0.77, Feb 0.72, Mar 0.82, Apr 1.26, May 1.36, Jun 1.27, Jul 1.19, Aug 1.19, Sep 1.41, Oct 1.79, Nov 1.62, Dec 1.28 | 2023: Jan 1.24, Feb 1.21, Mar 1.20, Apr 1.20, May 1.17, Jun 1.17, Jul 1.16, Aug 1.19, Sep 1.24, Oct 1.31, Nov 1.29, Dec 1.22 | 2024: Jan 1.23, Feb 1.23, Mar 1.38, Apr 1.63, May 1.62, Jun 1.68, Jul 1.64, Aug 1.56, Sep 1.44, Oct 1.52, Nov 1.54, Dec 1.60 | 2025: Jan 1.67, Feb 1.60, Mar 1.64, Apr 1.60, May 1.57, Jun 1.52, Jul 1.41, Aug 1.39, Sep 1.37, Oct 1.27, Nov 1.30, Dec 1.34 | 2026: Jan 1.41, Feb 1.42, Mar 1.51, Apr 1.50, May 1.58, Jun 1.77, Jul 1.90, Aug 1.96, Sep 1.92",
+    "as_of": "CBC database last_updated 2026-10-28; latest period 2026M09; retrieved 2026-11-02",
+    "source_name": "Central Bank of the Republic of China (Taiwan), statistical database table '29.利率 G.資本市場利率依期間' (EG43M01); underlying data from TPEx",
+    "source_url": "https://cpx.cbc.gov.tw/API/DataAPI/Get?FileName=EG43M01",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "I pulled the raw JSON myself; these are not values summarized by a model. Basis: monthly average, not month-end. The same series appears in the CBC Annual Report 2018 key-indicators table under the heading '10-year Gov't Bond Rate in Secondary Market (average)', and its 2018 monthly values match the API exactly (https://www.cbc.gov.tw/en/public/Attachment/961413374871.PDF). CBC footnote: the yield of the government bond closest to 10 years from maturity, sourced from TPEx (https://www.cbc.gov.tw/public/data/economic/statistics/key/interest-y.pdf). The CBC has not yet published October 2026. API guide: https://cpx.cbc.gov.tw/Data/ExportToAPIInfo"
+   },
+   {
+    "item": "Taiwan 10Y simple average, May-2021 to Sep-2026 (65 months, CBC monthly averages)",
+    "value": "1.289% (sum of monthly values 83.79 / 65)",
+    "as_of": "2026M09 (CBC data last updated 2026-10-28)",
+    "source_name": "Computed from CBC EG43M01 monthly series",
+    "source_url": "https://cpx.cbc.gov.tw/API/DataAPI/Get?FileName=EG43M01",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Unweighted arithmetic mean of the 65 CBC monthly values listed above. October 2026 is left out because the CBC has not released it."
+   },
+   {
+    "item": "Taiwan 10Y simple average, May-2021 to Oct-2026 (66 months, using a proxy for October 2026)",
+    "value": "1.300% = (83.79 + 2.006) / 66. The October value 2.006% is the mean of 21 Investing.com daily closes, 2026-10-02 to 10-30. Using the 10-30 level of 1.99% for October instead gives 1.2997%.",
+    "as_of": "2026-10-30",
+    "source_name": "Computed from CBC EG43M01 (May-21 to Sep-26) plus Investing.com daily closes (Oct-26)",
+    "source_url": "https://www.investing.com/rates-bonds/taiwan-10-year-bond-yield-historical-data",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "The October proxy uses a different basis: daily closes of the benchmark bond on an aggregator, against the CBC's monthly average for the bond nearest 10 years. The result barely moves with the proxy: any October value from 1.97 to 2.01 gives 1.299 to 1.300."
+   },
+   {
+    "item": "Taiwan 10Y annual averages (CBC official annual figures)",
+    "value": "2021 0.44 | 2022 1.09 | 2023 1.21 | 2024 1.43 | 2025 1.45 (% p.a.). The CBC publishes no 2026 YTD figure. My computed mean of CBC Jan-Sep 2026 monthly values is 1.66.",
+    "as_of": "CBC last_updated 2026-10-28",
+    "source_name": "CBC statistical database EG43Y01 (annual), matching CBC interest-y.pdf",
+    "source_url": "https://cpx.cbc.gov.tw/API/DataAPI/Get?FileName=EG43Y01",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "CONFLICT within the CBC's own data. Means of the CBC monthly values (my computation): 2021 0.44 (full year), 2022 1.22, 2023 1.22, 2024 1.51, 2025 1.47; May-Dec 2021 alone is 0.47. The official annual figures differ materially for 2022 (1.09 vs 1.22) and 2024 (1.43 vs 1.51). The CBC does not document how it weights the annual figure; daily or volume weighting is a plausible but unverified explanation. For a simple monthly average, use the monthly series. Cite the official annual numbers only when annual figures are wanted."
+   },
+   {
+    "item": "Taiwan 10Y yield level on 2026-10-30",
+    "value": "1.99%",
+    "as_of": "2026-10-30",
+    "source_name": "Trading Economics (Taiwan 10Y Bond Yield page)",
+    "source_url": "https://tradingeconomics.com/taiwan/government-bond-yield",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "The page summary says the yield 'eased to 1.99% on October 30, 2026', down 0.02pp on the day, up 0.02pp over the month and up 0.72pp over the year. The +0.72pp yearly change implies about 1.27% a year earlier, which matches the CBC's Oct-2025 monthly average of 1.27. Investing.com independently shows the same 1.990 close for Oct 30. I found no official daily figure from TPEx or the CBC."
+   },
+   {
+    "item": "Taiwan 10Y daily closes, October 2026",
+    "value": "Oct 2 1.940, Oct 5 1.950, Oct 6 1.960, Oct 7 1.990, Oct 8 2.050, Oct 9 2.050, Oct 12 2.050, Oct 13 2.050, Oct 14 2.040, Oct 15 2.030, Oct 16 2.030, Oct 19 2.020, Oct 20 2.034, Oct 21 2.010, Oct 22 1.990, Oct 23 1.990, Oct 26 1.990, Oct 27 1.980, Oct 28 1.980, Oct 29 2.010, Oct 30 1.990. Range 1.94-2.05; mean 2.006.",
+    "as_of": "retrieved 2026-11-02",
+    "source_name": "Investing.com, Taiwan 10-Year Bond Yield Historical Data",
+    "source_url": "https://www.investing.com/rates-bonds/taiwan-10-year-bond-yield-historical-data",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "The table starts at Oct 2, so Oct 1 is missing. Oct 9 is probably a Taiwan holiday carried forward flat, since National Day falls on a Saturday; dropping it gives a mean of 2.004. Investing.com's disclaimer says its data are not necessarily real-time or accurate."
+   },
+   {
+    "item": "Taiwan 10Y dated points cited in Trading Economics news, 2026",
+    "value": "2026-07-28: ~1.88% ('highest since October 2022'); 2026-08-12: 1.95% ('highest since November 2008'); 2026-09-24: 1.96% ('highest since November 2008')",
+    "as_of": "2026-09-24",
+    "source_name": "Trading Economics news stream on the Taiwan bond-yield page",
+    "source_url": "https://tradingeconomics.com/taiwan/government-bond-yield",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "These come from a page summary and TE's own narrative, and I have not checked them against daily data. They are consistent with the CBC monthly averages: Jul 1.90, Aug 1.96, Sep 1.92."
+   },
+   {
+    "item": "S&P 500 close on 2026-09-30",
+    "value": "7,651.54 (-19.30 points, -0.3% on the day)",
+    "as_of": "2026-09-30",
+    "source_name": "FRED series SP500 (data from S&P Dow Jones Indices); also the AP 'How major US stock indexes fared Wednesday 9/30/2026' wire as republished by La Nación",
+    "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2026-09-28&coed=2026-11-02",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "AP copy: https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-wednesday-9302026-nid30092026/ . Damodaran's Oct-1 ERP row also uses an S&P 500 level of 7,652."
+   },
+   {
+    "item": "S&P 500 close on 2026-10-30",
+    "value": "7,580.07 (-140.32 points, -1.8% on the day; prior close 2026-10-29 was 7,720.39)",
+    "as_of": "2026-10-30",
+    "source_name": "AP 'How major US stock indexes fared Friday 10/30/2026' wire (republished by La Nación, credited 'News Services'); corroborated by Investing.com",
+    "source_url": "https://www.lanacion.com.ar/usa/how-major-us-stock-indexes-fared-friday-10302026-nid30102026/",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "When I retrieved it, FRED/S&P DJI data stopped at 2026-10-28 (7,743.98), so I could not get an official 10-30 close. Investing.com (https://www.investing.com/indices/us-spx-500-historical-data) shows 7,580.07 for 10-30 and 7,720.39 for 10-29, matching AP. AP also reports the year to date as +734.57 points (+10.7%)."
+   },
+   {
+    "item": "S&P 500 change in October 2026",
+    "value": "-0.93% price return (-71.47 points): 7,580.07 / 7,651.54 - 1 = -0.934%. Chartrow shows -0.91% for October 2026 as of the Oct-30 close.",
+    "as_of": "2026-10-30",
+    "source_name": "Computed from FRED/S&P DJI (9/30) and AP (10/30) closes; Chartrow for comparison",
+    "source_url": "https://chartrow.com/sp500/october",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "The -0.93% is my arithmetic on the two sourced closes. Chartrow's -0.91% is probably total return (its table shows -0.9% for both total and price return). Oct 30 was the last trading day of October 2026. I found no S&P DJI or press statement of the official monthly change."
+   },
+   {
+    "item": "US 10-year Treasury yield on 2026-09-30",
+    "value": "5.29%",
+    "as_of": "2026-09-30",
+    "source_name": "U.S. Department of the Treasury, Daily Treasury Par Yield Curve Rates (10 Yr), September 2026",
+    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202609",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "FRED DGS10 also shows 5.29 for 2026-09-30. Treasury figures for the days before: 9/24 5.18, 9/25 5.17, 9/28 5.24, 9/29 5.26."
+   },
+   {
+    "item": "US 10-year Treasury yield on 2026-10-30",
+    "value": "4.94% (-35 bp from 9/30)",
+    "as_of": "2026-10-30",
+    "source_name": "U.S. Department of the Treasury, Daily Treasury Par Yield Curve Rates (10 Yr), October 2026",
+    "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "October range was 4.94% to 5.31% (high on 10/05). 10/29 was 4.98%. When I retrieved it, FRED DGS10 ended at 2026-10-29 (4.98)."
+   },
+   {
+    "item": "Damodaran implied ERP, October 1, 2026 (latest published)",
+    "value": "4.20% (trailing 12-month with adjusted/sustainable payout, the headline figure on his home page). Other variants: 3.70% (trailing 12-month cash yield); 3.92% (trailing 12-month against the adjusted USD riskfree rate); 5.67% (smoothed / 10-year average cash-flow yield); 3.61% (net cash yield); 3.30% (normalized). T-bond rate 5.29%; USD riskfree rate 5.07% (5.29% minus a 0.22% US default spread); S&P 500 at 7,652; expected return 8.99%.",
+    "as_of": "2026-10-01",
+    "source_name": "Aswath Damodaran, Damodaran Online home page and ERPbymonth.xlsx (Historical ERP sheet, last row dated 2026-10-01)",
+    "source_url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/home.htm",
+    "tier": "industry data",
+    "confidence": "high",
+    "note": "Spreadsheet: https://pages.stern.nyu.edu/~adamodar/pc/implprem/ERPbymonth.xlsx (date1904 workbook, modified 2026-10-06). His Oct 8, 2026 blog post says: 'an equity risk premium of 3.70% (3.92%) over the ten-year treasury rate (dollar riskfree rate) of 5.29% (5.07%) at the start of October 2026'. Prior month, Sep 1, 2026: 4.14% (adjusted payout) and 4.09% (trailing 12-month), with T-bond 4.75%, USD riskfree 4.53% and S&P 500 at 7,686.14."
+   },
+   {
+    "item": "2884 E.SUN FHC: FY2022 net income attributable to owners of parent",
+    "value": "NT$15,759m (total net income incl. NCI NT$15,781m), down 23.3% YoY",
+    "as_of": "FY2022 (audited, year to 2022-12-31)",
+    "source_name": "E.SUN FHC 4Q23 investor conference deck (26 Feb 2024), appendix income statement (labelled audited for 2022); the same 15,759 appears in the 2Q26 deck chart",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420240226M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Fugle's summary of the Feb-2023 call matches: NT$157.6億, -23.3% YoY (https://blog.fugle.tw/post/earnings-call-2884-2023-02-24). NCI is negligible (NT$22m)."
+   },
+   {
+    "item": "2884 E.SUN FHC: FY2022 EPS, ROE, ROA",
+    "value": "EPS NT$1.10; ROE 8.06%; ROA 0.47%",
+    "as_of": "FY2022",
+    "source_name": "E.SUN FHC 2Q26 investor deck (13 Aug 2026), profitability chart; identical in the 4Q23 deck (26 Feb 2024)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "EPS is as originally reported and is not restated for later stock dividends. Fugle's Feb-2023 call summary gives the same 1.10 / 8.06% / 0.47%."
+   },
+   {
+    "item": "2884 E.SUN FHC: FY2023 net income attributable to owners of parent",
+    "value": "NT$21,726m (total NT$21,748m) in the later company deck appendix. The preliminary figure on 26 Feb 2024 was NT$21,760m (total NT$21,783m), +38.1% YoY.",
+    "as_of": "FY2023 (year to 2023-12-31)",
+    "source_name": "E.SUN FHC 2Q26 deck (Aug 2026) appendix, Income Statement Yearly Results; preliminary figure from the 4Q23 deck (26 Feb 2024)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Conflict between two company documents. 4Q23 deck (https://mopsov.twse.com.tw/nas/STR/288420240226M001.pdf) is marked 'Preliminary figures of 2023' and shows 21,760. The 2Q26 appendix shows 21,726; its 2024 and 2025 rows match the chart exactly, and 2023 net revenue also moved from 66,680 to 66,696. I trust 21,726 as the post-audit figure. The 2Q26 chart label still prints 21,760."
+   },
+   {
+    "item": "2884 E.SUN FHC: FY2023 EPS, ROE, ROA",
+    "value": "EPS NT$1.41; ROE 10.03% (2Q26 deck) vs 10.05% (preliminary, Feb 2024); ROA 0.61%",
+    "as_of": "FY2023",
+    "source_name": "E.SUN FHC 2Q26 deck (Aug 2026) chart; 4Q23 deck (26 Feb 2024); Business Today 2024-02-26",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "I trust 10.03%. It is consistent with the lower post-audit net income: 10.05% x 21,726/21,760 = about 10.03%. Business Today (https://www.businesstoday.com.tw/article/category/183008/post/202402260027/) printed the preliminary 1.41 / 10.05% / 0.61%."
+   },
+   {
+    "item": "2884 E.SUN FHC: FY2024, FY2025 and 1H26 profitability (context and peer table)",
+    "value": "FY2024: NI NT$26,128m, EPS 1.63, ROE 10.68%, ROA 0.68%. FY2025: NI NT$34,342m, EPS 2.12, ROE 13.05%, ROA 0.80%. 1H26: NI NT$21,434m (+27.8%), EPS 1.32, ROE 15.46% annualised, ROA 0.91%.",
+    "as_of": "FY2024 and FY2025 audited; 1H26 self-reported (2026-06-30)",
+    "source_name": "E.SUN FHC 2026 Q2 investor conference deck (conference 13 Aug 2026)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "1H26 is before the Mercuries Life merger (record date 2026-09-01), so IFRS 17 did not yet affect E.SUN."
+   },
+   {
+    "item": "2884 E.SUN FHC (玉山金): close and P/B",
+    "value": "Close NT$49.05; P/B 2.82x; trailing P/E 20.35x; yield 2.85%",
+    "as_of": "2026-10-30 close; book value from the 2Q26 report (財報年/季 115/2 = 2026-06-30)",
+    "source_name": "TWSE 個股日本益比、殖利率及股價淨值比 (BWIBBU_d), 2026-10-30, 金融保險業 (selectType=17)",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "All peer P/Bs come from this one official TWSE file, with the same date and book-value basis. The P/B uses pre-merger 2Q26 BVPS of NT$17.40 (company deck; 49.05/17.40 = 2.82). New shares were issued in the 2026-09-01 share swap, so a post-merger P/B cannot yet be computed from published data. Raw JSON was cross-checked."
+   },
+   {
+    "item": "2891 CTBC FHC (中信金): close and P/B",
+    "value": "Close NT$75.80; P/B 2.17x; P/E 18.13x; yield 3.30%",
+    "as_of": "2026-10-30; book value 2026-06-30 (115/2)",
+    "source_name": "TWSE BWIBBU_d 2026-10-30",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The company reports common-equity BVPS of NT$34.35 at 2026-06-30 (2Q26 deck), which implies about 2.21x. The gap probably comes from TWSE's BVPS definition (preferred equity). Use the TWSE figure for consistency."
+   },
+   {
+    "item": "2891 CTBC FHC: ROE FY2025 and 1H26",
+    "value": "FY2025 16.88%; 1H26 13.53% annualised (book ROE; 1H25 16.29%)",
+    "as_of": "FY2025; 1H26 self-reported",
+    "source_name": "CTBC FHC 2026 Q2 financial presentation (18 Aug 2026), 主要比率 table",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/289120260818M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Equity rose 59.5% YoY to NT$705.9bn after IFRS 17 and on FVOCI equity gains at Taiwan Life, which depresses book ROE. Management's 'adjusted' ROE including OCI equity disposal gains is 16.56% (uanalyze 2026-08-18, https://uanalyze.com.tw/articles/6233153613, medium). Double leverage 118.9%."
+   },
+   {
+    "item": "2881 Fubon FHC (富邦金): close and P/B",
+    "value": "Close NT$161.50; P/B 1.99x; P/E 15.09x; yield 2.63%",
+    "as_of": "2026-10-30; book value 2026-06-30 (115/2)",
+    "source_name": "TWSE BWIBBU_d 2026-10-30",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The company reports common BVPS of NT$83.7, or NT$109.3 adjusted for after-tax CSM (1H26 deck). 83.7 implies about 1.93x, which differs from TWSE's definition."
+   },
+   {
+    "item": "2881 Fubon FHC: ROE FY2025 and 1H26",
+    "value": "FY2025 12.51% (ROAE, IFRS 4); 1H26 18.00% annualised (IFRS 17 & 9); 1H26 including after-tax FVOCI equity disposal gains 34.83%",
+    "as_of": "FY2025; 1H26",
+    "source_name": "Fubon FHC 2026 1H investor presentation (24 Aug 2026), financial summary appendix",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288120260824M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "ROE is on equity attributable to the parent. 1H25 was 11.63% (IFRS 4). FHC CAR 142.30%, double leverage 114.50% at 1H26."
+   },
+   {
+    "item": "2882 Cathay FHC (國泰金): close and P/B",
+    "value": "Close NT$116.00; P/B 1.67x; P/E 13.68x; yield 3.02%",
+    "as_of": "2026-10-30; book value 2026-06-30 (115/2)",
+    "source_name": "TWSE BWIBBU_d 2026-10-30",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": ""
+   },
+   {
+    "item": "2882 Cathay FHC: ROE FY2025 and 1H26",
+    "value": "FY2025 11.69% (consolidated average, IFRS 4); 1H26 16.90% annualised (IFRS 17 & 9)",
+    "as_of": "FY2025; 1H26",
+    "source_name": "Cathay FHC 2026 Q2 investor conference deck (Aug 2026; conference 28 Aug 2026), appendix and ROE chart",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288220260828M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The 1H26 figure is read from the appendix (only one ROE value in the IFRS 17 table) and agrees with the FHC bar of 16.9% in the slide-7 chart. Reported EPS was 4.95; including FVOCI equity disposal gains, the 'retained-earnings impact' is NT$11.04/share. FY2025 double leverage 120.7%, CAR 122%."
+   },
+   {
+    "item": "2886 Mega FHC (兆豐金): close and P/B",
+    "value": "Close NT$54.80; P/B 2.02x; P/E 21.32x; yield 3.19%",
+    "as_of": "2026-10-30; book value 2026-06-30 (115/2)",
+    "source_name": "TWSE BWIBBU_d 2026-10-30",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": ""
+   },
+   {
+    "item": "2886 Mega FHC: ROE FY2025 and 1H26",
+    "value": "FY2025 9.28%; 1H26 10.72% annualised (ROA 0.72% FY25, 0.82% 1H26)",
+    "as_of": "FY2025; 1H26 self-reported",
+    "source_name": "Mega FHC 2026 Q2 investor conference deck (27 Aug 2026), 主要獲利指標 slide",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288620260827M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Footnote: '1H/26乃自結數; ROE/ROA乃年化數據'. History: 2022 5.84%, 2023 10.46%, 2024 9.93%."
+   },
+   {
+    "item": "2892 First FHC (第一金): close and P/B",
+    "value": "Close NT$44.60; P/B 2.13x; P/E 20.84x; yield 2.91%",
+    "as_of": "2026-10-30; book value 2026-06-30 (115/2)",
+    "source_name": "TWSE BWIBBU_d 2026-10-30",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Matches company BVPS of NT$20.97 at 1H26 (44.60/20.97 = 2.13)."
+   },
+   {
+    "item": "2892 First FHC: ROE FY2025 and 1H26",
+    "value": "FY2025 9.61% (after-tax ROAE, IFRS 4); 1H26 11.98% annualised (IFRS 17)",
+    "as_of": "FY2025; 1H26",
+    "source_name": "First FHC 2025 full-year deck (4 Mar 2026) and 2026 1H deck (27 Aug 2026)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/289220260827M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "FY2025 deck: https://mopsov.twse.com.tw/nas/STR/289220260304M001.pdf (ROAA 0.55%, BVPS 20.33, group CAR 130.73%, DLR 114.32%). 1H26: ROAA 0.70%, group CAR 125.60%, DLR 114.79%; 1H25 was 9.44% (IFRS 4)."
+   },
+   {
+    "item": "2880 Hua Nan FHC (華南金): close and P/B",
+    "value": "Close NT$50.40; P/B 2.90x; P/E 21.82x; yield 2.88%",
+    "as_of": "2026-10-30; book value 2026-06-30 (115/2)",
+    "source_name": "TWSE BWIBBU_d 2026-10-30",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Matches company BVPS of NT$17.37 at 1H26."
+   },
+   {
+    "item": "2880 Hua Nan FHC: ROE FY2025 and 1H26",
+    "value": "FY2025 11.57% (parent-only basis, IFRS 4); 1H26 14.53% annualised (ROA 0.78%)",
+    "as_of": "FY2025; 1H26 self-reported",
+    "source_name": "Hua Nan FHC 2026 Q2 investor conference deck (27 Aug 2026)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288020260827M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "FY2025 comes from the 主要財務比率(非合併基礎) table, where net income and equity are attributable to the parent. The 1H26 14.53% appears in both the consolidated and parent-only tables. 1H25 was 10.07%. Group CAR 124.48%."
+   },
+   {
+    "item": "2890 SinoPac FHC (永豐金): close and P/B",
+    "value": "Close NT$46.50; P/B 2.54x; P/E 17.55x; yield 2.80%",
+    "as_of": "2026-10-30; book value 2026-06-30 (115/2)",
+    "source_name": "TWSE BWIBBU_d 2026-10-30",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Matches company BVPS of NT$18.29."
+   },
+   {
+    "item": "2890 SinoPac FHC: ROE FY2025 and 1H26",
+    "value": "FY2025 11.53%; 1H26 18.98% annualised (2Q26 alone 20.45%)",
+    "as_of": "FY2025; 1H26",
+    "source_name": "SinoPac FHC 2026 Q2 investor conference deck (25 Aug 2026), 財務摘要",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/289020260825M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Commercial Times cited 19.02% (EPS 1.69) from June monthly self-reported data. I trust the deck: 18.98%, EPS 1.66. CAR 127%, DLR 119%."
+   },
+   {
+    "item": "2887 Taishin Shin Kong FHC (台新新光金): close and P/B",
+    "value": "Close NT$42.25; P/B 1.56x; P/E 15.65x; yield 2.60%",
+    "as_of": "2026-10-30; book value 2026-06-30 (115/2)",
+    "source_name": "TWSE BWIBBU_d 2026-10-30",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "The company reports common BVPS of NT$26.28, which implies about 1.61x; TWSE's definition differs."
+   },
+   {
+    "item": "2887 Taishin Shin Kong FHC: ROE FY2025 and 1H26",
+    "value": "FY2025 11.52% (IFRS 4, common-equity basis); 1H26 15.36% annualised (IFRS 17)",
+    "as_of": "FY2025; 1H26",
+    "source_name": "Taishin Shin Kong FHC 2026 Q2 營運說明會 deck (1 Sep 2026)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288720260901M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "FY2025 includes Shin Kong only after the 2025 merger. 1H25 was 10.61%. Taishin Life and Shin Kong Life merged on 2026-01-01."
+   },
+   {
+    "item": "2885 Yuanta FHC (元大金): close and P/B",
+    "value": "Close NT$72.60; P/B 2.53x; P/E 17.00x; yield 3.03%",
+    "as_of": "2026-10-30; book value 2026-06-30 (115/2)",
+    "source_name": "TWSE BWIBBU_d 2026-10-30",
+    "source_url": "https://www.twse.com.tw/rwd/zh/afterTrading/BWIBBU_d?date=20261030&selectType=17&response=json",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Fugle's AI summary gives BVPS NT$27.62, which implies about 2.63x and is inconsistent with TWSE. Use TWSE."
+   },
+   {
+    "item": "2885 Yuanta FHC: ROE 1H26 (annualised)",
+    "value": "20.2% annualised; 1H26 NI NT$36.57bn (+125%), EPS 2.64",
+    "as_of": "1H26",
+    "source_name": "Fugle earnings-call summary (call 2026-09-18) and Quartr Q2 2026 summary",
+    "source_url": "https://blog.fugle.tw/post/earnings-call-2885-2026-09-18",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Two independent aggregator summaries agree (https://quartr.com/events/yuanta-financial-holding-co-ltd-2885-q2-2026_FTjrjo27); both are AI-generated. Company deck (https://mopsov.twse.com.tw/nas/STR/288520260827M001.pdf, 27 Aug 2026) is image-only and the ratio could not be extracted. Fugle cites FHC CAR 123.1%."
+   },
+   {
+    "item": "2885 Yuanta FHC: ROE FY2025",
+    "value": "11.2%",
+    "as_of": "FY2025",
+    "source_name": "Quartr summary of a Yuanta investor presentation (event 25 Jun 2026)",
+    "source_url": "https://quartr.com/events/yuanta-financial-holding-co-ltd-2885-investor-presentation_FTjrjcse",
+    "tier": "industry data",
+    "confidence": "low",
+    "note": "Single AI-generated aggregator source, not verified against a primary document. It is consistent with the 9M25 annualised 11.1% in Fugle's Nov-2025 summary. FY2025 NI NT$36.52bn, EPS 2.74 (Commercial Times 2026-03-13)."
+   },
+   {
+    "item": "E.SUN Bank: net interest margin (NIM) and loan-deposit spread",
+    "value": "NIM 2Q26 1.31% (1Q26 1.32%, 4Q25 1.32%, 2Q25 1.29%). Loan-deposit spread 2Q26 1.43% (loan yield 3.01%, deposit cost 1.58%), up from 1.35% in 2Q25.",
+    "as_of": "2Q26 (quarter to 2026-06-30)",
+    "source_name": "E.SUN FHC 2Q26 investor deck, slide 19 (玉山銀行淨利息收益率及存放利差)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Quarterly figures. No 3Q26 NIM is published yet."
+   },
+   {
+    "item": "E.SUN Bank: loan and deposit growth",
+    "value": "Total loans NT$2,838.9bn: +16.12% YoY, +7.93% YTD. FX loans +40.09% YoY; corporate +20.09%; SME +14.12%; personal +11.37%; mortgages +6.53%. Total deposits NT$3,988.6bn, +15.00% YoY.",
+    "as_of": "2026-06-30",
+    "source_name": "E.SUN FHC 2Q26 deck, slide 14 (存放款業務比較)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Totals are bank consolidated; corporate and personal splits are bank standalone. Overseas branch and subsidiary loans grew 20.5% YTD."
+   },
+   {
+    "item": "E.SUN Bank: NPL ratio, coverage ratio and credit cost",
+    "value": "NPL ratio 0.15% (NPL NT$4,192m); coverage 770.8% (2025: 826.4%); annualised credit cost 0.19% (provisions NT$2,710m)",
+    "as_of": "2026-06-30 (6M26)",
+    "source_name": "E.SUN FHC 2Q26 deck, slide 22 (資產品質)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Bank standalone. 3Q25 press cited NPL 0.15% and coverage above 800%."
+   },
+   {
+    "item": "E.SUN Bank: capital ratios (BIS CAR, Tier 1, CET1)",
+    "value": "BIS CAR 14.28%; Tier 1 12.03%; Tier 2 2.25%; CET1 10.91%",
+    "as_of": "2026-06-30 (self-reported)",
+    "source_name": "E.SUN FHC 2Q26 deck, slide 12 (資本適足率)",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Bank standalone. CET1 is given as a footnote (普通股權益比率 10.91%). CAR was 15.42% at 2025 and 16.05% at 6M25. The bank has FSC approval for credit-risk IRB."
+   },
+   {
+    "item": "E.SUN FHC: group capital adequacy and double-leverage ratio",
+    "value": "FHC CAR 118.09% (2025-12: 128.02%); double leverage 114.62% (2025-12: 115.02%)",
+    "as_of": "2026-06-30 (self-reported, pre-merger)",
+    "source_name": "E.SUN FHC 2Q26 deck, slides 5 and 12",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "These are pre-merger figures. No post-merger (3Q26) group CAR or DLR has been published."
+   },
+   {
+    "item": "E.SUN FHC: pre-merger balance sheet",
+    "value": "Total assets NT$4,871,197m; equity attributable NT$281,790m; BVPS NT$17.40 (2025-12: NT$16.86)",
+    "as_of": "2026-06-30 (preliminary)",
+    "source_name": "E.SUN FHC 2Q26 deck, slide 5 and Appendix 3",
+    "source_url": "https://mopsov.twse.com.tw/nas/STR/288420260813M001.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Slide 5 shows a typo for FHC total assets at 2025-12 (4,116,533); the appendix balance sheet shows 4,516,533, which is consistent with the bank's 4,466,652."
+   },
+   {
+    "item": "E.SUN FHC: post-merger total assets",
+    "value": "FHC NT$6.65tn; E.SUN Bank (consolidated) NT$5.04tn",
+    "as_of": "2026-09-30 (September self-reported release, 15 Oct 2026)",
+    "source_name": "Liberty Times 2026-10-15 and uanalyze 2026-10-15, quoting E.SUN's September 自結 release",
+    "source_url": "https://ec.ltn.com.tw/article/breakingnews/5607578",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "Also at https://uanalyze.com.tw/articles/9550957167. These are the first figures that include Mercuries Life, consolidated from 2026-09-01."
+   },
+   {
+    "item": "E.SUN FHC: 9M26 self-reported earnings (first release with Mercuries Life)",
+    "value": "9M26 NI NT$31.85bn (+21.54% YoY), EPS 1.95. September NI NT$3.81bn. E.SUN Bank 9M NT$27.95bn (+10.79%). Mercuries Life standalone: Sept NT$1.911bn, 9M NT$6.023bn; amount recognised in FHC consolidated for Sept: NT$0.144bn.",
+    "as_of": "2026-09-30 (released 2026-10-15)",
+    "source_name": "uanalyze 2026-10-15; Liberty Times 2026-10-15",
+    "source_url": "https://uanalyze.com.tw/articles/9550957167",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "The company attributes the gap between standalone and consolidated earnings to IFRS 3 remeasurement at fair value on the merger date. It describes this as a one-time adjustment concentrated in the merger period."
+   },
+   {
+    "item": "Mercuries Life (三商美邦人壽): RBC before the merger and injection (old regime)",
+    "value": "RBC 154% at 2025-06-30, against a 200% statutory minimum. Year-end 2025 was only guided as 'close to 200%' after NT$18.5bn of sub-debt and equity raising.",
+    "as_of": "2025-06-30 (actual); end-2025 (estimate only)",
+    "source_name": "uanalyze 2025-11-10 (E.SUN 3Q25 investor conference); Commercial Times 2026-01-23 for the year-end estimate",
+    "source_url": "https://uanalyze.com.tw/articles/9619938318",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "A search-result summary cited 154.27% RBC and a 2.31% net worth ratio at 1H25, but the URL could not be verified (low). No actual end-2025 RBC was found. Year-end estimate source: https://www.ctee.com.tw/news/20260123700900-430503."
+   },
+   {
+    "item": "Mercuries Life: TW-ICS (TIS) ratio before the capital injection",
+    "value": "TIS 110% at 2026-06-30, the lowest of the 14 life insurers using optional transitional measures; statutory minimum 100%",
+    "as_of": "2026-06-30 (published around 2026-09-30)",
+    "source_name": "Economic Daily News (經濟日報) 2026-10-01",
+    "source_url": "https://money.udn.com/money/story/5613/9786881",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "uanalyze 2026-10-08 (https://uanalyze.com.tw/articles/6551256787) also gives 110%, last among 21 insurers. Insurers using transitional measures must cap their disclosed TIS at the target ratio filed with the regulator (uanalyze 2026-10-06, https://uanalyze.com.tw/articles/9675356622). The 110% may therefore be a cap rather than the actual ratio."
+   },
+   {
+    "item": "Mercuries Life: capital injection and the ratio expected afterwards",
+    "value": "NT$16bn injected on 2026-09-29 (780m new shares at NT$20.512821, 100% subscribed by E.SUN FHC); a further NT$6bn is planned for 2027 (NT$22bn total). After the injection E.SUN projects TIS of 125% at end-2026. The chairman's projection after both tranches is RBC above 250% on the old basis and a net worth ratio above 10%.",
+    "as_of": "2026-09-29 (injection); projections as of Sep–Oct 2026",
+    "source_name": "Economic Daily News / CNA 2026-09-29; uanalyze 2026-09-24 and 2026-10-08",
+    "source_url": "https://money.udn.com/money/story/5613/9784241",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "All post-injection ratios are projections; no actual post-injection TIS has been published yet. TechNews 2026-08-13 calls the 125% 'RBC', which conflicts with the other reports. I trust the TIS label, because RBC was replaced by TW-ICS in 2026 and 125% would be below the old 200% RBC floor."
+   },
+   {
+    "item": "Mercuries Life: equity and net worth ratio under IFRS 17 (pre-injection)",
+    "value": "1H26 self-reported equity NT$120.0bn and net worth ratio 8.80%, up NT$55.3bn from the IFRS 17 opening. 1H26 NI NT$5.1bn. At end-April 2026: equity NT$86.7bn (6.46%); adjusted equity including CSM NT$139.0bn (10.35%). CSM NT$61.0bn at opening and NT$64.4bn at end-1Q26.",
+    "as_of": "2026-06-30 and 2026-04-30",
+    "source_name": "China Times Wealth 2026-07-15 and 2026-06-03",
+    "source_url": "https://wantrich.chinatimes.com/news/20260715900610-420101",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "End-April data: https://wantrich.chinatimes.com/news/20260603900714-420101. The IFRS 17 opening moved the net worth ratio from 2.85% to 4.80%. Mercuries Life FY2025 NI was NT$1.18bn and total assets NT$1.66tn (Liberty Times 2026-01-15)."
+   },
+   {
+    "item": "E.SUN–Mercuries Life deal terms and timeline",
+    "value": "Share swap of 0.2486 E.SUN shares per Mercuries Life share (about NT$8.2 per share, about NT$48.3bn total, at the Jan-2026 EGMs). FTC approval 2026-04-04; FSC approval 2026-07-07; record date 2026-09-01; renamed E.SUN Life on 2026-12-01.",
+    "as_of": "2026-01-23 (terms); 2026-08-13 (timeline)",
+    "source_name": "Commercial Times 2026-01-23; E.SUN 2Q26 deck slide 28",
+    "source_url": "https://www.ctee.com.tw/news/20260123700900-430503",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "A search summary said some July and August reports give 0.2596, which may be an adjustment for E.SUN's stock dividend. That is unverified, so use the official MOPS filing. E.SUN's chairman said capital was NT$177.2bn after the merger (TechNews and uanalyze); whether this means 股本 is not stated."
+   },
+   {
+    "item": "E.SUN 3Q26 financial statements, investor conference and acquisition accounting",
+    "value": "Neither 3Q26 consolidated statements nor a 3Q26 investor conference had been found as of 2026-11-02. The latest disclosure is the September self-reported earnings (2026-10-15). No amounts for goodwill or bargain-purchase gain have been disclosed.",
+    "as_of": "2026-11-02",
+    "source_name": "Searches of the press and MOPS deck paths; latest E.SUN release via Liberty Times 2026-10-15",
+    "source_url": "https://ec.ltn.com.tw/article/breakingnews/5607578",
+    "tier": "industry data",
+    "confidence": "medium",
+    "note": "For timing reference, the 3Q25 conference was held 2025-11-10 (SETN/Yahoo). The Oct-15 release mentions only an IFRS 3 fair-value remeasurement at the merger date."
+   }
+  ],
+  "not_found": [
+   "Damodaran implied ERP as of November 1, 2026: not published as of 2026-11-02 01:25 UTC (evening of Nov 1 in the US). His home page still shows Oct 1; ERPbymonth.xlsx ends at 2026-10-01; https://pages.stern.nyu.edu/~adamodar/pc/implprem/ERPNov26.xlsx returns 404; his newest blog post is Oct 28, 2026 (Anthropic IPO). X/Twitter (@AswathDamodaran) returned HTTP 402 and could not be checked. The Nov-1 T-bond rate he will use is therefore also unknown.",
+   "CBC official monthly average Taiwan 10Y yield for October 2026: not yet released (database last updated 2026-10-28, data through 2026M09).",
+   "Official daily (TPEx/CBC) Taiwan 10Y yield for 2026-10-30: only aggregator figures found (Trading Economics and Investing.com, both 1.99%). The TPEx OpenAPI has no government-bond yield endpoint, and I found no Taiwanese press report giving the Oct-30 close.",
+   "CBC official 2026 year-to-date annual average for the Taiwan 10Y: not published. Only my computed mean of Jan-Sep 2026 monthly values (1.66%) is available.",
+   "Month-end and year-end Taiwan 10Y values: not retrieved. The CBC series is monthly averages, which the task ranks first, so the fallback was not needed.",
+   "Official S&P DJI/FRED S&P 500 closes for 2026-10-29 and 2026-10-30: FRED ended at 2026-10-28 when retrieved. AP and Investing.com figures are used instead.",
+   "An official (S&P DJI) or press statement of the S&P 500's October 2026 monthly % change: not found. The figure given is computed from sourced closes, with Chartrow (-0.91%) as a cross-check.",
+   "E.SUN 3Q26 consolidated financial statements and 3Q26 investor conference: no evidence either had been published as of 2026-11-02.",
+   "E.SUN post-merger equity, BVPS, and any bargain-purchase gain or goodwill on Mercuries Life: not yet disclosed. The company only mentions IFRS 3 fair-value remeasurement.",
+   "E.SUN post-merger FHC capital adequacy ratio and double-leverage ratio: the latest published figures are pre-merger, at 2026-06-30.",
+   "E.SUN Bank 3Q26 NIM, loan growth, NPL, coverage, CAR and CET1: only 1H26 / 2Q26 figures are published.",
+   "Mercuries Life actual RBC at 2025-12-31: only a company estimate of 'close to 200%' was found.",
+   "Mercuries Life actual TW-ICS/TIS after the 2026-09-29 injection: only E.SUN's 125% end-2026 projection; the next disclosure is for year-end 2026.",
+   "Yuanta FHC FY2025 ROE from a primary source: the company deck is image-only; only Quartr's 11.2% (low confidence).",
+   "Mercuries Life 1H25 RBC of 154.27% and net worth ratio of 2.31%: precise figures seen only in search summaries, with the URL not verified (154% is confirmed at medium confidence)."
+  ]
  }
 ]

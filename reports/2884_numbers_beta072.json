@@ -296,15 +296,15 @@
           "annual_probability": 0.015,
           "loss_fraction": 0.9,
           "cumulative_probability_10y": 0.14026955774085703,
-          "enterprise_value_no_hazard_m": 1324352.7982283868,
-          "ev_haircut_pct": 38.24632533897577
+          "enterprise_value_no_hazard_m": 1229001.0290319086,
+          "ev_haircut_pct": 38.08215507465438
         },
         "warnings": [
           "terminal residual income is 81% of value above book: the explicit years are not carrying the valuation"
         ],
         "method": "residual_income",
-        "equity_value_no_hazard_m": 1324352.7982283868,
-        "implied_price_to_book_no_hazard": 3.7525687147146707,
+        "equity_value_no_hazard_m": 1229001.0290319086,
+        "implied_price_to_book_no_hazard": 3.4823883923277257,
         "cost_of_equity": 0.04789,
         "rows": [
           {
@@ -320,136 +320,136 @@
           {
             "year": 2,
             "book_value_open_m": 368359.32977164997,
-            "roe": 0.085,
-            "net_income_m": 31310.54303059025,
-            "residual_income_m": 13669.814727825931,
-            "dividends_m": 20351.85296988366,
+            "roe": 0.080002,
+            "net_income_m": 29469.483100391542,
+            "residual_income_m": 11828.754797627224,
+            "dividends_m": 19155.164015254504,
             "survival_multiplier": 0.9732025,
-            "pv_dividend_m": 18037.47659325021
+            "pv_dividend_m": 16976.8729695671
           },
           {
             "year": 3,
-            "book_value_open_m": 379318.01983235654,
-            "roe": 0.099994,
-            "net_income_m": 37929.52607511666,
-            "residual_income_m": 19763.986105345106,
-            "dividends_m": 24654.191948825828,
+            "book_value_open_m": 378673.64885678695,
+            "roe": 0.094996,
+            "net_income_m": 35972.48194679933,
+            "residual_income_m": 17837.800903047806,
+            "dividends_m": 23382.113265419564,
             "survival_multiplier": 0.9601044624999999,
-            "pv_dividend_m": 20571.32063909957
+            "pv_dividend_m": 19509.9052607805
           },
           {
             "year": 4,
-            "book_value_open_m": 392593.35395864735,
-            "roe": 0.104992,
-            "net_income_m": 41219.161418826305,
-            "residual_income_m": 22417.86569774668,
-            "dividends_m": 26792.4549222371,
+            "book_value_open_m": 391264.0175381667,
+            "roe": 0.099994,
+            "net_income_m": 39124.054169711446,
+            "residual_income_m": 20386.42036980864,
+            "dividends_m": 25430.63521031244,
             "survival_multiplier": 0.9472028955625,
-            "pv_dividend_m": 21047.123143231292
+            "pv_dividend_m": 19977.329902598874
           },
           {
             "year": 5,
-            "book_value_open_m": 407020.0604552366,
-            "roe": 0.104992,
-            "net_income_m": 42733.8501873162,
-            "residual_income_m": 23241.65949211492,
-            "dividends_m": 27777.00262175553,
+            "book_value_open_m": 404957.4364975657,
+            "roe": 0.099994,
+            "net_income_m": 40493.313905137584,
+            "residual_income_m": 21099.902271269162,
+            "dividends_m": 26320.65403833943,
             "survival_multiplier": 0.9344948521290625,
-            "pv_dividend_m": 20543.94357456228
+            "pv_dividend_m": 19466.824364472966
           },
           {
             "year": 6,
-            "book_value_open_m": 421976.90802079724,
-            "roe": 0.104992,
-            "net_income_m": 44304.19952691955,
-            "residual_income_m": 24095.725401803564,
-            "dividends_m": 28797.729692497705,
+            "book_value_open_m": 419130.09636436385,
+            "roe": 0.099994,
+            "net_income_m": 41910.4948558582,
+            "residual_income_m": 21838.354540968812,
+            "dividends_m": 27241.821656307828,
             "survival_multiplier": 0.9219774293471265,
-            "pv_dividend_m": 20053.23137775698
+            "pv_dividend_m": 18969.778474163835
           },
           {
             "year": 7,
-            "book_value_open_m": 437483.3778552191,
-            "roe": 0.104992,
-            "net_income_m": 45932.25480777516,
-            "residual_income_m": 24981.17584228872,
-            "dividends_m": 29855.965625053857,
+            "book_value_open_m": 433798.7695639142,
+            "roe": 0.099994,
+            "net_income_m": 43377.27416377404,
+            "residual_income_m": 22602.651089358187,
+            "dividends_m": 28195.22820645313,
             "survival_multiplier": 0.9096477679069196,
-            "pv_dividend_m": 19574.672686975606
+            "pv_dividend_m": 18485.831957575705
           },
           {
             "year": 8,
-            "book_value_open_m": 453559.6670379404,
-            "roe": 0.104992,
-            "net_income_m": 47620.13656164744,
-            "residual_income_m": 25899.164107200475,
-            "dividends_m": 30953.08876507084,
+            "book_value_open_m": 448980.8155212351,
+            "roe": 0.099994,
+            "net_income_m": 44895.38766723038,
+            "residual_income_m": 23393.696411918434,
+            "dividends_m": 29182.00198369975,
             "survival_multiplier": 0.8975030513883158,
-            "pv_dividend_m": 19107.96159216502
+            "pv_dividend_m": 18014.634252470925
           },
           {
             "year": 9,
-            "book_value_open_m": 470226.71483451704,
-            "roe": 0.104992,
-            "net_income_m": 49370.04324390562,
-            "residual_income_m": 26850.885870480593,
-            "dividends_m": 32090.528108538652,
+            "book_value_open_m": 464694.20120476576,
+            "roe": 0.099994,
+            "net_income_m": 46466.631955269346,
+            "residual_income_m": 24212.426659573113,
+            "dividends_m": 30203.310770925076,
             "survival_multiplier": 0.885540505617491,
-            "pv_dividend_m": 18652.799936814186
+            "pv_dividend_m": 17555.844245816173
           },
           {
             "year": 10,
-            "book_value_open_m": 487506.229969884,
-            "roe": 0.104992,
-            "net_income_m": 51184.25409699806,
-            "residual_income_m": 27837.580743740316,
-            "dividends_m": 33269.76516304874,
+            "book_value_open_m": 480957.52238911,
+            "roe": 0.099994,
+            "net_income_m": 48092.866493776666,
+            "residual_income_m": 25059.810746562187,
+            "dividends_m": 31260.363220954834,
             "survival_multiplier": 0.8737573980332287,
-            "pv_dividend_m": 18208.897120857157
+            "pv_dividend_m": 17109.13001824243
           }
         ],
         "book_value_m": 352919.0,
-        "pv_residual_income_m": 181662.02273007942,
-        "terminal_residual_income_m": 28860.533890846687,
-        "pv_terminal_m": 615044.0950838376,
-        "implied_price_to_book": 2.317349075516276,
-        "implied_terminal_pb": 3.4946264744429882,
-        "implied_terminal_pb_after_event_risk": 2.202668135488204,
-        "enterprise_value_m": 817836.5183821286,
+        "pv_residual_income_m": 166317.15305403087,
+        "terminal_residual_income_m": 25936.851497089294,
+        "pv_terminal_m": 567909.803207612,
+        "implied_price_to_book": 2.156219844459718,
+        "implied_terminal_pb": 3.276277850589777,
+        "implied_terminal_pb_after_event_risk": 2.0650426811781473,
+        "enterprise_value_m": 760970.9512868791,
         "equity_method": true,
         "name": "Bear",
         "probability": 0.25,
         "bridge": {
-          "enterprise_value_m": 817836.5183821286,
+          "enterprise_value_m": 760970.9512868791,
           "less_net_debt_m": 0.0,
           "less_minority_interest_m": 0.0,
           "plus_other_adjustments_m": 0.0,
-          "equity_value_m": 817836.5183821286,
+          "equity_value_m": 760970.9512868791,
           "shares_diluted_m": 17723.5
         },
-        "equity_value_m": 817836.5183821286,
-        "value_per_share": 46.144188133389484,
+        "equity_value_m": 760970.9512868791,
+        "value_per_share": 42.935704081410506,
         "price": 49.05,
-        "upside_pct": -5.924183214292588,
-        "target_price_12m_quote": 46.66403330309751
+        "upside_pct": -12.465435104157985,
+        "target_price_12m_quote": 43.30189494986926
       }
     ],
-    "probability_weighted_value_per_share": 58.579152418857745,
-    "probability_weighted_upside_pct": 19.42742593039297,
-    "equal_weighted_value_per_share": 58.947505694697156,
-    "target_price_12m_quote": 59.69450802819684,
+    "probability_weighted_value_per_share": 57.777031405863,
+    "probability_weighted_upside_pct": 17.79211295792662,
+    "equal_weighted_value_per_share": 57.878011010704164,
+    "target_price_12m_quote": 58.85397343988978,
     "roll_forward": {
       "cost_of_equity_quote": 0.04789,
       "dividends_quote_next_12m": 1.69,
-      "fair_value_today_quote": 58.579152418857745,
+      "fair_value_today_quote": 57.777031405863,
       "basis": "model"
     },
-    "target_upside_pct": 21.7013415457632,
-    "expected_total_return_12m_pct": 25.146805358199487,
+    "target_upside_pct": 19.987713435045418,
+    "expected_total_return_12m_pct": 23.43317724748171,
     "rating": "Buy",
     "price_triggers_quote": {
-      "buy_below": 51.90826785060595,
-      "sell_above": 70.22883297434923
+      "buy_below": 51.17736820859981,
+      "sell_above": 69.2399687528115
     }
   },
   "elasticity": [],

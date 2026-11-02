@@ -3,7 +3,10 @@
 Render a report (reports/<TICKER>_<DATE>.md) and its numbers appendix (<TICKER>_numbers.json)
 into a self-contained HTML page body for sharing (e.g. as a Claude Artifact). Stdlib only.
 
-    python3 scripts/render_report.py reports/2330_2026-11-01.md reports/2330_numbers.json OUT.html
+    python3 scripts/render_report.py reports/2330_2026-11-01.md reports/2330_numbers.json OUT.html \
+        "台積電 2330 研究報告" 2026-11-01 "2330.TW · TSM (ADR) · TWSE"
+
+Arguments: report, numbers JSON, output path, page title (a short name), as-of date, ticker line.
 
 The page has: a cover (headline, rating, target, price, the rating ladder and the report's own
 key-data table), a section index, the report body, and the disclaimer. It renders the subset of
@@ -129,30 +132,52 @@ def parse(md):
     return title, facts, blocks, toc, disclaimer
 
 
-def ladder_svg(spot, tp, buy, sell, cur):
+def _text_w(t, size=13.0):
+    """Rough rendered width of a label: CJK glyphs are ~1em, Latin and digits ~0.6em."""
+    return sum(size if ord(ch) > 0x2E80 else size * 0.6 for ch in t)
+
+
+def ladder_svg(spot, tp, buy, sell, cur, width=720, cls_extra=""):
+    """The rating ladder: Buy / Neutral / Sell zones on a price axis, with the spot price above
+    and the 12-month target below. Drawn at a given viewBox width so a narrow copy keeps its
+    text legible on phones; zone labels step aside when a marker would cross them."""
     lo = min(buy, tp, spot) - (sell - buy) * 0.28
     hi = max(sell, spot) + (sell - buy) * 0.24
-    x0, x1 = 16.0, 704.0
+    x0, x1 = 4.0, width - 4.0
     X = lambda v: x0 + (v - lo) / (hi - lo) * (x1 - x0)
     dp = 0 if spot >= 1000 else 2
     f = lambda v: ("{:,.%df}" % dp).format(v)
-    zones = [("zone-buy", lo, buy, "買進 < %s" % f(buy)), ("zone-hold", buy, sell, "中立"),
-             ("zone-sell", sell, hi, "賣出 > %s" % f(sell))]
-    parts = ['<svg class="ladder" viewBox="0 0 720 124" role="img" aria-label="評等區間：現價 %s %s，目標價 %s %s">'
-             % (cur, f(spot), cur, f(tp))]
-    for cls, a, b, lab in zones:
+    marks = [X(spot), X(tp)]
+    zones = [("zone-buy", lo, buy, "買進 < %s" % f(buy), "買進"), ("zone-hold", buy, sell, "中立", "中立"),
+             ("zone-sell", sell, hi, "賣出 > %s" % f(sell), "賣出")]
+    parts = ['<svg class="ladder %s" viewBox="0 0 %d 124" role="img" aria-label="評等區間：現價 %s %s，目標價 %s %s">'
+             % (cls_extra, width, cur, f(spot), cur, f(tp))]
+    for cls, a, b, lab, short in zones:
         xa, xb = X(a), X(b)
         parts.append('<rect class="%s" x="%.1f" y="46" width="%.1f" height="30"></rect>' % (cls, xa, xb - xa))
-        if xb - xa > 70:
-            parts.append('<text class="zone-label" x="%.1f" y="66" text-anchor="middle">%s</text>'
-                         % ((xa + xb) / 2, html.escape(lab)))
-    for v, cls, y, lab, anchor_y in ((spot, "mark-spot", 30, "現價 %s %s" % (cur, f(spot)), 40),
-                                     (tp, "mark-tp", 106, "12 個月目標價 %s %s" % (cur, f(tp)), 82)):
+        if xb - xa < _text_w(lab) + 16:
+            lab = short                      # the threshold itself is in the key-data table
+        w = _text_w(lab)
+        if xb - xa < w + 16:
+            continue
+        # centre, then left, then right: the first spot that no marker line crosses
+        for c in ((xa + xb) / 2, xa + 8 + w / 2, xb - 8 - w / 2):
+            if all(abs(m - c) > w / 2 + 6 for m in marks):
+                break
+        else:
+            c = (xa + xb) / 2
+        parts.append('<text class="zone-label" x="%.1f" y="66" text-anchor="middle">%s</text>'
+                     % (c, html.escape(lab)))
+    for v, cls, y, lab, dot_y in ((spot, "mark-spot", 30, "現價 %s %s" % (cur, f(spot)), 40),
+                                  (tp, "mark-tp", 106, "12 個月目標價 %s %s" % (cur, f(tp)), 82)):
         x = X(v)
-        anchor = "middle" if 120 < x < 600 else ("start" if x <= 120 else "end")
-        parts.append('<line class="%s" x1="%.1f" x2="%.1f" y1="%d" y2="%d"></line>' % (cls, x, x, 40 if cls == "mark-spot" else 46, 76 if cls == "mark-spot" else 86))
-        parts.append('<circle class="%s-dot" cx="%.1f" cy="%d" r="4"></circle>' % (cls, x, anchor_y))
-        parts.append('<text class="mark-label" x="%.1f" y="%d" text-anchor="%s">%s</text>' % (x, y, anchor, html.escape(lab)))
+        w = _text_w(lab)
+        left = min(max(x - w / 2, 2.0), width - 2.0 - w)
+        parts.append('<line class="%s" x1="%.1f" x2="%.1f" y1="%d" y2="%d"></line>'
+                     % (cls, x, x, 40 if cls == "mark-spot" else 46, 76 if cls == "mark-spot" else 86))
+        parts.append('<circle class="%s-dot" cx="%.1f" cy="%d" r="4"></circle>' % (cls, x, dot_y))
+        parts.append('<text class="mark-label" x="%.1f" y="%d" text-anchor="start">%s</text>'
+                     % (left, y, html.escape(lab)))
     parts.append("</svg>")
     return "".join(parts)
 
@@ -195,6 +220,8 @@ h1 { font-family: var(--font-display); font-size: var(--step-3); line-height: 1.
 .figure .v { font-family: var(--font-body); font-size: var(--step-2); font-weight: 600; font-variant-numeric: tabular-nums; }
 .figure .v.down { color: var(--sell); } .figure .v.up { color: var(--buy); }
 .ladder { width: 100%; max-width: 720px; height: auto; display: block; }
+.ladder-narrow { display: none; max-width: 480px; }
+@media (max-width: 600px) { .ladder-wide { display: none; } .ladder-narrow { display: block; } }
 .ladder .zone-buy { fill: var(--buy); } .ladder .zone-hold { fill: var(--hold); } .ladder .zone-sell { fill: var(--sell); }
 .ladder .zone-label { fill: var(--on-zone); font-family: var(--font-body); font-size: 13px; font-weight: 600; }
 .ladder .mark-label { fill: var(--ink); font-family: var(--font-body); font-size: 13px; font-weight: 600; }
@@ -281,9 +308,10 @@ def main(md_path, numbers_path, out_path, page_title, date, ticker_line):
            '<div class="verdict"><span class="chip %s">%s</span>' % (chip_cls, re.sub(r"<[^>]+>", "", rating_text).split("·")[0].strip()),
            '<div class="figure"><span class="k">12 個月目標價</span><span class="v">%s %s</span></div>' % (cur, f(tp)),
            '<div class="figure"><span class="k">現價</span><span class="v">%s %s</span></div>' % (cur, f(spot)),
-           '<div class="figure"><span class="k">潛在漲跌幅</span><span class="v %s">%+.1f%%</span></div></div>'
-           % ("down" if up < 0 else "up", up),
-           ladder_svg(spot, tp, trig["buy_below"], trig["sell_above"], cur),
+           '<div class="figure"><span class="k">潛在漲跌幅</span><span class="v %s">%s</span></div></div>'
+           % ("down" if up < 0 else "up", ("%+.1f%%" % up).replace("-", "\u2212")),
+           ladder_svg(spot, tp, trig["buy_below"], trig["sell_above"], cur, 720, "ladder-wide") +
+           ladder_svg(spot, tp, trig["buy_below"], trig["sell_above"], cur, 360, "ladder-narrow"),
            '<dl class="facts">%s</dl>' % "".join("<dt>%s</dt><dd>%s</dd>" % (html.escape(k), v) for k, v in facts),
            "</header>", '<div class="layout"><nav class="toc" aria-label="目錄"><details open><summary>目錄</summary><ol>%s</ol></details></nav>'
            % "".join('<li><a href="#%s">%s</a></li>' % (a, html.escape(t)) for a, t in toc),

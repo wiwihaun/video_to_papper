@@ -292,13 +292,13 @@
           "annual_probability": 0.015,
           "loss_fraction": 0.9,
           "cumulative_probability_10y": 0.14026955774085703,
-          "enterprise_value_no_hazard_m": 834209.7428303431,
-          "ev_haircut_pct": 29.43140950969677
+          "enterprise_value_no_hazard_m": 776123.5775425208,
+          "ev_haircut_pct": 29.249355284868017
         },
         "warnings": [],
         "method": "residual_income",
-        "equity_value_no_hazard_m": 834209.7428303431,
-        "implied_price_to_book_no_hazard": 2.3637427931914776,
+        "equity_value_no_hazard_m": 776123.5775425208,
+        "implied_price_to_book_no_hazard": 2.199154983275258,
         "cost_of_equity": 0.06063,
         "rows": [
           {
@@ -314,136 +314,136 @@
           {
             "year": 2,
             "book_value_open_m": 368359.32977164997,
-            "roe": 0.085,
-            "net_income_m": 31310.54303059025,
-            "residual_income_m": 8976.91686653511,
-            "dividends_m": 20351.85296988366,
+            "roe": 0.080002,
+            "net_income_m": 29469.483100391542,
+            "residual_income_m": 7135.856936336403,
+            "dividends_m": 19155.164015254504,
             "survival_multiplier": 0.9732025,
-            "pv_dividend_m": 17606.75651281864
+            "pv_dividend_m": 16571.479229864908
           },
           {
             "year": 3,
-            "book_value_open_m": 379318.01983235654,
-            "roe": 0.099994,
-            "net_income_m": 37929.52607511666,
-            "residual_income_m": 14931.47453268088,
-            "dividends_m": 24654.191948825828,
+            "book_value_open_m": 378673.64885678695,
+            "roe": 0.094996,
+            "net_income_m": 35972.48194679933,
+            "residual_income_m": 13013.498616612338,
+            "dividends_m": 23382.113265419564,
             "survival_multiplier": 0.9601044624999999,
-            "pv_dividend_m": 19838.89780003686
+            "pv_dividend_m": 18815.273134256473
           },
           {
             "year": 4,
-            "book_value_open_m": 392593.35395864735,
-            "roe": 0.104992,
-            "net_income_m": 41219.161418826305,
-            "residual_income_m": 17416.226368313513,
-            "dividends_m": 26792.4549222371,
+            "book_value_open_m": 391264.0175381667,
+            "roe": 0.099994,
+            "net_income_m": 39124.054169711446,
+            "residual_income_m": 15401.716786372393,
+            "dividends_m": 25430.63521031244,
             "survival_multiplier": 0.9472028955625,
-            "pv_dividend_m": 20053.948608709336
+            "pv_dividend_m": 19034.636918290184
           },
           {
             "year": 5,
-            "book_value_open_m": 407020.0604552366,
-            "roe": 0.104992,
-            "net_income_m": 42733.8501873162,
-            "residual_income_m": 18056.223921915203,
-            "dividends_m": 27777.00262175553,
+            "book_value_open_m": 404957.4364975657,
+            "roe": 0.099994,
+            "net_income_m": 40493.313905137584,
+            "residual_income_m": 15940.744530290174,
+            "dividends_m": 26320.65403833943,
             "survival_multiplier": 0.9344948521290625,
-            "pv_dividend_m": 19339.389401724595
+            "pv_dividend_m": 18325.424981486012
           },
           {
             "year": 6,
-            "book_value_open_m": 421976.90802079724,
-            "roe": 0.104992,
-            "net_income_m": 44304.19952691955,
-            "residual_income_m": 18719.739593618608,
-            "dividends_m": 28797.729692497705,
+            "book_value_open_m": 419130.09636436385,
+            "roe": 0.099994,
+            "net_income_m": 41910.4948558582,
+            "residual_income_m": 16498.63711328682,
+            "dividends_m": 27241.821656307828,
             "survival_multiplier": 0.9219774293471265,
-            "pv_dividend_m": 18650.698358905418
+            "pv_dividend_m": 17643.022692558214
           },
           {
             "year": 7,
-            "book_value_open_m": 437483.3778552191,
-            "roe": 0.104992,
-            "net_income_m": 45932.25480777516,
-            "residual_income_m": 19407.63760841323,
-            "dividends_m": 29855.965625053857,
+            "book_value_open_m": 433798.7695639142,
+            "roe": 0.099994,
+            "net_income_m": 43377.27416377404,
+            "residual_income_m": 17076.054765113917,
+            "dividends_m": 28195.22820645313,
             "survival_multiplier": 0.9096477679069196,
-            "pv_dividend_m": 17986.92944698204
+            "pv_dividend_m": 16986.40689971372
           },
           {
             "year": 8,
-            "book_value_open_m": 453559.6670379404,
-            "roe": 0.104992,
-            "net_income_m": 47620.13656164744,
-            "residual_income_m": 20120.81394913711,
-            "dividends_m": 30953.08876507084,
+            "book_value_open_m": 448980.8155212351,
+            "roe": 0.099994,
+            "net_income_m": 44895.38766723038,
+            "residual_income_m": 17673.680822177896,
+            "dividends_m": 29182.00198369975,
             "survival_multiplier": 0.8975030513883158,
-            "pv_dividend_m": 17347.1714515872
+            "pv_dividend_m": 16354.593738736978
           },
           {
             "year": 9,
-            "book_value_open_m": 470226.71483451704,
-            "roe": 0.104992,
-            "net_income_m": 49370.04324390562,
-            "residual_income_m": 20860.197523488845,
-            "dividends_m": 32090.528108538652,
+            "book_value_open_m": 464694.20120476576,
+            "roe": 0.099994,
+            "net_income_m": 46466.631955269346,
+            "residual_income_m": 18292.2225362244,
+            "dividends_m": 30203.310770925076,
             "survival_multiplier": 0.885540505617491,
-            "pv_dividend_m": 16730.546690677107
+            "pv_dividend_m": 15746.637118494089
           },
           {
             "year": 10,
-            "book_value_open_m": 487506.229969884,
-            "roe": 0.104992,
-            "net_income_m": 51184.25409699806,
-            "residual_income_m": 21626.75137392399,
-            "dividends_m": 33269.76516304874,
+            "book_value_open_m": 480957.52238911,
+            "roe": 0.099994,
+            "net_income_m": 48092.866493776666,
+            "residual_income_m": 18932.411911324925,
+            "dividends_m": 31260.363220954834,
             "survival_multiplier": 0.8737573980332287,
-            "pv_dividend_m": 16136.2097756075
+            "pv_dividend_m": 15161.6272649635
           }
         ],
         "book_value_m": 352919.0,
-        "pv_residual_income_m": 131982.15242294173,
-        "terminal_residual_income_m": 22421.473932011853,
-        "pv_terminal_m": 398328.76914815744,
-        "implied_price_to_book": 1.668059971971349,
-        "implied_terminal_pb": 2.245074375526242,
-        "implied_terminal_pb_after_event_risk": 1.614820308839754,
-        "enterprise_value_m": 588690.0572481565,
+        "pv_residual_income_m": 117930.08288618793,
+        "terminal_residual_income_m": 19595.00657015628,
+        "pv_terminal_m": 367802.5928661664,
+        "implied_price_to_book": 1.555916328952198,
+        "implied_terminal_pb": 2.1047993264103284,
+        "implied_terminal_pb_after_event_risk": 1.5139243204461508,
+        "enterprise_value_m": 549112.4348974808,
         "equity_method": true,
         "name": "Bear",
         "probability": 0.25,
         "bridge": {
-          "enterprise_value_m": 588690.0572481565,
+          "enterprise_value_m": 549112.4348974808,
           "less_net_debt_m": 0.0,
           "less_minority_interest_m": 0.0,
           "plus_other_adjustments_m": 0.0,
-          "equity_value_m": 588690.0572481565,
+          "equity_value_m": 549112.4348974808,
           "shares_diluted_m": 17723.5
         },
-        "equity_value_m": 588690.0572481565,
-        "value_per_share": 33.21522595695864,
+        "equity_value_m": 549112.4348974808,
+        "value_per_share": 30.982166891273213,
         "price": 49.05,
-        "upside_pct": -32.282923635150574,
-        "target_price_12m_quote": 33.53906510672904
+        "upside_pct": -36.83554150606888,
+        "target_price_12m_quote": 31.170615669891102
       }
     ],
-    "probability_weighted_value_per_share": 41.975564532332996,
-    "probability_weighted_upside_pct": -14.4229061522263,
-    "equal_weighted_value_per_share": 42.224667386427804,
-    "target_price_12m_quote": 42.83054300992835,
+    "probability_weighted_value_per_share": 41.417299765911636,
+    "probability_weighted_upside_pct": -15.56106061995588,
+    "equal_weighted_value_per_share": 41.48031436453267,
+    "target_price_12m_quote": 42.23843065071886,
     "roll_forward": {
       "cost_of_equity_quote": 0.06063,
       "dividends_quote_next_12m": 1.69,
-      "fair_value_today_quote": 41.975564532332996,
+      "fair_value_today_quote": 41.417299765911636,
       "basis": "model"
     },
-    "target_upside_pct": -12.679830764672062,
-    "expected_total_return_12m_pct": -9.234366952235785,
+    "target_upside_pct": -13.88699153778009,
+    "expected_total_return_12m_pct": -10.441527725343814,
     "rating": "Hold",
     "price_triggers_quote": {
-      "buy_below": 37.243950443415955,
-      "sell_above": 50.38887412932747
+      "buy_below": 36.729070131059885,
+      "sell_above": 49.6922713537869
     }
   },
   "elasticity": [
@@ -452,33 +452,20 @@
       "base_value_per_share": 41.22825597004856,
       "drivers": [
         {
-          "label": "ROA, whole path (sigma 0.12pp: SD of 2021, 2024, 2025, 1H26 ROA 0.66/0.68/0.80/0.91%)",
+          "label": "ROA, whole path (sigma 0.15pp: SD of ROA 2021-1H26, 0.66/0.47/0.61/0.68/0.80/0.91%)",
           "path": "roa",
-          "sigma": 0.0012,
+          "sigma": 0.0015,
           "mode": "abs",
           "unit": "pp",
-          "value_minus_1sd": 31.21647612279463,
-          "value_plus_1sd": 52.3309872243788,
-          "swing": 21.11451110158417,
-          "elasticity": 0.25606844874693957,
-          "variance_share": 0.9332682011751768,
-          "cumulative_share": 0.9332682011751768
+          "value_minus_1sd": 28.873594491402393,
+          "value_plus_1sd": 55.28798796065561,
+          "swing": 26.41439346925322,
+          "elasticity": 0.32034332823152534,
+          "variance_share": 0.9600453025652155,
+          "cumulative_share": 0.9600453025652155
         },
         {
-          "label": "Leverage, assets/equity (sigma 0.55x: SD of 2021-1H26 leverage 16.6/15.7/16.3/17.0x)",
-          "path": "leverage",
-          "sigma": 0.55,
-          "mode": "abs",
-          "unit": "x",
-          "value_minus_1sd": 39.225744235563795,
-          "value_plus_1sd": 43.271090970138815,
-          "swing": 4.04534673457502,
-          "elasticity": 0.04906036696669727,
-          "variance_share": 0.034257519388701745,
-          "cumulative_share": 0.9675257205638785
-        },
-        {
-          "label": "Payout ratio, book growth (sigma 10pp: 2025 66%, 2024 ~74%)",
+          "label": "Payout ratio, book growth (sigma 10pp, judgment: 2024 ~74% vs 2025 66%)",
           "path": "payout_ratio",
           "sigma": 0.1,
           "mode": "abs",
@@ -487,47 +474,47 @@
           "value_plus_1sd": 39.35420490202274,
           "swing": -3.938651519358835,
           "elasticity": -0.047766409549559664,
-          "variance_share": 0.03247427943612153,
+          "variance_share": 0.021345461853743163,
+          "cumulative_share": 0.9813907644189587
+        },
+        {
+          "label": "Leverage, assets/equity (sigma 0.5x: SD of leverage 2021-1H26, 16.6/17.1/16.4/15.7/16.3/17.0x)",
+          "path": "leverage",
+          "sigma": 0.5,
+          "mode": "abs",
+          "unit": "x",
+          "value_minus_1sd": 39.40614147674275,
+          "value_plus_1sd": 43.08369537290873,
+          "swing": 3.677553896165982,
+          "elasticity": 0.0445999207295798,
+          "variance_share": 0.018609235581041307,
           "cumulative_share": 1.0
         }
       ],
-      "top_two_variance_share": 0.9675257205638785,
-      "verdict": "Top two drivers explain 97% of tested variance: a clean two-number stock.",
+      "top_two_variance_share": 0.9813907644189587,
+      "verdict": "Top two drivers explain 98% of tested variance: a clean two-number stock.",
       "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
-      "title": "FINAL VERDICT. Operating drivers (DuPont), ROA merged; every sigma on its own anchor"
+      "title": "Operating drivers (DuPont), ROA merged"
     },
     {
       "scenario": "Base",
       "base_value_per_share": 41.22825597004856,
       "drivers": [
         {
-          "label": "ROA 2029-36 (through-cycle; sigma 0.12pp)",
+          "label": "ROA Y3 onward incl. terminal (through-cycle, sigma 0.15pp)",
           "path": "roa[2:]",
-          "sigma": 0.0012,
+          "sigma": 0.0015,
           "mode": "abs",
           "unit": "pp",
-          "value_minus_1sd": 32.104573838923706,
-          "value_plus_1sd": 51.17554937215484,
-          "swing": 19.070975533231135,
-          "elasticity": 0.231285256731279,
-          "variance_share": 0.904669311314939,
-          "cumulative_share": 0.904669311314939
+          "value_minus_1sd": 29.946089099935715,
+          "value_plus_1sd": 53.7975235271302,
+          "swing": 23.851434427194487,
+          "elasticity": 0.28926077353989993,
+          "variance_share": 0.9412863115791953,
+          "cumulative_share": 0.9412863115791953
         },
         {
-          "label": "Leverage, assets/equity (sigma 0.55x: SD of 2021-1H26 leverage 16.6/15.7/16.3/17.0x)",
-          "path": "leverage",
-          "sigma": 0.55,
-          "mode": "abs",
-          "unit": "x",
-          "value_minus_1sd": 39.225744235563795,
-          "value_plus_1sd": 43.271090970138815,
-          "swing": 4.04534673457502,
-          "elasticity": 0.04906036696669727,
-          "variance_share": 0.040705729640867355,
-          "cumulative_share": 0.9453750409558064
-        },
-        {
-          "label": "Payout ratio, book growth (sigma 10pp: 2025 66%, 2024 ~74%)",
+          "label": "Payout ratio, book growth (sigma 10pp, judgment: 2024 ~74% vs 2025 66%)",
           "path": "payout_ratio",
           "sigma": 0.1,
           "mode": "abs",
@@ -536,11 +523,24 @@
           "value_plus_1sd": 39.35420490202274,
           "swing": -3.938651519358835,
           "elasticity": -0.047766409549559664,
-          "variance_share": 0.03858683473283548,
-          "cumulative_share": 0.9839618756886419
+          "variance_share": 0.02566775306447454,
+          "cumulative_share": 0.9669540646436698
         },
         {
-          "label": "ROA 2027-28 (near term; market-driven fees; sigma 0.15pp, wider than through-cycle)",
+          "label": "Leverage, assets/equity (sigma 0.5x: SD of leverage 2021-1H26, 16.6/17.1/16.4/15.7/16.3/17.0x)",
+          "path": "leverage",
+          "sigma": 0.5,
+          "mode": "abs",
+          "unit": "x",
+          "value_minus_1sd": 39.40614147674275,
+          "value_plus_1sd": 43.08369537290873,
+          "swing": 3.677553896165982,
+          "elasticity": 0.0445999207295798,
+          "variance_share": 0.0223774620987664,
+          "cumulative_share": 0.9893315267424363
+        },
+        {
+          "label": "ROA Y1-Y2 (4Q26-3Q28, same sigma 0.15pp)",
           "path": "roa[0:2]",
           "sigma": 0.0015,
           "mode": "abs",
@@ -549,12 +549,12 @@
           "value_plus_1sd": 42.503206512938085,
           "swing": 2.5392459448851312,
           "elasticity": 0.030794971617642993,
-          "variance_share": 0.016038124311358228,
-          "cumulative_share": 1.0000000000000002
+          "variance_share": 0.010668473257563786,
+          "cumulative_share": 1.0
         }
       ],
-      "top_two_variance_share": 0.9453750409558064,
-      "verdict": "Top two drivers explain 95% of tested variance: a clean two-number stock.",
+      "top_two_variance_share": 0.9669540646436698,
+      "verdict": "Top two drivers explain 97% of tested variance: a clean two-number stock.",
       "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
       "title": "ROA split by period"
     },
@@ -725,302 +725,342 @@
   "variants": [
     {
       "label": "As modelled (beta 1.0, CoE 6.06%; event risk 1.5%/yr, 90% loss)",
-      "value": 41.975564532332996,
-      "target_12m": 42.83054300992835,
+      "value": 41.417299765911636,
+      "target_12m": 42.23843065071886,
       "scenarios": {
         "Bull": 52.23052023227622,
         "Base": 41.22825597004856,
-        "Bear": 33.21522595695864
+        "Bear": 30.982166891273213
       }
     },
     {
       "label": "No event risk",
-      "value": 59.762769877244274,
-      "target_12m": 61.69618661490159,
+      "value": 58.94343163581591,
+      "target_12m": 60.82717189589543,
       "scenarios": {
         "Bull": 74.71779382563966,
         "Base": 58.632641576953986,
-        "Bear": 47.068002529429464
+        "Bear": 43.790649563716016
       }
     },
     {
       "label": "Event risk 0.75%/yr",
-      "value": 49.26733116282986,
-      "target_12m": 50.56440945123224,
+      "value": 48.60232051735594,
+      "target_12m": 49.85907921032323,
       "scenarios": {
         "Bull": 61.44403088134701,
         "Base": 48.363827498156944,
-        "Bear": 38.897638773658564
+        "Bear": 36.23759619176286
       }
     },
     {
       "label": "Event risk 2.25%/yr",
-      "value": 36.62646344984666,
-      "target_12m": 37.15712592881086,
+      "value": 36.146114757666574,
+      "target_12m": 36.6476536954239,
       "scenarios": {
         "Bull": 45.47863926168569,
         "Base": 35.99269580027452,
-        "Bear": 29.041822937151917
+        "Bear": 27.120428168431562
       }
     },
     {
       "label": "Event risk 3.0%/yr",
-      "value": 32.54328093173991,
-      "target_12m": 32.8263800546313,
+      "value": 32.122080982702194,
+      "target_12m": 32.37964275268343,
       "scenarios": {
         "Bull": 40.330474632299605,
         "Base": 31.99530380468698,
-        "Bear": 25.85204148528606
+        "Bear": 24.167241689135203
       }
     },
     {
       "label": "Event risk 1.5%/yr, 80% loss (TSMC-consistent)",
-      "value": 43.95192068176758,
-      "target_12m": 44.92672563270315,
+      "value": 43.36464775145656,
+      "target_12m": 44.303846344627374,
       "scenarios": {
         "Bull": 54.72910618709438,
         "Base": 43.16207659303805,
-        "Bear": 34.754423353899845
+        "Bear": 32.405331632655745
       }
     },
     {
       "label": "Event risk 1.5%/yr, total loss",
-      "value": 39.9992083828984,
-      "target_12m": 40.73436038715354,
+      "value": 39.46995178036671,
+      "target_12m": 40.17301495681035,
       "scenarios": {
         "Bull": 49.73193427745805,
         "Base": 39.29443534705906,
-        "Bear": 31.67602856001744
+        "Bear": 29.559002149890677
       }
     },
     {
       "label": "Event risk 1.5%/yr confined to 2027-36",
-      "value": 53.02453711378992,
-      "target_12m": 54.549414798999,
+      "value": 52.301943736016995,
+      "target_12m": 53.783010584731706,
       "scenarios": {
         "Bull": 66.23816422877718,
         "Base": 52.03380968593297,
-        "Bear": 41.79236485451655
+        "Bear": 38.90199134342486
       }
     },
     {
       "label": "Beta 0.63 (Damodaran EM industry betas, equity-weighted) -> CoE 4.38%",
-      "value": 67.03500991204393,
-      "target_12m": 68.28114334619146,
+      "value": 66.10817449620247,
+      "target_12m": 67.31371253913613,
       "scenarios": {
         "Bull": 83.92532574152956,
         "Base": 65.74637691600668,
-        "Bear": 52.72196007463283
+        "Bear": 49.01461841126692
       }
     },
     {
       "label": "Beta 0.72 (Damodaran Global industry betas, equity-weighted: bottom-up) -> CoE 4.79%",
-      "value": 58.579152418857745,
-      "target_12m": 59.69450802819684,
+      "value": 57.777031405863,
+      "target_12m": 58.85397343988978,
       "scenarios": {
         "Bull": 73.22423635936248,
         "Base": 57.474092591339506,
-        "Bear": 46.144188133389484
+        "Bear": 42.935704081410506
+      }
+    },
+    {
+      "label": "Beta 0.74 (Damodaran US industry betas, equity-weighted) -> CoE 4.88%",
+      "value": 56.20157382627892,
+      "target_12m": 57.25421062900133,
+      "scenarios": {
+        "Bull": 71.20121217196788,
+        "Base": 55.90971485535711,
+        "Bear": 41.78565342243357
       }
     },
     {
       "label": "Beta 0.76 (US money-center banks) -> CoE 4.97%",
-      "value": 55.4653374739941,
-      "target_12m": 56.53251939982634,
+      "value": 54.70907056042044,
+      "target_12m": 55.73865845797894,
       "scenarios": {
         "Bull": 69.2849146769991,
         "Base": 54.42769059625798,
-        "Bear": 43.72105402646134
+        "Bear": 40.695986372166715
       }
     },
     {
       "label": "Beta 0.80 -> CoE 5.15%",
-      "value": 52.66210614294725,
-      "target_12m": 53.68578447249333,
+      "value": 51.94707964296467,
+      "target_12m": 52.93391265696664,
       "scenarios": {
         "Bull": 65.739237295477,
         "Base": 51.68504293915072,
-        "Bear": 41.53910139801059
+        "Bear": 38.67899539808024
       }
     },
     {
       "label": "Beta 0.90 -> CoE 5.61%",
-      "value": 46.73426578678684,
-      "target_12m": 47.66512341210985,
+      "value": 46.10629790866175,
+      "target_12m": 47.0019390953795,
       "scenarios": {
         "Bull": 58.24408978815116,
         "Base": 45.88491945674511,
-        "Bear": 36.923134445505994
+        "Bear": 34.41126293300564
       }
     },
     {
-      "label": "Beta 1.03 (the Sell flip) -> CoE 6.20%",
-      "value": 40.72949060671952,
-      "target_12m": 41.56431172943007,
+      "label": "Beta 1.03 (past the Sell flip at beta 1.01) -> CoE 6.20%",
+      "value": 40.18944418411019,
+      "target_12m": 40.99078782908318,
       "scenarios": {
         "Bull": 50.656457189004755,
         "Base": 40.00881177359276,
-        "Bear": 32.2438816906878
+        "Bear": 30.083696000250473
       }
     },
     {
       "label": "Beta 1.20 -> CoE 6.97%",
-      "value": 34.800237471447495,
-      "target_12m": 35.53685803033154,
+      "value": 34.34663924665368,
+      "target_12m": 35.051630401322846,
       "scenarios": {
         "Bull": 43.17081775927687,
         "Base": 34.205629449469924,
-        "Bear": 27.618873227573264
+        "Bear": 25.804480328398014
       }
     },
     {
       "label": "Unadjusted Taiwan 10Y (1.99 pct) as riskless rate -> CoE 6.54%",
-      "value": 37.896358900513405,
-      "target_12m": 38.68478077260698,
+      "value": 37.39767329627034,
+      "target_12m": 38.15348112984642,
       "scenarios": {
         "Bull": 47.07868817158955,
         "Base": 37.236063533521055,
-        "Bear": 30.034620363421965
+        "Bear": 28.039877946449717
       }
     },
     {
       "label": "Industry beta 0.72 AND event risk 2.25%/yr",
-      "value": 49.49706248304598,
-      "target_12m": 50.177476805359056,
+      "value": 48.828254740803516,
+      "target_12m": 49.4766398603406,
       "scenarios": {
         "Bull": 61.74213418286341,
         "Base": 48.58749699423844,
-        "Bear": 39.07112176084361
+        "Bear": 36.39589079187378
       }
     },
     {
       "label": "Payout 55% (dividend NT$1.43)",
-      "value": 44.211502751382774,
-      "target_12m": 45.46204616319911,
+      "value": 43.594591126020426,
+      "target_12m": 44.807731185991045,
       "scenarios": {
         "Bull": 55.93322080421787,
         "Base": 43.29285642138157,
-        "Bear": 34.32707735855008
+        "Bear": 31.859430857100698
       }
     },
     {
       "label": "Payout 75% (dividend NT$1.95)",
-      "value": 39.955751342497436,
-      "target_12m": 40.42826854639305,
+      "value": 39.450721737169644,
+      "target_12m": 39.892618996094235,
       "scenarios": {
         "Bull": 48.92190350489483,
         "Base": 39.35420490202274,
-        "Bear": 32.192692061049435
+        "Bear": 30.172573639738275
       }
     },
     {
       "label": "Payout 68% (dividend NT$1.76)",
-      "value": 41.34785494071951,
-      "target_12m": 42.09477538577533,
+      "value": 40.8061075537195,
+      "target_12m": 41.52018185470151,
       "scenarios": {
         "Bull": 51.19840938815009,
         "Base": 40.64680547705444,
-        "Bear": 32.899399420619055
+        "Bear": 30.73240987261902
       }
     },
     {
       "label": "Payout 70% (dividend NT$1.82)",
-      "value": 40.93991093859423,
-      "target_12m": 41.6020977388012,
+      "value": 40.40891093487212,
+      "target_12m": 41.03890320485341,
       "scenarios": {
         "Bull": 50.52948497420107,
         "Base": 40.268468696020534,
-        "Bear": 32.69322138813479
+        "Bear": 30.569221373246332
       }
     },
     {
-      "label": "Payout 76% (4% cash yield at NT$49.05, dividend NT$1.96)",
-      "value": 39.86007408272615,
-      "target_12m": 40.31679037436184,
+      "label": "Payout 75.5% (4% cash yield at NT$49.05 = NT$1.96, 75% of 2026E EPS NT$2.60)",
+      "value": 39.35757249449905,
+      "target_12m": 39.783822114840525,
       "scenarios": {
         "Bull": 48.766099364560006,
         "Base": 39.265204219475464,
-        "Bear": 32.14378852739366
+        "Bear": 30.13378217448527
       }
     },
     {
       "label": "ERP 4.20% held (Damodaran 2026-10-01) -> CoE 5.71%",
-      "value": 45.54621371559209,
-      "target_12m": 46.45826890516386,
+      "value": 44.93566522138504,
+      "target_12m": 45.812839775482765,
       "scenarios": {
         "Bull": 56.742437173306364,
         "Base": 44.72238810062275,
-        "Bear": 35.99764148781648
+        "Bear": 33.555447510988294
+      }
+    },
+    {
+      "label": "HISTORY PREMIUM: no event risk, all-in 7.38% (5-yr average premium 5.39pp at ROE 10.5% + Taiwan 10Y 1.99%)",
+      "value": 42.08126559214125,
+      "target_12m": 43.49686299284128,
+      "scenarios": {
+        "Bull": 53.079273530894206,
+        "Base": 41.88788190252263,
+        "Bear": 31.470025032625532
+      }
+    },
+    {
+      "label": "HISTORY PREMIUM low: no event risk, all-in 7.12% (premium at ROE 10.0%)",
+      "value": 44.63842257863285,
+      "target_12m": 46.12667826623151,
+      "scenarios": {
+        "Bull": 56.358385431009374,
+        "Base": 44.42743853142801,
+        "Bear": 33.340427820665994
+      }
+    },
+    {
+      "label": "HISTORY PREMIUM high: no event risk, all-in 7.64% (premium at ROE 11.0%)",
+      "value": 39.78704190331573,
+      "target_12m": 41.13677190472906,
+      "scenarios": {
+        "Bull": 50.138327428308045,
+        "Base": 39.60936213909263,
+        "Bear": 29.791115906769626
       }
     },
     {
       "label": "Weights Bull 15 / Base 50 / Bear 35",
-      "value": 40.07403510480123,
-      "target_12m": 40.81372385320533,
+      "value": 39.29246443181133,
+      "target_12m": 39.98476655031205,
       "scenarios": {
         "Bull": 52.23052023227622,
         "Base": 41.22825597004856,
-        "Bear": 33.21522595695864
+        "Bear": 30.982166891273213
       }
     },
     {
       "label": "Weights Bull 25 / Base 40 / Bear 35",
-      "value": 41.174261531024,
-      "target_12m": 41.98065700764999,
+      "value": 40.3926908580341,
+      "target_12m": 41.15169970475671,
       "scenarios": {
         "Bull": 52.23052023227622,
         "Base": 41.22825597004856,
-        "Bear": 33.21522595695864
+        "Bear": 30.982166891273213
       }
     },
     {
       "label": "Weights Bull 50 / Base 25 / Bear 25",
-      "value": 44.726130597889906,
-      "target_12m": 45.74787589603997,
+      "value": 44.16786583146855,
+      "target_12m": 45.15576353683049,
       "scenarios": {
         "Bull": 52.23052023227622,
         "Base": 41.22825597004856,
-        "Bear": 33.21522595695864
+        "Bear": 30.982166891273213
       }
     },
     {
       "label": "Terminal growth 2.0%",
-      "value": 40.6212468408491,
-      "target_12m": 41.394113036809784,
+      "value": 40.098475574035945,
+      "target_12m": 40.83964614808974,
       "scenarios": {
         "Bull": 50.24185522883602,
         "Base": 39.929009246471765,
-        "Bear": 32.385113641616854
+        "Bear": 30.294028574364223
       }
     },
     {
       "label": "Terminal growth 3.0%",
-      "value": 43.659511053613926,
-      "target_12m": 44.61658720879454,
+      "value": 43.05730415823953,
+      "target_12m": 43.9778685093536,
       "scenarios": {
         "Bull": 54.69984278678253,
         "Base": 42.84404034594447,
-        "Bear": 34.25012073578423
+        "Bear": 31.84129315428664
       }
     },
     {
       "label": "Retained profit +NT$1bn (one month's beat, added to book)",
-      "value": 42.094502771793984,
-      "target_12m": 42.956692474847856,
+      "value": 41.53465615580822,
+      "target_12m": 42.362902358534875,
       "scenarios": {
         "Bull": 52.378516005335406,
         "Base": 41.3450767021997,
-        "Bear": 33.30934167744113
+        "Bear": 31.069955213498083
       }
     },
     {
       "label": "Equal weights (bias check)",
-      "value": 42.224667386328164,
-      "target_12m": 43.094748969961245,
+      "value": 41.48031436450746,
+      "target_12m": 42.30526582442754,
       "scenarios": {
         "Bull": 52.23052023227622,
         "Base": 41.22825597004856,
-        "Bear": 33.21522595695864
+        "Bear": 30.982166891273213
       }
     }
   ],
@@ -1028,47 +1068,51 @@
   "solve": [
     {
       "title": "FLIP Buy->Neutral: annual event probability at which the TP falls to the Buy line (+15% = NT$56.41)",
-      "solution": 0.0031960964202880863
+      "solution": 0.0026730060577392573
     },
     {
       "title": "FLIP Neutral->Sell: annual event probability at which the TP reaches the Sell line (-15% = NT$41.69)",
-      "solution": 0.016339349746704104
+      "solution": 0.015642976760864253
     },
     {
       "title": "FLIP Buy->Neutral: cost of equity at which the TP falls to the Buy line (NT$56.41)",
-      "solution": 0.04978611946105957
+      "solution": 0.04930243492126467
     },
     {
       "title": "FLIP Neutral->Sell: cost of equity at which the TP reaches the Sell line (NT$41.69)",
-      "solution": 0.06184870719909667
+      "solution": 0.061215448379516604
     },
     {
       "title": "FLIP Neutral->Sell: terminal growth at which the TP reaches the Sell line (NT$41.69)",
-      "solution": 0.02112537384033203
+      "solution": 0.02316913604736328
     },
     {
       "title": "OUR ALL-IN RATE: no-event cost of equity that reproduces our probability-weighted fair value",
-      "solution": 0.07452441215515138
+      "solution": 0.07452452659606934
+    },
+    {
+      "title": "ALL-IN RATE AT THE INDUSTRY BETA 0.72: no-event cost of equity that reproduces the probability-weighted fair value at CoE 4.79% with our event risk",
+      "solution": 0.06130534172058105
     },
     {
       "title": "MARKET ALL-IN RATE: no-event cost of equity at which the probability-weighted fair value equals the price NT$49.05",
-      "solution": 0.06785845756530764
+      "solution": 0.06731892585754395
     },
     {
       "title": "PRICE-IMPLIED annual event probability on probability-weighted operations (perpetual hazard, 90% loss)",
-      "solution": 0.0076901912689208984
+      "solution": 0.007107877731323243
     },
     {
       "title": "PRICE-IMPLIED annual event probability on probability-weighted operations if events can occur only in Y1-Y10 (2027-36)",
-      "solution": 0.024855959415435794
+      "solution": 0.023120677471160887
     },
     {
       "title": "FLIP Neutral->Sell: payout ratio (ROE fixed; dividend held at NT$1.69) at which the TP reaches the Sell line",
-      "solution": 0.7018509000539779
+      "solution": 0.675203475356102
     },
     {
       "title": "PRICE-IMPLIED cost of equity WITH our event risk (1.5%/yr, 90% loss): the rate at which the probability-weighted fair value equals NT$49.05",
-      "solution": 0.05417515754699706
+      "solution": 0.053654794692993155
     },
     {
       "title": "HISTORY: no-event cost of equity at which a flat 10.0% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book)",
@@ -1087,8 +1131,8 @@
       "solution": 0.15534570574760437
     },
     {
-      "title": "ROE for 2027-36 then 10.5% (2021-24 level) forever, with event risk",
-      "solution": 0.17752477765083313
+      "title": "ROE for 2027-36 then 10.0% (2021-24 average) forever, with event risk",
+      "solution": 0.1853045356273651
     },
     {
       "title": "ROE for 2027-36 then Base 12% forever, NO event risk",
@@ -1114,39 +1158,39 @@
       ],
       "grid": [
         [
-          98.20664606542618,
-          84.17506513954375,
-          71.27883858781168,
-          61.69618661490159,
-          54.30063827597133
+          96.79724378281698,
+          82.97357907975271,
+          70.26821547048024,
+          60.82717189589543,
+          53.54073013267718
         ],
         [
-          74.07027122101324,
-          65.47152502935711,
-          57.10182382475786,
-          50.56440945123224,
-          45.318083345641895
+          73.01784861229248,
+          64.54625256019331,
+          56.30013501925503,
+          49.85907921032323,
+          44.6899347349588
         ],
         [
-          59.69450802819684,
-          53.68578447249333,
-          47.66512341210985,
-          42.83054300992835,
-          38.85895694938676
+          58.85397343988978,
+          52.93391265696664,
+          47.0019390953795,
+          42.23843065071886,
+          38.325105292415934
         ],
         [
-          50.177476805359056,
-          45.597863878121615,
-          40.94697533619426,
-          37.15712592881086,
-          34.00099477565068
+          49.4766398603406,
+          44.96446665486313,
+          40.3819318659381,
+          36.6476536954239,
+          33.537691301076954
         ],
         [
-          43.427538210615126,
-          39.71653031445002,
-          35.93123153930269,
-          32.8263800546313,
-          30.22186173665026
+          42.825313931022265,
+          39.1688574028152,
+          35.439075327203284,
+          32.37964275268343,
+          29.813123544112788
         ]
       ]
     }

@@ -25,10 +25,11 @@
   "cost_of_equity": "6.06% = TWD riskless 1.51% (Taiwan 10Y 1.99% on 2026-10-30 less Taiwan default spread 0.477%, Damodaran Jul-2026) + beta 1.0 x ERP 4.55% (Damodaran implied US ERP 4.20% on 2026-10-01 vs a 5.29% T-bond, held at the 10-30 yield of 4.94%). BETA IS A JUDGMENT, NOT A MEASUREMENT. Sourced industry (levered) betas, Damodaran Jan-2026: money-center banks Global 0.70 (604 firms; 2021-26 average 0.42), EM 0.59 (455; avg 0.41), US 0.76 (15); life insurers Global 0.80, EM 0.82, US 0.64. Weighted by E.SUN's post-merger equity (bank ~83%, life ~17%) the bottom-up beta is 0.72 (EM basis 0.63). We do not use it: at beta 0.72 the cost of equity (4.79%) is only 2.3pp above long-run growth, the terminal value carries 81% of the value above book (engine warning), and Base is worth 2.9x book with event risk (4.7x without), above the 2.82x maximum E.SUN has traded at in five years. Beta 1.0 gives 2.07x with event risk. The industry-beta result (TP NT$59.7, Buy) is reported as the main alternative. Local regression beta 0.12 (MoneyDJ, vs TAIEX) rejected: TSMC is ~42% of TAIEX. Taiwan event risk sits in the hazard overlay, not in the discount rate.",
   "hazard": "1.5%/yr, 90% loss of equity (a bank's book is a claim on the same economy); applied to every dividend (DDM form)",
   "roll_forward": "12-month TP = fair value x (1 + cost of equity) - NT$1.69 dividend (2026E EPS 2.595 = 9M 1.95 + 4Q26E NT$11.43bn / 17,723.5m shares; x 65% payout; paid ~Jul-2027)",
-  "roe_history": "ROE 2021 10.96%, 1H22 7.52%, 2024 10.66%, 2025 13.04%, 1Q26 14.43%, 1H26 15.46% (company releases); 1H26 net fee income +39.9%, wealth-management fees +30.7%",
-  "dupont": "ROE = ROA x leverage. Leverage 17.0x = 1H26 ROE 15.46% / ROA 0.91% (company); 2021 16.6x, 2024 15.7x, 2025 16.3x. ROA 2021 0.66%, 2024 0.68%, 2025 0.80%, 1H26 0.91%. Post-merger leverage not disclosed until the 3Q26 statements.",
-  "scenarios": "Base ROE 13.5% (2027) -> 12.5% -> 12% steady: fee income normalises from a bull-market peak (1H26 net fees +39.9%) but stays above 2021-24 (~10.7%) with Mercuries Life and the wealth franchise. Bull holds 14-15% (fees structurally higher, bancassurance synergies). Bear: market correction in 2028 (ROE 8.5%; 1H22 was 7.52%), then 10.5% (2021-24 level). Payout 65% (2025: NT$1.4 / EPS 2.12 = 66%).",
-  "model_years": "Year 1 = 4Q26-3Q27 (opening book at 2026-09-30, discounted from the 2026-11-01 valuation date), not calendar 2027."
+  "roe_history": "ROE / ROA: 2021 10.96% / 0.66%; 2022 8.06% / 0.47%; 2023 10.03% / 0.61%; 2024 10.68% / 0.68%; 2025 13.05% / 0.80%; 1H26 15.46% / 0.91% (annualised, pre-merger). 2021-24 average ROE 9.93%; 2021-25 average 10.56%. Sources: E.SUN 4Q23 and 2Q26 investor decks (MOPS). 1H26 net fee income +39.9%, wealth-management fees +30.7%. September 2026 (first merged month): group NI NT$3.81bn, of which Mercuries Life recognised in the consolidated accounts NT$0.144bn (standalone NT$1.911bn) after IFRS 3 remeasurement; annualised on our book estimate, ROE ~13.0%.",
+  "dupont": "ROE = ROA x leverage. Leverage = ROE / ROA: 2021 16.6x, 2022 17.1x, 2023 16.4x, 2024 15.7x, 2025 16.3x, 1H26 17.0x (SD 0.5x). ROA SD over the six points 0.15pp. The model keeps the pre-merger 17x split for the elasticity test; post-merger FHC assets NT$6.65tn (Sept-2026 release) on our book estimate imply ~18.8x, so reported ROA will fall mechanically after the merger. Value depends on ROE; we track NT$ earnings.",
+  "scenarios": "Base ROE 13.5% (Y1) -> 12.5% -> 12% steady: fee income normalises from a bull-market peak but stays above the 2021-24 average (9.9%) with Mercuries Life and the wealth franchise; first merged month ran at ~13.0%. Bull holds 14-15%. Bear: a market correction in Y2 (ROE 8.0%; FY2022 8.06%), 9.5% in Y3, then 10.0% (the 2021-24 average, 9.9%). Payout 65% (2025: NT$1.4 / EPS 2.12 = 66%).",
+  "model_years": "Year 1 = 4Q26-3Q27 (opening book at 2026-09-30, discounted from the 2026-11-01 valuation date), not calendar 2027.",
+  "mercuries_life": "TW-ICS (TIS) 110% at 2026-06-30, the lowest of the 14 life insurers using transitional measures (minimum 100%); NT$16bn injected 2026-09-29, NT$6bn planned for 2027; E.SUN projects TIS 125% at end-2026. IFRS 17 equity NT$120.0bn and net worth ratio 8.80% at 2026-06-30; CSM NT$64.4bn at end-1Q26 (press). Not modelled separately: one group ROE path covers the whole book."
  },
  "scenarios": [
   {
@@ -128,15 +129,15 @@
    "horizon_years": 10,
    "roa": [
     0.007353,
-    0.005,
+    0.004706,
+    0.005588,
     0.005882,
-    0.006176,
-    0.006176,
-    0.006176,
-    0.006176,
-    0.006176,
-    0.006176,
-    0.006176
+    0.005882,
+    0.005882,
+    0.005882,
+    0.005882,
+    0.005882,
+    0.005882
    ],
    "leverage": [
     17.0,
@@ -152,15 +153,15 @@
    ],
    "_roe_path": [
     0.125,
-    0.085,
+    0.08,
+    0.095,
     0.1,
-    0.105,
-    0.105,
-    0.105,
-    0.105,
-    0.105,
-    0.105,
-    0.105
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
    ]
   }
  ]

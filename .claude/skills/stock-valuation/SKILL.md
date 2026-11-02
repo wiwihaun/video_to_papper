@@ -257,15 +257,19 @@ gap is usually the most interesting paragraph in the report.
 it and your value: re-run the engine switching one assumption at a time to the consensus-like
 setting (discount rate, event risk, margin path, growth path) and tabulate how much of the
 gap each explains. Readers trust a different number only when they can see which assumption
-makes it different. Three rules from the 2330 reviews:
+makes it different. Four rules from the 2330 reviews:
 
+- **Use only what consensus publishes.** Consensus covers two or three years; the years after
+  that are your inference, so label them as such and keep them out of the "consensus" step.
+  In 2330, published 2027–28 revenue and margins explained only 4–11% of the gap; the rest sat
+  in unpublished assumptions, and saying so is the finding.
 - **Convert consensus revenue and EPS at one FX rate.** NT$ consensus growth applied to a USD
   base overstated 2027 revenue by 2.5% and understated the EPS-consistent margin by 1.4pp.
 - **The last step is a residual, not a finding.** Whatever the bridge leaves unexplained lands
   on the step solved last (usually the discount rate). Show the alternative closes: the same
   consensus TP reached with a longer growth duration at your own cost of equity, for example.
-  Report only the attribution that survives every ordering and every close (2330: event risk,
-  23–41% of the gap).
+  Report only the attribution that survives every ordering and every close, on a Shapley basis
+  (2330: event risk, 30–33% of the gap; 23–44% across every ordering).
 - **ADR targets carry an explicit premium.** A premium that the report itself calls structural
   cannot be assumed to vanish in the headline ADR target; show zero premium as a sensitivity.
 

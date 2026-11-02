@@ -5,22 +5,22 @@
  "quote": false,
  "elasticity": [
   {
-   "title": "FINAL VERDICT. Operating drivers (DuPont), ROA merged; every sigma on its own anchor",
+   "title": "Operating drivers (DuPont), ROA merged",
    "scenario": "Base",
    "drivers": [
-    "ROA, whole path (sigma 0.12pp: SD of 2021, 2024, 2025, 1H26 ROA 0.66/0.68/0.80/0.91%)@roa=0.0012",
-    "Leverage, assets/equity (sigma 0.55x: SD of 2021-1H26 leverage 16.6/15.7/16.3/17.0x)@leverage=0.55:x",
-    "Payout ratio, book growth (sigma 10pp: 2025 66%, 2024 ~74%)@payout_ratio=0.10"
+    "ROA, whole path (sigma 0.15pp: SD of ROA 2021-1H26, 0.66/0.47/0.61/0.68/0.80/0.91%)@roa=0.0015",
+    "Leverage, assets/equity (sigma 0.5x: SD of leverage 2021-1H26, 16.6/17.1/16.4/15.7/16.3/17.0x)@leverage=0.5:x",
+    "Payout ratio, book growth (sigma 10pp, judgment: 2024 ~74% vs 2025 66%)@payout_ratio=0.10"
    ]
   },
   {
    "title": "ROA split by period",
    "scenario": "Base",
    "drivers": [
-    "ROA 2027-28 (near term; market-driven fees; sigma 0.15pp, wider than through-cycle)@roa[0:2]=0.0015",
-    "ROA 2029-36 (through-cycle; sigma 0.12pp)@roa[2:]=0.0012",
-    "Leverage, assets/equity (sigma 0.55x: SD of 2021-1H26 leverage 16.6/15.7/16.3/17.0x)@leverage=0.55:x",
-    "Payout ratio, book growth (sigma 10pp: 2025 66%, 2024 ~74%)@payout_ratio=0.10"
+    "ROA Y1-Y2 (4Q26-3Q28, same sigma 0.15pp)@roa[0:2]=0.0015",
+    "ROA Y3 onward incl. terminal (through-cycle, sigma 0.15pp)@roa[2:]=0.0015",
+    "Leverage, assets/equity (sigma 0.5x: SD of leverage 2021-1H26, 16.6/17.1/16.4/15.7/16.3/17.0x)@leverage=0.5:x",
+    "Payout ratio, book growth (sigma 10pp, judgment: 2024 ~74% vs 2025 66%)@payout_ratio=0.10"
    ]
   },
   {
@@ -159,6 +159,12 @@
    }
   },
   {
+   "label": "Beta 0.74 (Damodaran US industry betas, equity-weighted) -> CoE 4.88%",
+   "set": {
+    "case.wacc": 0.0488
+   }
+  },
+  {
    "label": "Beta 0.76 (US money-center banks) -> CoE 4.97%",
    "set": {
     "case.wacc": 0.04971
@@ -177,7 +183,7 @@
    }
   },
   {
-   "label": "Beta 1.03 (the Sell flip) -> CoE 6.20%",
+   "label": "Beta 1.03 (past the Sell flip at beta 1.01) -> CoE 6.20%",
    "set": {
     "case.wacc": 0.06199
    }
@@ -230,7 +236,7 @@
    }
   },
   {
-   "label": "Payout 76% (4% cash yield at NT$49.05, dividend NT$1.96)",
+   "label": "Payout 75.5% (4% cash yield at NT$49.05 = NT$1.96, 75% of 2026E EPS NT$2.60)",
    "set": {
     "scenarios.*.payout_ratio": 0.755,
     "case.roll_forward.dividends_quote_next_12m": 1.96
@@ -240,6 +246,27 @@
    "label": "ERP 4.20% held (Damodaran 2026-10-01) -> CoE 5.71%",
    "set": {
     "case.wacc": 0.05713
+   }
+  },
+  {
+   "label": "HISTORY PREMIUM: no event risk, all-in 7.38% (5-yr average premium 5.39pp at ROE 10.5% + Taiwan 10Y 1.99%)",
+   "set": {
+    "case.hazard": null,
+    "case.wacc": 0.0738
+   }
+  },
+  {
+   "label": "HISTORY PREMIUM low: no event risk, all-in 7.12% (premium at ROE 10.0%)",
+   "set": {
+    "case.hazard": null,
+    "case.wacc": 0.0712
+   }
+  },
+  {
+   "label": "HISTORY PREMIUM high: no event risk, all-in 7.64% (premium at ROE 11.0%)",
+   "set": {
+    "case.hazard": null,
+    "case.wacc": 0.0764
    }
   },
   {
@@ -343,6 +370,20 @@
    "title": "OUR ALL-IN RATE: no-event cost of equity that reproduces our probability-weighted fair value",
    "path": "case.wacc",
    "target": "as_modelled_fair_value",
+   "measure": "fair_value",
+   "lo": 0.03,
+   "hi": 0.15,
+   "set": {
+    "case.hazard": null
+   }
+  },
+  {
+   "title": "ALL-IN RATE AT THE INDUSTRY BETA 0.72: no-event cost of equity that reproduces the probability-weighted fair value at CoE 4.79% with our event risk",
+   "path": "case.wacc",
+   "target": "as_modelled_fair_value",
+   "target_set": {
+    "case.wacc": 0.04789
+   },
    "measure": "fair_value",
    "lo": 0.03,
    "hi": 0.15,
@@ -483,7 +524,7 @@
    }
   },
   {
-   "title": "ROE for 2027-36 then 10.5% (2021-24 level) forever, with event risk",
+   "title": "ROE for 2027-36 then 10.0% (2021-24 average) forever, with event risk",
    "path": "scenarios.Base.roe[0:10]",
    "target": 49.05,
    "measure": "fair_value",
@@ -507,7 +548,7 @@
      0.135,
      0.135,
      0.135,
-     0.105
+     0.1
     ]
    }
   },

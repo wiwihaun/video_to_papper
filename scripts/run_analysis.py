@@ -313,10 +313,11 @@ def main(argv=None):
             c = apply_sets(case, sv.get("set"))
             tgt = sv["target"]
             if isinstance(tgt, str):
-                # named targets: the as-modelled measure (e.g. the no-event rate that reproduces our value)
+                # named targets: the as-modelled measure (e.g. the no-event rate that reproduces our value).
+                # "target_set" measures it on a modified case instead (e.g. the value at another beta).
                 if tgt not in ("as_modelled_fair_value", "as_modelled_target_12m"):
                     raise ValueError("unknown named solve target %r" % tgt)
-                tgt = pw_quote(case, tgt.replace("as_modelled_", ""))[1]
+                tgt = pw_quote(apply_sets(case, sv.get("target_set")), tgt.replace("as_modelled_", ""))[1]
                 sv = dict(sv, target=tgt)
             try:
                 x = solve(c, sv["path"], float(tgt), sv.get("measure", "fair_value"),
