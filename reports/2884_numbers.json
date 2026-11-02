@@ -914,6 +914,76 @@
       }
     },
     {
+      "label": "Payout 68% (dividend NT$1.76)",
+      "value": 41.34785494071951,
+      "target_12m": 42.09477538577533,
+      "scenarios": {
+        "Bull": 51.19840938815009,
+        "Base": 40.64680547705444,
+        "Bear": 32.899399420619055
+      }
+    },
+    {
+      "label": "Payout 70% (dividend NT$1.82)",
+      "value": 40.93991093859423,
+      "target_12m": 41.6020977388012,
+      "scenarios": {
+        "Bull": 50.52948497420107,
+        "Base": 40.268468696020534,
+        "Bear": 32.69322138813479
+      }
+    },
+    {
+      "label": "Payout 76% (4% cash yield at NT$49.05, dividend NT$1.96)",
+      "value": 39.86007408272615,
+      "target_12m": 40.31679037436184,
+      "scenarios": {
+        "Bull": 48.766099364560006,
+        "Base": 39.265204219475464,
+        "Bear": 32.14378852739366
+      }
+    },
+    {
+      "label": "ERP 4.20% held (Damodaran 2026-10-01) -> CoE 5.71%",
+      "value": 45.54621371559209,
+      "target_12m": 46.45826890516386,
+      "scenarios": {
+        "Bull": 56.742437173306364,
+        "Base": 44.72238810062275,
+        "Bear": 35.99764148781648
+      }
+    },
+    {
+      "label": "Weights Bull 15 / Base 50 / Bear 35",
+      "value": 40.07403510480123,
+      "target_12m": 40.81372385320533,
+      "scenarios": {
+        "Bull": 52.23052023227622,
+        "Base": 41.22825597004856,
+        "Bear": 33.21522595695864
+      }
+    },
+    {
+      "label": "Weights Bull 25 / Base 40 / Bear 35",
+      "value": 41.174261531024,
+      "target_12m": 41.98065700764999,
+      "scenarios": {
+        "Bull": 52.23052023227622,
+        "Base": 41.22825597004856,
+        "Bear": 33.21522595695864
+      }
+    },
+    {
+      "label": "Weights Bull 50 / Base 25 / Bear 25",
+      "value": 44.726130597889906,
+      "target_12m": 45.74787589603997,
+      "scenarios": {
+        "Bull": 52.23052023227622,
+        "Base": 41.22825597004856,
+        "Bear": 33.21522595695864
+      }
+    },
+    {
       "label": "Terminal growth 2.0%",
       "value": 40.6212468408491,
       "target_12m": 41.394113036809784,
@@ -954,6 +1024,7 @@
       }
     }
   ],
+  "bridges": [],
   "solve": [
     {
       "title": "FLIP Buy->Neutral: annual event probability at which the TP falls to the Buy line (+15% = NT$56.41)",
@@ -982,6 +1053,18 @@
     {
       "title": "MARKET ALL-IN RATE: no-event cost of equity at which the probability-weighted fair value equals the price NT$49.05",
       "solution": 0.06785845756530764
+    },
+    {
+      "title": "PRICE-IMPLIED annual event probability on probability-weighted operations (perpetual hazard, 90% loss)",
+      "solution": 0.0076901912689208984
+    },
+    {
+      "title": "PRICE-IMPLIED annual event probability on probability-weighted operations if events can occur only in Y1-Y10 (2027-36)",
+      "solution": 0.024855959415435794
+    },
+    {
+      "title": "FLIP Neutral->Sell: payout ratio (ROE fixed; dividend held at NT$1.69) at which the TP reaches the Sell line",
+      "solution": 0.7018509000539779
     },
     {
       "title": "PRICE-IMPLIED cost of equity WITH our event risk (1.5%/yr, 90% loss): the rate at which the probability-weighted fair value equals NT$49.05",

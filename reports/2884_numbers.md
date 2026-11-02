@@ -157,6 +157,13 @@ _Variance shares assume drivers are independent and locally linear. Correlated d
 | Industry beta 0.72 AND event risk 2.25%/yr | 49.50 | +0.9% | 50.18 | +2.3% |
 | Payout 55% (dividend NT$1.43) | 44.21 | -9.9% | 45.46 | -7.3% |
 | Payout 75% (dividend NT$1.95) | 39.96 | -18.5% | 40.43 | -17.6% |
+| Payout 68% (dividend NT$1.76) | 41.35 | -15.7% | 42.09 | -14.2% |
+| Payout 70% (dividend NT$1.82) | 40.94 | -16.5% | 41.60 | -15.2% |
+| Payout 76% (4% cash yield at NT$49.05, dividend NT$1.96) | 39.86 | -18.7% | 40.32 | -17.8% |
+| ERP 4.20% held (Damodaran 2026-10-01) -> CoE 5.71% | 45.55 | -7.1% | 46.46 | -5.3% |
+| Weights Bull 15 / Base 50 / Bear 35 | 40.07 | -18.3% | 40.81 | -16.8% |
+| Weights Bull 25 / Base 40 / Bear 35 | 41.17 | -16.1% | 41.98 | -14.4% |
+| Weights Bull 50 / Base 25 / Bear 25 | 44.73 | -8.8% | 45.75 | -6.7% |
 | Terminal growth 2.0% | 40.62 | -17.2% | 41.39 | -15.6% |
 | Terminal growth 3.0% | 43.66 | -11.0% | 44.62 | -9.0% |
 | Retained profit +NT$1bn (one month's beat, added to book) | 42.09 | -14.2% | 42.96 | -12.4% |
@@ -173,13 +180,16 @@ _Variance shares assume drivers are independent and locally linear. Correlated d
 | 5 | FLIP Neutral->Sell: terminal growth at which the TP reaches the Sell line (NT$41.69) | case.terminal_growth | target_12m | 41.69 | 2.11% |
 | 6 | OUR ALL-IN RATE: no-event cost of equity that reproduces our probability-weighted fair value | case.wacc | fair_value | 41.98 | 7.45% |
 | 7 | MARKET ALL-IN RATE: no-event cost of equity at which the probability-weighted fair value equals the price NT$49.05 | case.wacc | fair_value | 49.05 | 6.79% |
-| 8 | PRICE-IMPLIED cost of equity WITH our event risk (1.5%/yr, 90% loss): the rate at which the probability-weighted fair value equals NT$49.05 | case.wacc | fair_value | 49.05 | 5.42% |
-| 9 | HISTORY: no-event cost of equity at which a flat 10.0% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book) | case.wacc | fair_value | 38.03 | 6.43% |
-| 10 | HISTORY: no-event cost of equity at which a flat 10.5% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book) | case.wacc | fair_value | 38.03 | 6.69% |
-| 11 | HISTORY: no-event cost of equity at which a flat 11.0% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book) | case.wacc | fair_value | 38.03 | 6.95% |
-| 12 | ROE for 2027-36 (Y1-Y10) then Base 12% forever, with event risk: what the price needs | scenarios.Base.roe[0:10] | fair_value | 49.05 | 15.53% |
-| 13 | ROE for 2027-36 then 10.5% (2021-24 level) forever, with event risk | scenarios.Base.roe[0:10] | fair_value | 49.05 | 17.75% |
-| 14 | ROE for 2027-36 then Base 12% forever, NO event risk | scenarios.Base.roe[0:10] | fair_value | 49.05 | 8.51% |
+| 8 | PRICE-IMPLIED annual event probability on probability-weighted operations (perpetual hazard, 90% loss) | case.hazard.annual_probability | fair_value | 49.05 | 0.77% |
+| 9 | PRICE-IMPLIED annual event probability on probability-weighted operations if events can occur only in Y1-Y10 (2027-36) | case.hazard.annual_probability | fair_value | 49.05 | 2.49% |
+| 10 | FLIP Neutral->Sell: payout ratio (ROE fixed; dividend held at NT$1.69) at which the TP reaches the Sell line | scenarios.*.payout_ratio | target_12m | 41.69 | 70.19% |
+| 11 | PRICE-IMPLIED cost of equity WITH our event risk (1.5%/yr, 90% loss): the rate at which the probability-weighted fair value equals NT$49.05 | case.wacc | fair_value | 49.05 | 5.42% |
+| 12 | HISTORY: no-event cost of equity at which a flat 10.0% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book) | case.wacc | fair_value | 38.03 | 6.43% |
+| 13 | HISTORY: no-event cost of equity at which a flat 10.5% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book) | case.wacc | fair_value | 38.03 | 6.69% |
+| 14 | HISTORY: no-event cost of equity at which a flat 11.0% ROE is worth the 5-year average P/B of 1.91x (NT$38.03 on our book) | case.wacc | fair_value | 38.03 | 6.95% |
+| 15 | ROE for 2027-36 (Y1-Y10) then Base 12% forever, with event risk: what the price needs | scenarios.Base.roe[0:10] | fair_value | 49.05 | 15.53% |
+| 16 | ROE for 2027-36 then 10.5% (2021-24 level) forever, with event risk | scenarios.Base.roe[0:10] | fair_value | 49.05 | 17.75% |
+| 17 | ROE for 2027-36 then Base 12% forever, NO event risk | scenarios.Base.roe[0:10] | fair_value | 49.05 | 8.51% |
 
 ## 6.1 Sensitivity — Base: steady ROE x cost of equity (with event risk)
 

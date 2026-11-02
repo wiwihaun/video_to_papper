@@ -219,11 +219,12 @@ def main(argv=None):
         md.append("")
 
     # ---- bridge
-    if spec.get("bridge"):
-        br = spec["bridge"]
+    bridges = spec.get("bridges") or ([spec["bridge"]] if spec.get("bridge") else [])
+    js["bridges"] = []
+    for bi, br in enumerate(bridges, 1):
         measure = br.get("measure", "fair_value")
         mlabel = "12-month target price" if measure == "target_12m" else "probability-weighted fair value"
-        md.append("## 5. Bridge — %s" % br.get("title", ""))
+        md.append("## 5.%d Bridge — %s" % (bi, br.get("title", "")) if len(bridges) > 1 else "## 5. Bridge — %s" % br.get("title", ""))
         md.append("")
         md.append("Measure: %s." % mlabel)
         md.append("")
@@ -245,7 +246,7 @@ def main(argv=None):
             md.append("| Target to explain: %s | %s | residual %+s |" % (
                 br.get("target_label", "target"), ve._m(br["target"], DP), ve._m(br["target"] - prev, DP)))
         md.append("")
-        js["bridge"] = rows
+        entry = {"title": br.get("title"), "rows": rows}
 
         if br.get("shapley"):
             # Order-independent attribution: average marginal contribution over all orderings.
@@ -263,7 +264,7 @@ def main(argv=None):
                     cache[mask] = pw_quote(c2, measure)[1]
                 return cache[mask]
 
-            phi = []
+            phi, ranges = [], []
             for i in range(n):
                 tot = 0.0
                 for mask in range(1 << n):
@@ -275,8 +276,9 @@ def main(argv=None):
                 phi.append(tot)
             md.append("**Order-independent (Shapley) attribution of the same gap:**")
             md.append("")
-            md.append("| Step | Shapley contribution | Range across orderings |")
-            md.append("|---|---|---|")
+            md.append("| Step | Shapley contribution | Share of gap | Range across orderings |")
+            md.append("|---|---|---|---|")
+            total = sum(phi)
             for i in range(n):
                 contribs = []
                 for perm in itertools.permutations(range(n)):
@@ -286,11 +288,19 @@ def main(argv=None):
                             contribs.append(v(mask | (1 << i)) - v(mask))
                             break
                         mask |= (1 << j)
-                md.append("| %s | %+s | %+s to %+s |" % (steps[i]["label"], ve._m(phi[i], DP),
-                                                        ve._m(min(contribs), DP), ve._m(max(contribs), DP)))
-            md.append("| Total | %+s | |" % ve._m(sum(phi), DP))
+                ranges.append((min(contribs), max(contribs)))
+                md.append("| %s | %+s | %.1f%% | %+s to %+s |" % (
+                    steps[i]["label"], ve._m(phi[i], DP), (phi[i] / total * 100) if total else 0.0,
+                    ve._m(min(contribs), DP), ve._m(max(contribs), DP)))
+            md.append("| Total | %+s | 100%% | |" % ve._m(total, DP))
             md.append("")
-            js["bridge_shapley"] = [{"label": steps[i]["label"], "shapley": phi[i]} for i in range(n)]
+            entry["shapley"] = [{"label": steps[i]["label"], "shapley": phi[i], "min": ranges[i][0],
+                                 "max": ranges[i][1]} for i in range(n)]
+        js["bridges"].append(entry)
+        if bi == 1:
+            js["bridge"] = rows
+            if "shapley" in entry:
+                js["bridge_shapley"] = entry["shapley"]
 
     # ---- solve: bisect a case path so a measure hits a target
     js["solve"] = []

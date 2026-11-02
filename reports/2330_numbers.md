@@ -119,7 +119,7 @@ Terminal value implies (at the end of year N): EV/EBIT 10.1x · EV/EBITDA 6.4x �
 | **Probability-weighted** | **1,713** |
 | Equal-weighted (bias check) | 1,496 |
 
-## 2.1 Elasticity — FINAL VERDICT. Operating drivers, growth merged; sigma rule B for the two %-of-revenue drivers: half the gap between the FY2015-25 mean and today (EBITDA 66.3% vs 1-3Q26 74.0% -> 3.85pp; capex 38.3% vs 2026E ~35% -> 1.65pp)
+## 2.1 Elasticity — RULE B. Operating drivers, growth merged; sigma rule B for the two %-of-revenue drivers: half the gap between the FY2015-25 mean and today (EBITDA 66.3% vs 1-3Q26 74.0% -> 3.85pp; capex 38.3% vs 2026E ~35% -> 1.65pp)
 
 ### Driver isolation — Base (base value/share USD 53.37)
 
@@ -135,7 +135,7 @@ Terminal value implies (at the end of year N): EV/EBIT 10.1x · EV/EBITDA 6.4x �
 
 _Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking._
 
-## 2.2 Elasticity — ROBUSTNESS. Same drivers, sigma rule A for the two %-of-revenue drivers: half the FY2015-25 annual SD (EBITDA 2.36pp -> 1.2pp; capex 7.5pp -> 3.75pp)
+## 2.2 Elasticity — RULE A. Same drivers, sigma rule A for the two %-of-revenue drivers: half the FY2015-25 annual SD (EBITDA 2.36pp -> 1.2pp; capex 7.5pp -> 3.75pp)
 
 ### Driver isolation — Base (base value/share USD 53.37)
 
@@ -190,14 +190,14 @@ _Variance shares assume drivers are independent and locally linear. Correlated d
 |---|---|---|---|---|---|---|
 | 1 | Flat 10-yr revenue CAGR implied, EBITDA margin held at 74% (1-3Q26 reported level, 74.0%), no event risk | Base | revenue_growth | — | 12.48% | 5.51e-06 |
 | 2 | Flat 10-yr revenue CAGR implied, EBITDA margin 68.9% (FY2025 record), no event risk | Base | revenue_growth | — | 14.20% | -9.01e-06 |
-| 3 | Consensus 2027-28 (USD at spot: +34.3%/+26%) at EPS-consistent margins: implied 2029-36 growth, no event risk | Base | revenue_growth | 3 | 7.37% | -4.80e-06 |
-| 4 | Same, with our event-risk overlay (1.5%/yr, 80% loss) | Base | revenue_growth | 3 | 10.56% | -1.23e-05 |
+| 3 | Consensus 2027-28 (USD at spot: +34.3%/+26%) at EPS-consistent 2027-28 margins, our Base margins after: implied 2029-36 growth, no event risk | Base | revenue_growth | 3 | 9.43% | -6.28e-07 |
+| 4 | Same, with our event-risk overlay (1.5%/yr, 80% loss) | Base | revenue_growth | 3 | 12.70% | -3.99e-06 |
 | 5 | Our Base growth path: implied flat EBITDA margin, no event risk | Base | ebitda_margin | — | 76.04% | 2.73e-06 |
 | 6 | Our Base growth path: implied flat EBITDA margin, with event risk | Base | ebitda_margin | — | 84.30% | -2.45e-06 |
 | 7 | Our Base growth and margins: implied flat capex intensity (capex/revenue), no event risk | Base | capex_intensity | — | 23.47% | -8.47e-06 |
 | 8 | Our Base growth and margins: implied flat capex intensity, with event risk | Base | capex_intensity | — | 16.78% | -1.79e-06 |
 | 9 | Implied annual event probability, our Base operations | Base | hazard_rate | — | no solution: no solution for hazard_rate in [0.0000, 0.5000] | — |
-| 10 | Implied annual event probability, consensus-like EPS-consistent operations | Base | hazard_rate | — | 0.28% (10y cumulative 2.7%) | 2.05e-05 |
+| 10 | Implied annual event probability, PUBLISHED consensus operations (2027-28), our Base after | Base | hazard_rate | — | no solution: no solution for hazard_rate in [0.0000, 0.5000] | — |
 | 11 | Implied annual event probability, our Bull operations | Bull | hazard_rate | — | 1.59% (10y cumulative 14.8%) | 6.13e-06 |
 | 12 | FRONTIER consensus-2027/28 + base duration (Base capex path; consensus capex not sourced): flat EBITDA 66.3% -> implied event probability | Base | hazard_rate | — | no solution: no solution for hazard_rate in [0.0000, 0.5000] | — |
 | 13 | FRONTIER consensus-2027/28 + base duration (Base capex path; consensus capex not sourced): flat EBITDA 68.9% -> implied event probability | Base | hazard_rate | — | no solution: no solution for hazard_rate in [0.0000, 0.5000] | — |
@@ -209,6 +209,8 @@ _Variance shares assume drivers are independent and locally linear. Correlated d
 | 19 | FRONTIER Bull growth path (Bull capex path: growth costs capital): flat EBITDA 71.0% -> implied event probability | Base | hazard_rate | — | 0.92% (10y cumulative 8.8%) | -2.91e-07 |
 | 20 | FRONTIER Bull growth path (Bull capex path: growth costs capital): flat EBITDA 74.0% -> implied event probability | Base | hazard_rate | — | 1.59% (10y cumulative 14.8%) | 6.13e-06 |
 | 21 | FRONTIER Bull growth path (Bull capex path: growth costs capital): flat EBITDA 77.0% -> implied event probability | Base | hazard_rate | — | 2.28% (10y cumulative 20.6%) | -5.57e-06 |
+| 22 | Implied annual event probability, consensus 2027-28 with EBITDA 74.1% held to 2036 (our INFERENCE about the street) | Base | hazard_rate | — | 0.28% (10y cumulative 2.7%) | 2.05e-05 |
+| 23 | Implied annual event probability, Bull with EBITDA 74% only through 2036, then 68.9% (11-year path) | Bull | hazard_rate | — | 1.00% (10y cumulative 9.6%) | -2.62e-07 |
 
 ## 4. Variants (independent what-ifs, probability-weighted value per share)
 
@@ -230,7 +232,7 @@ _Variance shares assume drivers are independent and locally linear. Correlated d
 | Exit multiple 6.5x EV/EBITDA (all scenarios; hazard through 2036) | 1,780 | -24.9% | 1,945 | -17.9% |
 | Exit multiple 7.6x EV/EBITDA (UMC 2027E) | 1,931 | -18.5% | 2,111 | -10.9% |
 | Exit multiple 10.1x EV/EBITDA (TSMC 2027E, MarketScreener) | 2,273 | -4.1% | 2,489 | +5.0% |
-| ERP 4.20% (Oct-1 figure, mismatched date) -> 10.15% | 1,804 | -23.9% | 1,963 | -17.2% |
+| ERP 4.20% held (Damodaran 2026-10-01, sticky-ERP convention) -> CoE 10.15% | 1,804 | -23.9% | 1,963 | -17.2% |
 | Terminal growth 4% | 1,828 | -22.9% | 1,997 | -15.7% |
 | Base holds the 1-3Q26 cash margin (EBITDA 74%) | 1,812 | -23.5% | 1,980 | -16.5% |
 | Capex intensity floored at 30.5% (FY15-25 minimum) | 1,632 | -31.1% | 1,781 | -24.9% |
@@ -243,8 +245,15 @@ _Variance shares assume drivers are independent and locally linear. Correlated d
 | Bull 35% (others pro rata: 43.3/17.3/4.3) | 1,803 | -23.9% | 1,970 | -16.9% |
 | Bull 40% (others pro rata: 40/16/4) | 1,849 | -22.0% | 2,020 | -14.8% |
 | Multiples-consistent: no event risk, cost of equity 9.58%, Base holds 74% EBITDA | 2,462 | +3.9% | 2,674 | +12.8% |
+| Country-risk premium in the discount rate instead of the overlay (10.58% + 0.742% = 11.32%) | 1,828 | -22.9% | 2,011 | -15.2% |
+| Event risk 0.853%/yr, 80% loss (equivalent of Damodaran's 0.742% CRP) | 1,828 | -22.9% | 1,997 | -15.7% |
+| Event risk 0.667%/yr, total loss (equivalent of Damodaran's 0.742% CRP) | 1,827 | -22.9% | 1,997 | -15.7% |
+| US 10Y +50bp, implied market return held (ERP 4.05%) -> CoE 10.46% | 1,737 | -26.7% | 1,895 | -20.1% |
+| US 10Y +50bp, ERP held (4.55%) -> CoE 11.08% | 1,618 | -31.7% | 1,774 | -25.2% |
+| Cost of equity 10.08% and event risk 0.75%/yr | 1,971 | -16.9% | 2,145 | -9.5% |
+| Bull only, EBITDA 74% only through 2036 then 68.9% (11-year path) | 2,255 | -4.9% | 2,469 | +4.2% |
 
-## 5. Bridge — from our 12-month target price to the FactSet median target price (NT$3,300, 2026-10-16)
+## 5.1 Bridge — A. from our 12-month TP to the FactSet median TP (NT$3,300): published consensus, then event risk, then the cost of equity that closes the gap (Base duration)
 
 Measure: 12-month target price.
 
@@ -252,34 +261,122 @@ Measure: 12-month target price.
 |---|---|---|
 | Our 12-month target price | 1,870 | — |
 | + Base scenario only (drop Bull/Bear/Bust weighting) | 1,893 | 23 |
-| + Remove cross-strait event risk | 2,222 | 329 |
-| + Consensus revenue growth 2027-28 (USD at spot: +34.3%/+26%) | 2,398 | 176 |
-| + Consensus-EPS-consistent cash margins (EBITDA 72.6% in 2027, 74.1% from 2028) | 2,684 | 286 |
-| + Cost of equity 9.13% (the level that closes the gap; solve #1) | 3,300 | 616 |
+| + PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%) | 2,040 | 147 |
+| + PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029 | 2,046 | 6 |
+| + Remove cross-strait event risk | 2,404 | 358 |
+| + Cost of equity 8.47% (solved: closes the gap with our Base duration) | 3,300 | 896 |
 | Target to explain: FactSet median TP | 3,300 | residual -0 |
 
 **Order-independent (Shapley) attribution of the same gap:**
 
-| Step | Shapley contribution | Range across orderings |
+| Step | Shapley contribution | Share of gap | Range across orderings |
+|---|---|---|---|
+| Base scenario only (drop Bull/Bear/Bust weighting) | 77 | 5.4% | 23 to 149 |
+| PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%) | 150 | 10.5% | 74 to 248 |
+| PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029 | 5 | 0.3% | 3 to 6 |
+| Remove cross-strait event risk | 472 | 33.0% | 329 to 628 |
+| Cost of equity 8.47% (solved: closes the gap with our Base duration) | 727 | 50.9% | 576 to 896 |
+| Total | 1,430 | 100% | |
+
+## 5.2 Bridge — B. same, closing with our Bull duration (18% fading to 4%, Bull capex path) and a lower cost of equity
+
+Measure: 12-month target price.
+
+| Step | Value/share (TWD) | Contribution |
 |---|---|---|
-| Base scenario only (drop Bull/Bear/Bust weighting) | 148 | 23 to 311 |
-| Remove cross-strait event risk | 442 | 329 to 583 |
-| Consensus revenue growth 2027-28 (USD at spot: +34.3%/+26%) | 149 | 74 to 248 |
-| Consensus-EPS-consistent cash margins (EBITDA 72.6% in 2027, 74.1% from 2028) | 219 | 110 to 358 |
-| Cost of equity 9.13% (the level that closes the gap; solve #1) | 472 | 356 to 616 |
-| Total | 1,430 | |
+| Our 12-month target price | 1,870 | — |
+| + Base scenario only (drop Bull/Bear/Bust weighting) | 1,893 | 23 |
+| + PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%) | 2,040 | 147 |
+| + PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029 | 2,046 | 6 |
+| + Remove cross-strait event risk | 2,404 | 358 |
+| + Bull duration 2029-36 with the Bull capex path | 2,700 | 296 |
+| + Cost of equity 9.20% (solved) | 3,300 | 600 |
+| Target to explain: FactSet median TP | 3,300 | residual 0 |
+
+**Order-independent (Shapley) attribution of the same gap:**
+
+| Step | Shapley contribution | Share of gap | Range across orderings |
+|---|---|---|---|
+| Base scenario only (drop Bull/Bear/Bust weighting) | 170 | 11.9% | 23 to 326 |
+| PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%) | 57 | 4.0% | 0 to 217 |
+| PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029 | 5 | 0.3% | 3 to 6 |
+| Remove cross-strait event risk | 449 | 31.4% | 329 to 590 |
+| Bull duration 2029-36 with the Bull capex path | 293 | 20.5% | 119 to 600 |
+| Cost of equity 9.20% (solved) | 457 | 32.0% | 336 to 600 |
+| Total | 1,430 | 100% | |
+
+## 5.3 Bridge — C. same, closing with faster 2029-36 growth at our 10.58% cost of equity (Bull capex path)
+
+Measure: 12-month target price.
+
+| Step | Value/share (TWD) | Contribution |
+|---|---|---|
+| Our 12-month target price | 1,870 | — |
+| + Base scenario only (drop Bull/Bear/Bust weighting) | 1,893 | 23 |
+| + PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%) | 2,040 | 147 |
+| + PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029 | 2,046 | 6 |
+| + Remove cross-strait event risk | 2,404 | 358 |
+| + 2029-36 revenue growth 14.1% a year (solved), Bull capex path | 3,300 | 896 |
+| Target to explain: FactSet median TP | 3,300 | residual 0 |
+
+**Order-independent (Shapley) attribution of the same gap:**
+
+| Step | Shapley contribution | Share of gap | Range across orderings |
+|---|---|---|---|
+| Base scenario only (drop Bull/Bear/Bust weighting) | 288 | 20.1% | 23 to 562 |
+| PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%) | 53 | 3.7% | 0 to 176 |
+| PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029 | 5 | 0.3% | 3 to 6 |
+| Remove cross-strait event risk | 423 | 29.6% | 329 to 546 |
+| 2029-36 revenue growth 14.1% a year (solved), Bull capex path | 662 | 46.3% | 354 to 1,072 |
+| Total | 1,430 | 100% | |
+
+## 5.4 Bridge — D. keeping our 1.5%/yr event risk: Bull duration, 74.1% EBITDA held to 2036 (our inference, not published) and a lower cost of equity
+
+Measure: 12-month target price.
+
+| Step | Value/share (TWD) | Contribution |
+|---|---|---|
+| Our 12-month target price | 1,870 | — |
+| + Base scenario only (drop Bull/Bear/Bust weighting) | 1,893 | 23 |
+| + PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%) | 2,040 | 147 |
+| + PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029 | 2,046 | 6 |
+| + Bull duration 2029-36 with the Bull capex path | 2,284 | 237 |
+| + INFERENCE: EBITDA 74.1% held 2029-36 (consensus publishes nothing after 2028) | 2,554 | 270 |
+| + Cost of equity 8.63% (solved, event risk kept) | 3,300 | 746 |
+| Target to explain: FactSet median TP | 3,300 | residual -0 |
+
+**Order-independent (Shapley) attribution of the same gap:**
+
+| Step | Shapley contribution | Share of gap | Range across orderings |
+|---|---|---|---|
+| Base scenario only (drop Bull/Bear/Bust weighting) | 236 | 16.5% | 23 to 467 |
+| PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%) | 58 | 4.0% | 0 to 217 |
+| PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029 | 2 | 0.1% | 0 to 6 |
+| Bull duration 2029-36 with the Bull capex path | 294 | 20.6% | 119 to 600 |
+| INFERENCE: EBITDA 74.1% held 2029-36 (consensus publishes nothing after 2028) | 223 | 15.6% | 107 to 363 |
+| Cost of equity 8.63% (solved, event risk kept) | 617 | 43.2% | 519 to 746 |
+| Total | 1,430 | 100% | |
 
 ## 5b. Solves — the input that makes a measure hit a target
 
 | # | Question | Path | Measure | Target | Solution |
 |---|---|---|---|---|---|
-| 1 | Cost of equity at which consensus 2027-28 + EPS-consistent margins + OUR Base duration, no event risk, give a 12-month TP of NT$3,300 | case.wacc | target_12m | 3,300 | 9.13% |
-| 2 | Same operations with our BULL duration (18% fading to 4%): cost of equity that gives NT$3,300 | case.wacc | target_12m | 3,300 | 10.04% |
-| 3 | At OUR 10.58% cost of equity, consensus 2027-28 + margins, no event risk: flat 2029-36 growth that gives NT$3,300 | scenarios.Base.driver_build.revenue_growth[2:] | target_12m | 3,300 | 11.78% |
-| 4 | FLIP: annual event probability at which our TP reaches the Hold line (NT$2,014.5) | case.hazard.annual_probability | target_12m | 2,014 | 0.77% |
-| 5 | FLIP: cost of equity at which our TP reaches the Hold line (NT$2,014.5) | case.wacc | target_12m | 2,014 | 9.93% |
-| 6 | FLIP: cost of equity at which our TP reaches the Hold line with NO event risk | case.wacc | target_12m | 2,014 | 11.30% |
-| 7 | FLIP: exit EV/EBITDA multiple (all scenarios, event risk through 2036) at which our TP reaches the Hold line (NT$2,014.5) | scenarios.*.terminal.multiple | target_12m | 2,014 | 6.9609 |
+| 1 | S1 Cost of equity: published consensus 2027-28 (growth + margins), our Base duration and margins after, no event risk -> TP NT$3,300 | case.wacc | target_12m | 3,300 | 8.47% |
+| 2 | S2 Same with our Bull duration and Bull capex path | case.wacc | target_12m | 3,300 | 9.20% |
+| 3 | S3 At our 10.58%, no event risk: flat 2029-36 growth (Bull capex path) that gives NT$3,300 | scenarios.Base.driver_build.revenue_growth[2:] | target_12m | 3,300 | 14.11% |
+| 4 | S4 EVENT RISK KEPT (1.5%/yr): Bull duration + Bull capex + EBITDA 74.1% held to 2036 (inference): cost of equity -> NT$3,300 | case.wacc | target_12m | 3,300 | 8.63% |
+| 5 | S5 EVENT RISK KEPT: Bull duration + Bull capex, our Base margins after 2028: cost of equity -> NT$3,300 | case.wacc | target_12m | 3,300 | 7.90% |
+| 6 | S6 Our own Base operations (no consensus), no event risk: cost of equity -> NT$3,300 | case.wacc | target_12m | 3,300 | 8.04% |
+| 7 | S7 Our four scenarios, no event risk: cost of equity at which fair value = NT$2,370 | case.wacc | fair_value | 2,370 | 9.45% |
+| 8 | S8 Our four scenarios, no event risk: cost of equity at which fair value = NT$2,513 (18x consensus NTM EPS NT$139.6) | case.wacc | fair_value | 2,513 | 9.10% |
+| 9 | S9 Bull only, our 1.5%/yr event risk: cost of equity at which fair value = NT$2,513 | case.wacc | fair_value | 2,513 | 10.19% |
+| 10 | S10 Exit EV/EBITDA multiple (event risk through 2036) equivalent to our Gordon terminal value (reproduces our TP) | scenarios.*.terminal.multiple | target_12m | 1,870 | 6.0056 |
+| 11 | S11 TEN YEARS THEN REVERT: flat capex intensity for 2027-36 only (then 28%), Base, no event risk -> fair value NT$2,370 | scenarios.Base.driver_build.capex_pct_revenue[0:10] | fair_value | 2,370 | 18.27% |
+| 12 | S12 TEN YEARS THEN REVERT: flat EBITDA margin for 2027-36 only (then 68.9%), Base growth, no event risk -> fair value NT$2,370 | scenarios.Base.driver_build.ebitda_margin[0:10] | fair_value | 2,370 | 84.25% |
+| 13 | FLIP: annual event probability at which our TP reaches the Hold line (NT$2,014.5) | case.hazard.annual_probability | target_12m | 2,014 | 0.77% |
+| 14 | FLIP: cost of equity at which our TP reaches the Hold line (NT$2,014.5) | case.wacc | target_12m | 2,014 | 9.93% |
+| 15 | FLIP: cost of equity at which our TP reaches the Hold line with NO event risk | case.wacc | target_12m | 2,014 | 11.30% |
+| 16 | FLIP: exit EV/EBITDA multiple (all scenarios, event risk through 2036) at which our TP reaches the Hold line (NT$2,014.5) | scenarios.*.terminal.multiple | target_12m | 2,014 | 6.9609 |
 
 ## 6.1 Sensitivity — Base: 10-yr revenue CAGR x steady EBITDA margin (with event risk)
 

@@ -952,7 +952,7 @@
       "top_two_variance_share": 0.9331913804156725,
       "verdict": "Top two drivers explain 93% of tested variance: a clean two-number stock.",
       "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
-      "title": "FINAL VERDICT. Operating drivers, growth merged; sigma rule B for the two %-of-revenue drivers: half the gap between the FY2015-25 mean and today (EBITDA 66.3% vs 1-3Q26 74.0% -> 3.85pp; capex 38.3% vs 2026E ~35% -> 1.65pp)"
+      "title": "RULE B. Operating drivers, growth merged; sigma rule B for the two %-of-revenue drivers: half the gap between the FY2015-25 mean and today (EBITDA 66.3% vs 1-3Q26 74.0% -> 3.85pp; capex 38.3% vs 2026E ~35% -> 1.65pp)"
     },
     {
       "scenario": "Base",
@@ -1027,7 +1027,7 @@
       "top_two_variance_share": 0.9648824998418843,
       "verdict": "Top two drivers explain 96% of tested variance: a clean two-number stock.",
       "caveat": "Variance shares assume drivers are independent and locally linear. Correlated drivers (e.g. growth and operating leverage) overstate the total; merge them into one driver before ranking.",
-      "title": "ROBUSTNESS. Same drivers, sigma rule A for the two %-of-revenue drivers: half the FY2015-25 annual SD (EBITDA 2.36pp -> 1.2pp; capex 7.5pp -> 3.75pp)"
+      "title": "RULE A. Same drivers, sigma rule A for the two %-of-revenue drivers: half the FY2015-25 annual SD (EBITDA 2.36pp -> 1.2pp; capex 7.5pp -> 3.75pp)"
     },
     {
       "scenario": "Base",
@@ -1221,21 +1221,21 @@
       "solved_for": "revenue_growth",
       "from_year": 3,
       "target_price": 72.97247367448735,
-      "implied_value": 0.07367410510778427,
-      "model_value_per_share_at_solution": 72.97246887616926,
-      "residual": -4.798318087750886e-06,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 7.37% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "Consensus 2027-28 (USD at spot: +34.3%/+26%) at EPS-consistent margins: implied 2029-36 growth, no event risk"
+      "implied_value": 0.09431511908769608,
+      "model_value_per_share_at_solution": 72.9724730462345,
+      "residual": -6.282528488554817e-07,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 9.43% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Consensus 2027-28 (USD at spot: +34.3%/+26%) at EPS-consistent 2027-28 margins, our Base margins after: implied 2029-36 growth, no event risk"
     },
     {
       "scenario": "Base",
       "solved_for": "revenue_growth",
       "from_year": 3,
       "target_price": 72.97247367448735,
-      "implied_value": 0.10557644814252853,
-      "model_value_per_share_at_solution": 72.97246140651002,
-      "residual": -1.2267977325564061e-05,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 10.56% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "implied_value": 0.12704537063837051,
+      "model_value_per_share_at_solution": 72.97246968661142,
+      "residual": -3.987875928146423e-06,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies revenue_growth = 12.70% from forecast year 3 onward. The analyst's job is to judge whether that is achievable, not to re-derive it.",
       "title": "Same, with our event-risk overlay (1.5%/yr, 80% loss)"
     },
     {
@@ -1287,15 +1287,8 @@
       "title": "Implied annual event probability, our Base operations"
     },
     {
-      "scenario": "Base",
-      "solved_for": "hazard_rate",
-      "from_year": null,
-      "target_price": 72.97247367448735,
-      "implied_value": 0.002773195505142212,
-      "model_value_per_share_at_solution": 72.97249416572178,
-      "residual": 2.0491234437258754e-05,
-      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.28%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
-      "title": "Implied annual event probability, consensus-like EPS-consistent operations"
+      "error": "no solution for hazard_rate in [0.0000, 0.5000]: implied value is below the price at both ends. The price cannot be reconciled by this driver alone — widen the bracket with --lo/--hi, or solve for a different driver.",
+      "title": "Implied annual event probability, PUBLISHED consensus operations (2027-28), our Base after"
     },
     {
       "scenario": "Bull",
@@ -1389,6 +1382,28 @@
       "residual": -5.57052185001794e-06,
       "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 2.28%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
       "title": "FRONTIER Bull growth path (Bull capex path: growth costs capital): flat EBITDA 77.0% -> implied event probability"
+    },
+    {
+      "scenario": "Base",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.002773195505142212,
+      "model_value_per_share_at_solution": 72.97249416572178,
+      "residual": 2.0491234437258754e-05,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 0.28%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Implied annual event probability, consensus 2027-28 with EBITDA 74.1% held to 2036 (our INFERENCE about the street)"
+    },
+    {
+      "scenario": "Bull",
+      "solved_for": "hazard_rate",
+      "from_year": null,
+      "target_price": 72.97247367448735,
+      "implied_value": 0.010023266077041626,
+      "model_value_per_share_at_solution": 72.97247341252611,
+      "residual": -2.6196123315003206e-07,
+      "interpretation": "At 2026-11-01, the current price of 72.97 implies hazard_rate = 1.00%. The analyst's job is to judge whether that is achievable, not to re-derive it.",
+      "title": "Implied annual event probability, Bull with EBITDA 74% only through 2036, then 68.9% (11-year path)"
     }
   ],
   "variants": [
@@ -1569,7 +1584,7 @@
       }
     },
     {
-      "label": "ERP 4.20% (Oct-1 figure, mismatched date) -> 10.15%",
+      "label": "ERP 4.20% held (Damodaran 2026-10-01, sticky-ERP convention) -> CoE 10.15%",
       "value": 1803.6165568755907,
       "target_12m": 1962.6836373984631,
       "scenarios": {
@@ -1710,6 +1725,375 @@
         "Bear": 1373.6063305856173,
         "Bust": 1084.879547798192
       }
+    },
+    {
+      "label": "Country-risk premium in the discount rate instead of the overlay (10.58% + 0.742% = 11.32%)",
+      "value": 1827.5930977790251,
+      "target_12m": 2010.5131883095664,
+      "scenarios": {
+        "Bull": 2559.818389407738,
+        "Base": 1848.1497620080293,
+        "Bear": 1099.9997426595503,
+        "Bust": 871.2734178233164
+      }
+    },
+    {
+      "label": "Event risk 0.853%/yr, 80% loss (equivalent of Damodaran's 0.742% CRP)",
+      "value": 1827.58277174225,
+      "target_12m": 1996.94102899258,
+      "scenarios": {
+        "Bull": 2559.833745106089,
+        "Base": 1848.130660970246,
+        "Bear": 1099.9791112319099,
+        "Bust": 871.263654684455
+      }
+    },
+    {
+      "label": "Event risk 0.667%/yr, total loss (equivalent of Damodaran's 0.742% CRP)",
+      "value": 1827.4763245891916,
+      "target_12m": 1996.823319730728,
+      "scenarios": {
+        "Bull": 2559.6467562790945,
+        "Base": 1848.032869312177,
+        "Bear": 1099.9352314950527,
+        "Bust": 871.2230912863807
+      }
+    },
+    {
+      "label": "US 10Y +50bp, implied market return held (ERP 4.05%) -> CoE 10.46%",
+      "value": 1736.8329051220028,
+      "target_12m": 1894.5403636558667,
+      "scenarios": {
+        "Bull": 2426.5457213981404,
+        "Base": 1757.2602688608283,
+        "Bear": 1049.797667730227,
+        "Bust": 832.1361359201617
+      }
+    },
+    {
+      "label": "US 10Y +50bp, ERP held (4.55%) -> CoE 11.08%",
+      "value": 1618.2915390762323,
+      "target_12m": 1773.598241605879,
+      "scenarios": {
+        "Bull": 2252.458710329204,
+        "Base": 1638.5556821388482,
+        "Bear": 984.2392697587741,
+        "Bust": 781.0233294550441
+      }
+    },
+    {
+      "label": "Cost of equity 10.08% and event risk 0.75%/yr",
+      "value": 1970.6409344557999,
+      "target_12m": 2145.2815406489444,
+      "scenarios": {
+        "Bull": 2770.1704071203912,
+        "Base": 1991.315197978146,
+        "Bear": 1178.977137451357,
+        "Bust": 932.9061239271498
+      }
+    },
+    {
+      "label": "Bull only, EBITDA 74% only through 2036 then 68.9% (11-year path)",
+      "value": 2254.6081716230165,
+      "target_12m": 2469.145716180731,
+      "scenarios": {
+        "Bull": 2254.6081716230165,
+        "Base": 1733.2565507180232,
+        "Bear": 1036.5443454547242,
+        "Bust": 821.8008835366079
+      }
+    }
+  ],
+  "bridges": [
+    {
+      "title": "A. from our 12-month TP to the FactSet median TP (NT$3,300): published consensus, then event risk, then the cost of equity that closes the gap (Base duration)",
+      "rows": [
+        {
+          "label": "Our 12-month target price",
+          "value": 1870.0795975189521,
+          "delta": null
+        },
+        {
+          "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
+          "value": 1892.6350937839898,
+          "delta": 22.55549626503762
+        },
+        {
+          "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+          "value": 2040.0648758964726,
+          "delta": 147.42978211248283
+        },
+        {
+          "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+          "value": 2046.3319039415396,
+          "delta": 6.267028045067036
+        },
+        {
+          "label": "Remove cross-strait event risk",
+          "value": 2404.2346947146325,
+          "delta": 357.9027907730929
+        },
+        {
+          "label": "Cost of equity 8.47% (solved: closes the gap with our Base duration)",
+          "value": 3300.002226117021,
+          "delta": 895.7675314023886
+        }
+      ],
+      "shapley": [
+        {
+          "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
+          "shapley": 76.74555494213972,
+          "min": 22.55159029972083,
+          "max": 149.34633839406115
+        },
+        {
+          "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+          "shapley": 149.64305102527118,
+          "min": 73.71489105624073,
+          "max": 247.62015960198005
+        },
+        {
+          "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+          "shapley": 4.598199413385851,
+          "min": 2.8534860302622747,
+          "max": 6.475380917446728
+        },
+        {
+          "label": "Remove cross-strait event risk",
+          "shapley": 471.52356592438804,
+          "min": 329.10045260170045,
+          "max": 627.5002130059761
+        },
+        {
+          "label": "Cost of equity 8.47% (solved: closes the gap with our Base duration)",
+          "shapley": 727.4122572928842,
+          "min": 576.1922130520834,
+          "max": 895.7675314023886
+        }
+      ]
+    },
+    {
+      "title": "B. same, closing with our Bull duration (18% fading to 4%, Bull capex path) and a lower cost of equity",
+      "rows": [
+        {
+          "label": "Our 12-month target price",
+          "value": 1870.0795975189521,
+          "delta": null
+        },
+        {
+          "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
+          "value": 1892.6350937839898,
+          "delta": 22.55549626503762
+        },
+        {
+          "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+          "value": 2040.0648758964726,
+          "delta": 147.42978211248283
+        },
+        {
+          "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+          "value": 2046.3319039415396,
+          "delta": 6.267028045067036
+        },
+        {
+          "label": "Remove cross-strait event risk",
+          "value": 2404.2346947146325,
+          "delta": 357.9027907730929
+        },
+        {
+          "label": "Bull duration 2029-36 with the Bull capex path",
+          "value": 2700.3686590994917,
+          "delta": 296.13396438485915
+        },
+        {
+          "label": "Cost of equity 9.20% (solved)",
+          "value": 3299.9789750392324,
+          "delta": 599.6103159397408
+        }
+      ],
+      "shapley": [
+        {
+          "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
+          "shapley": 169.70215832016044,
+          "min": 22.55549626503762,
+          "max": 325.8179869493579
+        },
+        {
+          "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+          "shapley": 57.17520012190953,
+          "min": 0.0,
+          "max": 217.15147068105125
+        },
+        {
+          "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+          "shapley": 4.657490836340821,
+          "min": 2.8534860302622747,
+          "max": 6.4466326640767875
+        },
+        {
+          "label": "Remove cross-strait event risk",
+          "shapley": 448.6762410604283,
+          "min": 329.10045260170045,
+          "max": 589.6038681899645
+        },
+        {
+          "label": "Bull duration 2029-36 with the Bull capex path",
+          "shapley": 292.74645334409564,
+          "min": 118.74474746429382,
+          "max": 600.2035362176994
+        },
+        {
+          "label": "Cost of equity 9.20% (solved)",
+          "shapley": 456.94183383734554,
+          "min": 335.9960266050675,
+          "max": 599.6103159397408
+        }
+      ]
+    },
+    {
+      "title": "C. same, closing with faster 2029-36 growth at our 10.58% cost of equity (Bull capex path)",
+      "rows": [
+        {
+          "label": "Our 12-month target price",
+          "value": 1870.0795975189521,
+          "delta": null
+        },
+        {
+          "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
+          "value": 1892.6350937839898,
+          "delta": 22.55549626503762
+        },
+        {
+          "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+          "value": 2040.0648758964726,
+          "delta": 147.42978211248283
+        },
+        {
+          "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+          "value": 2046.3319039415396,
+          "delta": 6.267028045067036
+        },
+        {
+          "label": "Remove cross-strait event risk",
+          "value": 2404.2346947146325,
+          "delta": 357.9027907730929
+        },
+        {
+          "label": "2029-36 revenue growth 14.1% a year (solved), Bull capex path",
+          "value": 3299.997998227484,
+          "delta": 895.7633035128515
+        }
+      ],
+      "shapley": [
+        {
+          "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
+          "shapley": 287.6020486299028,
+          "min": 22.55549626503762,
+          "max": 561.8592531075619
+        },
+        {
+          "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+          "shapley": 52.75528112000139,
+          "min": 0.0,
+          "max": 176.33081484097784
+        },
+        {
+          "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+          "shapley": 4.6357898686954515,
+          "min": 2.8534860302622747,
+          "max": 6.393762061617963
+        },
+        {
+          "label": "Remove cross-strait event risk",
+          "shapley": 423.05404724801144,
+          "min": 329.10045260170045,
+          "max": 546.0223655112504
+        },
+        {
+          "label": "2029-36 revenue growth 14.1% a year (solved), Bull capex path",
+          "shapley": 661.8712338419209,
+          "min": 353.82186438734675,
+          "max": 1072.0941183538293
+        }
+      ]
+    },
+    {
+      "title": "D. keeping our 1.5%/yr event risk: Bull duration, 74.1% EBITDA held to 2036 (our inference, not published) and a lower cost of equity",
+      "rows": [
+        {
+          "label": "Our 12-month target price",
+          "value": 1870.0795975189521,
+          "delta": null
+        },
+        {
+          "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
+          "value": 1892.6350937839898,
+          "delta": 22.55549626503762
+        },
+        {
+          "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+          "value": 2040.0648758964726,
+          "delta": 147.42978211248283
+        },
+        {
+          "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+          "value": 2046.3319039415396,
+          "delta": 6.267028045067036
+        },
+        {
+          "label": "Bull duration 2029-36 with the Bull capex path",
+          "value": 2283.821398870127,
+          "delta": 237.4894949285872
+        },
+        {
+          "label": "INFERENCE: EBITDA 74.1% held 2029-36 (consensus publishes nothing after 2028)",
+          "value": 2553.6749196745077,
+          "delta": 269.8535208043809
+        },
+        {
+          "label": "Cost of equity 8.63% (solved, event risk kept)",
+          "value": 3300.0232463582242,
+          "delta": 746.3483266837166
+        }
+      ],
+      "shapley": [
+        {
+          "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
+          "shapley": 235.86072422439446,
+          "min": 22.55549626503762,
+          "max": 466.7421482371433
+        },
+        {
+          "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+          "shapley": 57.567512897079276,
+          "min": 0.0,
+          "max": 217.32028940198234
+        },
+        {
+          "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+          "shapley": 2.0140819231234746,
+          "min": 0.0,
+          "max": 6.34109368828922
+        },
+        {
+          "label": "Bull duration 2029-36 with the Bull capex path",
+          "shapley": 294.4576221219532,
+          "min": 118.74474746429382,
+          "max": 599.7125344661235
+        },
+        {
+          "label": "INFERENCE: EBITDA 74.1% held 2029-36 (consensus publishes nothing after 2028)",
+          "shapley": 222.6177954061103,
+          "min": 107.1524747926062,
+          "max": 363.4812339935247
+        },
+        {
+          "label": "Cost of equity 8.63% (solved, event risk kept)",
+          "shapley": 617.4259122666112,
+          "min": 519.0275392089607,
+          "max": 746.3483266837166
+        }
+      ]
     }
   ],
   "bridge": [
@@ -1724,60 +2108,106 @@
       "delta": 22.55549626503762
     },
     {
+      "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+      "value": 2040.0648758964726,
+      "delta": 147.42978211248283
+    },
+    {
+      "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+      "value": 2046.3319039415396,
+      "delta": 6.267028045067036
+    },
+    {
       "label": "Remove cross-strait event risk",
-      "value": 2222.0806082289437,
-      "delta": 329.4455144449539
+      "value": 2404.2346947146325,
+      "delta": 357.9027907730929
     },
     {
-      "label": "Consensus revenue growth 2027-28 (USD at spot: +34.3%/+26%)",
-      "value": 2397.8409326530145,
-      "delta": 175.76032442407086
-    },
-    {
-      "label": "Consensus-EPS-consistent cash margins (EBITDA 72.6% in 2027, 74.1% from 2028)",
-      "value": 2683.8063057845443,
-      "delta": 285.96537313152976
-    },
-    {
-      "label": "Cost of equity 9.13% (the level that closes the gap; solve #1)",
-      "value": 3300.008060882733,
-      "delta": 616.2017550981886
+      "label": "Cost of equity 8.47% (solved: closes the gap with our Base duration)",
+      "value": 3300.002226117021,
+      "delta": 895.7675314023886
     }
   ],
   "bridge_shapley": [
     {
       "label": "Base scenario only (drop Bull/Bear/Bust weighting)",
-      "shapley": 147.71397381037474
+      "shapley": 76.74555494213972,
+      "min": 22.55159029972083,
+      "max": 149.34633839406115
+    },
+    {
+      "label": "PUBLISHED: consensus 2027-28 revenue growth (USD at spot: +34.3%/+26%)",
+      "shapley": 149.64305102527118,
+      "min": 73.71489105624073,
+      "max": 247.62015960198005
+    },
+    {
+      "label": "PUBLISHED: consensus-EPS-consistent EBITDA margins for 2027-28 (72.6%, 74.1%); our Base path from 2029",
+      "shapley": 4.598199413385851,
+      "min": 2.8534860302622747,
+      "max": 6.475380917446728
     },
     {
       "label": "Remove cross-strait event risk",
-      "shapley": 442.11596476062107
+      "shapley": 471.52356592438804,
+      "min": 329.10045260170045,
+      "max": 627.5002130059761
     },
     {
-      "label": "Consensus revenue growth 2027-28 (USD at spot: +34.3%/+26%)",
-      "shapley": 149.44232570667197
-    },
-    {
-      "label": "Consensus-EPS-consistent cash margins (EBITDA 72.6% in 2027, 74.1% from 2028)",
-      "shapley": 218.75292551533494
-    },
-    {
-      "label": "Cost of equity 9.13% (the level that closes the gap; solve #1)",
-      "shapley": 471.9032735707782
+      "label": "Cost of equity 8.47% (solved: closes the gap with our Base duration)",
+      "shapley": 727.4122572928842,
+      "min": 576.1922130520834,
+      "max": 895.7675314023886
     }
   ],
   "solve": [
     {
-      "title": "Cost of equity at which consensus 2027-28 + EPS-consistent margins + OUR Base duration, no event risk, give a 12-month TP of NT$3,300",
-      "solution": 0.09134812355041505
+      "title": "S1 Cost of equity: published consensus 2027-28 (growth + margins), our Base duration and margins after, no event risk -> TP NT$3,300",
+      "solution": 0.0846510410308838
     },
     {
-      "title": "Same operations with our BULL duration (18% fading to 4%): cost of equity that gives NT$3,300",
-      "solution": 0.10041642189025882
+      "title": "S2 Same with our Bull duration and Bull capex path",
+      "solution": 0.09203562736511231
     },
     {
-      "title": "At OUR 10.58% cost of equity, consensus 2027-28 + margins, no event risk: flat 2029-36 growth that gives NT$3,300",
-      "solution": 0.11783480644226073
+      "title": "S3 At our 10.58%, no event risk: flat 2029-36 growth (Bull capex path) that gives NT$3,300",
+      "solution": 0.141115140914917
+    },
+    {
+      "title": "S4 EVENT RISK KEPT (1.5%/yr): Bull duration + Bull capex + EBITDA 74.1% held to 2036 (inference): cost of equity -> NT$3,300",
+      "solution": 0.08626646995544433
+    },
+    {
+      "title": "S5 EVENT RISK KEPT: Bull duration + Bull capex, our Base margins after 2028: cost of equity -> NT$3,300",
+      "solution": 0.07902827262878419
+    },
+    {
+      "title": "S6 Our own Base operations (no consensus), no event risk: cost of equity -> NT$3,300",
+      "solution": 0.08035025596618653
+    },
+    {
+      "title": "S7 Our four scenarios, no event risk: cost of equity at which fair value = NT$2,370",
+      "solution": 0.09453978538513183
+    },
+    {
+      "title": "S8 Our four scenarios, no event risk: cost of equity at which fair value = NT$2,513 (18x consensus NTM EPS NT$139.6)",
+      "solution": 0.09095044136047366
+    },
+    {
+      "title": "S9 Bull only, our 1.5%/yr event risk: cost of equity at which fair value = NT$2,513",
+      "solution": 0.1018589496612549
+    },
+    {
+      "title": "S10 Exit EV/EBITDA multiple (event risk through 2036) equivalent to our Gordon terminal value (reproduces our TP)",
+      "solution": 6.005554901435971
+    },
+    {
+      "title": "S11 TEN YEARS THEN REVERT: flat capex intensity for 2027-36 only (then 28%), Base, no event risk -> fair value NT$2,370",
+      "solution": 0.18268443346023555
+    },
+    {
+      "title": "S12 TEN YEARS THEN REVERT: flat EBITDA margin for 2027-36 only (then 68.9%), Base growth, no event risk -> fair value NT$2,370",
+      "solution": 0.8425404065847397
     },
     {
       "title": "FLIP: annual event probability at which our TP reaches the Hold line (NT$2,014.5)",

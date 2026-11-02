@@ -495,6 +495,13 @@ class TestDuPont(unittest.TestCase):
 
 
 class TestCapexDriverAndBroadcast(unittest.TestCase):
+    def test_ebitda_margin_in_build_sets_ebit_net_of_da(self):
+        b = {"revenue_base_m": 100.0, "revenue_growth": 0.0, "horizon_years": 2,
+             "ebitda_margin": [0.50, 0.40], "da_pct_revenue": [0.10, 0.20], "ebit_margin": 0.99}
+        rows = ve.build_fcff(b)
+        self.assertAlmostEqual(rows[0]["ebit_margin"], 0.40)   # 0.50 - 0.10; ebit_margin ignored
+        self.assertAlmostEqual(rows[1]["ebit_margin"], 0.20)   # 0.40 - 0.20
+
     def test_capex_intensity_driver_sets_flat_path(self):
         case = one_year_case()
         case["scenarios"][0] = {"name": "Base", "probability": 1.0, "method": "dcf", "horizon_years": 3,

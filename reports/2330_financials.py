@@ -59,7 +59,7 @@ hist = {
     "FY2024A": (90.08, 30.0, 56.1, 45.7, 22.9, 33.0, 30.1, 45.25),
     "FY2025A": (122.42, 35.9, 59.9, 50.8, 18.1, 33.4, 26.3, 66.25),
 }
-L = ["| 年度 | 營收（US$ 十億） | 美元成長 | 毛利率 | 營業利益率 | EBITDA 利潤率 | 資本支出／營收 | 現金流量利潤率 | EPS（NT$） |",
+L = ["| 年度 | 營收（US$ 十億） | 美元成長 | 毛利率 | 營業利益率 | EBITDA 利潤率 | 資本支出／營收 | 自由現金流利潤率（歷史 FCF／預估 FCFF） | EPS（NT$） |",
      "|---|---|---|---|---|---|---|---|---|"]
 for y, h in hist.items():
     L.append("| %s | %.2f | %+.1f%% | %.1f%% | %.1f%% | %.1f%% | %.1f%% | %.1f%%（FCF） | %.2f |"
@@ -91,8 +91,8 @@ L = ["| | FY2026E | FY2027E | FY2028E |", "|---|---|---|---|"]
 L.append("| EPS（NT$，我們） | %.1f | %.1f | %.1f |" % (eps26, eps[0], eps[1]))
 L.append("| EPS（NT$，FactSet 共識中位數） | 109.21 | 145.69 | 185.61 |")
 L.append("| 我們 vs 共識 | %+.1f%% | %+.1f%% | %+.1f%% |" % ((eps26 / 109.21 - 1) * 100, (eps[0] / 145.69 - 1) * 100, (eps[1] / 185.61 - 1) * 100))
-L.append("| 本益比（NT$%s，我們的 EPS） | %.1fx | %.1fx | %.1fx |" % (format(price, ","), price / eps26, price / eps[0], price / eps[1]))
-L.append("| 本益比（NT$%s，共識 EPS） | %.1fx | %.1fx | %.1fx |" % (format(price, ","), price / 109.21, price / 145.69, price / 185.61))
+L.append("| 本益比（NT$%s，我們的 EPS） | %.1f 倍 | %.1f 倍 | %.1f 倍 |" % (format(price, ","), price / eps26, price / eps[0], price / eps[1]))
+L.append("| 本益比（NT$%s，共識 EPS） | %.1f 倍 | %.1f 倍 | %.1f 倍 |" % (format(price, ","), price / 109.21, price / 145.69, price / 185.61))
 print("\n".join(L))
 print()
 print("FY2015-25: TSMC 4Q management reports (EBITDA = OPM + D&A / NT$ revenue; FCF = CFO - capex, TSMC definition, / NT$ revenue). "

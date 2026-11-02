@@ -339,6 +339,46 @@
     "tier": "filing",
     "confidence": "high",
     "note": "Quoted from the release, 2026-11-01. The auditor's +41.1% used a rounded 3Q25 base; the company figure (+41.2%) stands."
+   },
+   {
+    "item": "3Q26 diluted weighted-average shares",
+    "value": "25,932 million (3Q26); 25,930 million (3Q25)",
+    "as_of": "2026-09-30",
+    "source_name": "TSMC 3Q26 earnings release (SEC 6-K)",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/0001046179/000104617926000726/a3q26e_withguidancexfinal.htm",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Used as the per-share divisor (shares_diluted_m)."
+   },
+   {
+    "item": "3Q26 cash dividends paid",
+    "value": "NT$155.59bn in 3Q26 (NT$155.59bn in 2Q26; NT$116.70bn in 3Q25)",
+    "as_of": "2026-09-30",
+    "source_name": "TSMC 3Q26 Management Report, cash-flow summary",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/f83780000ddc0c3b48e57a87eab6814c4ab35058/3Q26%20ManagementReport.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "NT$155.59bn / 25,932m shares = NT$6.00 a quarter; the 12-month TP deducts 4 x NT$6.00 = NT$24."
+   },
+   {
+    "item": "3Q26 long-term investments",
+    "value": "NT$224.63bn (2.2% of total assets NT$10,052.89bn); 2Q26 NT$227.93bn",
+    "as_of": "2026-09-30",
+    "source_name": "TSMC 3Q26 Management Report, balance sheet",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/f83780000ddc0c3b48e57a87eab6814c4ab35058/3Q26%20ManagementReport.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Added to equity at book (other_adjustments_m)."
+   },
+   {
+    "item": "3Q26 non-operating items",
+    "value": "NT$34.59bn (2Q26 NT$95.83bn; 3Q25 NT$24.68bn)",
+    "as_of": "2026-09-30",
+    "source_name": "TSMC 3Q26 Management Report, income statement",
+    "source_url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/f83780000ddc0c3b48e57a87eab6814c4ab35058/3Q26%20ManagementReport.pdf",
+    "tier": "filing",
+    "confidence": "high",
+    "note": "Annualised on cash & marketable securities of NT$4,016.98bn gives the 3.44% cash yield used in the EPS forecasts."
    }
   ],
   "synthesis": "FACTS (TSMC 4Q management reports, 20-F, 3Q26 statements): From FY15 to FY25, USD revenue rose from US$26.61bn to US$122.42bn. Annual USD growth ranged from -8.7% (FY23) to +35.9% (FY25), with weak years in FY18 (+6.5%) and FY19 (+1.3%). OPM ranged from 34.8% (FY19) to 50.8% (FY25), and GM from 46.0% to 59.9%. Capex rose from US$8.12bn to US$40.90bn. TSMC-defined FCF ranged from NT$154.7bn (FY19) to NT$1,002.6bn (FY25). At 30-Sep-26, interest-bearing debt was NT$1,031.58bn (current portion NT$213.20bn), net cash NT$2,985.40bn and NCI NT$45.3bn. At 30-Jun-26, leases were NT$36.9bn and customer temporary receipts NT$234.2bn (Dec-25: NT$189.9bn; Dec-24: NT$291.1bn). TSMC's own FY25 USD revenue is US$122.42bn, not the ~US$122.0bn in the established list.\n\nDERIVED: Mean USD growth was 16.4% (sample SD 15.2pp). OPM averaged 41.9% (SD 5.0pp) and GM 52.6% (SD 4.5pp). USD revenue CAGR was 16.5% for FY15-25 and 23.4% for FY19-25. Capex/revenue ranged 30.5-52.9% (mean 38.3%); FCF margin ranged 13.5-32.3% (mean 23.1%).\n\nINFERENCE for valuation:\n(1) The 3Q26 OPM of 58.7% and GM of 66.4% sit about 3.3 and 3.0 sample SDs above their 11-year means, and above the 56%+ through-cycle GM target. A terminal margin anchored on the current run-rate assumes a regime shift that history does not yet support, especially with the guided 2-4pts of overseas-fab dilution.\n(2) Growth volatility is high (~15pp SD, a down year in FY23 and a near-stall in FY19). That argues for wide scenario bands even if the ~25% 2024-29 CAGR target is met on average.\n(3) FCF margins compressed when capex intensity spiked (FY19, FY21, FY23). 2026 capex YTD is US$40.64bn against a US$60-64bn guide, which implies US$19.4-23.4bn in 4Q26.\n(4) EV bridge: net cash is about NT$115/share (2,985.40bn / 25,932m shares). Customer temporary receipts are capacity prepayments that are later refunded or offset against receivables, so treat them as quasi-debt or operating liabilities, not free cash. Leases and NCI are each under 1% of equity.",

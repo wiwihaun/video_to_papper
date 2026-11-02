@@ -1,4 +1,4 @@
-| 年度 | 營收（US$ 十億） | 美元成長 | 毛利率 | 營業利益率 | EBITDA 利潤率 | 資本支出／營收 | 現金流量利潤率 | EPS（NT$） |
+| 年度 | 營收（US$ 十億） | 美元成長 | 毛利率 | 營業利益率 | EBITDA 利潤率 | 資本支出／營收 | 自由現金流利潤率（歷史 FCF／預估 FCFF） | EPS（NT$） |
 |---|---|---|---|---|---|---|---|---|
 | FY2015A | 26.61 | +5.7% | 48.7% | 37.9% | 64.3% | 30.5% | 32.3%（FCF） | 11.82 |
 | FY2016A | 29.43 | +10.6% | 50.1% | 39.9% | 63.5% | 34.6% | 22.3%（FCF） | 12.89 |
@@ -24,7 +24,7 @@ FY2015-25 EBITDA margin: mean 66.3%, SD 2.36pp, range 61.6-68.9%. Capex/revenue 
 | EPS（NT$，我們） | 112.0 | 144.2 | 164.2 |
 | EPS（NT$，FactSet 共識中位數） | 109.21 | 145.69 | 185.61 |
 | 我們 vs 共識 | +2.6% | -1.0% | -11.5% |
-| 本益比（NT$2,370，我們的 EPS） | 21.2x | 16.4x | 14.4x |
-| 本益比（NT$2,370，共識 EPS） | 21.7x | 16.3x | 12.8x |
+| 本益比（NT$2,370，我們的 EPS） | 21.2 倍 | 16.4 倍 | 14.4 倍 |
+| 本益比（NT$2,370，共識 EPS） | 21.7 倍 | 16.3 倍 | 12.8 倍 |
 
 FY2015-25: TSMC 4Q management reports (EBITDA = OPM + D&A / NT$ revenue; FCF = CFO - capex, TSMC definition, / NT$ revenue). FY2026E: 1Q-3Q26 reported + 4Q26 guidance mid-points; EBITDA range from 4Q26 D&A flat to +10% QoQ. FY2027E onward: Base scenario (FCFF = model free cash flow to the firm, / US$ revenue). 4Q26E EPS 33.27; cash yield 3.44%; NTM EPS (ours) 138.9, (consensus) 139.6; FY2026E OPM 58.59%.

@@ -117,9 +117,14 @@ def build_fcff(build, horizon=None):
     if years == 0:
         raise ValueError("empty revenue path")
 
-    ebit_margin = _as_path(build.get("ebit_margin"), years, "ebit_margin")
     tax_rate = _as_path(build.get("tax_rate", 0.21), years, "tax_rate")
     da_pct = _as_path(build.get("da_pct_revenue", 0.0), years, "da_pct_revenue")
+    if build.get("ebitda_margin") is not None:
+        # cash-margin input: EBIT = EBITDA - D&A, year by year (takes precedence over ebit_margin)
+        ebitda = _as_path(build.get("ebitda_margin"), years, "ebitda_margin")
+        ebit_margin = [e - d for e, d in zip(ebitda, da_pct)]
+    else:
+        ebit_margin = _as_path(build.get("ebit_margin"), years, "ebit_margin")
     capex_pct = _as_path(build.get("capex_pct_revenue", 0.0), years, "capex_pct_revenue")
     nwc_pct = _as_path(build.get("nwc_pct_delta_revenue", 0.0), years, "nwc_pct_delta_revenue")
     sbc_pct = _as_path(build.get("sbc_pct_revenue", 0.0), years, "sbc_pct_revenue")

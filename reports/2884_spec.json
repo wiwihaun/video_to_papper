@@ -216,6 +216,57 @@
    }
   },
   {
+   "label": "Payout 68% (dividend NT$1.76)",
+   "set": {
+    "scenarios.*.payout_ratio": 0.68,
+    "case.roll_forward.dividends_quote_next_12m": 1.76
+   }
+  },
+  {
+   "label": "Payout 70% (dividend NT$1.82)",
+   "set": {
+    "scenarios.*.payout_ratio": 0.7,
+    "case.roll_forward.dividends_quote_next_12m": 1.82
+   }
+  },
+  {
+   "label": "Payout 76% (4% cash yield at NT$49.05, dividend NT$1.96)",
+   "set": {
+    "scenarios.*.payout_ratio": 0.755,
+    "case.roll_forward.dividends_quote_next_12m": 1.96
+   }
+  },
+  {
+   "label": "ERP 4.20% held (Damodaran 2026-10-01) -> CoE 5.71%",
+   "set": {
+    "case.wacc": 0.05713
+   }
+  },
+  {
+   "label": "Weights Bull 15 / Base 50 / Bear 35",
+   "set": {
+    "scenarios.Bull.probability": 0.15,
+    "scenarios.Base.probability": 0.5,
+    "scenarios.Bear.probability": 0.35
+   }
+  },
+  {
+   "label": "Weights Bull 25 / Base 40 / Bear 35",
+   "set": {
+    "scenarios.Bull.probability": 0.25,
+    "scenarios.Base.probability": 0.4,
+    "scenarios.Bear.probability": 0.35
+   }
+  },
+  {
+   "label": "Weights Bull 50 / Base 25 / Bear 25",
+   "set": {
+    "scenarios.Bull.probability": 0.5,
+    "scenarios.Base.probability": 0.25,
+    "scenarios.Bear.probability": 0.25
+   }
+  },
+  {
    "label": "Terminal growth 2.0%",
    "set": {
     "case.terminal_growth": 0.02
@@ -309,6 +360,35 @@
    "set": {
     "case.hazard": null
    }
+  },
+  {
+   "title": "PRICE-IMPLIED annual event probability on probability-weighted operations (perpetual hazard, 90% loss)",
+   "path": "case.hazard.annual_probability",
+   "target": 49.05,
+   "measure": "fair_value",
+   "lo": 0.0,
+   "hi": 0.2,
+   "set": {}
+  },
+  {
+   "title": "PRICE-IMPLIED annual event probability on probability-weighted operations if events can occur only in Y1-Y10 (2027-36)",
+   "path": "case.hazard.annual_probability",
+   "target": 49.05,
+   "measure": "fair_value",
+   "lo": 0.0,
+   "hi": 0.3,
+   "set": {
+    "case.hazard.years": 10
+   }
+  },
+  {
+   "title": "FLIP Neutral->Sell: payout ratio (ROE fixed; dividend held at NT$1.69) at which the TP reaches the Sell line",
+   "path": "scenarios.*.payout_ratio",
+   "target": 41.6925,
+   "measure": "target_12m",
+   "lo": 0.5,
+   "hi": 0.95,
+   "set": {}
   },
   {
    "title": "PRICE-IMPLIED cost of equity WITH our event risk (1.5%/yr, 90% loss): the rate at which the probability-weighted fair value equals NT$49.05",
